@@ -46,6 +46,8 @@ export const REPO = "https://github.com/nevertoday/xxd-saily";
 /** Saily 官方帮助中心：功能、价格和用法以这里和 Saily App 为准。中文页链官方的中文版（同一篇文章，地址里的 en-us 换成 zh-cn） */
 export const DOCS = "https://support.saily.com/hc/en-us";
 export const DOCS_ZH = "https://support.saily.com/hc/zh-cn";
+// 有官方帮助中心的语言，页脚和「相关链接」指向那种语言；俄语、阿拉伯语没有，用英文版
+export const DOCS_BY_LANG = { ja: "https://support.saily.com/hc/ja", ko: "https://support.saily.com/hc/ko", es: "https://support.saily.com/hc/es", pt: "https://support.saily.com/hc/pt-br", fr: "https://support.saily.com/hc/fr", de: "https://support.saily.com/hc/de" };
 
 // 新手入门：给第一次出国用 eSIM 的人。三课，一条路走到底；做完这三课，落地就能上网。
 export const LESSONS = [

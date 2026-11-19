@@ -2,7 +2,7 @@
 // 外壳：顶栏（搜索、主题、语言、GitHub）、左侧导航（主线 8 步 + 栏目）、正文、右侧目录。界面全部用 xxd-ui-kit：
 // 顶栏 xxd-topbar、标志 xxd-logo、左侧 xxd-sidebar（How-to 分组是子菜单）、目录 xxd-toc（跟着滚动高亮）。
 // 中文在根路径，英文在 /en/ 下；语言看路径（langOf），界面文字在下面的 UI 里。
-import { LESSONS, lessonHref, STEPS, stepHref, HOWTO, HOWTO_FLAT, howtoHref, wikiHref, link, REPO, DOCS, DOCS_ZH, LANGS, langInfo, langOf, fullLang, isFull, langHref, t } from "../data/nav.js";
+import { LESSONS, lessonHref, STEPS, stepHref, HOWTO, HOWTO_FLAT, howtoHref, wikiHref, link, REPO, DOCS, DOCS_ZH, DOCS_BY_LANG, LANGS, langInfo, langOf, fullLang, isFull, langHref, t } from "../data/nav.js";
 import { X as dict, fmt } from "../i18n/index.js";
 import { WIKI } from "../data/wiki.js";
 import { WIKI_EN } from "../data/wiki.en.js";
@@ -39,8 +39,8 @@ const fl = fullLang(lang);
 const en = fl === "en";
 const L = x
   ? { ...UI.en, ...x.ui, html: info.html,
-      repos: UI.en.repos.map((r, i) => [r[0], x.ui.repos?.[i]?.[0] ?? r[1], r[2], x.ui.repos?.[i]?.[1] ?? r[3]]),
-      foot: fmt(x.ui.foot, { docs: `<a href="${DOCS}">${x.ui.docsLink}</a>`, github: `<a href="${REPO}">GitHub</a>` }) }
+      repos: UI.en.repos.map((r, i) => [r[0] === DOCS ? (DOCS_BY_LANG[lang] ?? DOCS) : r[0], x.ui.repos?.[i]?.[0] ?? r[1], r[2], x.ui.repos?.[i]?.[1] ?? r[3]]),
+      foot: fmt(x.ui.foot, { docs: `<a href="${DOCS_BY_LANG[lang] ?? DOCS}">${x.ui.docsLink}</a>`, github: `<a href="${REPO}">GitHub</a>` }) }
   : UI[lang];
 // 语言菜单：每种语言里的同一页；那种语言没有这一页就去它的首页
 const langLinks = LANGS.map((l) => ({ ...l, href: langHref(Astro.url.pathname, l.code) }));
