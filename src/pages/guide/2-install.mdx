@@ -1,5 +1,122 @@
 ---
 layout: ../../layouts/Guide.astro
 step: 2
+need: 一部支持 eSIM、没被运营商锁定的手机；买好的套餐；稳定的 Wi-Fi
+tldr: eSIM 要在出发前连着 Wi-Fi 装好。装上不花有效期，套餐要到落地才开始算。App 装不上就换二维码或手动输入，装进去的是同一张 eSIM。重装时只在手机设置里删，别点 App 里的删除 eSIM。
+description: 装好 eSIM：为什么要在出发前连着 Wi-Fi 装；App、二维码、手动输入三种装法，iPhone、三星、Pixel 和其他安卓各在哪；装好以后看哪三个开关；一个账户装几张 eSIM、给别的手机装；改名；重装前分清手机里的删除和 App 里的删除。
 ---
-{/* 待写：正文。写法见 docs/MAINTAINING.md 的「怎么写」，资料在 docs/sources/。 */}
+import Callout from "../../components/Callout.astro";
+import Checkpoint from "../../components/Checkpoint.astro";
+import Tabs from "../../components/Tabs.astro";
+import Term from "../../components/Term.astro";
+import Q from "../../components/Q.astro";
+
+出发前一晚，行李都收好了，你突然想起 Saily 的套餐还没装。这时候装正好，家里有稳定的 Wi-Fi，出了岔子也有时间慢慢试。要是拖到落地再装，你可能正站在机场，连不上 Wi-Fi，偏偏 Saily 的 App 在那个国家还打不开。
+
+<mark><strong>eSIM 要在出发前连着 Wi-Fi 装好。装上不花一天有效期，套餐要到你落地才开始算。</strong></mark>
+
+在 App 里一路点下来的装法，[新手第 2 课](/start/2-data-plan/)讲过了。这一步讲它背后的几件事：为什么要早装，App 装不上时还有哪两种装法，装好以后看哪几个开关，以及多张 eSIM、改名和重装。
+
+## 为什么要在出发前装
+
+装 eSIM，其实是让手机从网上下载一份配置，所以装的那一下手机必须有网。官方的要求是连着稳定的 Wi-Fi，而且装的时候别打电话，正在通话会让 eSIM 装不上。装好以后它就在手机里等着，套餐不会因为早装就早开始算，要等你到了目的地、连上当地的网络才激活（[官方说明](https://support.saily.com/hc/zh-cn/articles/21484628749084)）。
+
+还有一个更硬的理由。在土耳其、阿曼、卡塔尔、沙特阿拉伯、阿联酋和中国大陆，Saily 的 App 或网站可能打不开，所以要去这些地方，出发前就把 eSIM 装好（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#travel)）。
+
+装之前先确认两样。一是 Saily App 是最新版，它要 iOS 18 或 Android 10 以上。二是手机没被运营商锁定，被锁的手机也许装得上 eSIM，却连不上网。iPhone 可以在 **设置 → 通用 → 关于本机 → 运营商锁**（Settings → General → About → Carrier Lock）里看，显示「无 SIM 卡限制」就是没锁。App 怎么装、怎么更新，见官方的[如何在设备上安装 Saily 应用？](https://support.saily.com/hc/zh-cn/articles/16927103076892)
+
+## 三种装法，装进去的是同一张 eSIM
+
+最省事的是在 App 里装，它会替你把这条线设好。点 **安装 eSIM**（Set up eSIM），选 **在此设备上**（On this device），再点 **开始安装 eSIM**（Start eSIM install），然后让 App 开着，等几分钟。在安卓上还有一个好处，只有 App 自己装的时候，它才会顺手替你打开数据漫游、设好 <Term k="APN" />。
+
+App 装不上，就换另外两种。它们装进去的还是同一张 eSIM，只是换了一种送进手机的办法。
+
+**扫二维码。** 二维码要显示在另一块屏幕上，因为手机扫不了自己屏幕上的码。找另一部手机或平板，登录同一个 Saily 账户，点 **安装 eSIM**，选 **在其他人的设备上**（On someone else's device），它会显示二维码，你这边装好了它还会告诉你。手边只有一部手机的话，iPhone 可以先把二维码图片存下来，在 **使用二维码**（Use QR Code）里点 **打开照片**（Open Photos）选它。
+
+**手动输入。** App 自动安装失败时，会出现一个 **查看说明**（View instructions）按钮，点开能看到 SM-DP+ 地址和<Term k="激活码" />，照着一字不差地输进手机设置里。安卓上的激活码一般以 `LPA:1$` 开头。
+
+每种手机的入口不一样：
+
+<Tabs id="install" items={[["ios", "iPhone"], ["samsung", "三星"], ["pixel", "Pixel"], ["android", "其他安卓"]]}>
+<div slot="ios">
+
+去 **设置 → 蜂窝网络**（Settings → Mobile Service，有的机型叫 Cellular），点 **添加 eSIM**（Add eSIM），再点 **使用二维码**（Use QR Code）。扫码就直接扫；手动输入就再点 **手动输入详细信息**（Enter Details Manually），填 SM-DP+ 地址和激活码，点 **下一步**。照屏幕往下走的时候，默认号码选国内的卡，蜂窝数据选 Saily。
+
+</div>
+<div slot="samsung">
+
+去 **设置 → 连接 → SIM 卡管理器**（Settings → Connections → SIM manager），点 **添加 eSIM**（Add eSIM），再点 **扫描服务提供商的二维码**（Scan QR code from service provider）。手动输入的话，在这个界面再点 **输入激活码**（Enter activation code），输好后点 **连接**、**添加**。
+
+</div>
+<div slot="pixel">
+
+去 **设置 → 网络和互联网 → SIM 卡**（Settings → Network & internet → SIMs），点 **添加 SIM 卡**（Add SIM，或者 **+**），再点 **下载新的 eSIM**（Download a new eSIM）。手动输入的话，在扫码界面点 **需要帮助？**（Need help?），选自己输入代码。
+
+</div>
+<div slot="android">
+
+一加、摩托罗拉、Nothing 这些手机，SIM 卡设置多半在 **设置 → 网络和互联网 → SIM 卡**，或者 **设置 → 连接 → SIM 卡管理器**。找 **添加 eSIM**、**添加 SIM 卡** 或 **下载 SIM 卡** 这样的按钮，扫码，或者在扫码界面选自己输入代码。一加手机用 App 装失败的情况多一些，试两次不行就直接换二维码或手动输入。
+
+</div>
+</Tabs>
+
+<u>安卓手机用二维码或手动输入装好以后，要自己打开 Saily 这条线的数据漫游，并确认 APN 是 `wbdata`。</u>App 只在它亲手装的时候才替你设这两样。每个品牌的完整步骤和截图，见官方的[如何在设备上安装 Saily eSIM？](https://support.saily.com/hc/zh-cn/articles/15751399206172)
+
+## 装好以后，看三个开关
+
+装好了不等于能用。官方列了出发前要确认的三样（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164)）：
+
+1. Saily 这条线是开着的。eSIM 有时候装好了却是关着的，iOS 26 和小米手机上尤其常见；以前装过别的 Saily eSIM 的话，新装的这张在 iPhone 上也可能是关着的。去 SIM 卡设置里打开就行，不用重装，也别指望到了国外 iPhone 会自己替你打开。
+2. Saily 这条线的数据漫游是开着的。
+3. 蜂窝数据选的是 Saily，自动切换数据的选项是关着的。
+
+第三样有个小麻烦。Saily 要到了目的地才连得上，蜂窝数据一切过去，你在国内就没有手机流量用了。所以出发前还要用国内流量的话，这一项可以留到落地再切，[第 3 步](/guide/3-abroad/)会讲怎么切。
+
+<Callout type="ok">
+手机的 SIM 卡设置里多了一条线，名字可能是 Saily、旅行（Travel）、Webbing，或者你起的名字，开关是开着的。人还没到目的地，它连不上网是正常的，官方也说到达之前没法测试。
+</Callout>
+
+## 一个账户，可以有好几张 eSIM
+
+Saily 的一个账户能有好几张 eSIM，很多手机也能存下 6 张以上。什么时候要第二张？官方举了两种情况：同一趟旅行要用不同的套餐，或者要给另一台设备装一张。在 App 里点顶部你已经买的那张 eSIM，选 **添加新 eSIM**（Add new eSIM），确认 **获取新 eSIM**（Get a new eSIM），就会进到买套餐的页面，买好再照上面的办法装。见官方的[如何获取多个 Saily eSIM？](https://support.saily.com/hc/zh-cn/articles/20269649356828)
+
+可也不是每次出门都要一张新的。新的套餐可以加在原来那张 eSIM 上，在 App 里选中它，点 **添加流量**（Add data），选好目的地就行（[官方说明](https://support.saily.com/hc/zh-cn/articles/12823216658204)）。官方在土耳其那篇里也提过，以前用过 Saily 的人，新套餐可能就挂在旧的那张 eSIM 上，所以找线的时候先看看旧的那条。
+
+要给家人的手机装，先记住一条，一张 Saily eSIM 同一时间只能在一部手机上用（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164)）。所以给另一部手机，就在你的账户里再买一张，然后用上面扫二维码的办法，在你的手机上选 **在其他人的设备上**，让对方的手机扫你屏幕上的码。想让家人用他自己的账户，可以用 Family Plan 分一份给他，或者直接送一份，见 How-to 的[和家人一起用](/howto/share-family/)。
+
+## 给它起个好认的名字
+
+手机里的线一多，「eSIM 1」「副卡」这种名字就分不清了。名字要在两个地方各改一次，因为它们互不同步（[官方说明](https://support.saily.com/hc/zh-cn/articles/27480300684060)）。在 Saily App 里，点顶部的 eSIM，选 **重命名**（Rename），输入名字再点 **确认**，这只改 App 里显示的名字，eSIM 本身照常工作。手机设置里的名字要另外改；iPhone 装的过程中会出一个给线路起名的页面（Mobile Plan Labels），官方建议直接改成 Saily，以后好找。
+
+## 删掉重装之前，先分清两个「删除」
+
+Saily 允许重装，甚至能装到另一部手机上，只要你用同一个邮箱登录 App（[官方说明](https://support.saily.com/hc/zh-cn/articles/12822203571100)）。可动手之前，先分清两个长得很像的「删除」：
+
+- 在**手机设置**里删掉 eSIM，只是把它从这部手机上拿掉，套餐还在你的 Saily 账户里，回到 App 里点 **安装 eSIM** 就能再装上。
+- 在 **Saily App** 里点 **删除 eSIM**（Delete eSIM），是把这张 eSIM 连同它的套餐从账户里永久删掉，上面的电话号码、Ultra 订阅和自动加购也一起取消。<u>重装的时候千万别点 App 里的这个删除。</u>
+
+所以重装的顺序是，先在手机设置里删掉这条线（iPhone 在 **设置 → 蜂窝网络** 里点它，选 **删除 eSIM**；三星在 **SIM 卡管理器** 里点它，选 **删除**），再回到 Saily App 点 **安装 eSIM**。装不上的话，先把 Saily App 删了重装一遍。
+
+重装还有两条规矩。一是要连着稳定的 Wi-Fi。二是<u>别在 Saily 受限制的国家删了重装</u>，比如土耳其和中国大陆，删了可能就下载不回来了（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#travel)）。换新手机也是同样的道理，让旧手机连着网，在它的设置里删掉 eSIM，再到新手机上装；旧手机已经不在手边，就找客服帮你把套餐挪过去。细节见 How-to 的[换了手机，把 eSIM 移过去](/howto/change-phone/)和[删掉 eSIM 之前先看这个](/howto/delete-esim/)。
+
+装好了，三个开关也看过了。下一步，带着它出发。
+
+## 卡住了？
+
+<Q q="App 显示「哎呀！eSIM 尚未安装」（Whoops! eSIM not installed yet）。">
+<p>先别急着重试。安装最多要 4 分钟，出了错也可能在后台装好了，先去手机的 SIM 卡设置里看看有没有 Saily 这条线，同一张 eSIM 装两次反而会出错。确实没有，就确认 Wi-Fi 稳定，点 <strong>重试安装 eSIM</strong>（Retry eSIM installation），最多 3 次，小米和一加 2 次；还不行就换二维码或手动输入。开着 VPN 的话先断开，VPN 会挡住安装，安卓上尤其常见。</p>
+</Q>
+<Q q="提示手机被运营商锁定（carrier locked）。">
+<p>这说明手机只认你国内运营商的卡，只能联系国内的运营商解锁。解锁以后，Saily 的 eSIM 才装得上、连得上网。</p>
+</Q>
+<Q q="提示 eSIM 槽位满了（you've reached the eSIM slots limit）。">
+<p>手机存不下更多 eSIM 了。在手机设置里删掉一张以前旅行或者别家的、不再用的 eSIM，再装 Saily。</p>
+</Q>
+<Q q="提示「此代码不再有效」或「已在其他设备上使用」。">
+<p>这张 eSIM 可能已经装上了，先看这部手机的 SIM 卡设置。不在的话，它可能还在你的旧手机上。让旧手机连上 Wi-Fi，在它的设置里删掉，再到这部手机上装。旧手机不在了，就找 Saily 客服。</p>
+</Q>
+<Q q="安卓装好了，可还是没有流量。">
+<p>让 Saily App 开着等最多 5 分钟，它可能还在设置连接。还不行，就打开 Saily 这条线的 <strong>接入点名称</strong>（Access Point Names），确认选中的是 <code>wbdata</code>；不是的话，照官方<a href="https://support.saily.com/hc/zh-cn/articles/15751399206172">安装那篇</a>里的值加一个新的 APN。</p>
+</Q>
+
+<Checkpoint id="s2" items={["我在出发前连着 Wi-Fi 装好了 eSIM", "手机设置里有 Saily 这条线，开关开着，数据漫游也打开了", "我知道重装只在手机设置里删，不点 App 里的删除 eSIM"]} />

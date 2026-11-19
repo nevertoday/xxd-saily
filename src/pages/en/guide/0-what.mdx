@@ -1,5 +1,82 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 0
+need: "Nothing yet, just read"
+tldr: "Saily is a travel eSIM from Nord Security that sells mobile data for your destination. It sits in your phone next to your home SIM, so your home number still takes calls while Saily handles the internet. A US number is an add-on."
+description: "What Saily is: a prepaid travel eSIM from Nord Security; it sells data plans and an optional +1 US phone number; how it shares a phone with your home SIM; whether WhatsApp and iMessage still work; how it compares with roaming or a local SIM, and where it doesn't work; what this guide covers."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+The last time you went abroad, you probably got online one of two ways. Either you found a SIM counter at the airport, poked your home SIM out with a pin, and tucked it somewhere safe, or you left your carrier's roaming on and came home to a painful bill. Saily is meant to save you both.
+
+<mark><strong>Saily is a travel eSIM that only does data. It sits in your phone next to your home SIM, so your home number still takes calls while Saily handles the internet.</strong></mark>
+
+This full guide is for people who've done the beginner lessons or have used an eSIM before, so it doesn't walk through every tap in the app. If you're new to all this, start with [the three beginner lessons](/en/start/1-check-phone/), beginning with checking your phone.
+
+This is an unofficial learning site, not connected to Saily or Nord Security. The rules below come from the [Saily Help Center](https://support.saily.com/hc/en-us), and where we differ, the Help Center is right.
+
+## Who makes it
+
+Saily comes from Nord Security, the company behind NordVPN. The Help Center describes it as a prepaid eSIM service, meaning you pay for a data plan first and then use it, and it sells data plans in more than 200 countries and regions. See [What is Saily?](https://support.saily.com/hc/en-us/articles/27276323644572)
+
+What it sells lives on an <Term k="eSIM" />. An eSIM is a SIM built into your phone. There's no card to insert. You download a profile over the internet, and it connects to mobile networks just like a physical SIM. So there's no delivery to wait for and nothing to pick up. You pay in the app and install it right there.
+
+## It sells two things
+
+The first is a travel <Term k="流量套餐" />, which is why most people buy Saily. A standard Saily plan is data only. Browsing, streaming and messaging apps all run on it, but it doesn't come with a phone number, so on its own it can't make regular calls or send texts. The Help Center says the same of regional plans, which cover data only, with no calls or SMS ([Help Center](https://support.saily.com/hc/en-us/articles/13798863550492)).
+
+The second is a +1 US number, an optional add-on called a <Term k="电话号码套餐" />. With it, the Saily line can make and receive calls and send texts. Calls come in minute packages and cover local calls only, in the country you're in; international calls aren't supported. If you're visiting several countries, the official answer is to pair it with the Global plan, which lets you call from any supported country. MMS, short premium numbers like 1482, and call forwarding aren't supported. One thing people miss is that when someone calls you from their local carrier, they're dialing a US number, so their carrier may charge them international rates. See [What is a Saily phone number?](https://support.saily.com/hc/en-us/articles/27948598334620)
+
+You get the number only after <Term k="KYC 实名认证" />, and some services flag it as an internet-based (VoIP) number, so verification codes may not arrive. [Step 5](/en/guide/5-phone-number/) covers all of that. Most of this guide is about the first thing, data.
+
+## Two SIMs, one phone, separate jobs
+
+Once Saily is installed, your phone has two lines. One is your home SIM, which keeps your number. The other is Saily, which gets you online.
+
+Whether your home number can still take calls depends on whether your phone can run a physical SIM and an eSIM at the same time. The Help Center talks about Dual SIM Dual Standby (DSDS). iPhones and many newer Android phones that support it keep both SIMs connected, so your home number still receives calls. How many eSIMs you can have active at once depends on the model and software version, so check your phone's manual or ask the manufacturer. See [Can I receive phone calls on my primary number while using Saily eSIM?](https://support.saily.com/hc/en-us/articles/16747226859164)
+
+But with both SIMs on, your home SIM is <Term k="漫游" /> while you're abroad. The Help Center warns that using your own carrier's call service may bring extra roaming charges, so ask your carrier before you turn both on. That's why the usual setup is the opposite for each line. Your home SIM stays on for calls with its data roaming turned off. The Saily line gets data roaming turned on, because it runs on local partner networks, and Saily doesn't charge anything extra for that roaming ([Help Center](https://support.saily.com/hc/en-us/articles/12838788763164)). [Step 3](/en/guide/3-abroad/) covers this on/off pair, and the how-to [Keep your home number alongside Saily](/en/howto/dual-sim/) covers running both numbers.
+
+## Do WhatsApp and iMessage still work?
+
+A lot of people worry that switching the SIM they use for data will cut off their messages. The Help Center answers this for WhatsApp and iMessage. WhatsApp only uses your phone number once, to verify you when you sign up. After that it just needs an internet connection, so even if you take your SIM out or swap it, the WhatsApp you set up with your old number keeps working. iMessage runs over the internet too, and it can use the email address on your Apple ID instead of a phone number.
+
+If iMessage misbehaves, the Help Center's check is to go to **Settings → Messages → Send & Receive**, make sure your Apple ID email is ticked, then restart your iPhone. See [Will iMessage/WhatsApp work with an eSIM?](https://support.saily.com/hc/en-us/articles/13718527919900)
+
+## Compared with roaming or a local SIM
+
+The two old ways each have their own hassle. Turning on your carrier's international roaming is the least effort, but the Help Center says Saily's data costs significantly less than standard international roaming. The app shows the actual prices, and this site doesn't list them. A local SIM means finding a shop after you land, queuing, and swapping out your home SIM. Saily's approach is to buy and install at home before you leave, so you're online when you land, with no SIM shop to find and no home SIM to pull out.
+
+There are things it can't do, though, and it's worth knowing them before you go:
+
+- Some places it doesn't work at all: Belarus, Cuba, Iran, North Korea, Russia, Syria, and restricted regions of Ukraine.
+- In some places the Saily app or website may be blocked: Turkey, Oman, Qatar, Saudi Arabia, the UAE, and mainland China. If you're going there, install the eSIM before you leave ([Help Center](https://support.saily.com/hc/en-us/articles/12838788763164#travel)).
+- On a cruise, regular plans use land-based networks, which are out of reach once the ship is at sea. You need a dedicated cruise plan; see [step 1](/en/guide/1-choose-plan/).
+- If your phone doesn't support eSIM, it won't install. Many phone models sold in mainland China, Hong Kong, Macau, Taiwan and South Korea don't, so check first with [beginner lesson 1](/en/start/1-check-phone/). If yours doesn't, [step 6](/en/guide/6-no-esim/) covers the official workaround.
+
+## What this guide covers
+
+The main guide has eight steps, in the order a trip happens. This step introduces Saily. Step 1 picks a plan for your itinerary, step 2 installs the eSIM before you leave, and step 3 gets it online when you land and keeps roaming charges off your home SIM. Step 4 covers usage, top-ups and credits, step 5 is the US number, step 6 is for phones without eSIM, and step 7 covers extras like Web protection and the ad blocker.
+
+Specific tasks, like sharing a hotspot or switching phones, live in [How-to](/en/howto/). For what a word means, check the [Wiki](/en/wiki/), and loose questions are in the [FAQ](/en/faq/).
+
+That's the one idea on this page. Saily only does data, it works alongside your home SIM, and a number is an extra. Next, pick a plan that fits your trip.
+
+## Stuck?
+
+<Q q="Are Saily and NordVPN the same thing?">
+<p>No. They're two products from the same company, Nord Security. Saily's Ultra plan includes NordVPN and a few other security tools; see <a href="/en/guide/7-extras/">step 7</a>.</p>
+</Q>
+<Q q="Will installing Saily switch off my home number?">
+<p>No. Saily lives on an eSIM, and your home SIM stays where it is. If your phone can keep both on at once, your home number still takes calls. It's roaming with your home carrier while you're abroad, though, so ask them what that costs.</p>
+</Q>
+<Q q="Who do I contact when something goes wrong?">
+<p>Saily support. In the Saily app, open the <strong>Help</strong> tab and tap <strong>Chat with us</strong>. Someone's there 24/7. Live chat is only in the app, and you can also email from the bottom of any Help Center article. Saily doesn't offer phone support. See <a href="https://support.saily.com/hc/en-us/articles/17770364559516">How to contact Saily customer support</a>.</p>
+</Q>
+<Q q="Is this Saily's official site?">
+<p>No. This is an independent, unofficial learning site with no connection to Saily or Nord Security. The <a href="https://support.saily.com/hc/en-us">Saily Help Center</a> and what the app shows are what count.</p>
+</Q>
+
+<Checkpoint id="s0" items={["I know Saily sells data, and a phone number is a separate add-on", "I know Saily and my home SIM can share my phone, and my home number still takes calls", "I've checked that Saily works where I'm going, and whether the app is reachable there"]} />

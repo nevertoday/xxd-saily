@@ -1,5 +1,122 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 2
+need: "A phone that supports eSIM and isn't carrier-locked; a plan you've bought; stable Wi-Fi"
+tldr: "Install the eSIM over Wi-Fi before you leave. Installing doesn't use up any of the plan, which starts when you land. If the app can't install it, use a QR code or enter the details by hand. It's the same eSIM either way. To reinstall, delete it only in your phone's settings, never with Delete eSIM in the app."
+description: "Install the eSIM: why to do it over Wi-Fi before you leave; the app, QR code and manual methods, and where they are on iPhone, Samsung, Pixel and other Android phones; the three switches to check afterwards; several eSIMs on one account and installing for another phone; renaming; the two kinds of delete to tell apart before reinstalling."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Tabs from "../../../components/Tabs.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+It's the night before your flight, the bags are packed, and you suddenly remember you haven't installed your Saily plan. Now is actually a good time. You've got steady Wi-Fi at home and time to try again if something goes wrong. Leave it until you land, and you might be standing in an airport with no Wi-Fi, in a country where the Saily app won't even load.
+
+<mark><strong>Install the eSIM over Wi-Fi before you leave. Installing doesn't use up a single day of the plan, which only starts when you land.</strong></mark>
+
+[Beginner lesson 2](/en/start/2-data-plan/) walks through installing in the app. This step covers what's behind it: why to install early, the two other ways when the app can't do it, the switches to check afterwards, and multiple eSIMs, renaming and reinstalling.
+
+## Why install before you leave
+
+Installing an eSIM means your phone downloads a profile from the internet, so it has to be online while it installs. The Help Center asks for a stable Wi-Fi connection and no phone calls during the install, because an active call stops the eSIM from installing. Once it's on your phone, it waits. Installing early doesn't start the plan early. It activates when you reach your destination and connect to a local network ([Help Center](https://support.saily.com/hc/en-us/articles/21484628749084)).
+
+There's a firmer reason too. In Turkey, Oman, Qatar, Saudi Arabia, the UAE and mainland China, the Saily app or website may be blocked, so if you're going to any of them, install the eSIM before you leave ([Help Center](https://support.saily.com/hc/en-us/articles/12838788763164#travel)).
+
+Check two things first. One, the Saily app is up to date, and it needs iOS 18 or Android 10 or later. Two, your phone isn't carrier-locked, because a locked phone may install the eSIM but still can't connect with it. On iPhone, look under **Settings → General → About → Carrier Lock**; "No SIM restrictions" means it's unlocked. For installing or updating the app, see [How do I install the Saily App on my device?](https://support.saily.com/hc/en-us/articles/16927103076892)
+
+## Three ways in, one eSIM
+
+The easiest is installing from the app, which sets the line up for you. Tap **Set up eSIM**, choose **On this device**, tap **Start eSIM install**, then keep the app open for a few minutes. On Android there's a bonus, because only when the app installs the eSIM itself does it also turn on data roaming and set the <Term k="APN" /> for you.
+
+If the app can't install it, use one of the other two. They install the same eSIM; they're just another way of getting it onto your phone.
+
+**Scan a QR code.** The QR code has to be on a second screen, since a phone can't scan its own display. On another phone or tablet, log in to the same Saily account, tap **Set up eSIM**, and choose **On someone else's device**. It shows the QR code and tells you when your phone has finished installing. With only one phone, an iPhone can use a saved image of the QR code. Tap **Use QR Code**, then **Open Photos**, and pick it.
+
+**Enter the details by hand.** When the automatic install fails, the app shows a **View instructions** button with the SM-DP+ address and the <Term k="激活码" />. Type them into your phone's settings exactly as shown. On Android, the activation code usually starts with `LPA:1$`.
+
+Where to find these on each phone:
+
+<Tabs id="install" items={[["ios", "iPhone"], ["samsung", "Samsung"], ["pixel", "Pixel"], ["android", "Other Android"]]}>
+<div slot="ios">
+
+Go to **Settings → Mobile Service** (or **Cellular**), tap **Add eSIM**, then **Use QR Code**. To scan, just scan. To type it in, tap **Enter Details Manually**, enter the SM-DP+ address and activation code, and tap **Next**. As you follow the screens, choose your home SIM as the default line and Saily for mobile data.
+
+</div>
+<div slot="samsung">
+
+Go to **Settings → Connections → SIM manager**, tap **Add eSIM**, then **Scan QR code from service provider**. To type it in, tap **Enter activation code** on that screen, enter it, then tap **Connect** and **Add**.
+
+</div>
+<div slot="pixel">
+
+Go to **Settings → Network & internet → SIMs**, tap **Add SIM** (or **+**), then **Download a new eSIM**. To type it in, tap **Need help?** on the scan screen and choose to enter the code yourself.
+
+</div>
+<div slot="android">
+
+On OnePlus, Motorola, Nothing and similar phones, SIM settings are usually at **Settings → Network & internet → SIMs** or **Settings → Connections → SIM manager**. Look for **Add eSIM**, **Add SIM** or **Download a SIM**, then scan, or choose to enter the code yourself on the scan screen. Installing in the app fails more often on OnePlus phones, so after two tries, switch to the QR code or manual install.
+
+</div>
+</Tabs>
+
+<u>On Android, after a QR code or manual install, turn on data roaming for the Saily line yourself and check that the APN is `wbdata`.</u> The app only sets those when it does the install itself. For every brand's full steps and screenshots, see [How do I install a Saily eSIM on my phone?](https://support.saily.com/hc/en-us/articles/15751399206172)
+
+## Once it's installed, check three switches
+
+Installed doesn't mean ready. The Help Center lists three things to confirm before you leave ([Help Center](https://support.saily.com/hc/en-us/articles/12838788763164)):
+
+1. The Saily line is turned on. An eSIM can finish installing and stay switched off, especially on iOS 26 and Xiaomi phones, and if you already have another Saily eSIM, a new one can show up switched off on iPhone. Turn it on in your SIM settings. There's no need to reinstall, and don't count on your iPhone doing it for you abroad.
+2. Data roaming is on for the Saily line.
+3. Saily is selected for mobile data, and automatic data switching is off.
+
+The third one has a catch. Saily only connects once you reach your destination, so if you switch mobile data to it at home, you lose mobile data at home. If you still need your home data before you leave, you can leave that one until you land. [Step 3](/en/guide/3-abroad/) shows how to switch.
+
+<Callout type="ok">
+There's a new line in your phone's SIM settings, called something like Saily, Travel, Webbing, or whatever you named it, and it's switched on. It's normal for it not to connect before you arrive; the Help Center says you can't test it until then.
+</Callout>
+
+## One account, several eSIMs
+
+A Saily account can hold several eSIMs, and many phones can store more than 6. When would you want a second one? The Help Center gives two cases: you need different plans on the same trip, or you want an eSIM on another device. In the app, tap the eSIM you already have at the top, choose **Add new eSIM**, and confirm with **Get a new eSIM**. That takes you to the plans, and after buying one you install it the same ways as above. See [How do I get an additional Saily eSIM?](https://support.saily.com/hc/en-us/articles/20269649356828)
+
+But you don't need a new eSIM for every trip. A new plan can go on the eSIM you already have. Select it in the app, tap **Add data**, and choose the destination ([Help Center](https://support.saily.com/hc/en-us/articles/12823216658204)). The Help Center's Turkey article mentions it too. If you've used Saily before, your new plan may be linked to your old eSIM, so check the old line first when you're looking for it.
+
+To install on a family member's phone, remember that a Saily eSIM works on one phone at a time ([Help Center](https://support.saily.com/hc/en-us/articles/12838788763164)). So for another phone, buy another eSIM on your account, then use the QR code method above. Choose **On someone else's device** on your phone and let theirs scan the code on your screen. If you'd rather they use their own account, share a plan with the Family Plan or send one as a gift; see the how-to [Share with your family](/en/howto/share-family/).
+
+## Give it a name you'll recognise
+
+With several lines on your phone, names like "eSIM 1" or "Secondary" get confusing. You rename it in two places, because they don't sync ([Help Center](https://support.saily.com/hc/en-us/articles/27480300684060)). In the Saily app, tap the eSIM at the top, choose **Rename**, enter a name and tap **Confirm**. That only changes the name in the app, and the eSIM works exactly the same. Your phone's settings need renaming separately. On iPhone, the install shows a **Mobile Plan Labels** screen, and the Help Center suggests renaming the line to Saily there so it's easy to find later.
+
+## Before you delete and reinstall, know which delete you're pressing
+
+Saily lets you reinstall, even on a different phone, as long as you log in to the app with the same email ([Help Center](https://support.saily.com/hc/en-us/articles/12822203571100)). Before you do, tell apart two deletes that look alike:
+
+- Deleting the eSIM in your **phone's settings** only removes it from that phone. Your plans stay in your Saily account, and you can tap **Set up eSIM** in the app to install it again.
+- Tapping **Delete eSIM** in the **Saily app** permanently removes that eSIM and its plans from your account, and cancels its phone number, Ultra subscription and auto top-up. <u>Never use the app's Delete eSIM to reinstall.</u>
+
+So reinstalling goes like this. First delete the line in your phone's settings (on iPhone, tap it under **Settings → Mobile Service** and choose **Delete eSIM**; on Samsung, tap it in **SIM manager** and choose **Remove**), then go back to the Saily app and tap **Set up eSIM**. If that doesn't work, delete and reinstall the Saily app first.
+
+Two more rules for reinstalling. Do it on stable Wi-Fi. And <u>don't delete and reinstall in a country where Saily is restricted</u>, like Turkey or mainland China, where you may not be able to download it again ([Help Center](https://support.saily.com/hc/en-us/articles/12838788763164#travel)). Moving to a new phone works the same way. Keep the old phone online, delete the eSIM in its settings, then install on the new one. If you no longer have the old phone, ask support to move your plan. For details, see the how-tos [Move the eSIM to a new phone](/en/howto/change-phone/) and [Read this before you delete an eSIM](/en/howto/delete-esim/).
+
+It's installed, and the three switches are checked. Next, take it with you.
+
+## Stuck?
+
+<Q q="The app says Whoops! eSIM not installed yet.">
+<p>Don't retry straight away. Installing can take up to 4 minutes and can finish in the background even after an error, so first look for the Saily line in your phone's SIM settings. Installing the same eSIM twice causes errors. If it really isn't there, make sure your Wi-Fi is stable and tap <strong>Retry eSIM installation</strong>, up to 3 times (2 on Xiaomi and OnePlus). If it still fails, switch to the QR code or manual install. If a VPN is on, turn it off, because a VPN can block the install, especially on Android.</p>
+</Q>
+<Q q="It says my phone is carrier locked.">
+<p>Your phone only accepts SIMs from your home carrier, so ask them to unlock it. Once it's unlocked, the Saily eSIM can install and connect.</p>
+</Q>
+<Q q="It says I've reached the eSIM slots limit.">
+<p>Your phone can't store any more eSIMs. In your phone's settings, delete an old eSIM from another trip or provider that you no longer use, then install Saily.</p>
+</Q>
+<Q q={`It says "This code is no longer valid" or "already being used on another device."`}>
+<p>The eSIM may already be installed, so check this phone's SIM settings first. If it isn't there, it may still be on your old phone. Connect that phone to Wi-Fi, delete the eSIM in its settings, then install it on this one. If you no longer have the old phone, contact Saily support.</p>
+</Q>
+<Q q="It's installed on Android, but there's still no data.">
+<p>Keep the Saily app open for up to 5 minutes, since it may still be setting up the connection. If there's still nothing, open <strong>Access Point Names</strong> for the Saily line and check that <code>wbdata</code> is selected. If it isn't, add a new APN with the values in the Help Center's <a href="https://support.saily.com/hc/en-us/articles/15751399206172">install article</a>.</p>
+</Q>
+
+<Checkpoint id="s2" items={["I installed the eSIM over Wi-Fi before leaving", "The Saily line is in my phone's settings, switched on, with data roaming on", "I know to reinstall by deleting only in my phone's settings, never with Delete eSIM in the app"]} />
