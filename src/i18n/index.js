@@ -3,8 +3,16 @@
 // base.js 是英文底稿，也是兜底：某种语言缺了哪个键，就显示英文。
 // 全站语言（中文、英文）的文字在各组件里，不走这里。
 import BASE from "./base.js";
+import ja from "./ja.js";
+import ko from "./ko.js";
+import es from "./es.js";
+import pt from "./pt.js";
+import fr from "./fr.js";
+import de from "./de.js";
+import ru from "./ru.js";
+import ar from "./ar.js";
 
-export const EXTRA = {};
+export const EXTRA = { ja, ko, es, pt, fr, de, ru, ar };
 
 const isObj = (v) => v && typeof v === "object" && !Array.isArray(v);
 const merge = (a, b) => {

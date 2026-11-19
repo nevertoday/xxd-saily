@@ -2,7 +2,7 @@
 
 # Saily for Beginners
 
-[中文](./README.md) · **English**
+[中文](./README.md) · **English** · [日本語](./README.ja.md) · [한국어](./README.ko.md) · [Español](./README.es.md) · [Português](./README.pt.md) · [Français](./README.fr.md) · [Deutsch](./README.de.md) · [Русский](./README.ru.md) · [العربية](./README.ar.md)
 
 ### Get the most out of Saily: online the moment you land
 
@@ -10,7 +10,7 @@ Saily is a travel eSIM. Install it on your phone before you leave, turn on data 
 
 **[Start with lesson 1 →](https://saily.xiaoxiaodong.ai/en/start/1-check-phone/)**　·　**[Already using it? The full guide →](https://saily.xiaoxiaodong.ai/en/guide/0-what/)**
 
-<sub>Unofficial · free · open source · English and Chinese</sub>
+<sub>Unofficial · free · open source · 10 languages</sub>
 
 </div>
 

@@ -1,4 +1,4 @@
-# Translation brief: more languages (for later)
+# Translation brief: 8 more languages (2026-11-19)
 
 v1 of this site is Chinese (root) and English (`/en/`). This brief is for the next step: adding Japanese, Korean, Spanish, Portuguese (Brazil), French, German, Russian and Arabic, the same way the sister site grokbot.xiaoxiaodong.ai did. Fill in the dates and paths when you hand it to translators.
 
@@ -20,7 +20,7 @@ The unofficial Saily beginners site gets more languages. Each language has the h
 1. `src/i18n/<lang>.js`: translate every string value. Keep every key, array length and `{placeholder}` exactly. Labels that name the full guide, how-to, wiki and FAQ should say they are in English where base.js does.
 2. `src/pages/<lang>/index.astro`: already correct, don't touch.
 3. `src/pages/<lang>/start/1-check-phone.mdx`, `2-data-plan.mdx`, `3-land.mdx`: translate from the English, checking the Chinese for intent. Keep frontmatter keys (`layout`, `lesson`, `tldr`, `description` if present), every component, every `Copy` id and other element ids, the single `<mark>`. Links: lessons link to `/<lang>/start/…`; every other site page links to `/en/…`; Help Center links point at the same article in your language's Help Center when it exists (swap `en-us` in the address for your locale), otherwise the English one.
-4. `README.<lang>.md`: new file. Translate the English README in the same voice.
+4. `README.<lang>.md`: new file. Translate `README.en.md` in the same voice. Use the English images (`assets/en/hero.svg`, `assets/en/readme/*.svg`) exactly as README.en.md does. The language bar is the 10-language line already in README.en.md with your language in bold instead of English. The tagline says 10 languages. Site links go to `https://saily.xiaoxiaodong.ai/<lang>/` for the home page and lessons, `/en/` for everything else. Help Center links point at your locale when the article exists there.
 
 ## Rules
 - **Button names as the app shows them in your language.** The Saily app follows the phone's system language. Its languages (2026-11-19) are Chinese, Czech, Dutch, English, French, German, Italian, Japanese, Lithuanian, Polish, Spanish (and Latin American Spanish), Portuguese (and Brazilian Portuguese) and Traditional Chinese; there is no Korean, Russian or Arabic app interface yet. Look each label up in your language's Help Center copy, write the app's text in bold, and the English label in parentheses on first use, like the Chinese pages do. If your language has no app interface or the label isn't found, keep the English in bold and explain it in your language.

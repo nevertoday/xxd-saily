@@ -2,7 +2,7 @@
 
 # Saily 新手教程
 
-**中文** · [English](./README.en.md)
+**中文** · [English](./README.en.md) · [日本語](./README.ja.md) · [한국어](./README.ko.md) · [Español](./README.es.md) · [Português](./README.pt.md) · [Français](./README.fr.md) · [Deutsch](./README.de.md) · [Русский](./README.ru.md) · [العربية](./README.ar.md)
 
 ### 如何爽用 Saily：出国落地就有网
 
@@ -10,7 +10,7 @@ Saily 是一张旅行用的 eSIM，出发前在手机里装好，落地打开数
 
 **[从第 1 课开始 →](https://saily.xiaoxiaodong.ai/start/1-check-phone/)**　·　**[已经在用了，看完整教程 →](https://saily.xiaoxiaodong.ai/guide/0-what/)**
 
-<sub>非官方 · 免费 · 开源 · 中文和英文</sub>
+<sub>非官方 · 免费 · 开源 · 10 种语言</sub>
 
 </div>
 

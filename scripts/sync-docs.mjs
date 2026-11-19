@@ -17,7 +17,7 @@ const RAW = join(ROOT, "docs/sources/raw/official");
 const INDEX = join(ROOT, "docs/sources/official.json");
 const HOST = "https://support.saily.com";
 const API = `${HOST}/api/v2/help_center`;
-const LOCALES = ["en-us", "zh-cn"];
+const LOCALES = ["en-us", "zh-cn", "ja", "ko", "es", "pt-br", "fr", "de"];
 const CHECK = process.argv.includes("--check");
 
 const getJSON = async (url) => {

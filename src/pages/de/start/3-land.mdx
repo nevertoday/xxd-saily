@@ -1,0 +1,131 @@
+---
+layout: ../../../layouts/Lesson.astro
+tldr: "After you land, flip two switches: use Saily for data, and turn on data roaming for it. Deal with your home SIM before you board, so no roaming bill is waiting when you get back."
+lesson: 3
+---
+import Callout from "../../../components/Callout.astro";
+import Term from "../../../components/Term.astro";
+import Tabs from "../../../components/Tabs.astro";
+import Copy from "../../../components/Copy.astro";
+import Q from "../../../components/Q.astro";
+
+The plane has landed and is still taxiing, and all around you phones are switching back on. People are booking rides and texting home. This lesson is about what you do in those few minutes. It's really just two switches, and once you know what each one does, there's nothing to panic about.
+
+## Two lines, one for data
+
+With Saily installed, your phone has two lines: your home SIM and Saily. Both can be on at once, but data only goes through one line at a time. So the first switch tells your phone to use Saily for data.
+
+The second switch is <Term k="漫游" text="data roaming" />, the setting that lets your phone use mobile networks abroad. The Saily eSIM connects through local partner networks, so this has to be on for Saily, and Saily doesn't charge extra for roaming ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164#faq)).
+
+Your home SIM is the opposite. If its data roaming is on, your phone may quietly use it for data abroad, and when you get home, there's a roaming bill from your carrier waiting. So remember this one line:
+
+<mark><strong>Use Saily for data, and turn on data roaming for Saily only.</strong></mark>
+
+## Before you board: deal with your home SIM
+
+Do this while you're still at home. What to do with your home SIM depends on whether you still want calls and texts on your home number during the trip.
+
+If you don't, turning that SIM off completely is the simplest, and it's one of the options Saily lists ([Saily's note](https://support.saily.com/hc/en-us/articles/20793044376092)). The catch is that your home number won't get calls or texts while it's off. If you do, leave it on and just keep it off data. Calls still come through, but your home carrier may charge roaming for them, so it's worth asking your carrier before you go ([Saily's note](https://support.saily.com/hc/en-us/articles/16747226859164)).
+
+<Tabs id="home-sim" items={[["ios", "iPhone"], ["android", "Android"]]}>
+<div slot="ios">
+
+Open **Settings** > **Mobile Service** and tap your home SIM.
+
+- To turn it off completely, turn off **Turn On This Line**.
+- To keep it for calls, turn off its **Data Roaming**.
+
+</div>
+<div slot="android">
+
+- To turn it off completely, open the SIM screen (on Samsung, **Settings** > **Connections** > **SIM manager**), switch your home SIM off, and tap **Turn off**.
+- To keep it for calls, just leave it on. After you land, you'll switch data to Saily, turn off automatic switching, and turn off your home SIM's data roaming (under **Settings** > **Connections** > **Mobile networks**) so your home carrier doesn't charge roaming.
+
+</div>
+</Tabs>
+
+Then, as on any flight, turn on airplane mode before takeoff.
+
+## After you land: flip two switches
+
+<Tabs id="land" items={[["ios", "iPhone"], ["android", "Android"]]}>
+<div slot="ios">
+
+1. Open **Settings** > **Mobile Service** > **Mobile Data** (**Cellular Data** on some iPhones) and choose the Saily line. On the same screen, turn off **Allow Mobile Data Switching**, so your phone doesn't switch back to your home SIM for data on its own.
+2. Go back to **Mobile Service**, tap the Saily line, check that **Turn On This Line** is on, and turn on **Data Roaming**.
+
+</div>
+<div slot="android">
+
+Using Samsung as the example:
+
+1. Open **Settings** > **Connections** > **SIM manager**. The Saily line needs to be on. It's usually called eSIM 1, eSIM 2 or Saily #1, with Saily shown under the name. Tap **Mobile data** and choose it. Then turn off **Data switching** (on some phones, **Data switching and backup calling**), so your phone doesn't switch back to your home SIM for data on its own.
+2. Open **Settings** > **Connections** > **Mobile networks** and turn on **Data roaming**.
+
+On other Android phones, do the same on the SIM screen. Choose Saily for data, turn on **Mobile data**, turn off any option that switches data between SIMs automatically, then tap Saily and turn on **Data roaming** (or **Roaming**). On a Google Pixel, the SIM screen is **Settings** > **Network & internet** > **SIMs**.
+
+</div>
+</Tabs>
+
+Once they're set, turn off airplane mode. Turn off Wi-Fi as well and open a website, because with Wi-Fi off, you're testing Saily's connection ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164)). Your phone takes a moment to join the local network, so give it about a minute.
+
+<Callout type="ok">
+Signal bars at the top of the screen, and the website loads.
+</Callout>
+
+That's also when your plan switches on, all by itself. There's no "activate" button to press ([Saily's note](https://support.saily.com/hc/en-us/articles/12823108536476)).
+
+## See how much data is left
+
+Open the Saily app. The number in the middle of the home screen, under your eSIM, is the data you have left ([Saily's note](https://support.saily.com/hc/en-us/articles/12823154589724)). Your phone's settings have a data counter too, and it's normal for it not to match Saily's, because your phone may count from a different date and include your home SIM and Wi-Fi ([Saily's note](https://support.saily.com/hc/en-us/articles/31092295169948)). For what's left on your plan, go by the Saily app.
+
+Running low? Tap your eSIM in the app, choose **add data**, and buy more ([Saily's note](https://support.saily.com/hc/en-us/articles/12823150321052)).
+
+## You've got it
+
+Every trip from now on works the same way. Before you leave, check your phone, buy a plan, and install it on Wi-Fi. Before you board, deal with your home SIM. After you land, use Saily for data and turn on data roaming for it.
+
+<Callout type="tip" title="That's all you need">
+These three lessons are everything a beginner needs. Everything else on the site is there to look up when it comes up:
+
+- Visiting several countries on one trip: see [One trip, several countries](/en/howto/multi-country/).
+- Worried about running out, or want to get a laptop online: see [Make your data last](/en/howto/save-data/) and [Share your data with a hotspot](/en/howto/hotspot/).
+- Want a US number for calls and texts: see [step 5](/en/guide/5-phone-number/) of the full guide.
+- Any other questions: see the [FAQ](/en/faq/).
+</Callout>
+
+## If something's off
+
+<Q q="I have signal bars, but websites won't load.">
+
+Saily says this usually means Saily isn't chosen for data, data roaming is off for Saily, or the APN isn't `wbdata` ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164#faq)). Go back up and check both switches, and see [step 3](/en/guide/3-abroad/) of the full guide for the APN. If they're right, turn on airplane mode, wait 15 seconds and turn it off, so your phone connects to the local network afresh. Then wait a minute and try again.
+
+</Q>
+<Q q="There's no signal at all.">
+
+First, make sure you're actually in the country your plan covers. A Saily plan only connects there, so if it's for a different country, no setting will help. Open the app and check which country your plan is for. If it doesn't match, buy a plan for the country you're in, right there in the app.
+
+If the country is right, check that the Saily line is on. On some phones it installs switched off, especially on iOS 26 and Xiaomi phones. Just turn it on, there's no need to reinstall. Still nothing? Restart your phone and give it a minute. If you're indoors or underground, move to a window or step outside and try again ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164)).
+
+</Q>
+<Q q="It's online, but really slow.">
+
+First, check how much is left in the app. On an Unlimited plan, once you've used the day's high-speed allowance, your speed drops to about 1 Mbps, which still works for messaging, email and most websites. Changing settings or restarting won't help then. You either wait for the reset (usually local midnight) or buy a regular plan for the same country.
+
+If you still have high-speed data, try switching from 5G to 4G, since some local networks don't have 5G everywhere. On an iPhone, go to **Settings** > **Mobile Service**, tap the Saily line, then **Voice & Data**, and choose **LTE** (or **4G**). On Samsung, go to **Settings** > **Connections** > **Mobile networks** > **Network mode** and choose **LTE/3G/2G** ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164)).
+
+</Q>
+<Q q="I want to delete the eSIM and reinstall it.">
+
+Hold off. Reinstalling is the last resort, after everything else, and <u>never delete it while you're in Turkey, Oman, Qatar, Saudi Arabia, the UAE or mainland China</u>, where you may not be able to get it back. Don't delete the eSIM in the Saily app either, because that removes its plans from your account ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164#faq)). If you really get to that point, talk to support first. See the last item below.
+
+</Q>
+<Q q="I've tried everything and still can't get online.">
+
+First, work through Saily's [troubleshooting guide](https://support.saily.com/hc/en-us/articles/12838788763164) for your phone, one step at a time. If that doesn't do it, contact Saily support. There's no phone line, but you can chat in the app around the clock. Open the app, go to the **Help** tab, and tap **Chat with us** ([Saily's note](https://support.saily.com/hc/en-us/articles/17770364559516)).
+
+Give them the whole picture in your first message, with where you are, which phone you have and what you've already tried, so they don't have to ask you one thing at a time. For example:
+
+<Copy id="support" title="Write something like this, with your own details" code={`I'm in Tokyo with an iPhone 15, and the Saily app says my eSIM is installed. I've set Saily for mobile data and turned on data roaming for it, I've switched airplane mode on and off, and I've restarted once, but I still can't get online.`} />
+
+</Q>
