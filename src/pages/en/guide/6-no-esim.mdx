@@ -1,5 +1,66 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 6
+need: A physical card that can hold eSIMs; a way to reach Saily support
+tldr: If your phone has no eSIM, put in a physical card that can hold one and install Saily on that card. Saily's own route is an eSIM.me card plus a QR code from support. Cards like BeeSIM are the route users have made work, and Saily's docs don't mention them.
+description: Using Saily on a phone without eSIM. Saily's route is a physical eSIM.me card and a QR code from Saily support. Users also write Saily onto cards like BeeSIM over Bluetooth, which Saily's docs don't cover, at your own risk. A QR code installs once, so keep it to yourself.
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import Copy from "../../../components/Copy.astro";
+import Q from "../../../components/Q.astro";
+
+You've bought a plan in Saily and gone into your phone's settings to find **Add eSIM**, as the instructions say. But no matter where you look, it isn't there. Saily says that when this option is missing, either your phone doesn't support <Term k="eSIM" /> or it's locked by your carrier ([official page](https://support.saily.com/hc/en-us/articles/13318373425180)). Phones without eSIM are common in some places. Saily notes that in mainland China, Hong Kong, Macau, Taiwan and South Korea, many locally sold phone models don't support eSIM ([official page](https://support.saily.com/hc/en-us/articles/12838788763164#travel)).
+
+Don't ask for a refund just yet. An eSIM is, in the end, a profile your phone downloads. If your phone has no chip to hold it, a physical card can hold it instead.
+
+<mark><strong>If your phone has no eSIM, give it a physical card that can hold one, and install Saily on that card.</strong></mark>
+
+This kind of card is a <Term k="实体 eSIM 卡" />. It goes in the SIM slot like an ordinary <Term k="实体 SIM 卡" />, but it can store eSIMs. There are two ways to set one up, one that Saily documents and one that users worked out themselves, and this step takes them in turn.
+
+## Check first
+
+Before you start, make sure your phone really doesn't support eSIM. [Lesson 1](/en/start/1-check-phone/) shows how, and you can also look your model up in Saily's [list of eSIM-supported devices](https://saily.com/esim-supported-devices/). Saily says the list changes as new models come out, and that support can depend on the country a phone was sold in.
+
+Also rule out a carrier lock. A phone locked by its carrier can't use eSIM, and the official page linked at the top shows how to check. If yours is locked, Saily's advice is to ask your home provider to unlock it ([installing the eSIM](https://support.saily.com/hc/en-us/articles/15751399206172)). Saily's docs don't say whether a physical card gets around a lock.
+
+## Saily's route: an eSIM.me card and a QR code from support
+
+Saily's answer is to buy a physical SIM card from eSIM.me and use it instead of your regular SIM. You can then download eSIM profiles straight to your phone, and with Saily on it, you have data ([official page](https://support.saily.com/hc/en-us/articles/12822397552028)). Because it takes a SIM slot, on a phone with only one slot you'll need to take your home SIM out first.
+
+One more thing is needed to put Saily on it, and that's the QR code. Saily says that to finish the setup you contact Saily support for it. You can reach them two ways: in the Saily app, open the **Help** tab and tap **Chat with us**; or email them through the help center's [submit a request](https://support.saily.com/hc/en-us/requests/new) form ([how to contact support](https://support.saily.com/hc/en-us/articles/17770364559516)). Just tell them what's going on, for example:
+
+<Copy id="ask-qr" title="Send this to Saily support, adjusted to your situation" code="Hi, my phone doesn't support eSIM, so I bought an eSIM.me card and it's in my SIM slot now. I'd like to install the Saily eSIM from my account on this card. Could you send me its installation QR code? Thank you!" />
+
+Once you have the QR code, follow eSIM.me's own instructions for using the card and scanning the code in. Saily's docs stop at giving you the code. After it's installed, follow [step 3](/en/guide/3-abroad/) when you arrive, to set your phone to use Saily for data and turn on data roaming.
+
+<u>A QR code installs only once, and anyone who has it can install your eSIM, so don't forward it or post it in a group chat.</u> Saily makes the same point about gifting, where it says a QR code can't be reused once it's installed ([official page](https://support.saily.com/hc/en-us/articles/31072966285724)).
+
+## The route users took: cards like BeeSIM and 9eSIM
+
+Other physical cards can hold eSIMs too, and users have mentioned BeeSIM, 9eSIM, XeSIM and ESTK. <u>Saily's help center doesn't mention these cards, so installing Saily on them is at your own risk.</u>
+
+Users on X have shared the whole process ([post one](https://x.com/AI_Jasonyu/status/2080877134319624492), [post two](https://x.com/zureA255062/status/2113811704106959213)). Roughly, it goes like this. In the Saily app, tap **Set up eSIM** and choose **On someone else's device** so the app shows an installation QR code. That option is in Saily's own install guide, where it's meant for showing the QR code on a second screen ([official page](https://support.saily.com/hc/en-us/articles/15751399206172)). Then put the BeeSIM card in the phone's SIM slot (the other user put it in a matching Bluetooth reader first), connect to the card over Bluetooth with its mini program, web page or app, scan the QR code, and write Saily onto the card.
+
+One user suggests typing the activation code in by hand if scanning doesn't work. Saily says that when the automatic install doesn't work, **View instructions** appears in the Saily app and shows the SM-DP+ address and activation code.
+
+If something goes wrong with one of these cards, start with the card's maker, because Saily's docs don't cover them. The shop links and promo codes in those posts don't appear on this site.
+
+Either way, you end up with Saily's eSIM on a physical card. In both posts above, what users put on the card was Saily's US number, and the number's own rules are in [step 5](/en/guide/5-phone-number/). The next step covers what else Saily comes with besides data.
+
+## Stuck?
+
+<Q q="I can't open the Saily app in mainland China.">
+<p>Saily notes that its app or website may be blocked in Turkey, Oman, Qatar, Saudi Arabia, the UAE and mainland China, so if you're going to one of these places, install the eSIM before you travel (<a href="https://support.saily.com/hc/en-us/articles/12838788763164#travel">official page</a>). This site doesn't cover ways around network restrictions.</p>
+</Q>
+<Q q='Scanning says "This code is no longer valid" or "already being used on another device".'>
+<p>Saily says the eSIM may already be installed. Check your phone's SIM settings first, and don't install the same eSIM twice (<a href="https://support.saily.com/hc/en-us/articles/15751399206172">official page</a>). If it really isn't there, contact Saily support and explain what happened (<a href="https://support.saily.com/hc/en-us/articles/17770364559516">how to contact support</a>).</p>
+</Q>
+<Q q="The card is in, but there's no signal before I've left.">
+<p>That doesn't mean the card is broken. A Saily data plan starts working only once you arrive in a country or region it covers, with the Saily line and data roaming on (<a href="https://support.saily.com/hc/en-us/articles/12838788763164">official page</a>). If you've arrived and there's still no internet, go through <a href="/en/guide/3-abroad/">step 3</a>.</p>
+</Q>
+<Q q="Can one Saily eSIM be installed in two places at once?">
+<p>No. Saily says a Saily eSIM works on one phone at a time. To move it, delete it from where it is while that device is online, then install it in the new place.</p>
+</Q>
+
+<Checkpoint id="s6" items={["I've checked that my phone's settings really have no <strong>Add eSIM</strong>, and that it isn't carrier-locked", "I know Saily's route is an eSIM.me card, with the QR code from Saily support", "I know Saily's docs don't mention BeeSIM, 9eSIM and similar cards, and using them is at my own risk", "I haven't sent my QR code to anyone"]} />
