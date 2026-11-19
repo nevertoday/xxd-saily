@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "After you land, flip two switches: use Saily for data, and turn on data roaming for it. Deal with your home SIM before you board, so no roaming bill is waiting when you get back."
+tldr: "После посадки щёлкните двумя переключателями: выберите Saily для интернета и включите для неё роуминг данных. С основной SIM-картой разберитесь ещё до вылета, чтобы дома вас не ждал счёт за роуминг."
 lesson: 3
 ---
 import Callout from "../../../components/Callout.astro";
@@ -9,123 +9,123 @@ import Tabs from "../../../components/Tabs.astro";
 import Copy from "../../../components/Copy.astro";
 import Q from "../../../components/Q.astro";
 
-The plane has landed and is still taxiing, and all around you phones are switching back on. People are booking rides and texting home. This lesson is about what you do in those few minutes. It's really just two switches, and once you know what each one does, there's nothing to panic about.
+Самолёт приземлился и ещё рулит, а вокруг уже включаются телефоны. Кто-то вызывает такси, кто-то пишет домой, что долетел. Этот урок как раз о том, что делать в эти несколько минут. На самом деле всё сводится к двум переключателям, и если понимать, за что отвечает каждый, паниковать не из-за чего.
 
-## Two lines, one for data
+## Две линии, интернет идёт по одной
 
-With Saily installed, your phone has two lines: your home SIM and Saily. Both can be on at once, but data only goes through one line at a time. So the first switch tells your phone to use Saily for data.
+Когда Saily установлена, в телефоне две линии: ваша основная SIM-карта и Saily. Обе могут работать одновременно, но интернет в каждый момент идёт только по одной из них. Поэтому первый переключатель говорит телефону брать интернет через Saily.
 
-The second switch is <Term k="漫游" text="data roaming" />, the setting that lets your phone use mobile networks abroad. The Saily eSIM connects through local partner networks, so this has to be on for Saily, and Saily doesn't charge extra for roaming ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164#faq)).
+Второй переключатель называется <Term k="漫游" text="роумингом данных" />. Это настройка, которая разрешает телефону пользоваться мобильными сетями за границей. eSIM Saily подключается через местные сети-партнёры, поэтому для Saily этот переключатель должен быть включён, и никакой доплаты за роуминг Saily не берёт ([справка Saily](https://support.saily.com/hc/en-us/articles/12838788763164#faq)).
 
-Your home SIM is the opposite. If its data roaming is on, your phone may quietly use it for data abroad, and when you get home, there's a roaming bill from your carrier waiting. So remember this one line:
+С основной SIM-картой всё наоборот. Если для неё включён роуминг данных, телефон может потихоньку брать интернет через неё, и дома вас будет ждать счёт за роуминг от вашего оператора. Поэтому запомните одну фразу:
 
-<mark><strong>Use Saily for data, and turn on data roaming for Saily only.</strong></mark>
+<mark><strong>Интернет через Saily, и роуминг данных включён только для Saily.</strong></mark>
 
-## Before you board: deal with your home SIM
+## Перед вылетом: разберитесь с основной SIM-картой
 
-Do this while you're still at home. What to do with your home SIM depends on whether you still want calls and texts on your home number during the trip.
+Сделайте это, пока вы ещё дома. Что делать с основной SIM-картой, зависит от того, нужны ли вам в поездке звонки и SMS на ваш обычный номер.
 
-If you don't, turning that SIM off completely is the simplest, and it's one of the options Saily lists ([Saily's note](https://support.saily.com/hc/en-us/articles/20793044376092)). The catch is that your home number won't get calls or texts while it's off. If you do, leave it on and just keep it off data. Calls still come through, but your home carrier may charge roaming for them, so it's worth asking your carrier before you go ([Saily's note](https://support.saily.com/hc/en-us/articles/16747226859164)).
+Если не нужны, проще всего выключить эту SIM-карту совсем, и Saily называет это одним из вариантов ([справка Saily](https://support.saily.com/hc/en-us/articles/20793044376092)). Но пока она выключена, звонки и SMS на ваш номер приходить не будут. Если нужны, оставьте её включённой, только не давайте ей пользоваться интернетом. Звонки по-прежнему будут доходить, но оператор может брать за них плату за роуминг, так что перед поездкой стоит у него уточнить ([справка Saily](https://support.saily.com/hc/en-us/articles/16747226859164)).
 
 <Tabs id="home-sim" items={[["ios", "iPhone"], ["android", "Android"]]}>
 <div slot="ios">
 
-Open **Settings** > **Mobile Service** and tap your home SIM.
+Откройте **Настройки** > **Сотовая связь** (Settings > Mobile Service) и нажмите на основную SIM-карту.
 
-- To turn it off completely, turn off **Turn On This Line**.
-- To keep it for calls, turn off its **Data Roaming**.
+- Чтобы выключить её совсем, выключите **Включение этого номера** (Turn On This Line).
+- Чтобы оставить её для звонков, выключите для неё **Роуминг данных** (Data Roaming).
 
 </div>
 <div slot="android">
 
-- To turn it off completely, open the SIM screen (on Samsung, **Settings** > **Connections** > **SIM manager**), switch your home SIM off, and tap **Turn off**.
-- To keep it for calls, just leave it on. After you land, you'll switch data to Saily, turn off automatic switching, and turn off your home SIM's data roaming (under **Settings** > **Connections** > **Mobile networks**) so your home carrier doesn't charge roaming.
+- Чтобы выключить её совсем, откройте экран SIM-карт (на Samsung **Настройки** > **Подключения** > **Диспетчер SIM-карт**, Settings > Connections > SIM manager), выключите основную SIM-карту и нажмите **Выключить** (Turn off).
+- Чтобы оставить её для звонков, просто не выключайте её. После посадки вы переключите интернет на Saily, выключите автоматическое переключение и выключите роуминг данных для основной SIM-карты (в **Настройки** > **Подключения** > **Мобильные сети**, Mobile networks), чтобы ваш оператор не взял плату за роуминг.
 
 </div>
 </Tabs>
 
-Then, as on any flight, turn on airplane mode before takeoff.
+А потом, как перед любым полётом, включите авиарежим до взлёта.
 
-## After you land: flip two switches
+## После посадки: щёлкните двумя переключателями
 
 <Tabs id="land" items={[["ios", "iPhone"], ["android", "Android"]]}>
 <div slot="ios">
 
-1. Open **Settings** > **Mobile Service** > **Mobile Data** (**Cellular Data** on some iPhones) and choose the Saily line. On the same screen, turn off **Allow Mobile Data Switching**, so your phone doesn't switch back to your home SIM for data on its own.
-2. Go back to **Mobile Service**, tap the Saily line, check that **Turn On This Line** is on, and turn on **Data Roaming**.
+1. Откройте **Настройки** > **Сотовая связь** > **Сотовые данные** (Mobile Data, на некоторых iPhone Cellular Data) и выберите линию Saily. На том же экране выключите **Разрешить переключение для сотовых данных** (Allow Mobile Data Switching), чтобы телефон сам не переключал интернет обратно на основную SIM-карту.
+2. Вернитесь в **Сотовая связь**, нажмите на линию Saily, проверьте, что **Включение этого номера** включено, и включите **Роуминг данных**.
 
 </div>
 <div slot="android">
 
-Using Samsung as the example:
+На примере Samsung:
 
-1. Open **Settings** > **Connections** > **SIM manager**. The Saily line needs to be on. It's usually called eSIM 1, eSIM 2 or Saily #1, with Saily shown under the name. Tap **Mobile data** and choose it. Then turn off **Data switching** (on some phones, **Data switching and backup calling**), so your phone doesn't switch back to your home SIM for data on its own.
-2. Open **Settings** > **Connections** > **Mobile networks** and turn on **Data roaming**.
+1. Откройте **Настройки** > **Подключения** > **Диспетчер SIM-карт**. Линия Saily должна быть включена. Обычно она называется eSIM 1, eSIM 2 или Saily #1, а под названием написано Saily. Нажмите **Мобильные данные** (Mobile data) и выберите её. Затем выключите **Переключение данных** (Data switching, на некоторых телефонах Data switching and backup calling), чтобы телефон сам не переключал интернет обратно на основную SIM-карту.
+2. Откройте **Настройки** > **Подключения** > **Мобильные сети** и включите **Роуминг данных** (Data roaming).
 
-On other Android phones, do the same on the SIM screen. Choose Saily for data, turn on **Mobile data**, turn off any option that switches data between SIMs automatically, then tap Saily and turn on **Data roaming** (or **Roaming**). On a Google Pixel, the SIM screen is **Settings** > **Network & internet** > **SIMs**.
+На других Android-телефонах сделайте то же самое на экране SIM-карт. Выберите Saily для интернета, включите **Мобильные данные**, выключите всё, что автоматически переключает интернет между SIM-картами, затем нажмите на Saily и включите **Роуминг данных** (или просто **Роуминг**). На Google Pixel экран SIM-карт находится в **Настройки** > **Сеть и интернет** > **SIM-карты**.
 
 </div>
 </Tabs>
 
-Once they're set, turn off airplane mode. Turn off Wi-Fi as well and open a website, because with Wi-Fi off, you're testing Saily's connection ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164)). Your phone takes a moment to join the local network, so give it about a minute.
+Когда всё настроено, выключите авиарежим. Выключите заодно и Wi-Fi и откройте какой-нибудь сайт, потому что с выключенным Wi-Fi вы проверяете именно связь Saily ([справка Saily](https://support.saily.com/hc/en-us/articles/12838788763164)). Телефону нужно немного времени, чтобы подключиться к местной сети, так что дайте ему примерно минуту.
 
 <Callout type="ok">
-Signal bars at the top of the screen, and the website loads.
+Вверху экрана появились полоски сигнала, и сайт открывается.
 </Callout>
 
-That's also when your plan switches on, all by itself. There's no "activate" button to press ([Saily's note](https://support.saily.com/hc/en-us/articles/12823108536476)).
+В этот же момент сам собой включается и ваш тариф. Никакой кнопки «активировать» нажимать не нужно ([справка Saily](https://support.saily.com/hc/en-us/articles/12823108536476)).
 
-## See how much data is left
+## Сколько трафика осталось
 
-Open the Saily app. The number in the middle of the home screen, under your eSIM, is the data you have left ([Saily's note](https://support.saily.com/hc/en-us/articles/12823154589724)). Your phone's settings have a data counter too, and it's normal for it not to match Saily's, because your phone may count from a different date and include your home SIM and Wi-Fi ([Saily's note](https://support.saily.com/hc/en-us/articles/31092295169948)). For what's left on your plan, go by the Saily app.
+Откройте приложение Saily. Число в центре главного экрана, под вашей eSIM, и есть оставшийся трафик ([справка Saily](https://support.saily.com/hc/en-us/articles/12823154589724)). В настройках телефона тоже есть счётчик трафика, и то, что он не совпадает с Saily, нормально: телефон может считать с другой даты и учитывать основную SIM-карту и Wi-Fi ([справка Saily](https://support.saily.com/hc/en-us/articles/31092295169948)). Сколько осталось по тарифу, смотрите в приложении Saily.
 
-Running low? Tap your eSIM in the app, choose **add data**, and buy more ([Saily's note](https://support.saily.com/hc/en-us/articles/12823150321052)).
+Трафик заканчивается? Нажмите в приложении на свою eSIM, выберите **add data** (докупить трафик) и купите ещё ([справка Saily](https://support.saily.com/hc/en-us/articles/12823150321052)).
 
-## You've got it
+## Теперь вы это умеете
 
-Every trip from now on works the same way. Before you leave, check your phone, buy a plan, and install it on Wi-Fi. Before you board, deal with your home SIM. After you land, use Saily for data and turn on data roaming for it.
+Дальше каждая поездка устроена одинаково. До отъезда проверить телефон, купить тариф и установить его через Wi-Fi. Перед вылетом разобраться с основной SIM-картой. После посадки выбрать Saily для интернета и включить для неё роуминг данных.
 
-<Callout type="tip" title="That's all you need">
-These three lessons are everything a beginner needs. Everything else on the site is there to look up when it comes up:
+<Callout type="tip" title="Больше ничего не нужно">
+Эти три урока и есть всё, что нужно новичку. Остальное на сайте можно найти, когда понадобится (эти страницы пока на английском):
 
-- Visiting several countries on one trip: see [One trip, several countries](/en/howto/multi-country/).
-- Worried about running out, or want to get a laptop online: see [Make your data last](/en/howto/save-data/) and [Share your data with a hotspot](/en/howto/hotspot/).
-- Want a US number for calls and texts: see [step 5](/en/guide/5-phone-number/) of the full guide.
-- Any other questions: see the [FAQ](/en/faq/).
+- Едете в несколько стран за одну поездку: [одна поездка, несколько стран](/en/howto/multi-country/).
+- Боитесь, что трафика не хватит, или хотите подключить ноутбук: [как растянуть трафик](/en/howto/save-data/) и [как раздать интернет через точку доступа](/en/howto/hotspot/).
+- Нужен американский номер для звонков и SMS: [шаг 5](/en/guide/5-phone-number/) полного руководства.
+- Любые другие вопросы: [частые вопросы](/en/faq/).
 </Callout>
 
-## If something's off
+## Если что-то не так
 
-<Q q="I have signal bars, but websites won't load.">
+<Q q="Полоски сигнала есть, а сайты не открываются.">
 
-Saily says this usually means Saily isn't chosen for data, data roaming is off for Saily, or the APN isn't `wbdata` ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164#faq)). Go back up and check both switches, and see [step 3](/en/guide/3-abroad/) of the full guide for the APN. If they're right, turn on airplane mode, wait 15 seconds and turn it off, so your phone connects to the local network afresh. Then wait a minute and try again.
-
-</Q>
-<Q q="There's no signal at all.">
-
-First, make sure you're actually in the country your plan covers. A Saily plan only connects there, so if it's for a different country, no setting will help. Open the app and check which country your plan is for. If it doesn't match, buy a plan for the country you're in, right there in the app.
-
-If the country is right, check that the Saily line is on. On some phones it installs switched off, especially on iOS 26 and Xiaomi phones. Just turn it on, there's no need to reinstall. Still nothing? Restart your phone and give it a minute. If you're indoors or underground, move to a window or step outside and try again ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164)).
+Saily пишет, что обычно это значит одно из трёх: для интернета не выбрана Saily, для Saily выключен роуминг данных или APN не `wbdata` ([справка Saily](https://support.saily.com/hc/en-us/articles/12838788763164#faq)). Вернитесь выше и проверьте оба переключателя, а про APN читайте в [шаге 3](/en/guide/3-abroad/) полного руководства. Если всё верно, включите авиарежим, подождите 15 секунд и выключите его, чтобы телефон заново подключился к местной сети. Потом подождите минуту и попробуйте ещё раз.
 
 </Q>
-<Q q="It's online, but really slow.">
+<Q q="Сигнала нет совсем.">
 
-First, check how much is left in the app. On an Unlimited plan, once you've used the day's high-speed allowance, your speed drops to about 1 Mbps, which still works for messaging, email and most websites. Changing settings or restarting won't help then. You either wait for the reset (usually local midnight) or buy a regular plan for the same country.
+Сначала убедитесь, что вы действительно в той стране, для которой куплен тариф. Тариф Saily подключается только там, так что если он для другой страны, никакие настройки не помогут. Откройте приложение и посмотрите, для какой страны ваш тариф. Если не совпадает, купите тариф для страны, где вы сейчас, прямо в приложении.
 
-If you still have high-speed data, try switching from 5G to 4G, since some local networks don't have 5G everywhere. On an iPhone, go to **Settings** > **Mobile Service**, tap the Saily line, then **Voice & Data**, and choose **LTE** (or **4G**). On Samsung, go to **Settings** > **Connections** > **Mobile networks** > **Network mode** and choose **LTE/3G/2G** ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164)).
-
-</Q>
-<Q q="I want to delete the eSIM and reinstall it.">
-
-Hold off. Reinstalling is the last resort, after everything else, and <u>never delete it while you're in Turkey, Oman, Qatar, Saudi Arabia, the UAE or mainland China</u>, where you may not be able to get it back. Don't delete the eSIM in the Saily app either, because that removes its plans from your account ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164#faq)). If you really get to that point, talk to support first. See the last item below.
+Если страна правильная, проверьте, включена ли линия Saily. На некоторых телефонах она устанавливается выключенной, особенно на iOS 26 и на телефонах Xiaomi. Просто включите её, переустанавливать ничего не нужно. Всё равно ничего? Перезагрузите телефон и подождите минуту. Если вы в помещении или под землёй, подойдите к окну или выйдите на улицу и попробуйте снова ([справка Saily](https://support.saily.com/hc/en-us/articles/12838788763164)).
 
 </Q>
-<Q q="I've tried everything and still can't get online.">
+<Q q="Интернет есть, но очень медленный.">
 
-First, work through Saily's [troubleshooting guide](https://support.saily.com/hc/en-us/articles/12838788763164) for your phone, one step at a time. If that doesn't do it, contact Saily support. There's no phone line, but you can chat in the app around the clock. Open the app, go to the **Help** tab, and tap **Chat with us** ([Saily's note](https://support.saily.com/hc/en-us/articles/17770364559516)).
+Сначала посмотрите в приложении, сколько осталось. На тарифе Unlimited, когда дневной объём на высокой скорости израсходован, скорость падает примерно до 1 Мбит/с. Для мессенджеров, почты и большинства сайтов этого хватает. Менять настройки или перезагружать телефон тогда бесполезно. Остаётся дождаться сброса (обычно в полночь по местному времени) или купить обычный тариф для той же страны.
 
-Give them the whole picture in your first message, with where you are, which phone you have and what you've already tried, so they don't have to ask you one thing at a time. For example:
+Если скоростной трафик ещё есть, попробуйте переключиться с 5G на 4G, потому что в некоторых местных сетях 5G есть не везде. На iPhone откройте **Настройки** > **Сотовая связь**, нажмите на линию Saily, затем **Голос и данные** (Voice & Data) и выберите **LTE** (или **4G**). На Samsung откройте **Настройки** > **Подключения** > **Мобильные сети** > **Режим сети** (Network mode) и выберите **LTE/3G/2G** ([справка Saily](https://support.saily.com/hc/en-us/articles/12838788763164)).
 
-<Copy id="support" title="Write something like this, with your own details" code={`I'm in Tokyo with an iPhone 15, and the Saily app says my eSIM is installed. I've set Saily for mobile data and turned on data roaming for it, I've switched airplane mode on and off, and I've restarted once, but I still can't get online.`} />
+</Q>
+<Q q="Хочу удалить eSIM и установить её заново.">
+
+Подождите. Переустановка нужна в самую последнюю очередь, когда всё остальное уже испробовано, и <u>ни в коем случае не удаляйте eSIM, пока вы в Турции, Омане, Катаре, Саудовской Аравии, ОАЭ или материковом Китае</u>: вернуть её там может не получиться. И не удаляйте eSIM в приложении Saily, потому что так из аккаунта вместе с ней удаляются и её тарифы ([справка Saily](https://support.saily.com/hc/en-us/articles/12838788763164#faq)). Если дело и правда дошло до этого, сначала напишите в поддержку. Смотрите последний вопрос ниже.
+
+</Q>
+<Q q="Всё перепробовано, а интернета всё равно нет.">
+
+Сначала пройдите шаг за шагом [руководство Saily по устранению неполадок](https://support.saily.com/hc/en-us/articles/12838788763164) для своего телефона. Если не помогло, напишите в поддержку Saily. Телефонной линии у поддержки нет, зато в приложении можно переписываться с ней круглосуточно. Откройте приложение, перейдите на вкладку **Help** (помощь) и нажмите **Chat with us** (написать нам) ([справка Saily](https://support.saily.com/hc/en-us/articles/17770364559516)).
+
+В первом же сообщении опишите всё сразу: где вы, какой у вас телефон и что вы уже пробовали. Тогда поддержке не придётся расспрашивать вас по одному пункту. Пример ниже на английском, потому что у Saily нет ни русского интерфейса, ни справки на русском. По-русски он значит вот что: «Я в Токио, у меня iPhone 15, и приложение Saily показывает, что eSIM установлена. Я выбрал Saily для мобильного интернета и включил для неё роуминг данных, включал и выключал авиарежим и один раз перезагрузил телефон, но в интернет так и не выходит».
+
+<Copy id="support" title="Напишите примерно так, подставив свои данные" code={`I'm in Tokyo with an iPhone 15, and the Saily app says my eSIM is installed. I've set Saily for mobile data and turned on data roaming for it, I've switched airplane mode on and off, and I've restarted once, but I still can't get online.`} />
 
 </Q>
