@@ -1,5 +1,92 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: change-phone
+step: 2
+time: 10 minutes, on Wi-Fi
+for: You've got a new phone and want to keep using the Saily eSIM from the old one
+tldr: A Saily eSIM goes with your account. Delete it in the old phone's settings while it's online, install it again on the new phone with the same account, and your plans are still there.
+description: "Moving a Saily eSIM to a new phone: delete it in the old phone's settings first, then install it on the new phone with the same account or scan a QR code from the old phone's app, plus what the Move button in the app is for."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Tabs from "../../../components/Tabs.astro";
+import Callout from "../../../components/Callout.astro";
+
+A week before your trip you got a new phone. The transfer brought over your photos and chats, but the Saily <Term k="eSIM" /> is nowhere in the new phone's settings, and the Europe plan you bought last month is still untouched. Don't buy another one yet. When you finish this page, that eSIM will be on your new phone with your plans exactly as they were.
+
+Most eSIMs only work on the one device they were installed on, so a new phone means buying again. Saily is different. As long as you log in to the app with the same email, you can install your eSIM again, even on a different device ([reinstall article](https://support.saily.com/hc/en-us/articles/12822203571100)). A Saily eSIM still works on only one phone at a time, though, so the order matters. <mark>Delete the eSIM in the old phone's settings first, then install it on the new phone with the same account. Your plans stay in your account the whole time.</mark>
+
+## Before you start
+
+Have these ready so you don't get stuck halfway:
+
+- Both phones in front of you, both on Wi-Fi. Saily says to delete the eSIM while the old phone is online, and installing on the new one needs a connection too ([FAQ](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE2Z59F1JKQWSA5SJ9X)).
+- A new phone that supports eSIM and isn't locked to a carrier.
+- The email you use for Saily, since the new phone has to use the same one.
+- Your PIN or PUK code, if you ever changed your eSIM's default settings ([transfer article](https://support.saily.com/hc/en-us/articles/15511041342748)).
+
+One more thing. Don't delete and reinstall while you're in Turkey, Oman, Qatar, Saudi Arabia, the UAE or mainland China. Saily says its app or website may not open there, so once the eSIM is deleted you may not get it back ([official note](https://support.saily.com/hc/en-us/articles/12838788763164#travel)). It's best to switch phones at home before you leave.
+
+## Step 1: delete the eSIM on the old phone
+
+You're deleting the eSIM in the phone's own settings:
+
+<Tabs id="cp" items={[["ios","iPhone"],["android","Android (Samsung)"]]}>
+<div slot="ios">
+
+1. Open **Settings** > **Cellular** (called **Mobile Service** on some iPhones).
+2. Tap the Saily line. It may carry a label like Travel, Business or Secondary.
+3. Tap **Delete eSIM** and confirm the prompts that follow.
+
+</div>
+<div slot="android">
+
+On a Samsung phone it goes like this ([Android transfer article](https://support.saily.com/hc/en-us/articles/15530928047516)):
+
+1. Open **Settings** > **Connections** (called **Network & internet** on some phones) > **SIM manager**.
+2. Select the Saily eSIM.
+3. Tap **Remove**, then **Remove** again in the prompt.
+
+</div>
+</Tabs>
+
+<Callout type="no" title="Don't use Delete eSIM in the Saily app">
+The app has a **Delete eSIM** option too, but it does something else. It permanently removes the eSIM and its plans from your Saily account, and cancels its phone number, Ultra subscription and auto top-up ([official FAQ](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE22FYPG3YY7FBPFVQ3)). To change phones, only delete the one in your phone's settings. For how the different kinds of delete compare, see [Read this before you delete an eSIM](/en/howto/delete-esim/).
+</Callout>
+
+## Step 2: install it on the new phone
+
+Saily gives two ways to do this. Use whichever is easier.
+
+**Install from the Saily app on the new phone.** Install the Saily app on the new phone, log in with the same email, go to **eSIMs**, and tap **Install eSIM**. If it won't install, Saily's fix is to delete the Saily app and install it again ([reinstall article](https://support.saily.com/hc/en-us/articles/12822203571100#h_01JDPFTFAB3T0S84HT7A2H3WVS)).
+
+**Scan a QR code from the old phone.** After deleting the eSIM on the old phone, open the Saily app on it, tap **Install eSIM**, then **Share eSIM to other person**, and a QR code appears. Scan it with the new phone and follow the on-screen steps ([transfer article](https://support.saily.com/hc/en-us/articles/15511041342748)). That QR code lets anyone install your eSIM, so don't post a screenshot of it in a group chat.
+
+Once it's installed, it's the same as the first time. The Saily line needs to be on, with <Term k="漫游" text="data roaming" /> on, and selected for mobile data.
+
+<Callout type="ok">
+The Saily line shows up under **Cellular** on the new phone (on Android, in **SIM manager**), and your plans are still there when you open the Saily app.
+</Callout>
+
+## The Move button in the app is something else
+
+If you see a **Move** button on the Saily app's home screen, or get an email from Saily about replacing your eSIM, that isn't for changing phones. Saily is replacing some older eSIMs with new ones, and the older kind can no longer get new plans, top-ups or shared plans. Move carries your eligible plans over to a new eSIM together, for free, and each plan keeps its full data allowance. See the [official article](https://support.saily.com/hc/en-us/articles/31797245183516).
+
+If you do it yourself, keep a few things in mind. Update the app to version 3.62 or newer and connect to Wi-Fi. Wait until the app says the move is finished, then follow its prompts to remove the old eSIM and set up the new one, and select the new eSIM for mobile data with data roaming on. If you used auto top-up, turn it on again after the move. You can also leave it alone. Saily says it'll move the remaining plans automatically around January 17, 2027, though you'll still need to set up the new eSIM in the app then.
+
+When changing phones, the usual mistakes are the order and the place you delete from. Old phone first, new phone second, and delete in the phone's settings. Remember those two and your plans are safe.
+
+## Stuck?
+
+<Q q="The new phone says this eSIM is already being used on another device.">
+First check the new phone's SIM settings, because the install sometimes finishes in the background. If it isn't there, the eSIM is still on the old phone. Connect the old phone to Wi-Fi, delete the eSIM in its settings, and then install it on the new phone ([official article](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE27S987MX815S7D1GT)).
+</Q>
+<Q q="I lost the old phone, or it's broken.">
+If you can't delete the eSIM from the old phone, contact Saily support, and Saily says the team will help move your plan. Open the **Help** tab in the Saily app and tap **Chat with us** ([contacting support](https://support.saily.com/hc/en-us/articles/17770364559516)).
+</Q>
+<Q q="I tap Install eSIM on the new phone and it just won't install.">
+Delete the Saily app, install it again, log in and try once more. That's Saily's own fix. Make sure you're not on a phone call while installing, because a call stops the install, and stay on stable Wi-Fi. If it still fails, work through Saily's [troubleshooting guide](https://support.saily.com/hc/en-us/articles/12838788763164) step by step.
+</Q>
+<Q q="It's moved, but the new phone has signal and no internet.">
+Go through [No signal, or signal but no internet](/en/howto/no-signal/). The three things people most often miss are the Saily line being on, Saily selected for data, and data roaming on.
+</Q>

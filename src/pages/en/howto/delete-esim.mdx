@@ -1,5 +1,78 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: delete-esim
+step: 2
+time: 3-minute read
+for: You want to turn off or delete a Saily eSIM, or delete your Saily account
+tldr: If you just don't need it for now, turn the line off. Deleting the eSIM in your phone's settings keeps your plans in your account. Delete eSIM in the Saily app and deleting your account can't be undone.
+description: "Before you delete a Saily eSIM, tell four things apart: turning the line off, deleting the eSIM in your phone's settings, deleting it in the Saily app, and deleting your Saily account. What each one loses, and when to use which."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Tabs from "../../../components/Tabs.astro";
+
+You're back from a trip and there's a Saily line in your phone's settings you don't need anymore, so you want to clear it out. But "delete" means several different things here, and if you tap it in the wrong place, you may lose more than the <Term k="eSIM" />. The plans on it, its phone number and its auto top-up can go too. After this page, you'll know which one you want, and you'll know what happens before you tap it.
+
+<mark>Before you delete, check where you're deleting. In your phone's settings it only takes the eSIM off this phone. In the Saily app it removes it from your account for good.</mark>
+
+From lightest to heaviest, there are four.
+
+## Not needed for now? Turn the line off
+
+If you don't need Saily at home, the lightest option is to switch the line off. The eSIM and its plans stay put, and you switch it back on for your next trip ([turning off an eSIM](https://support.saily.com/hc/en-us/articles/16436358702108)):
+
+<Tabs id="de" items={[["ios","iPhone"],["android","Android (Samsung)"]]}>
+<div slot="ios">
+
+Open **Settings** > **Cellular** (called **Mobile Service** on some iPhones), tap the Saily line, and turn off **Turn On This Line**.
+
+</div>
+<div slot="android">
+
+Open **Settings** > **Connections** > **SIM manager**, select the Saily eSIM, and switch it off.
+
+</div>
+</Tabs>
+
+There's one thing to know. Turning the line off doesn't pause the plan. Saily says that once a plan is activated, it can't be paused ([activation article](https://support.saily.com/hc/en-us/articles/15751572038300#h_01KQYSVQNWB4DTM9CF03ZJ375C)), so the validity period keeps running.
+
+## Take it off this phone in your phone's settings
+
+Deleting the Saily eSIM in your phone's settings only takes it off that phone, and your plans stay in your Saily account ([FAQ](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE22FYPG3YY7FBPFVQ3)). On iPhone, go to **Settings** > **Cellular**, tap the Saily line, then **Delete eSIM**. On Samsung, select the eSIM in **Settings** > **Connections** > **SIM manager** and tap **Remove**. When you want it again, go to **eSIMs** in the Saily app and tap **Install eSIM** to put it back, even on a new phone, as long as you log in with the same email ([reinstall article](https://support.saily.com/hc/en-us/articles/12822203571100)).
+
+This is the one you'll use most often:
+
+- Changing phones, where you delete it from the old phone first. See [Move the eSIM to a new phone](/en/howto/change-phone/).
+- Your phone says it has no room for another eSIM. Delete an old one from a past trip that you'll never use again, to free up space ([troubleshooting guide](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE17RWJ59BPRQSN3AHG)).
+- You've reached the last troubleshooting step, where Saily tells you to delete and reinstall.
+
+Two things to watch when you delete. Make sure the phone is online, which is what Saily asks for when you change phones ([FAQ](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE2Z59F1JKQWSA5SJ9X)). And don't delete while you're in Turkey, Oman, Qatar, Saudi Arabia, the UAE or mainland China. Saily warns that its app or website may not open there, so the eSIM may not come back ([official note](https://support.saily.com/hc/en-us/articles/12838788763164#travel)).
+
+## Delete eSIM in the Saily app removes it for good
+
+The Saily app has a **Delete eSIM** option too. Same name, very different result. It permanently removes the eSIM and its plans from your Saily account, and cancels its phone number, Ultra subscription and auto top-up. Saily's troubleshooting guide makes a point of it too. When you reinstall, <u>don't use Delete eSIM inside the Saily app</u> ([official article](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE29G6WP3ZTSWN35QP9)).
+
+So unless you're sure you're done with the eSIM, its plans and its number, leave this one alone. If a Saily US number is attached to the eSIM, the number goes with it. If all you want is to stop paying for the number or Ultra, cancel the subscription instead, as described in "Stop subscriptions yourself" on [Ask for a refund](/en/howto/refund/).
+
+## Deleting your Saily account, the heaviest of all
+
+Deleting your account is permanent, and you lose access to everything you've bought ([deleting your account](https://support.saily.com/hc/en-us/articles/27480241534620)). Before you do it, take a look. Do you have plans with data left? A phone number you still use? None of that comes back.
+
+If you're sure, open the Saily app and log in, tap the **Profile** icon, go to **account settings**, and under **delete account** tap **delete**, then **delete** again to confirm. You can also scroll to the bottom of any help center article and choose "Chat with us" or "Email us" to have support delete it, but you'll need to prove you own the account first.
+
+Remember the order. Turning the line off is lightest, deleting on the phone comes next, and deleting in the app or deleting your account can't be undone. When in doubt, turn the line off.
+
+## Stuck?
+
+<Q q="I deleted the eSIM in the Saily app. Can I get it back?">
+Saily describes it as permanently removed from your account. If you deleted the new eSIM by mistake after moving to it, Saily says to contact support for help ([official article](https://support.saily.com/hc/en-us/articles/31797245183516)). In other cases it's still worth asking support. Open the **Help** tab in the Saily app and tap **Chat with us**.
+</Q>
+<Q q="I deleted the eSIM on my phone and the app won't install it again.">
+First make sure you're on stable Wi-Fi. If it still won't install, Saily's fix is to delete the Saily app, install it again, log in and try once more.
+</Q>
+<Q q="My phone says it's out of room for eSIMs.">
+Delete an old eSIM from a past trip that you'll never use again in your phone's settings, then install the new one. Check which one it is before you delete.
+</Q>
+<Q q="If I turn the line off, is the plan still counting days?">
+Yes. Saily says an activated plan can't be paused, and turning the line off only stops this phone from using it for now.
+</Q>

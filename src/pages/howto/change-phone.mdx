@@ -1,5 +1,92 @@
 ---
 layout: ../../layouts/HowTo.astro
 slug: change-phone
+step: 2
+time: 10 分钟，要连着 Wi-Fi
+for: 换了新手机，旧手机上的 Saily eSIM 还想接着用
+tldr: Saily 的 eSIM 跟着账号走：连着网在旧手机的设置里把它删掉，再用同一个账号在新手机上装回来，套餐都还在。
+description: 换手机时怎么把 Saily eSIM 移到新手机：先在旧手机的设置里删掉，再在新手机上用同一个账号安装，或者让旧手机的 App 出一个二维码；还有 App 里的 Move 按钮是做什么的。
 ---
-{/* 待写：正文。写法见 docs/MAINTAINING.md 的「怎么写」，资料在 docs/sources/。 */}
+import Term from "../../components/Term.astro";
+import Q from "../../components/Q.astro";
+import Tabs from "../../components/Tabs.astro";
+import Callout from "../../components/Callout.astro";
+
+你出发前一周换了新手机，数据迁移把照片和聊天记录都搬了过来，可新手机的设置里找不到那张 Saily <Term k="eSIM" />，上个月买的欧洲套餐还一点没用。别急着再买一个。照这一页做完，这张 eSIM 会装在新手机上，套餐原样还在。
+
+大多数 eSIM 只能装在一台设备上，换手机就得重买。Saily 不一样，只要用同一个邮箱登录 App，就能把 eSIM 重新装上，甚至装到另一台设备上（[重新安装说明](https://support.saily.com/hc/zh-cn/articles/12822203571100)）。不过一张 Saily eSIM 同一时间只能在一部手机上用，所以顺序很要紧。<mark>先在旧手机的设置里把 eSIM 删掉，再用同一个账号在新手机上装回来，套餐一直在你的账号里。</mark>
+
+## 动手之前
+
+准备好下面几样，免得做到一半卡住：
+
+- 两部手机都在手边，而且都连着 Wi-Fi。官方说要趁旧手机联网的时候删 eSIM，新手机安装也要网（[常见问答](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE2Z59F1JKQWSA5SJ9X)）。
+- 新手机支持 eSIM，而且没有被运营商锁定。
+- 记得你登录 Saily 用的是哪个邮箱，新手机要用同一个。
+- 要是你改过 eSIM 的默认设置，可能还要输入 PIN/PUK 码（[转移说明](https://support.saily.com/hc/zh-cn/articles/15511041342748)）。
+
+还有一条：人在土耳其、阿曼、卡塔尔、沙特阿拉伯、阿联酋或中国大陆时，别删了再装。官方说在这些地方 Saily 的 App 或网站可能打不开，删掉以后可能就装不回来了（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#travel)）。最好出发前在家把手机换好。
+
+## 第一步：在旧手机上删掉 eSIM
+
+删的是手机系统设置里的那张 eSIM：
+
+<Tabs id="cp" items={[["ios","iPhone"],["android","安卓（三星）"]]}>
+<div slot="ios">
+
+1. 打开 **设置** → **蜂窝网络**（有的系统版本叫 **移动服务**）。
+2. 点 Saily 那条线，它可能被标成「旅行」「商务」或「副号」。
+3. 点 **删除 eSIM**，接下来弹出的提示照着确认。
+
+</div>
+<div slot="android">
+
+三星手机上是这样（[安卓转移说明](https://support.saily.com/hc/zh-cn/articles/15530928047516)）：
+
+1. 打开 **设置** → **连接**（有的手机叫 **网络和互联网**）→ **SIM 卡管理器**。
+2. 选 Saily 那张 eSIM。
+3. 点 **删除**，在弹出的提示里再点一次 **删除**。
+
+</div>
+</Tabs>
+
+<Callout type="no" title="别用 Saily App 里的「删除 eSIM」">
+App 里也有一个 **删除 eSIM**，可它做的是另一件事：把这张 eSIM 和上面的套餐从你的 Saily 账户里永久删掉，连带取消它的电话号码、Ultra 订阅和自动充值（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE22FYPG3YY7FBPFVQ3)）。换手机只删手机设置里的那张。几种「删除」的区别，见[删掉 eSIM 之前先看这个](/howto/delete-esim/)。
+</Callout>
+
+## 第二步：在新手机上装回来
+
+官方给了两种装法，挑顺手的一种。
+
+**在新手机上用 Saily App 装。** 在新手机上装好 Saily App，用同一个邮箱登录，进 **eSIM**（eSIMs）页，点 **安装 eSIM**（Install eSIM）。要是点了装不上，官方的办法是把 Saily App 删掉、重新装一次（[重新安装说明](https://support.saily.com/hc/zh-cn/articles/12822203571100#h_01JDPFTFAB3T0S84HT7A2H3WVS)）。
+
+**让旧手机出一个二维码。** 在旧手机上删掉 eSIM 以后，打开它上面的 Saily App，点 **安装 eSIM**，再点 **与他人共享 eSIM**（Share eSIM to other person），屏幕上会出一个二维码。用新手机扫它，照屏幕上的提示走完（[转移说明](https://support.saily.com/hc/zh-cn/articles/15511041342748)）。这个二维码能让别人装上你的 eSIM，别截图发到群里。
+
+装好以后，和第一次装一样，Saily 这条线要开着、<Term k="漫游" text="数据漫游" />要开着、上网要选它。
+
+<Callout type="ok">
+新手机的 **蜂窝网络**（安卓是 **SIM 卡管理器**）里出现了 Saily 那条线；打开 Saily App，你的套餐还在。
+</Callout>
+
+## App 首页的 Move 按钮是另一回事
+
+要是你在 Saily App 首页看到一个 **Move**（迁移）按钮，或者收到 Saily 说要替换 eSIM 的邮件，那不是换手机用的。Saily 正在把一部分旧的 eSIM 换成新的，旧的那种以后不能再加新套餐、加购或共享。Move 会把你符合条件的套餐一起搬到一张新 eSIM 上，不收钱，每个套餐都是满额的流量。这一篇官方只有英文版：[官方英文说明](https://support.saily.com/hc/en-us/articles/31797245183516)。
+
+要动它的话，记住几件事。App 要更新到 3.62 或更新的版本，手机要连着 Wi-Fi；等 App 说迁移完成了，再按它的提示删掉旧的那张、装好新的，然后给新 eSIM 选上网、打开数据漫游；开过自动充值的，迁移以后要重新打开。不动它也行，官方说会在 2027 年 1 月 17 日前后自动迁移，到时候你还是要在 App 里把新 eSIM 装好。
+
+换手机最容易出错的，是顺序和删的地方：先旧后新，删的是手机设置里那张。记住这两点，套餐就丢不了。
+
+## 卡住了？
+
+<Q q="新手机提示，这张 eSIM 已经在另一台设备上使用。">
+先看看新手机的 SIM 设置里是不是已经有它了，安装有时会在后台完成。没有的话，就是 eSIM 还留在旧手机上：让旧手机连上 Wi-Fi，在它的设置里删掉，再到新手机上装（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE27S987MX815S7D1GT)）。
+</Q>
+<Q q="旧手机丢了，或者已经坏了。">
+eSIM 没法从旧手机上删了，就联系 Saily 客服，官方说他们会帮你把套餐移过来。在 Saily App 的 **帮助**（Help）页点 **与我们聊天**（Chat with us）就能找到客服（[联系客服](https://support.saily.com/hc/zh-cn/articles/17770364559516)）。
+</Q>
+<Q q="在新手机上点了「安装 eSIM」，可就是装不上。">
+先把 Saily App 删掉、重新装一次，登录后再试，这是官方的办法。装的时候别在打电话，也要连着稳定的 Wi-Fi，因为通话会挡住安装。还不行，就照官方的[排查指南](https://support.saily.com/hc/zh-cn/articles/12838788763164)一步步来。
+</Q>
+<Q q="换好了，新手机有信号却上不了网。">
+照[没信号，或者有信号没网](/howto/no-signal/)查。Saily 这条线开着、上网选它、数据漫游开着，这三样最常漏。
+</Q>
