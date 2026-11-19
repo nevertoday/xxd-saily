@@ -30,7 +30,7 @@ The unofficial Saily beginners site gets more languages. Each language has the h
 - MDX: no bare `<`, `{`, `}` in prose.
 
 ## Checks before you report
-`npm run build`, `node scripts/check-i18n.mjs <lang>` for each of your languages (must print no ✗), `npm run check`, `node scripts/check-doc-links.mjs`. Don't start a dev server; if you must look, serve `dist/` with `python3 -m http.server <port> --bind 127.0.0.1` and kill it after. Commit on your branch: `git add -A && git commit -m "<lang>: …"`. Don't push.
+`npm run build`, `node scripts/check-i18n.mjs <lang>` for each of your languages (must print no ✗), `npm run check`, `node scripts/check-doc-links.mjs`. For a language with a Saily Help Center, also `node scripts/check-lesson-parity.mjs . <lang> <locale>` (same Help Center articles and anchors as the English lessons, same components and numbers, every bold label found in that locale's Help Center copy). Don't start a dev server; if you must look, serve `dist/` with `python3 -m http.server <port> --bind 127.0.0.1` and kill it after. Commit on your branch: `git add -A && git commit -m "<lang>: …"`. Don't push.
 
 ## Report
 Per language: files changed, any label you couldn't find in the Help Center, anything you were unsure how to say, the commit hash.
