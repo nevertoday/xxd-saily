@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "An eSIM is a SIM built into your phone, so there's nothing to insert. This lesson does one thing: it takes two minutes in your phone's settings to see whether your phone can take one."
+tldr: "eSIM встроена прямо в телефон, так что вставлять ничего не нужно. Этот урок делает одно: за пару минут в настройках телефона вы узнаете, можно ли поставить на него eSIM."
 lesson: 1
 ---
 import Callout from "../../../components/Callout.astro";
@@ -8,89 +8,89 @@ import Term from "../../../components/Term.astro";
 import Tabs from "../../../components/Tabs.astro";
 import Q from "../../../components/Q.astro";
 
-This is how a lot of trips used to start. You land, find the SIM card counter at the airport, queue for a local card, borrow a pin to pop out the tray, swap out your own tiny card and put it in your pocket, and then spend the trip hoping you don't lose it.
+Раньше многие поездки начинались так. Вы приземляетесь, ищете в аэропорту стойку с SIM-картами, стоите в очереди за местной картой, просите скрепку, чтобы открыть лоток, вынимаете свою крошечную карточку, прячете её в карман и всю поездку надеетесь её не потерять.
 
-With an <Term k="eSIM" />, you skip all of that.
+С <Term k="eSIM" text="eSIM" /> ничего этого делать не нужно.
 
-## A slot in your phone you can't see
+## Слот в телефоне, которого не видно
 
-The plastic card in your phone is a <Term k="实体 SIM 卡" />, and it's what connects your phone to your carrier's network. An eSIM does the same job, but it's a chip built right into the phone, so there's nothing to take in or out. Think of it as a slot your phone already has that you can't see. You buy a plan in the Saily app, the app downloads a profile into that slot over the internet, and your phone gains a second line. The download needs a connection, and once it's installed it doesn't.
+Пластиковая карточка в вашем телефоне называется <Term k="实体 SIM 卡" text="физической SIM-картой" />, и именно через неё телефон подключается к сети оператора. eSIM делает то же самое, только это чип, встроенный прямо в телефон, поэтому вставлять и вынимать ничего не нужно. Представьте, что в телефоне уже есть слот, которого вы просто не видите. Вы покупаете тариф в приложении Saily, приложение через интернет загружает в этот слот профиль, и у телефона появляется вторая линия. Для загрузки нужен интернет, а после установки он уже не нужен.
 
-Your home SIM stays where it is. So if your phone supports dual SIM, both lines can be on at once. Your home number still gets calls, and your data goes through Saily.
+Ваша основная SIM-карта остаётся на месте. Так что если телефон поддерживает две SIM-карты, обе линии могут работать одновременно: на ваш обычный номер по-прежнему приходят звонки, а интернет идёт через Saily.
 
-All of this depends on one thing, though. Your phone has to be able to take an eSIM, so this lesson does just one thing:
+Но всё это держится на одном условии. Телефон должен уметь работать с eSIM, поэтому этот урок делает только одно:
 
-<mark><strong>Before you buy a plan, check in your phone's settings that it can take an eSIM.</strong></mark>
+<mark><strong>Прежде чем покупать тариф, проверьте в настройках телефона, что на него можно установить eSIM.</strong></mark>
 
-## Why check first
+## Зачем проверять заранее
 
-Because not every phone can. Most newer phones support eSIM, but Saily specifically warns that in mainland China, Hong Kong, Macau, Taiwan and South Korea, many locally sold models don't ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164#travel)). The same model can come in different versions depending on where it's sold, so even if your phone is new, it's worth a look if you bought it in one of those places.
+Потому что умеет это не каждый телефон. Большинство новых моделей eSIM поддерживают, но Saily отдельно предупреждает, что в материковом Китае, Гонконге, Макао, на Тайване и в Южной Корее многие модели, которые продаются там, eSIM не поддерживают ([справка Saily](https://support.saily.com/hc/en-us/articles/12838788763164#travel)). Одна и та же модель выходит в разных версиях в зависимости от того, где её продают. Так что, даже если телефон у вас новый, но куплен в одном из этих мест, лучше проверить.
 
-The other catch is a phone that's locked to its carrier and only accepts that carrier's SIMs. Saily says a carrier-locked phone can install the Saily eSIM but can't connect with it ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164)). The good news is that the check below covers this too.
+Есть и вторая ловушка. Телефон может быть привязан к оператору и принимать только его SIM-карты. Saily пишет, что на такой телефон eSIM Saily установить можно, а вот подключиться через неё не получится ([справка Saily](https://support.saily.com/hc/en-us/articles/12838788763164)). Хорошая новость в том, что проверка ниже заодно покажет и это.
 
-## Check now
+## Проверьте прямо сейчас
 
 <Tabs id="check" items={[["ios", "iPhone"], ["android", "Android"]]}>
 <div slot="ios">
 
-1. Open **Settings** and tap **Mobile Service**. On some iPhones it's called **Cellular**.
-2. On that screen, look for **Add eSIM**.
+1. Откройте **Настройки** и нажмите **Сотовая связь**. На некоторых iPhone этот пункт называется **Мобильные данные**, а в английском интерфейсе **Mobile Service** или **Cellular**.
+2. На этом экране найдите **Добавить eSIM** (Add eSIM).
 
 </div>
 <div slot="android">
 
-Menu names vary from brand to brand on Android, so first find the SIM screen:
+На Android названия меню у разных марок разные, так что сначала найдите экран с SIM-картами:
 
-- Samsung: **Settings** > **Connections** > **SIM manager**.
-- Google Pixel: **Settings** > **Network & internet** > **SIMs**.
-- Xiaomi, Redmi and POCO: **Settings** > **SIM cards & mobile networks** > **Manage eSIM**, where you need to turn eSIM on first.
-- Other brands: usually the **Mobile network** or **SIM** screen in **Settings**.
+- Samsung: **Настройки** > **Подключения** > **Диспетчер SIM-карт** (Settings > Connections > SIM manager).
+- Google Pixel: **Настройки** > **Сеть и интернет** > **SIM-карты** (Settings > Network & internet > SIMs).
+- Xiaomi, Redmi и POCO: **Настройки** > **SIM-карты и мобильные сети** > **Управление eSIM** (Settings > SIM cards & mobile networks > Manage eSIM). Там eSIM сначала нужно включить.
+- Другие марки: обычно это экран **Мобильная сеть** или **SIM-карты** в **Настройках**.
 
-Then look for **Add eSIM** on that screen. Some phones call it **Add SIM** or **Download a SIM**, and you can choose to download an eSIM from there.
+Затем найдите на этом экране **Добавить eSIM** (Add eSIM). На некоторых телефонах этот пункт называется **Добавить SIM-карту** (Add SIM) или **Скачать SIM-карту** (Download a SIM), и там можно выбрать загрузку eSIM.
 
 </div>
 </Tabs>
 
-If you can find it, two things are fine: your phone supports eSIM, and it isn't locked to a carrier. That's the test Saily itself gives ([How to check if my device is eSIM compatible?](https://support.saily.com/hc/en-us/articles/13318373425180)). Don't tap it yet. In the next lesson, the Saily app does the install for you.
+Если вы нашли этот пункт, значит, в порядке сразу две вещи: телефон поддерживает eSIM и не привязан к оператору. Именно такую проверку предлагает сама Saily ([как проверить, совместимо ли устройство с eSIM](https://support.saily.com/hc/en-us/articles/13318373425180)). Пока не нажимайте его. В следующем уроке приложение Saily всё установит за вас.
 
-To double-check, you can look your phone up on Saily's [list of eSIM-compatible devices](https://saily.com/esim-supported-devices/). New models keep coming out, so the list changes too ([Saily's note](https://support.saily.com/hc/en-us/articles/16927592788636)).
+Для верности можно найти свой телефон в [списке устройств с поддержкой eSIM](https://saily.com/esim-supported-devices/) на сайте Saily. Новые модели выходят постоянно, так что и список меняется ([справка Saily](https://support.saily.com/hc/en-us/articles/16927592788636)).
 
-While you're there, check your system version, because the Saily app you'll install next needs iOS 18 or later, or Android 10 or later ([Saily's note](https://support.saily.com/hc/en-us/articles/15751399206172)). On an iPhone, it's under **Settings** > **General** > **About**.
+Заодно посмотрите версию системы, потому что приложению Saily, которое вы поставите дальше, нужна iOS 18 или новее либо Android 10 или новее ([справка Saily](https://support.saily.com/hc/en-us/articles/15751399206172)). На iPhone она указана в разделе **Настройки** > **Основные** > **Об этом устройстве** (Settings > General > About).
 
-## If you can't find it, don't worry
+## Если не нашли, не беда
 
-If there's no "Add eSIM," your phone most likely doesn't support eSIM, but you can still use Saily. Saily's answer is a <Term k="实体 eSIM 卡" /> that goes in your SIM slot, and you install Saily onto that. [Step 6](/en/guide/6-no-esim/) of the full guide covers this route.
+Если пункта «Добавить eSIM» нет, скорее всего, телефон eSIM не поддерживает. Но Saily всё равно можно пользоваться. На этот случай у Saily есть <Term k="实体 eSIM 卡" text="физическая eSIM-карта" />: на вид это обычная SIM-карта, на которую можно записать eSIM. Она вставляется в слот для SIM-карты, а на неё вы устанавливаете Saily. Этот путь разобран в [шаге 6](/en/guide/6-no-esim/) полного руководства (на английском).
 
-<Callout type="tip" title="Three lessons are enough">
-Once you know your phone works, the rest follows. In lesson 2, while you're still at home on Wi-Fi, you buy a plan and install the eSIM. In lesson 3, you flip two switches after you land and you're online. After these three lessons you're set for data abroad, and everything else on the site is there to look up when you need it.
+<Callout type="tip" title="Трёх уроков хватит">
+Когда вы знаете, что телефон подходит, дальше всё складывается само. Во втором уроке, пока вы ещё дома и на Wi-Fi, вы покупаете тариф и устанавливаете eSIM. В третьем после посадки щёлкаете двумя переключателями и выходите в интернет. После этих трёх уроков с интернетом за границей у вас всё будет в порядке, а остальное на сайте можно посмотреть, когда понадобится.
 </Callout>
 
-## If something's off
+## Если что-то не так
 
-<Q q="Settings has no Add eSIM option.">
+<Q q="В настройках нет пункта «Добавить eSIM».">
 
-First, think about where you bought the phone. Many models sold in mainland China, Hong Kong, Macau, Taiwan or South Korea don't support eSIM at all. Then look your model up on Saily's [device list](https://saily.com/esim-supported-devices/). If it isn't there, go to [step 6](/en/guide/6-no-esim/). If it is listed but the setting is missing, your phone may be carrier-locked. See the next item.
-
-</Q>
-<Q q="I'm not sure whether my phone is carrier-locked.">
-
-On an iPhone, open **Settings** > **General** > **About** and find **Carrier Lock**. "No SIM restrictions" means it's unlocked. Android phones vary, so the easiest test is still whether **Add eSIM** shows up.
-
-If it is locked, ask your carrier to unlock it. Saily says that once it's unlocked, the Saily eSIM can install and connect ([Saily's note](https://support.saily.com/hc/en-us/articles/12838788763164)).
+Сначала вспомните, где вы покупали телефон. Многие модели, которые продаются в материковом Китае, Гонконге, Макао, на Тайване или в Южной Корее, eSIM вообще не поддерживают. Потом найдите свою модель в [списке устройств](https://saily.com/esim-supported-devices/) Saily. Если её там нет, переходите к [шагу 6](/en/guide/6-no-esim/). Если модель в списке есть, а пункта в настройках нет, возможно, телефон привязан к оператору. Об этом следующий вопрос.
 
 </Q>
-<Q q="My phone is on something older than iOS 18 or Android 10.">
+<Q q="Не знаю, привязан ли мой телефон к оператору.">
 
-Update your phone's system to the latest version first, then go to lesson 2. Saily says its app needs iOS 18 or Android 10 or later. If your phone can't get to that version, ask Saily support what to do.
+На iPhone откройте **Настройки** > **Основные** > **Об этом устройстве** и найдите строку **Блокировка оператором** (Carrier Lock). Если там написано «SIM без ограничений» (No SIM restrictions), телефон разблокирован. На Android у каждой марки по-своему, так что проще всего по-прежнему посмотреть, есть ли пункт **Добавить eSIM**.
 
-</Q>
-<Q q="I want to use it on a tablet or a laptop.">
-
-Most newer tablets support eSIM too, and you check them the same way. Laptops and routers are harder. Saily says its support for laptops is limited, and for routers even more so ([Saily's note](https://support.saily.com/hc/en-us/articles/16927592788636)). To get a laptop online, it's easier to share your phone's connection with a <Term k="热点" />. When the time comes, see [Share your data with a hotspot](/en/howto/hotspot/).
+Если телефон всё-таки привязан, попросите оператора его разблокировать. Saily пишет, что после разблокировки eSIM Saily сможет установиться и подключиться ([справка Saily](https://support.saily.com/hc/en-us/articles/12838788763164)).
 
 </Q>
-<Q q="If I add an eSIM, do I lose my home number?">
+<Q q="У меня система старше iOS 18 или Android 10.">
 
-No. The eSIM is an extra line, and your home SIM stays where it is. On a phone that supports dual SIM, both lines can be on at once and your home number still gets calls ([Saily's note](https://support.saily.com/hc/en-us/articles/16747226859164)). Your home carrier may charge roaming for that, though, and lesson 3 shows how to avoid surprises.
+Сначала обновите систему телефона до последней версии, а потом переходите ко второму уроку. Saily пишет, что приложению нужна iOS 18 или Android 10 и новее. Если ваш телефон до такой версии не обновляется, спросите в поддержке Saily, что делать.
+
+</Q>
+<Q q="Хочу пользоваться этим на планшете или ноутбуке.">
+
+Большинство новых планшетов тоже поддерживают eSIM, и проверяются они так же. С ноутбуками и роутерами сложнее. Saily пишет, что ноутбуки поддерживаются ограниченно, а роутеры ещё меньше ([справка Saily](https://support.saily.com/hc/en-us/articles/16927592788636)). Чтобы подключить ноутбук к интернету, проще раздать интернет с телефона через <Term k="热点" text="точку доступа" />. Когда дойдёт до этого, загляните в инструкцию [как раздать интернет через точку доступа](/en/howto/hotspot/) (на английском).
+
+</Q>
+<Q q="Если я добавлю eSIM, мой номер пропадёт?">
+
+Нет. eSIM добавляет ещё одну линию, а основная SIM-карта остаётся на месте. На телефоне с поддержкой двух SIM-карт обе линии могут работать одновременно, и на ваш обычный номер по-прежнему приходят звонки ([справка Saily](https://support.saily.com/hc/en-us/articles/16747226859164)). Правда, ваш оператор может взять за это плату за роуминг, и в третьем уроке показано, как обойтись без сюрпризов.
 
 </Q>
