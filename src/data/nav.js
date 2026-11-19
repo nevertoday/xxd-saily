@@ -1,6 +1,6 @@
 import { EXTRA } from "../i18n/index.js";
 // 站点结构的唯一来源：左侧导航、首页路线图、上一步 / 下一步、How-to 目录、搜索都从这里读。
-// ready: false 的页面还没写，导航里显示「编写中」，不给链接。
+// ready: true 的页面还没写，导航里显示「编写中」，不给链接。
 // 中文在根路径，英文在 /en/ 下（同样的 slug）。英文文字放在各条目的 en: {} 里，用 t(x, key, lang) 取。
 
 const BASE = (import.meta.env?.BASE_URL || "/").replace(/\/$/, "");
@@ -50,14 +50,14 @@ for (const [code, d] of Object.entries(EXTRA)) (d.lessons || []).forEach((l, i) 
 export const lessonHref = (s, lang = "zh") => link(`/start/${s.slug}/`, lang);
 
 export const STEPS = [
-  { n: 0, slug: "0-what", title: "Saily 是什么", minutes: "读 5 分钟", ready: false, sum: "Nord Security 做的旅行 eSIM：它替你省掉什么，管不了什么，和开漫游、买当地卡比起来怎样", en: { title: "What Saily is", minutes: "5-minute read", sum: "A travel eSIM from Nord Security: what it saves you, what it can't do, and how it stacks up against roaming or a local SIM" } },
-  { n: 1, slug: "1-choose-plan", title: "选对套餐", minutes: "10 分钟", ready: false, sum: "去一个国家还是好几个，要一份总流量还是每天不限量，让你的行程来定", en: { title: "Pick the right plan", minutes: "10 minutes", sum: "One country or several, one data total or unlimited by the day: let your trip decide" } },
-  { n: 2, slug: "2-install", title: "装好 eSIM", minutes: "10 分钟", ready: false, sum: "让 App 替你装；装不上，再扫二维码或者手动输入激活码", en: { title: "Install the eSIM", minutes: "10 minutes", sum: "Let the app install it, and fall back on a QR code or the activation code if it can't" } },
-  { n: 3, slug: "3-abroad", title: "到了当地", minutes: "5 分钟", ready: false, sum: "让手机走 Saily 上网、打开数据漫游；没网的时候，先查这几样", en: { title: "Once you land", minutes: "5 minutes", sum: "Switch mobile data to Saily and turn on data roaming, and what to check first when there's no internet" } },
-  { n: 4, slug: "4-manage", title: "用量、加流量和抵用金", minutes: "10 分钟", ready: false, sum: "看还剩多少流量，不够了怎么加，自动充值和抵用金怎么用", en: { title: "Usage, top-ups and credits", minutes: "10 minutes", sum: "See how much data is left, add more when you run low, and how Auto Top-Up and credits work" } },
-  { n: 5, slug: "5-phone-number", title: "美国电话号码", minutes: "15 分钟", ready: false, sum: "Saily 的 +1 美国号码能打电话、收发短信；开通之前，先要做实名认证", en: { title: "The US phone number", minutes: "15 minutes", sum: "Saily's +1 US number makes calls and sends texts, once you've passed the identity check" } },
-  { n: 6, slug: "6-no-esim", title: "手机不支持 eSIM 怎么办", minutes: "10 分钟", ready: false, sum: "换一张能装 eSIM 的实体卡插进卡槽，官方说的是 eSIM.me，再找客服要二维码把 Saily 装上去", en: { title: "When your phone has no eSIM", minutes: "10 minutes", sum: "Put a card that holds eSIMs in the SIM slot (Saily names eSIM.me), then get a QR code from support to install Saily on it" } },
-  { n: 7, slug: "7-extras", title: "其他功能", minutes: "读 5 分钟", ready: false, sum: "网页防护、广告拦截器、虚拟位置，还有超级套餐附带的权益，各是做什么的", en: { title: "Other features", minutes: "5-minute read", sum: "What Web protection, Ad Blocker and virtual locations do, and what the Ultra plan adds" } },
+  { n: 0, slug: "0-what", title: "Saily 是什么", minutes: "读 5 分钟", ready: true, sum: "Nord Security 做的旅行 eSIM：它替你省掉什么，管不了什么，和开漫游、买当地卡比起来怎样", en: { title: "What Saily is", minutes: "5-minute read", sum: "A travel eSIM from Nord Security: what it saves you, what it can't do, and how it stacks up against roaming or a local SIM" } },
+  { n: 1, slug: "1-choose-plan", title: "选对套餐", minutes: "10 分钟", ready: true, sum: "去一个国家还是好几个，要一份总流量还是每天不限量，让你的行程来定", en: { title: "Pick the right plan", minutes: "10 minutes", sum: "One country or several, one data total or unlimited by the day: let your trip decide" } },
+  { n: 2, slug: "2-install", title: "装好 eSIM", minutes: "10 分钟", ready: true, sum: "让 App 替你装；装不上，再扫二维码或者手动输入激活码", en: { title: "Install the eSIM", minutes: "10 minutes", sum: "Let the app install it, and fall back on a QR code or the activation code if it can't" } },
+  { n: 3, slug: "3-abroad", title: "到了当地", minutes: "5 分钟", ready: true, sum: "让手机走 Saily 上网、打开数据漫游；没网的时候，先查这几样", en: { title: "Once you land", minutes: "5 minutes", sum: "Switch mobile data to Saily and turn on data roaming, and what to check first when there's no internet" } },
+  { n: 4, slug: "4-manage", title: "用量、加流量和抵用金", minutes: "10 分钟", ready: true, sum: "看还剩多少流量，不够了怎么加，自动充值和抵用金怎么用", en: { title: "Usage, top-ups and credits", minutes: "10 minutes", sum: "See how much data is left, add more when you run low, and how Auto Top-Up and credits work" } },
+  { n: 5, slug: "5-phone-number", title: "美国电话号码", minutes: "15 分钟", ready: true, sum: "Saily 的 +1 美国号码能打电话、收发短信；开通之前，先要做实名认证", en: { title: "The US phone number", minutes: "15 minutes", sum: "Saily's +1 US number makes calls and sends texts, once you've passed the identity check" } },
+  { n: 6, slug: "6-no-esim", title: "手机不支持 eSIM 怎么办", minutes: "10 分钟", ready: true, sum: "换一张能装 eSIM 的实体卡插进卡槽，官方说的是 eSIM.me，再找客服要二维码把 Saily 装上去", en: { title: "When your phone has no eSIM", minutes: "10 minutes", sum: "Put a card that holds eSIMs in the SIM slot (Saily names eSIM.me), then get a QR code from support to install Saily on it" } },
+  { n: 7, slug: "7-extras", title: "其他功能", minutes: "读 5 分钟", ready: true, sum: "网页防护、广告拦截器、虚拟位置，还有超级套餐附带的权益，各是做什么的", en: { title: "Other features", minutes: "5-minute read", sum: "What Web protection, Ad Blocker and virtual locations do, and what the Ultra plan adds" } },
 ];
 export const stepHref = (s, lang = "zh") => link(`/guide/${s.slug}/`, lang);
 
@@ -77,7 +77,7 @@ export const HOWTO = [
   ]},
   { group: "出问题了", en: { group: "When something's wrong" }, items: [
     { slug: "no-signal", title: "没信号，或者有信号没网", en: { title: "No signal, or signal but no internet" } },
-    { slug: "refund", title: "想退款怎么办", en: { title: "Ask for a refund" } },
+    { slug: "refund", title: "退款和取消订阅", en: { title: "Refunds and cancelling subscriptions" } },
     { slug: "delete-esim", title: "删掉 eSIM 之前先看这个", en: { title: "Read this before you delete an eSIM" } },
   ]},
   { group: "钱和账户", en: { group: "Money and account" }, items: [
