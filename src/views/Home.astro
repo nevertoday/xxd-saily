@@ -1,90 +1,78 @@
 ---
-// 首页：先对新手说话（遇到过的事 → 用 Saily 以后的不同 → 三课入门 → 适不适合），
-// 最后才是给用熟了的人的一张图（整件事的四步）和完整教程路线。
-// 文字是骨架阶段的初稿，事实都出自官方帮助中心；写手按 docs/MAINTAINING.md 的「怎么写」改。
+// 首页：先对新手说话（遇到过的事 → 三课入门 → 适不适合），最后是这个站讲的三件事，每件链到完整教程里对应的几步。
+// 事实都出自官方帮助中心（来源见 docs/sources/README.md 的「和本站的对应」）。
 import Site from "../layouts/Site.astro";
 import Contact from "../components/Contact.astro";
-import { LESSONS, lessonHref, STEPS, stepHref, link, langOf, fullLang, t } from "../data/nav.js";
+import { LESSONS, lessonHref, STEPS, stepHref, langOf, fullLang, t } from "../data/nav.js";
 import { X as dict, fmt } from "../i18n/index.js";
 
 const lang = langOf(Astro.url.pathname);
+// 三件事里和语言无关的部分：图标、对应完整教程的哪几步。第一件是新手三课讲的那件，底色浅一点
+const TRACK_BASE = [["Globe", [0, 1, 2, 3, 4, 7]], ["PhoneCall", [5]], ["Smartphone", [6]]];
 const ZH = {
   brand: "Saily 新手教程",
   h1: "出国上网，出发前就准备好",
-  lead: ["Saily 是 Nord Security（做 NordVPN 的那家公司）出的旅行 eSIM。出发前在 App 里买好目的地的流量套餐、装进手机，落地打开数据就能上网，不用再到机场找柜台买卡。它还另外卖一个美国 +1 电话号码，能打电话、收发短信。", "这是非官方学习站", "，和 Saily、Nord Security 都没有关系；功能、价格以官方帮助中心和 App 为准。"],
+  lead: ["Saily 是 Nord Security（做 NordVPN 的那家公司）出的旅行 eSIM。出发前在 App 里买好目的地的流量，装进手机，落地拨两个开关就能上网，不用再到机场找柜台买卡。它还另外卖一个美国 +1 电话号码，能打电话、收发短信。", "这是一个非官方的学习站", "，和 Saily、Nord Security 都没有关系；功能和价格以官方帮助中心和 App 为准。"],
   cta: ["新手从这里开始", "用过了，看完整教程"],
-  ctaNote: "新手入门一共三课：先看手机能不能用，再买好套餐装上，最后落地打开数据。",
+  ctaNote: "新手入门一共三课：先看手机能不能用，再在出发前买好套餐装上，最后落地打开数据。",
   painH: "你是不是也遇到过这些",
   PAIN: [
     "落地以后手机没网，叫不了车、看不了地图，只好到处找 Wi-Fi。",
     "开着国内的卡出国，回来收到一笔漫游费账单。",
     "在机场排队买当地的卡，换卡时还怕把自己那张弄丢。",
   ],
-  diffH: "用 Saily 以后，有什么不一样",
-  diffW: "什么时候", diffA: "落地再买当地的卡", diffB: "出发前装好 Saily",
-  DIFF: [
-    ["买卡", "到了机场找柜台、排队", "出发前在 App 里买好"],
-    ["装卡", "取出卡托，换上新卡", "在 App 里把 eSIM 装进手机"],
-    ["落地", "先去买卡，再上网", "打开数据漫游就能上网"],
-  ],
-  lessonsH: "新手只要三课", lessonsP: "按顺序看就行。学完这三课，落地就能上网；网站上别的内容，遇到了再查。",
+  lessonsH: "新手只要三课",
+  lessonsP: "按顺序看，一共二十多分钟。学完你会查自己的手机能不能用 eSIM，会在出发前把套餐买好、装进手机，落地几分钟就能上网，也知道怎么不让国内运营商收你漫游费。网站上别的内容，遇到了再查。",
   lessonsLabel: "新手入门：共 3 课",
   fitH: "适不适合你", yesH: "适合", noH: "先不用",
   YES: ["要出国旅行或出差，想落地就有网", "手机支持 eSIM，或者愿意多买一张能写入 eSIM 的实体卡", "想要一个美国号码打电话、收短信"],
-  NO: ["这趟不出国，只在国内用手机", "要去的地方 Saily 不能用：出发前先在官网查一下目的地", "要用彩信或呼叫转移：Saily 的电话号码不支持这两样"],
-  devH: "用熟以后看这里",
-  devP: "完整教程把每一步讲得更细。整件事其实就四步，一句话一个：",
-  FLOW: [
-    ["Smartphone", "查手机", "看手机支不支持 eSIM。不支持，可以用一张能写入 eSIM 的实体卡。"],
-    ["ShoppingCart", "买套餐", "选目的地和流量。一个国家还是好几个，照你的行程挑。"],
-    ["Download", "装 eSIM", "出发前连着 Wi-Fi，在 App 里装好。"],
-    ["Plane", "落地上网", "让手机用 Saily 上网，给它打开数据漫游。"],
+  NO: ["这趟不出国，只在国内用手机", "要去的地方 Saily 用不了：官方列了白俄罗斯、古巴、伊朗、朝鲜、俄罗斯、叙利亚和乌克兰的受限地区", "要用彩信或呼叫转移：Saily 的电话号码不支持这两样"],
+  tracksH: "这个网站讲三件事",
+  tracksP: "新手三课只讲第一件。另外两件用得上的时候，完整教程里各有一步。",
+  TRACKS: [
+    ["出国上网的流量", "Saily 的本行：按目的地买流量套餐，装进手机，落地就能用。完整教程把挑套餐、装 eSIM、到了当地、加流量一步步讲细，还有 App 里的其他功能。"],
+    ["美国 +1 电话号码", "Saily 另外卖的一个美国号码，能打电话、收发短信。开通前要先做实名认证；有的银行和支付类应用把它当作网络电话号码，不收它的验证码。"],
+    ["手机不支持 eSIM", "官方的办法是一张能写入 eSIM 的实体卡：插进原来的卡槽，再把 Saily 装上去。"],
   ],
-  CONN: ["能用", "买好", "到了"],
-  stepsLabel: (n) => `完整教程：共 ${n} 步`,
+  tracksLabel: "完整教程里对应的步骤",
+  stepLink: (n, title) => `第 ${n} 步：${title}`,
 };
 const EN = {
   brand: "Saily for beginners",
   h1: "Get online abroad, sorted before you leave",
-  lead: ["Saily is a travel eSIM from Nord Security, the company behind NordVPN. Before your trip you buy a data plan for where you're going and install it from the app, and when you land you turn on data and you're online, with no SIM counter to find at the airport. It also sells a separate +1 US phone number for calls and texts. ", "This is an unofficial guide", ", not affiliated with Saily or Nord Security. For features and prices, the official Help Center and the app are the source of truth."],
+  lead: ["Saily is a travel eSIM from Nord Security, the company behind NordVPN. Before your trip you buy data for where you're going in the app and install it on your phone, and when you land you flip two switches and you're online, with no SIM counter to find at the airport. It also sells a separate +1 US phone number for calls and texts. ", "This is an unofficial guide", ", not affiliated with Saily or Nord Security. For features and prices, the official Help Center and the app are the source of truth."],
   cta: ["Start here if you're new", "Used it already? The full guide"],
-  ctaNote: "The beginner track is three lessons: check your phone, buy and install a plan, then turn on data when you land.",
+  ctaNote: "The beginner track is three lessons: check your phone, buy and install a plan before you go, then turn on data when you land.",
   painH: "Has this happened to you?",
   PAIN: [
     "You land, your phone has no internet, and you can't call a ride or open a map, so you go looking for Wi-Fi.",
     "You travel with your home SIM on and come back to a roaming bill.",
     "You queue at the airport for a local SIM, then worry about losing your own card while you swap.",
   ],
-  diffH: "What changes with Saily",
-  diffW: "When", diffA: "Buying a local SIM on arrival", diffB: "Installing Saily before you go",
-  DIFF: [
-    ["Buying", "Find a counter at the airport and queue", "Buy it in the app before you leave"],
-    ["Setting up", "Pop out the tray and swap cards", "Install the eSIM from the app"],
-    ["Landing", "Buy the card first, then get online", "Turn on data roaming and you're online"],
-  ],
-  lessonsH: "Beginners need just three lessons", lessonsP: "Just read them in order. After these three you'll be online when you land, and everything else on the site is there to look up when you need it.",
+  lessonsH: "Beginners need just three lessons",
+  lessonsP: "Read them in order, about 25 minutes in all. By the end you'll know whether your phone can use an eSIM, you'll have a plan bought and installed before you leave, you'll be online a few minutes after you land, and you'll know how to keep your home carrier from charging you roaming. Everything else on the site is there to look up when you need it.",
   lessonsLabel: "Beginner track: 3 lessons",
   fitH: "Is it for you?", yesH: "Yes, if", noH: "Not yet, if",
   YES: ["You're traveling abroad and want data the moment you land", "Your phone supports eSIM, or you're happy to buy a physical card that holds eSIMs", "You want a US number for calls and texts"],
-  NO: ["You're not leaving the country this time", "Saily doesn't work where you're going: check your destination on the official site first", "You need MMS or call forwarding, which the Saily phone number doesn't support"],
-  devH: "Once you're comfortable",
-  devP: "The full guide goes into each step in more detail. The whole thing is four steps, one line each:",
-  FLOW: [
-    ["Smartphone", "Check your phone", "See whether it supports eSIM. If it doesn't, a physical card that holds eSIMs can stand in."],
-    ["ShoppingCart", "Buy a plan", "Pick the destination and the data. One country or several, pick by your trip."],
-    ["Download", "Install the eSIM", "Install it from the app on Wi-Fi before you leave."],
-    ["Plane", "Land and connect", "Switch mobile data to Saily and turn on data roaming for it."],
+  NO: ["You're not leaving the country this time", "Saily doesn't work where you're going. Its list is Belarus, Cuba, Iran, North Korea, Russia, Syria and restricted regions of Ukraine", "You need MMS or call forwarding, which the Saily phone number doesn't support"],
+  tracksH: "What this site covers",
+  tracksP: "The beginner track covers the first of these. For the other two, the full guide has a step each, for when you need them.",
+  TRACKS: [
+    ["Data abroad", "What Saily is for. You buy a data plan for your destination, install it on your phone, and it works when you land. The full guide goes step by step through picking a plan, installing the eSIM, arriving and topping up, plus the app's other features."],
+    ["A +1 US phone number", "A separate US number Saily sells, for calls and texts. You verify your identity before you get it, and some banks and payment apps treat it as an internet (VoIP) number and won't send codes to it."],
+    ["A phone without eSIM", "Saily's answer is a physical card that holds eSIMs. It goes in your SIM slot, and you install Saily onto it."],
   ],
-  CONN: ["it works", "bought", "landed"],
-  stepsLabel: (n) => `Full guide: ${n} steps`,
+  tracksLabel: "Matching steps in the full guide",
+  stepLink: (n, title) => `Step ${n}: ${title}`,
 };
-// 以后加的语言：文字来自 src/i18n/<语言>.js；FLOW 的图标沿用英文版；完整教程链到英文版
+// 以后加的语言：文字来自 src/i18n/<语言>.js；完整教程链到英文版
 const x = dict(lang);
 const fl = fullLang(lang);
 const C = x
-  ? { ...EN, ...x.home, brand: x.ui.brand, FLOW: EN.FLOW.map(([icon], i) => [icon, ...(x.home.FLOW[i] ?? EN.FLOW[i].slice(1))]), stepsLabel: (n) => fmt(x.home.stepsLabel, { n }) }
+  ? { ...EN, ...x.home, brand: x.ui.brand, stepLink: (n, title) => fmt(x.home.stepLink, { n, title }) }
   : lang === "en" ? EN : ZH;
-const headings = [["h-pain", C.painH], ["h-diff", C.diffH], ["h-lessons", C.lessonsH], ["h-fit", C.fitH], ["h-dev", C.devH]].map(([slug, text]) => ({ slug, text, depth: 2 }));
+const TRACKS = TRACK_BASE.map(([icon, steps], i) => ({ icon, h: C.TRACKS[i][0], p: C.TRACKS[i][1], steps: steps.map((n) => STEPS.find((s) => s.n === n)) }));
+const headings = [["h-pain", C.painH], ["h-lessons", C.lessonsH], ["h-fit", C.fitH], ["h-tracks", C.tracksH]].map(([slug, text]) => ({ slug, text, depth: 2 }));
 ---
 <Site title={C.brand} headings={headings}>
   <div class="home">
@@ -99,16 +87,6 @@ const headings = [["h-pain", C.painH], ["h-diff", C.diffH], ["h-lessons", C.less
     <section aria-labelledby="h-pain">
       <h2 id="h-pain">{C.painH}</h2>
       <ul class="pain">{C.PAIN.map((x) => <li>{x}</li>)}</ul>
-    </section>
-
-    <section aria-labelledby="h-diff">
-      <h2 id="h-diff">{C.diffH}</h2>
-      <div class="xxd-table-wrap diff">
-        <table class="xxd-table">
-          <thead><tr><th scope="col">{C.diffW}</th><th scope="col" data-wrap>{C.diffA}</th><th scope="col" data-wrap>{C.diffB}</th></tr></thead>
-          <tbody>{C.DIFF.map(([w, a, b]) => <tr><th scope="row" class="diff__when">{w}</th><td data-wrap class="diff__before">{a}</td><td data-wrap>{b}</td></tr>)}</tbody>
-        </table>
-      </div>
     </section>
 
     <section aria-labelledby="h-lessons">
@@ -135,38 +113,22 @@ const headings = [["h-pain", C.painH], ["h-diff", C.diffH], ["h-lessons", C.less
       </div>
     </section>
 
-    <section aria-labelledby="h-dev">
-      <h2 id="h-dev">{C.devH}</h2>
-      <p>{C.devP}</p>
+    <section aria-labelledby="h-tracks">
+      <h2 id="h-tracks">{C.tracksH}</h2>
+      <p>{C.tracksP}</p>
       {x && <p class="home__note">{C.devNote}</p>}
       <div class="flow">
-        {C.FLOW.map(([icon, h, p], i) => (
-          <>
-            {i > 0 && (
-              <div class="flow__conn" aria-hidden="true">
-                <span class="flow__label">{C.CONN[i - 1]}</span>
-                <span class="flow__track"><span class="flow__dot" style={`animation-delay:${(i - 1) * 1.2}s`}></span><i class="flow__head" data-xxd-icon="ChevronRight" data-size="14"></i></span>
-              </div>
-            )}
-            <div class="flow__box" data-mine={i === 1 ? "" : undefined}>
-              <i class="flow__icon" data-xxd-icon={icon} data-size="20"></i>
-              <p class="flow__title">{h}</p>
-              <p class="flow__desc">{p}</p>
-            </div>
-          </>
+        {TRACKS.map((k, i) => (
+          <div class="flow__box" data-mine={i === 0 ? "" : undefined}>
+            <i class="flow__icon" data-xxd-icon={k.icon} data-size="20"></i>
+            <p class="flow__title">{k.h}</p>
+            <p class="flow__desc">{k.p}</p>
+            <ul class="flow__how" aria-label={C.tracksLabel}>
+              {k.steps.map((s) => <li><a href={stepHref(s, fl)} hreflang={fl === lang ? undefined : fl}>{C.stepLink(s.n, t(s, "title", fl))}</a></li>)}
+            </ul>
+          </div>
         ))}
       </div>
-      <ol class="xxd-steps roadmap" data-vertical start={STEPS[0].n} aria-label={C.stepsLabel(STEPS.length)}>
-        {STEPS.map((s) => (
-          <li class="xxd-steps__item">
-            <span class="xxd-steps__mark" aria-hidden="true">{s.n}</span>
-            <span class="xxd-steps__text">
-              <a class="xxd-steps__title xxd-steps__link" href={stepHref(s, fl)}>{t(s, "title", fl)}</a>
-              <span class="xxd-steps__desc">{t(s, "minutes", fl)} · {t(s, "sum", fl)}</span>
-            </span>
-          </li>
-        ))}
-      </ol>
     </section>
 
     <Contact />
