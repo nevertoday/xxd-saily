@@ -11,28 +11,31 @@
   h1 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; white-space: nowrap; display: inline-block; }
   h1 em { font-style: normal; color: #ff7a4d; }
   .sub { margin-top: 30px; font-size: 38px; font-weight: 500; color: #a7a194; }
-  .bot { position: absolute; right: 96px; top: 170px; width: 300px; height: 300px; border: 14px solid #f3f0ea; }
-  .bot i { position: absolute; background: #f3f0ea; }
-  .bot .e1, .bot .e2 { width: 44px; height: 44px; top: 80px; }
-  .bot .e1 { left: 58px; } .bot .e2 { right: 58px; }
-  .bot .m { left: 58px; right: 58px; top: 178px; height: 24px; background: #ff7a4d; }
+  /* 右边：一张 SIM 卡（切角 + 芯片），信号从卡上冒出来 */
+  .sim { position: absolute; right: 110px; top: 150px; width: 260px; height: 340px; }
+  .sim svg { width: 100%; height: 100%; overflow: visible; }
   .brand { position: absolute; left: 88px; bottom: 56px; font-size: 26px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
-  .brand b { width: 30px; height: 30px; background: #f3f0ea; position: relative; }
-  .brand b::before, .brand b::after { content: ""; position: absolute; top: 9px; width: 5px; height: 5px; background: #171612; }
-  .brand b::before { left: 7px; } .brand b::after { right: 7px; }
+  .brand b { width: 26px; height: 32px; background: #f3f0ea; clip-path: polygon(0 0, 70% 0, 100% 22%, 100% 100%, 0 100%); position: relative; }
+  .brand b::after { content: ""; position: absolute; left: 6px; top: 13px; width: 14px; height: 11px; background: #ff7a4d; }
 </style>
 </head>
 <body>
 <div class="copy"><h1 id="h1"></h1><p class="sub" id="sub"></p></div>
-<div class="bot"><i class="e1"></i><i class="e2"></i><i class="m"></i></div>
+<div class="sim"><svg viewBox="0 0 260 340" aria-hidden="true">
+  <path d="M14 14 H186 L246 74 V326 H14 Z" fill="none" stroke="#f3f0ea" stroke-width="14" stroke-linejoin="miter"/>
+  <rect x="62" y="150" width="136" height="104" fill="#ff7a4d"/>
+  <path d="M62 184 H198 M62 220 H198 M130 150 V254" stroke="#171612" stroke-width="8"/>
+  <path d="M96 96 a46 46 0 0 1 68 0" fill="none" stroke="#f3f0ea" stroke-width="10" stroke-linecap="square"/>
+  <path d="M76 76 a74 74 0 0 1 108 0" fill="none" stroke="#f3f0ea" stroke-width="10" stroke-linecap="square" opacity=".55"/>
+</svg></div>
 <div class="brand"><b></b><span id="brand"></span></div>
 <script>
-  // TBD：文字和画面由设计那一步定（大标题、一行副标题、右边的图形）。现在是占位，右边还是从 Grok Bot 站带来的 bot 脸
-  const SUB = { zh: "TBD 副标题 · 非官方学习站", en: "TBD subtitle · an unofficial guide" };
-  const BRAND = { zh: "Saily 新手教程", en: "Saily for beginners" };
+  // 定稿（2026-11-19）：利益点 + 三条线（流量、美国号码、没有 eSIM 的手机）。覆盖范围照官方：200 多个国家和地区
+  const SUB = { zh: "流量套餐 · 美国号码 · 手机不支持 eSIM 也有办法", en: "Online when you land · a US number · even without eSIM" };
+  const BRAND = { zh: "Saily 新手教程 · 非官方", en: "Saily for beginners · unofficial" };
   const COPY = {
-    zh: "TBD 大标题<br><em>Saily</em>",
-    en: "TBD headline<br><em>Saily</em>",
+    zh: "如何爽用 Saily<br><em>出国落地就有网</em>",
+    en: "Get the most<br>out of <em>Saily</em>",
   };
   const q = new URLSearchParams(location.search);
   const lang = q.get("lang") === "en" ? "en" : "zh";
