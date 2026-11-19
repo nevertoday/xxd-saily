@@ -1,0 +1,174 @@
+---
+// 首页：先对新手说话（遇到过的事 → 用 Saily 以后的不同 → 三课入门 → 适不适合），
+// 最后才是给用熟了的人的一张图（整件事的四步）和完整教程路线。
+// 文字是骨架阶段的初稿，事实都出自官方帮助中心；写手按 docs/MAINTAINING.md 的「怎么写」改。
+import Site from "../layouts/Site.astro";
+import Contact from "../components/Contact.astro";
+import { LESSONS, lessonHref, STEPS, stepHref, link, langOf, fullLang, t } from "../data/nav.js";
+import { X as dict, fmt } from "../i18n/index.js";
+
+const lang = langOf(Astro.url.pathname);
+const ZH = {
+  brand: "Saily 新手教程",
+  h1: "出国上网，出发前就准备好",
+  lead: ["Saily 是 Nord Security（做 NordVPN 的那家公司）出的旅行 eSIM。出发前在 App 里买好目的地的流量套餐、装进手机，落地打开数据就能上网，不用再到机场找柜台买卡。它还另外卖一个美国 +1 电话号码，能打电话、收发短信。", "这是非官方学习站", "，和 Saily、Nord Security 都没有关系；功能、价格以官方帮助中心和 App 为准。"],
+  cta: ["新手从这里开始", "用过了，看完整教程"],
+  ctaNote: "新手入门一共三课：先看手机能不能用，再买好套餐装上，最后落地打开数据。",
+  painH: "你是不是也遇到过这些",
+  PAIN: [
+    "落地以后手机没网，叫不了车、看不了地图，只好到处找 Wi-Fi。",
+    "开着国内的卡出国，回来收到一笔漫游费账单。",
+    "在机场排队买当地的卡，换卡时还怕把自己那张弄丢。",
+  ],
+  diffH: "用 Saily 以后，有什么不一样",
+  diffW: "什么时候", diffA: "落地再买当地的卡", diffB: "出发前装好 Saily",
+  DIFF: [
+    ["买卡", "到了机场找柜台、排队", "出发前在 App 里买好"],
+    ["装卡", "取出卡托，换上新卡", "在 App 里把 eSIM 装进手机"],
+    ["落地", "先去买卡，再上网", "打开数据漫游就能上网"],
+  ],
+  lessonsH: "新手只要三课", lessonsP: "按顺序看就行。学完这三课，落地就能上网；网站上别的内容，遇到了再查。",
+  lessonsLabel: "新手入门：共 3 课",
+  fitH: "适不适合你", yesH: "适合", noH: "先不用",
+  YES: ["要出国旅行或出差，想落地就有网", "手机支持 eSIM，或者愿意多买一张能写入 eSIM 的实体卡", "想要一个美国号码打电话、收短信"],
+  NO: ["这趟不出国，只在国内用手机", "要去的地方 Saily 不能用：出发前先在官网查一下目的地", "要用彩信或呼叫转移：Saily 的电话号码不支持这两样"],
+  devH: "用熟以后看这里",
+  devP: "完整教程把每一步讲得更细。整件事其实就四步，一句话一个：",
+  FLOW: [
+    ["Smartphone", "查手机", "看手机支不支持 eSIM。不支持，可以用一张能写入 eSIM 的实体卡。"],
+    ["ShoppingCart", "买套餐", "选目的地和流量。一个国家还是好几个，照你的行程挑。"],
+    ["Download", "装 eSIM", "出发前连着 Wi-Fi，在 App 里装好。"],
+    ["Plane", "落地上网", "让手机用 Saily 上网，给它打开数据漫游。"],
+  ],
+  CONN: ["能用", "买好", "到了"],
+  stepsLabel: (n) => `完整教程：共 ${n} 步`,
+};
+const EN = {
+  brand: "Saily for beginners",
+  h1: "Get online abroad, sorted before you leave",
+  lead: ["Saily is a travel eSIM from Nord Security, the company behind NordVPN. Before your trip you buy a data plan for where you're going and install it from the app, and when you land you turn on data and you're online, with no SIM counter to find at the airport. It also sells a separate +1 US phone number for calls and texts. ", "This is an unofficial guide", ", not affiliated with Saily or Nord Security. For features and prices, the official Help Center and the app are the source of truth."],
+  cta: ["Start here if you're new", "Used it already? The full guide"],
+  ctaNote: "The beginner track is three lessons: check your phone, buy and install a plan, then turn on data when you land.",
+  painH: "Has this happened to you?",
+  PAIN: [
+    "You land, your phone has no internet, and you can't call a ride or open a map, so you go looking for Wi-Fi.",
+    "You travel with your home SIM on and come back to a roaming bill.",
+    "You queue at the airport for a local SIM, then worry about losing your own card while you swap.",
+  ],
+  diffH: "What changes with Saily",
+  diffW: "When", diffA: "Buying a local SIM on arrival", diffB: "Installing Saily before you go",
+  DIFF: [
+    ["Buying", "Find a counter at the airport and queue", "Buy it in the app before you leave"],
+    ["Setting up", "Pop out the tray and swap cards", "Install the eSIM from the app"],
+    ["Landing", "Buy the card first, then get online", "Turn on data roaming and you're online"],
+  ],
+  lessonsH: "Beginners need just three lessons", lessonsP: "Just read them in order. After these three you'll be online when you land, and everything else on the site is there to look up when you need it.",
+  lessonsLabel: "Beginner track: 3 lessons",
+  fitH: "Is it for you?", yesH: "Yes, if", noH: "Not yet, if",
+  YES: ["You're traveling abroad and want data the moment you land", "Your phone supports eSIM, or you're happy to buy a physical card that holds eSIMs", "You want a US number for calls and texts"],
+  NO: ["You're not leaving the country this time", "Saily doesn't work where you're going: check your destination on the official site first", "You need MMS or call forwarding, which the Saily phone number doesn't support"],
+  devH: "Once you're comfortable",
+  devP: "The full guide goes into each step in more detail. The whole thing is four steps, one line each:",
+  FLOW: [
+    ["Smartphone", "Check your phone", "See whether it supports eSIM. If it doesn't, a physical card that holds eSIMs can stand in."],
+    ["ShoppingCart", "Buy a plan", "Pick the destination and the data. One country or several, pick by your trip."],
+    ["Download", "Install the eSIM", "Install it from the app on Wi-Fi before you leave."],
+    ["Plane", "Land and connect", "Switch mobile data to Saily and turn on data roaming for it."],
+  ],
+  CONN: ["it works", "bought", "landed"],
+  stepsLabel: (n) => `Full guide: ${n} steps`,
+};
+// 以后加的语言：文字来自 src/i18n/<语言>.js；FLOW 的图标沿用英文版；完整教程链到英文版
+const x = dict(lang);
+const fl = fullLang(lang);
+const C = x
+  ? { ...EN, ...x.home, brand: x.ui.brand, FLOW: EN.FLOW.map(([icon], i) => [icon, ...(x.home.FLOW[i] ?? EN.FLOW[i].slice(1))]), stepsLabel: (n) => fmt(x.home.stepsLabel, { n }) }
+  : lang === "en" ? EN : ZH;
+const headings = [["h-pain", C.painH], ["h-diff", C.diffH], ["h-lessons", C.lessonsH], ["h-fit", C.fitH], ["h-dev", C.devH]].map(([slug, text]) => ({ slug, text, depth: 2 }));
+---
+<Site title={C.brand} headings={headings}>
+  <div class="home">
+    <h1>{C.h1}</h1>
+    <p class="home__lead">{C.lead[0]}<mark>{C.lead[1]}</mark>{C.lead[2]}</p>
+    <div class="home__cta">
+      <a class="xxd-btn" data-variant="primary" href={lessonHref(LESSONS[0], lang)}>{C.cta[0]}<i data-xxd-icon="ArrowRight" data-size="16"></i></a>
+      <a class="xxd-btn" data-variant="ghost" href={stepHref(STEPS[0], fl)} hreflang={fl === lang ? undefined : fl}>{C.cta[1]}</a>
+    </div>
+    <p class="home__note">{C.ctaNote}</p>
+
+    <section aria-labelledby="h-pain">
+      <h2 id="h-pain">{C.painH}</h2>
+      <ul class="pain">{C.PAIN.map((x) => <li>{x}</li>)}</ul>
+    </section>
+
+    <section aria-labelledby="h-diff">
+      <h2 id="h-diff">{C.diffH}</h2>
+      <div class="xxd-table-wrap diff">
+        <table class="xxd-table">
+          <thead><tr><th scope="col">{C.diffW}</th><th scope="col" data-wrap>{C.diffA}</th><th scope="col" data-wrap>{C.diffB}</th></tr></thead>
+          <tbody>{C.DIFF.map(([w, a, b]) => <tr><th scope="row" class="diff__when">{w}</th><td data-wrap class="diff__before">{a}</td><td data-wrap>{b}</td></tr>)}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-lessons">
+      <h2 id="h-lessons">{C.lessonsH}</h2>
+      <p>{C.lessonsP}</p>
+      <ol class="xxd-steps roadmap" data-vertical aria-label={C.lessonsLabel}>
+        {LESSONS.map((s) => (
+          <li class="xxd-steps__item">
+            <span class="xxd-steps__mark" aria-hidden="true">{s.n}</span>
+            <span class="xxd-steps__text">
+              <a class="xxd-steps__title xxd-steps__link" href={lessonHref(s, lang)}>{t(s, "title", lang)}</a>
+              <span class="xxd-steps__desc">{t(s, "minutes", lang)} · {t(s, "sum", lang)}</span>
+            </span>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section aria-labelledby="h-fit">
+      <h2 id="h-fit">{C.fitH}</h2>
+      <div class="fit">
+        <div class="route"><h3><i data-xxd-icon="CircleCheck" data-size="18"></i>{C.yesH}</h3><ul>{C.YES.map((x) => <li>{x}</li>)}</ul></div>
+        <div class="route"><h3><i data-xxd-icon="CircleX" data-size="18"></i>{C.noH}</h3><ul>{C.NO.map((x) => <li>{x}</li>)}</ul></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-dev">
+      <h2 id="h-dev">{C.devH}</h2>
+      <p>{C.devP}</p>
+      {x && <p class="home__note">{C.devNote}</p>}
+      <div class="flow">
+        {C.FLOW.map(([icon, h, p], i) => (
+          <>
+            {i > 0 && (
+              <div class="flow__conn" aria-hidden="true">
+                <span class="flow__label">{C.CONN[i - 1]}</span>
+                <span class="flow__track"><span class="flow__dot" style={`animation-delay:${(i - 1) * 1.2}s`}></span><i class="flow__head" data-xxd-icon="ChevronRight" data-size="14"></i></span>
+              </div>
+            )}
+            <div class="flow__box" data-mine={i === 1 ? "" : undefined}>
+              <i class="flow__icon" data-xxd-icon={icon} data-size="20"></i>
+              <p class="flow__title">{h}</p>
+              <p class="flow__desc">{p}</p>
+            </div>
+          </>
+        ))}
+      </div>
+      <ol class="xxd-steps roadmap" data-vertical start={STEPS[0].n} aria-label={C.stepsLabel(STEPS.length)}>
+        {STEPS.map((s) => (
+          <li class="xxd-steps__item">
+            <span class="xxd-steps__mark" aria-hidden="true">{s.n}</span>
+            <span class="xxd-steps__text">
+              <a class="xxd-steps__title xxd-steps__link" href={stepHref(s, fl)}>{t(s, "title", fl)}</a>
+              <span class="xxd-steps__desc">{t(s, "minutes", fl)} · {t(s, "sum", fl)}</span>
+            </span>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <Contact />
+  </div>
+</Site>

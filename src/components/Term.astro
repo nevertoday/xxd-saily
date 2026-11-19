@@ -1,0 +1,12 @@
+---
+// 术语：虚线下划线，悬停或键盘聚焦时出一句话解释；点一下进对应的 Wiki 条目
+import { GLOSSARY, wikiHref, langOf, fullLang } from "../data/nav.js";
+interface Props { k: string; text?: string }
+const { k, text } = Astro.props;
+const g = GLOSSARY[k];
+if (!g) throw new Error(`GLOSSARY 里没有「${k}」`);
+const lang = langOf(Astro.url.pathname);
+// 只有中文和英文有 Wiki；其他语言的页面链到英文 Wiki，悬停解释也用英文。页面上显示的词由翻译时传进来的 text 决定
+const zh = lang === "zh";
+---
+<a class="term" href={wikiHref(g.wiki, fullLang(lang))} data-tooltip={zh ? g.tip : g.en.tip}>{text ?? (zh ? k : g.en.label)}</a>

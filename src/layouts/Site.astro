@@ -1,0 +1,296 @@
+---
+// 外壳：顶栏（搜索、主题、语言、GitHub）、左侧导航（主线 8 步 + 栏目）、正文、右侧目录。界面全部用 xxd-ui-kit：
+// 顶栏 xxd-topbar、标志 xxd-logo、左侧 xxd-sidebar（How-to 分组是子菜单）、目录 xxd-toc（跟着滚动高亮）。
+// 中文在根路径，英文在 /en/ 下；语言看路径（langOf），界面文字在下面的 UI 里。
+import { LESSONS, lessonHref, STEPS, stepHref, HOWTO, HOWTO_FLAT, howtoHref, wikiHref, link, REPO, DOCS, DOCS_ZH, LANGS, langInfo, langOf, fullLang, isFull, langHref, t } from "../data/nav.js";
+import { X as dict, fmt } from "../i18n/index.js";
+import { WIKI } from "../data/wiki.js";
+import { WIKI_EN } from "../data/wiki.en.js";
+import { FAQ } from "../data/faq.js";
+import { FAQ_EN } from "../data/faq.en.js";
+import { existsSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { join } from "node:path";
+
+interface Props {
+  title: string;
+  description?: string;
+  headings?: { slug: string; text: string; depth: number }[];
+}
+const UI = {
+  zh: { html: "zh-CN", brand: "Saily 新手教程", desc: "Saily 的非官方学习站：出国用 eSIM 上网、用美国号码打电话，从查手机到落地上网，说人话。", skip: "跳到正文", menu: "打开目录", search: "搜索教程",
+  searchPh: "搜课程、步骤、How-to、名词、问题……", searchEmpty: "没找到，换个词试试", look: "外观", repo: "本教程的 GitHub 仓库", repoMore: "更多：Saily 官方帮助中心", repoDefault: "默认",
+  repos: [[REPO, "本教程", "nevertoday/xxd-saily", "教程的源码，有问题在这里提"], [DOCS_ZH, "Saily 官方帮助中心", "support.saily.com", "功能、价格和用法以这里为准"]],
+  navLabel: "网站目录", start: "开始", home: "首页", lessons: "新手入门：先看这三课", main: "完整教程：想用得更深的人看", pending: "编写中", ref: "查资料", howto: "How-to：具体怎么做",
+  wiki: "Wiki：这是什么", faq: "常见问题", toc: "本页", tocLabel: "本页目录", hintMain: "完整教程", hintLesson: "新手入门", hintFaq: "常见问题", switchTo: "English", switchLabel: "Switch to English",
+  foot: `本站是 Saily 的非官方学习站，和 Saily、Nord Security 都没有关系。功能、价格以 <a href="${DOCS_ZH}">官方帮助中心</a> 和 Saily App 为准。教程源码和问题反馈在 <a href="${REPO}">GitHub</a>。` },
+  en: { html: "en", brand: "Saily for beginners", desc: "An unofficial guide to Saily: travel eSIM data and a US phone number, from checking your phone to getting online when you land, in plain words.", skip: "Skip to content", menu: "Open menu", search: "Search the guide",
+    searchPh: "Search lessons, steps, how-tos, terms, questions…", searchEmpty: "Nothing found. Try another word", look: "Appearance", repo: "This guide on GitHub", repoMore: "More: the Saily Help Center", repoDefault: "Default",
+    repos: [[REPO, "This guide", "nevertoday/xxd-saily", "Source for this guide; file issues here"], [DOCS, "Saily Help Center", "support.saily.com", "The source of truth for features and prices"]],
+    navLabel: "Site navigation", start: "Start", home: "Home", lessons: "Beginner track: start here", main: "Full guide: to go further", pending: "In progress", ref: "Reference", howto: "How-to: how exactly",
+    wiki: "Wiki: what is it", faq: "FAQ", toc: "On this page", tocLabel: "On this page", hintMain: "Full guide", hintLesson: "Beginner track", hintFaq: "FAQ", switchTo: "中文", switchLabel: "切换到中文",
+    foot: `An unofficial guide to Saily, not affiliated with Saily or Nord Security. For features and prices, the <a href="${DOCS}">official Help Center</a> and the Saily app are the source of truth. Source and feedback for this guide are on <a href="${REPO}">GitHub</a>.` },
+};
+const lang = langOf(Astro.url.pathname);
+const info = langInfo(lang);
+// 非全站语言（以后加的）只有首页和新手入门；其余页面和数据都用英文版（fl = "en"）
+const x = dict(lang);
+const fl = fullLang(lang);
+const en = fl === "en";
+const L = x
+  ? { ...UI.en, ...x.ui, html: info.html,
+      repos: UI.en.repos.map((r, i) => [r[0], x.ui.repos?.[i]?.[0] ?? r[1], r[2], x.ui.repos?.[i]?.[1] ?? r[3]]),
+      foot: fmt(x.ui.foot, { docs: `<a href="${DOCS}">${x.ui.docsLink}</a>`, github: `<a href="${REPO}">GitHub</a>` }) }
+  : UI[lang];
+// 语言菜单：每种语言里的同一页；那种语言没有这一页就去它的首页
+const langLinks = LANGS.map((l) => ({ ...l, href: langHref(Astro.url.pathname, l.code) }));
+const rel = (Astro.url.pathname.replace(import.meta.env.BASE_URL.replace(/\/$/, ""), "") || "/");
+const alternates = langLinks.filter((l) => l.code !== lang && (isFull(l.code) || /^\/([a-z]{2}\/)?(start\/|$)/.test(rel)));
+// 外观面板的文字：中文、英文用 UI Kit 自带的，其他语言传进去
+// 顶栏的三个下拉都从触发按钮的末端垂下来。UI Kit 的定位按物理方向算，从右往左的语言里「末端」是左边
+const menuAt = info.dir === "rtl" ? "bottom-start" : "bottom-end";
+const lookOpts = JSON.stringify(x ? { locale: "en", labels: x.ui.appearance } : { locale: lang === "zh" ? "zh-CN" : "en", labels: { cornersDesc: lang === "zh" ? "关掉就是直角" : "Off keeps every corner square" } });
+const wikiItems = WIKI.map((w) => (en ? { ...w, ...WIKI_EN[w.slug] } : w));
+const faqGroups = en ? FAQ_EN : FAQ;
+const { title, description = L.desc, headings = [] } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const cur = (href) => (href.replace(/\/$/, "") || "/") === path;
+// 搜索关键词去掉行内标记（**粗体**、==荧光笔==、++粗墨线++）
+const plain = (x) => x.replace(/\*\*|==|\+\+/g, "");
+const toc = headings.filter((h) => h.depth === 2); // 只列二级标题：标签页里的小标题不进目录
+// 搜索：新手入门每一课、主线每一步、每篇 How-to、每个 Wiki 条目、每条常见问题（xxd 的命令面板，⌘K 打开）
+const searchIndex = JSON.stringify([
+  ...LESSONS.map((x) => ({ label: `${x.n}. ${t(x, "title", lang)}`, hint: L.hintLesson, keywords: t(x, "sum", lang), href: lessonHref(x, lang) })),
+  ...STEPS.map((x) => ({ label: `${x.n}. ${t(x, "title", fl)}`, hint: L.hintMain, keywords: t(x, "sum", fl), href: stepHref(x, fl) })),
+  ...HOWTO_FLAT.map((x) => ({ label: t(x, "title", fl), hint: `How-to · ${en ? x.groupEn : x.group}`, keywords: en ? x.groupEn : x.group, href: howtoHref(x.slug, fl) })),
+  ...wikiItems.map((x) => ({ label: x.title, hint: "Wiki", keywords: plain(x.one), href: wikiHref(x.slug, fl) })),
+  ...faqGroups.flatMap((g) => g.items.map(([q, a], i) => ({ label: q, hint: `${L.hintFaq} · ${g.title}`, keywords: plain(a), href: link(`/faq/#${g.id}-${i + 1}`, fl) }))),
+]);
+// 静态文件带内容指纹（?v=），改了就换地址：/xxd/* 缓存一天、site.css 一小时，不会出现新页面配旧样式
+const ver = (f) => { try { return createHash("sha256").update(readFileSync(join(process.cwd(), "public", f))).digest("hex").slice(0, 10); } catch { return "0"; } };
+const asset = (f) => `${link("/" + f)}?v=${ver(f)}`;
+// 分享大图：public/og.png（中文页）、public/og-en.png（其他语言）放进去了才输出 og:image
+const ogFile = lang === "zh" ? "og.png" : "og-en.png";
+const og = existsSync(join(process.cwd(), "public", ogFile)) ? new URL(link("/" + ogFile), Astro.site) : null;
+const GITHUB_MARK = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>';
+---
+
+<!doctype html>
+<html lang={L.html} dir={info.dir ?? "ltr"}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title === L.brand ? title : `${title} · ${L.brand}`}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={link("/favicon.svg")} type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={L.brand} />
+    <meta property="og:title" content={title === L.brand ? title : `${title} · ${L.brand}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    {og && <meta property="og:image" content={og} />}
+    {og && <meta property="og:image:width" content="2560" />}
+    {og && <meta property="og:image:height" content="1280" />}
+    {alternates.map((l) => <link rel="alternate" hreflang={l.html} href={new URL(l.href, Astro.site)} />)}
+    <meta name="twitter:card" content={og ? "summary_large_image" : "summary"} />
+    {og && <meta name="twitter:image" content={og} />}
+    <style is:inline>@layer theme, base, xxd, components, utilities, site;</style>
+    <script is:inline src={asset("xxd/boot.js")} data-key="xxd-saily-site" data-default-theme="system"></script>
+    <link rel="stylesheet" href={asset("xxd/xxd.css")} />
+    <link rel="stylesheet" href={asset("site.css")} />
+    <script is:inline src={asset("xxd/icons.js")}></script>
+    <script is:inline src={asset("xxd/xxd.js")}></script>
+  </head>
+  <body class="xxd-page">
+    <a class="xxd-sr-only-focusable" href="#main">{L.skip}</a>
+    <header class="xxd-topbar site-top">
+      <button class="xxd-btn site-menu" data-variant="ghost" data-icon-only aria-label={L.menu} id="site-menu" aria-controls="site-nav" aria-expanded="false"><i data-xxd-icon="Menu" data-size="18"></i></button>
+      <a class="xxd-logo site-brand" href={link("/", lang)}><svg class="site-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path class="site-mark__bg" d="M0 0H14L20 6V20H0Z" /><rect class="site-mark__bar" x="5" y="8" width="10" height="7" /><rect class="site-mark__bg" x="9.25" y="8" width="1.5" height="7" opacity=".62" /></svg><span class="site-brand__name">{L.brand}</span></a>
+      <span class="site-top__spacer"></span>
+      <!-- 顶栏和下面三栏用同一套网格（见 site.css）：标志对齐侧栏文字；搜索框占满正文栏，两端对齐正文；外观、语言、GitHub 占满目录栏，两端对齐目录文字。
+           .site-top__end 在宽屏是 display: contents（两样各进各的栏），目录收起后变成正文栏里的一行 -->
+      <div class="site-top__end">
+      <button class="site-search" id="site-search" type="button" aria-label={L.search}><i data-xxd-icon="Search" data-size="16"></i><span>{L.search}</span><kbd class="xxd-kbd">⌘K</kbd></button>
+      <div class="site-tools">
+        <!-- 外观：用 UI Kit 的外观设置组（主题 · 圆角 · 主色），和小小东其他产品同一套、同一份存储；boot.js 在首帧前应用 -->
+        <button class="xxd-btn site-look" data-size="sm" data-variant="ghost" data-icon-only type="button" data-xxd-popover="site-look-pop" aria-label={L.look} data-tooltip={L.look} data-tooltip-placement="bottom">
+          <i data-xxd-icon="Palette" data-size="16"></i>
+          <span class="site-look__dot" id="site-look-dot" hidden></span>
+        </button>
+        <div class="xxd-popover site-look-pop" id="site-look-pop" popover data-placement={menuAt} data-opts={lookOpts}></div>
+        <!-- 语言：菜单里列出全部语言，当前的那个打勾；中文、英文是全站，其他语言有首页和新手入门 -->
+        <button class="xxd-btn site-lang" data-size="sm" data-variant="ghost" type="button" data-xxd-menu="site-lang-menu" aria-label={L.lang ?? (lang === "zh" ? "语言" : "Language")} data-tooltip={L.lang ?? (lang === "zh" ? "语言" : "Language")} data-tooltip-placement="bottom"><i data-xxd-icon="Languages" data-size="16"></i><span class="site-lang__name">{info.name}</span></button>
+        <div class="xxd-menu site-lang-menu" id="site-lang-menu" role="menu" popover data-placement={menuAt}>
+          {langLinks.map((l) => <a class="xxd-menu__item" role="menuitemradio" aria-checked={l.code === lang ? "true" : "false"} href={l.href} hreflang={l.html} lang={l.html}>{l.name}</a>)}
+        </div>
+        <!-- GitHub：点图标直接去本教程的仓库；旁边的小箭头展开，可以去 Saily 官方帮助中心 -->
+        <div class="xxd-btn-group site-gh">
+          <a class="xxd-btn" data-size="sm" data-variant="ghost" data-icon-only href={REPO} aria-label={L.repo} data-tooltip={L.repo} data-tooltip-placement="bottom-end" set:html={GITHUB_MARK} />
+          <button class="xxd-btn site-gh__more" data-size="sm" data-variant="ghost" data-icon-only type="button" data-xxd-menu="site-gh-menu" aria-label={L.repoMore} data-tooltip={L.repoMore} data-tooltip-placement="bottom-end"><i data-xxd-icon="ChevronDown" data-size="14"></i></button>
+        </div>
+        <div class="xxd-menu site-gh-menu" id="site-gh-menu" role="menu" popover data-placement={menuAt}>
+          {L.repos.map(([href, name, path, note], i) => (
+            <a class="xxd-menu__item site-gh-menu__item" role="menuitem" href={href} aria-current={i === 0 ? "true" : undefined}>
+              <span class="site-gh-menu__name">{name}{i === 0 && <span class="site-gh-menu__tag">{L.repoDefault}</span>}</span>
+              <span class="site-gh-menu__path">{path}</span>
+              <span class="site-gh-menu__note">{note}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+      </div>
+    </header>
+
+    <div class="site-body">
+      <nav class="xxd-sidebar site-nav" id="site-nav" aria-label={L.navLabel}>
+        <div class="xxd-sidebar__body">
+          <section class="xxd-sidebar__group">
+            <h2 class="xxd-sidebar__label">{L.start}</h2>
+            <a class="xxd-sidebar__item" href={link("/", lang)} aria-current={cur(link("/", lang)) ? "page" : undefined}><span>{L.home}</span></a>
+          </section>
+          <section class="xxd-sidebar__group">
+            <h2 class="xxd-sidebar__label">{L.lessons}</h2>
+            {LESSONS.map((s) => (
+              <a class="xxd-sidebar__item" href={lessonHref(s, lang)} aria-current={cur(lessonHref(s, lang)) ? "page" : undefined}>
+                <span class="site-nav__num">{s.n}</span><span>{t(s, "title", lang)}</span>
+              </a>
+            ))}
+          </section>
+          {x ? (
+            <section class="xxd-sidebar__group">
+              <h2 class="xxd-sidebar__label">{L.more}</h2>
+              <a class="xxd-sidebar__item" href={stepHref(STEPS[0], "en")} hreflang="en"><span>{L.main}</span></a>
+              <a class="xxd-sidebar__item" href={link("/howto/", "en")} hreflang="en"><span>{L.howto}</span></a>
+              <a class="xxd-sidebar__item" href={link("/wiki/", "en")} hreflang="en"><span>{L.wiki}</span></a>
+              <a class="xxd-sidebar__item" href={link("/faq/", "en")} hreflang="en"><span>{L.faq}</span></a>
+            </section>
+          ) : (
+            <>
+          <section class="xxd-sidebar__group">
+            <h2 class="xxd-sidebar__label">{L.main}</h2>
+            {STEPS.map((s) => s.ready ? (
+              <a class="xxd-sidebar__item" href={stepHref(s, lang)} aria-current={cur(stepHref(s, lang)) ? "page" : undefined}>
+                <span class="site-nav__num">{s.n}</span><span>{t(s, "title", lang)}</span>
+              </a>
+            ) : (
+              <span class="xxd-sidebar__item is-pending"><span class="site-nav__num">{s.n}</span><span>{t(s, "title", lang)}</span><span class="xxd-badge">{L.pending}</span></span>
+            ))}
+          </section>
+          <section class="xxd-sidebar__group">
+            <h2 class="xxd-sidebar__label">{L.ref}</h2>
+            <a class="xxd-sidebar__item" href={link("/howto/", lang)} aria-current={cur(link("/howto/", lang)) ? "page" : undefined}><span>{L.howto}</span></a>
+            {HOWTO.map((g, i) => {
+              const open = g.items.some((it) => cur(howtoHref(it.slug, lang)));
+              return (
+                <>
+                  <button class="xxd-sidebar__item site-nav__sub" type="button" aria-expanded={String(open)} data-sidebar-sub={`site-nav-g${i}`}><span>{t(g, "group", lang)}</span></button>
+                  <div class="xxd-sidebar__sub" id={`site-nav-g${i}`} hidden={!open}>
+                    {g.items.map((it) => <a class="xxd-sidebar__item" href={howtoHref(it.slug, lang)} aria-current={cur(howtoHref(it.slug, lang)) ? "page" : undefined}><span>{t(it, "title", lang)}</span></a>)}
+                  </div>
+                </>
+              );
+            })}
+            <a class="xxd-sidebar__item" href={link("/wiki/", lang)} aria-current={cur(link("/wiki/", lang)) ? "page" : undefined}><span>{L.wiki}</span></a>
+            <a class="xxd-sidebar__item site-nav__faq" href={link("/faq/", lang)} aria-current={cur(link("/faq/", lang)) ? "page" : undefined}><span>{L.faq}</span><span class="site-nav__ping" aria-hidden="true"></span></a>
+          </section>
+            </>
+          )}
+        </div>
+      </nav>
+
+      <main id="main" class="site-main">
+        <slot />
+        <footer class="site-foot"><p set:html={L.foot} /></footer>
+      </main>
+
+      {toc.length > 1 && (
+        <nav class="site-toc" aria-label={L.tocLabel}>
+          <p class="xxd-toc__title">{L.toc}</p>
+          <ul class="xxd-toc" data-spy>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ul>
+        </nav>
+      )}
+    </div>
+    <div class="site-nav-scrim" id="site-nav-scrim"></div>
+
+    <script type="application/json" id="site-search-index" data-opts={JSON.stringify({ placeholder: L.searchPh, empty: L.searchEmpty })} data-base={import.meta.env.BASE_URL} data-sections={`${import.meta.env.BASE_URL}${lang === "zh" ? "" : lang + "/"}search-sections.json`} set:html={searchIndex} />
+    <script is:inline>
+      (() => {
+        const T = window.XxdTheme, X = window.Xxd;
+        if (!T || !X) return;
+        // 外观面板：直接挂 UI Kit 的外观设置组。改了就写进同一份设置，下次打开首帧就是这个样子
+        const pop = document.getElementById("site-look-pop");
+        X.mountAppearance(pop, JSON.parse(pop.dataset.opts || "{}"));
+        // 外观按钮右下角的小圆点：选了主色才出现，就是那个颜色
+        const dot = document.getElementById("site-look-dot");
+        const syncDot = () => {
+          const a = ({ ...T.DEFAULT_SETTINGS, ...T.read() }).accent || "";
+          dot.hidden = !a;
+          if (a) dot.style.background = a;
+        };
+        pop.addEventListener("xxd:appearance", syncDot);
+        window.addEventListener("xxd:settings", syncDot);
+        syncDot();
+        X.init(document);
+
+        // 搜索：⌘K / 点按钮，用 xxd 的命令面板
+        const pages = JSON.parse(document.getElementById("site-search-index").textContent);
+        const items = pages.map((p) => ({ label: p.label, hint: p.hint, keywords: p.keywords, run: () => { location.href = p.href; } }));
+        const opts = JSON.parse(document.getElementById("site-search-index").dataset.opts);
+        const btn = document.getElementById("site-search");
+        btn.addEventListener("click", () => X.openCommandPalette({ items, ...opts }));
+        X.bindCommandPalette(items, opts);
+        // 全文：各篇正文按小节切好的搜索数据（构建时生成），空闲时或要搜索时加载一次，加进同一个列表
+        const idx = document.getElementById("site-search-index");
+        let sections = null;
+        const loadSections = () => {
+          if (sections) return;
+          sections = fetch(idx.dataset.sections).then((r) => (r.ok ? r.json() : [])).then((list) => {
+            const base = idx.dataset.base.replace(/\/$/, "");
+            for (const p of list) items.push({ label: p.label, hint: p.hint, keywords: p.keywords, run: () => { location.href = base + p.href; } });
+          }).catch(() => { sections = null; });
+        };
+        btn.addEventListener("pointerenter", loadSections);
+        btn.addEventListener("focus", loadSections);
+        addEventListener("keydown", (e) => { if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") loadSections(); }, true);
+        (window.requestIdleCallback || ((f) => setTimeout(f, 1500)))(loadSections);
+
+        // 常见问题：从搜索或链接跳到 #某个问题 时，自动展开它
+        const openHash = () => {
+          const el = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+          if (el && el.tagName === "DETAILS") { el.open = true; el.scrollIntoView({ block: "center" }); }
+        };
+        openHash();
+        addEventListener("hashchange", openHash);
+
+        // 窄屏目录抽屉
+        const nav = document.getElementById("site-nav"), scrim = document.getElementById("site-nav-scrim"), menu = document.getElementById("site-menu");
+        const toggle = (on) => {
+          nav.toggleAttribute("data-open", on); scrim.toggleAttribute("data-open", on);
+          menu.setAttribute("aria-expanded", String(on));
+          if (on) (nav.querySelector('[aria-current="page"]') || nav.querySelector("a"))?.focus();
+          else if (nav.contains(document.activeElement)) menu.focus();
+        };
+        menu.addEventListener("click", () => toggle(!nav.hasAttribute("data-open")));
+        scrim.addEventListener("click", () => toggle(false));
+        nav.addEventListener("keydown", (e) => { if (e.key === "Escape" && nav.hasAttribute("data-open")) { e.preventDefault(); toggle(false); } });
+
+        // 检查点：打勾只存在这个浏览器里；存不了（无痕、禁用存储）也照常能勾
+        for (const box of document.querySelectorAll("[data-checkpoint]")) {
+          const key = "xxd-saily-check:" + box.dataset.checkpoint;
+          const inputs = [...box.querySelectorAll("input[type=checkbox]")];
+          const done = box.querySelector(".checkpoint__done");
+          let saved = [];
+          try { saved = JSON.parse(localStorage.getItem(key) || "[]"); } catch {}
+          inputs.forEach((el, i) => { el.checked = !!saved[i]; });
+          const update = () => {
+            const all = inputs.every((el) => el.checked);
+            if (done) done.hidden = !all;
+            try { localStorage.setItem(key, JSON.stringify(inputs.map((el) => el.checked))); } catch {}
+          };
+          inputs.forEach((el) => el.addEventListener("change", update));
+          update();
+        }
+      })();
+    </script>
+  </body>
+</html>

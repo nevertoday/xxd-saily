@@ -1,0 +1,940 @@
+{
+  "fetched": "2026-11-19",
+  "source": "https://support.saily.com/api/v2/help_center",
+  "locales": [
+    "en-us",
+    "zh-cn"
+  ],
+  "pages": {
+    "https://support.saily.com/hc/en-us/articles/12805704050972": {
+      "file": "en-us/12805704050972.md",
+      "title": "How can I purchase Saily eSIM?",
+      "sha": "19a144f03fe0b400",
+      "words": 170
+    },
+    "https://support.saily.com/hc/en-us/articles/12822169782812": {
+      "file": "en-us/12822169782812.md",
+      "title": "How to set up a hotspot with Saily eSIM",
+      "sha": "6a8bbf14bee109e3",
+      "words": 309
+    },
+    "https://support.saily.com/hc/en-us/articles/12822203571100": {
+      "file": "en-us/12822203571100.md",
+      "title": "Can I reinstall an eSIM?",
+      "sha": "44cadc46ed928c16",
+      "words": 310
+    },
+    "https://support.saily.com/hc/en-us/articles/12822397552028": {
+      "file": "en-us/12822397552028.md",
+      "title": "Can I use Saily if my device doesn't support eSIM?",
+      "sha": "ded52e8fa0b18982",
+      "words": 82
+    },
+    "https://support.saily.com/hc/en-us/articles/12823108536476": {
+      "file": "en-us/12823108536476.md",
+      "title": "How to check if my Saily eSIM is activated?",
+      "sha": "89dae5919233efbc",
+      "words": 195
+    },
+    "https://support.saily.com/hc/en-us/articles/12823150321052": {
+      "file": "en-us/12823150321052.md",
+      "title": "What happens when I run out of data on my eSIM?",
+      "sha": "f34de32e6b6c8dee",
+      "words": 136
+    },
+    "https://support.saily.com/hc/en-us/articles/12823154589724": {
+      "file": "en-us/12823154589724.md",
+      "title": "How can I check my current Saily data usage?",
+      "sha": "2238b397b75c0971",
+      "words": 219
+    },
+    "https://support.saily.com/hc/en-us/articles/12823160758044": {
+      "file": "en-us/12823160758044.md",
+      "title": "Does an eSIM require a data plan?",
+      "sha": "d1e336bbc8c9fcd4",
+      "words": 24
+    },
+    "https://support.saily.com/hc/en-us/articles/12823216658204": {
+      "file": "en-us/12823216658204.md",
+      "title": "Can I top up an eSIM?",
+      "sha": "8db24cfcf1ad9439",
+      "words": 145
+    },
+    "https://support.saily.com/hc/en-us/articles/12838788763164": {
+      "file": "en-us/12838788763164.md",
+      "title": "How to fix Saily eSIM problems: installation errors, no internet, and slow data",
+      "sha": "745a32372f7dfe59",
+      "words": 5325
+    },
+    "https://support.saily.com/hc/en-us/articles/13269281273372": {
+      "file": "en-us/13269281273372.md",
+      "title": "How to take and send a screenshot",
+      "sha": "327ac98493a12842",
+      "words": 460
+    },
+    "https://support.saily.com/hc/en-us/articles/13318373425180": {
+      "file": "en-us/13318373425180.md",
+      "title": "How to check if my device is eSIM compatible?",
+      "sha": "e5c984b94e97aaa1",
+      "words": 475
+    },
+    "https://support.saily.com/hc/en-us/articles/13338388172828": {
+      "file": "en-us/13338388172828.md",
+      "title": "How to fix Android no net issue?",
+      "sha": "d0c7ed222496e621",
+      "words": 934
+    },
+    "https://support.saily.com/hc/en-us/articles/13357933521436": {
+      "file": "en-us/13357933521436.md",
+      "title": "How to fix iOS network connection issues?",
+      "sha": "fe2fe554d3c12737",
+      "words": 492
+    },
+    "https://support.saily.com/hc/en-us/articles/13667167229596": {
+      "file": "en-us/13667167229596.md",
+      "title": "How to fix Google Pixel no net issue?",
+      "sha": "4895adc9af21d69d",
+      "words": 827
+    },
+    "https://support.saily.com/hc/en-us/articles/13718527919900": {
+      "file": "en-us/13718527919900.md",
+      "title": "Will iMessage/WhatsApp work with an eSIM?",
+      "sha": "e141ec5927107ea6",
+      "words": 348
+    },
+    "https://support.saily.com/hc/en-us/articles/13798863550492": {
+      "file": "en-us/13798863550492.md",
+      "title": "Does Saily provide bundle/regional plans?",
+      "sha": "a6f4bfc67145e2a9",
+      "words": 280
+    },
+    "https://support.saily.com/hc/en-us/articles/14262137198236": {
+      "file": "en-us/14262137198236.md",
+      "title": "Does Saily have a referral program?",
+      "sha": "eae7bbfbf61f16c9",
+      "words": 221
+    },
+    "https://support.saily.com/hc/en-us/articles/15492404637084": {
+      "file": "en-us/15492404637084.md",
+      "title": "How to troubleshoot slow speed issues on iOS",
+      "sha": "2c2bcc894721d526",
+      "words": 280
+    },
+    "https://support.saily.com/hc/en-us/articles/15494022819228": {
+      "file": "en-us/15494022819228.md",
+      "title": "How to troubleshoot slow speed issues on Android",
+      "sha": "6a4b1ede499d4473",
+      "words": 244
+    },
+    "https://support.saily.com/hc/en-us/articles/15511041342748": {
+      "file": "en-us/15511041342748.md",
+      "title": "How to transfer Saily eSIM from iOS to another device",
+      "sha": "183e379638825a01",
+      "words": 182
+    },
+    "https://support.saily.com/hc/en-us/articles/15530928047516": {
+      "file": "en-us/15530928047516.md",
+      "title": "How to transfer Saily eSIM from Android to another device",
+      "sha": "5d59fedebafb025c",
+      "words": 197
+    },
+    "https://support.saily.com/hc/en-us/articles/15636670187164": {
+      "file": "en-us/15636670187164.md",
+      "title": "How to troubleshoot slow speed issues on Google Pixel",
+      "sha": "76d73ab961174cbc",
+      "words": 249
+    },
+    "https://support.saily.com/hc/en-us/articles/15697852689052": {
+      "file": "en-us/15697852689052.md",
+      "title": "How to use a Saily coupon/voucher code",
+      "sha": "db50c571701c2b90",
+      "words": 104
+    },
+    "https://support.saily.com/hc/en-us/articles/15698622789148": {
+      "file": "en-us/15698622789148.md",
+      "title": "How to create a Saily account",
+      "sha": "a56059bacd896939",
+      "words": 190
+    },
+    "https://support.saily.com/hc/en-us/articles/15750378798236": {
+      "file": "en-us/15750378798236.md",
+      "title": "How to enable Data Roaming?",
+      "sha": "f6904a9d787cf7aa",
+      "words": 259
+    },
+    "https://support.saily.com/hc/en-us/articles/15751399206172": {
+      "file": "en-us/15751399206172.md",
+      "title": "How do I install a Saily eSIM on my phone?",
+      "sha": "e539dd4c64787ece",
+      "words": 3049
+    },
+    "https://support.saily.com/hc/en-us/articles/15751572038300": {
+      "file": "en-us/15751572038300.md",
+      "title": "How to activate my Saily eSIM?",
+      "sha": "56838068de6bbd0e",
+      "words": 386
+    },
+    "https://support.saily.com/hc/en-us/articles/16420576170652": {
+      "file": "en-us/16420576170652.md",
+      "title": "What is Saily's refund policy?",
+      "sha": "1be48ab293f5b9d4",
+      "words": 192
+    },
+    "https://support.saily.com/hc/en-us/articles/16436358702108": {
+      "file": "en-us/16436358702108.md",
+      "title": "How to turn off an eSIM?",
+      "sha": "7c860f53625b142d",
+      "words": 184
+    },
+    "https://support.saily.com/hc/en-us/articles/16516513668636": {
+      "file": "en-us/16516513668636.md",
+      "title": "How to get an invoice?",
+      "sha": "40bb7a17a43552fa",
+      "words": 173
+    },
+    "https://support.saily.com/hc/en-us/articles/16518272109212": {
+      "file": "en-us/16518272109212.md",
+      "title": "Can I check my Saily eSIM balance?",
+      "sha": "04c6dc4168515c06",
+      "words": 55
+    },
+    "https://support.saily.com/hc/en-us/articles/16747226859164": {
+      "file": "en-us/16747226859164.md",
+      "title": "Can I receive phone calls on my primary number while using Saily eSIM?",
+      "sha": "03c9e75069d11f64",
+      "words": 349
+    },
+    "https://support.saily.com/hc/en-us/articles/16927103076892": {
+      "file": "en-us/16927103076892.md",
+      "title": "How do I install the Saily App on my device?",
+      "sha": "cb98aec2b672c892",
+      "words": 267
+    },
+    "https://support.saily.com/hc/en-us/articles/16927592788636": {
+      "file": "en-us/16927592788636.md",
+      "title": "Which devices support eSIMs?",
+      "sha": "94682ea8622c0084",
+      "words": 81
+    },
+    "https://support.saily.com/hc/en-us/articles/16929378623004": {
+      "file": "en-us/16929378623004.md",
+      "title": "Which languages does Saily support?",
+      "sha": "d203790e5353be8c",
+      "words": 498
+    },
+    "https://support.saily.com/hc/en-us/articles/16931801671068": {
+      "file": "en-us/16931801671068.md",
+      "title": "How do I reinstall the Saily App on my device?",
+      "sha": "d714b80cc87d314e",
+      "words": 236
+    },
+    "https://support.saily.com/hc/en-us/articles/17026627259164": {
+      "file": "en-us/17026627259164.md",
+      "title": "How to change your fiscal region when purchasing a plan",
+      "sha": "ed6525df91d3a719",
+      "words": 101
+    },
+    "https://support.saily.com/hc/en-us/articles/17463257396508": {
+      "file": "en-us/17463257396508.md",
+      "title": "What is Saily Web protection?",
+      "sha": "db0e02e6e1de5941",
+      "words": 139
+    },
+    "https://support.saily.com/hc/en-us/articles/17464251910428": {
+      "file": "en-us/17464251910428.md",
+      "title": "What are Saily virtual locations?",
+      "sha": "29313874b9607f3c",
+      "words": 316
+    },
+    "https://support.saily.com/hc/en-us/articles/17464798496796": {
+      "file": "en-us/17464798496796.md",
+      "title": "What is Saily Ad Blocker?",
+      "sha": "0fa3a651f10411f4",
+      "words": 190
+    },
+    "https://support.saily.com/hc/en-us/articles/17770364559516": {
+      "file": "en-us/17770364559516.md",
+      "title": "How to contact Saily customer support",
+      "sha": "a19d4191aab1eb6f",
+      "words": 518
+    },
+    "https://support.saily.com/hc/en-us/articles/18420316369692": {
+      "file": "en-us/18420316369692.md",
+      "title": "How does Saily eSIMs for business work?",
+      "sha": "8de9228c42fc25a8",
+      "words": 370
+    },
+    "https://support.saily.com/hc/en-us/articles/19043096130332": {
+      "file": "en-us/19043096130332.md",
+      "title": "Does Saily have an affiliate program?",
+      "sha": "49cb306524c5a235",
+      "words": 32
+    },
+    "https://support.saily.com/hc/en-us/articles/20105542335132": {
+      "file": "en-us/20105542335132.md",
+      "title": "What is Saily Auto Top-Up?",
+      "sha": "6bb107df4f5a581a",
+      "words": 359
+    },
+    "https://support.saily.com/hc/en-us/articles/20269649356828": {
+      "file": "en-us/20269649356828.md",
+      "title": "How do I get an additional Saily eSIM?",
+      "sha": "5d8c9f3dfdfc58ee",
+      "words": 179
+    },
+    "https://support.saily.com/hc/en-us/articles/20793044376092": {
+      "file": "en-us/20793044376092.md",
+      "title": "How to avoid roaming charges while using Saily?",
+      "sha": "24b3451ab31fdbea",
+      "words": 550
+    },
+    "https://support.saily.com/hc/en-us/articles/21484628749084": {
+      "file": "en-us/21484628749084.md",
+      "title": "Saily data plan management",
+      "sha": "bdd1c206325b45cb",
+      "words": 154
+    },
+    "https://support.saily.com/hc/en-us/articles/21926290717980": {
+      "file": "en-us/21926290717980.md",
+      "title": "Supported lounge destinations",
+      "sha": "1f9a03f940022772",
+      "words": 49
+    },
+    "https://support.saily.com/hc/en-us/articles/22255302743964": {
+      "file": "en-us/22255302743964.md",
+      "title": "Supported fast-track destinations",
+      "sha": "2a1fc2822f2e73fc",
+      "words": 55
+    },
+    "https://support.saily.com/hc/en-us/articles/23595125732508": {
+      "file": "en-us/23595125732508.md",
+      "title": "What is Apple's \"Hide My Email\" and where to find your Saily account email?",
+      "sha": "8e47250c9c5c8bc8",
+      "words": 423
+    },
+    "https://support.saily.com/hc/en-us/articles/24617942070556": {
+      "file": "en-us/24617942070556.md",
+      "title": "What is ICCID number and why is it important?",
+      "sha": "e9f5bb99dc291c0a",
+      "words": 740
+    },
+    "https://support.saily.com/hc/en-us/articles/25026748831644": {
+      "file": "en-us/25026748831644.md",
+      "title": "How to check the latest Saily app version and keep it up-to-date?",
+      "sha": "7920a21385bdb646",
+      "words": 516
+    },
+    "https://support.saily.com/hc/en-us/articles/25332679316252": {
+      "file": "en-us/25332679316252.md",
+      "title": "How to disable background services",
+      "sha": "cdd7f8ac69baaa74",
+      "words": 326
+    },
+    "https://support.saily.com/hc/en-us/articles/25455420492572": {
+      "file": "en-us/25455420492572.md",
+      "title": "What is Saily Ultra?",
+      "sha": "97a9b7df10b083a2",
+      "words": 693
+    },
+    "https://support.saily.com/hc/en-us/articles/25700495342492": {
+      "file": "en-us/25700495342492.md",
+      "title": "What is Saily fast-track service?",
+      "sha": "7339f5d122d29a0a",
+      "words": 367
+    },
+    "https://support.saily.com/hc/en-us/articles/27276323644572": {
+      "file": "en-us/27276323644572.md",
+      "title": "What is Saily?",
+      "sha": "3bf207c2329f1873",
+      "words": 363
+    },
+    "https://support.saily.com/hc/en-us/articles/27276554064924": {
+      "file": "en-us/27276554064924.md",
+      "title": "What is an eSIM?",
+      "sha": "8cf78564794ae564",
+      "words": 577
+    },
+    "https://support.saily.com/hc/en-us/articles/27480241534620": {
+      "file": "en-us/27480241534620.md",
+      "title": "How to delete my Saily Account?",
+      "sha": "99e37cda0a90f2d9",
+      "words": 132
+    },
+    "https://support.saily.com/hc/en-us/articles/27480300684060": {
+      "file": "en-us/27480300684060.md",
+      "title": "How to rename the Saily eSIM?",
+      "sha": "5121326fbdbc3de1",
+      "words": 90
+    },
+    "https://support.saily.com/hc/en-us/articles/27480306670876": {
+      "file": "en-us/27480306670876.md",
+      "title": "I can’t make a payment to Saily",
+      "sha": "a374092abb778bbb",
+      "words": 176
+    },
+    "https://support.saily.com/hc/en-us/articles/27948598334620": {
+      "file": "en-us/27948598334620.md",
+      "title": "What is a Saily phone number?",
+      "sha": "07affd21a8b7b5df",
+      "words": 533
+    },
+    "https://support.saily.com/hc/en-us/articles/27948666453404": {
+      "file": "en-us/27948666453404.md",
+      "title": "How do SMS and MMS work with Saily phone number?",
+      "sha": "8f9cc30825f6234b",
+      "words": 275
+    },
+    "https://support.saily.com/hc/en-us/articles/27948683924380": {
+      "file": "en-us/27948683924380.md",
+      "title": "How do Saily phone number minutes and billing work?",
+      "sha": "77323a3b70b8f5dd",
+      "words": 294
+    },
+    "https://support.saily.com/hc/en-us/articles/27948689277596": {
+      "file": "en-us/27948689277596.md",
+      "title": "Can I use Saily phone number for OTP and 2FA?",
+      "sha": "c251e7ea0651bc94",
+      "words": 432
+    },
+    "https://support.saily.com/hc/en-us/articles/27948695958684": {
+      "file": "en-us/27948695958684.md",
+      "title": "Which countries support Saily phone number calls?",
+      "sha": "c1dd03ccf119238f",
+      "words": 441
+    },
+    "https://support.saily.com/hc/en-us/articles/29110860512028": {
+      "file": "en-us/29110860512028.md",
+      "title": "How to use your Saily eSIM in Turkey: what to expect and how to prepare?",
+      "sha": "f8a4c39a088f7f16",
+      "words": 808
+    },
+    "https://support.saily.com/hc/en-us/articles/29215830812444": {
+      "file": "en-us/29215830812444.md",
+      "title": "What is a Saily Cruise eSIM plan?",
+      "sha": "f85394ec640591b2",
+      "words": 729
+    },
+    "https://support.saily.com/hc/en-us/articles/29288111980060": {
+      "file": "en-us/29288111980060.md",
+      "title": "What are the types of documents Saily accepts for the Phone Numbers KYC verification?",
+      "sha": "a226b611a9b66ec9",
+      "words": 978
+    },
+    "https://support.saily.com/hc/en-us/articles/29726976242332": {
+      "file": "en-us/29726976242332.md",
+      "title": "I got an SMS from Saily - what is it?",
+      "sha": "55e2a02776e2c417",
+      "words": 453
+    },
+    "https://support.saily.com/hc/en-us/articles/29753248333724": {
+      "file": "en-us/29753248333724.md",
+      "title": "What is the Saily Family Plan (Shared Plan)?",
+      "sha": "1e3d0a79808ed2d9",
+      "words": 448
+    },
+    "https://support.saily.com/hc/en-us/articles/30330925461660": {
+      "file": "en-us/30330925461660.md",
+      "title": "How to find and update the Saily app version?",
+      "sha": "b3ff62b9e3ef3c03",
+      "words": 332
+    },
+    "https://support.saily.com/hc/en-us/articles/31030534656924": {
+      "file": "en-us/31030534656924.md",
+      "title": "What payment methods does Saily support?",
+      "sha": "5f8b683fdca428ff",
+      "words": 121
+    },
+    "https://support.saily.com/hc/en-us/articles/31072966285724": {
+      "file": "en-us/31072966285724.md",
+      "title": "How to gift someone a Saily eSIM?",
+      "sha": "a8cc2225a804c6c3",
+      "words": 639
+    },
+    "https://support.saily.com/hc/en-us/articles/31089593239452": {
+      "file": "en-us/31089593239452.md",
+      "title": "How to cancel a Saily subscription or auto-renewal?",
+      "sha": "51bb6562355a6351",
+      "words": 307
+    },
+    "https://support.saily.com/hc/en-us/articles/31091827466140": {
+      "file": "en-us/31091827466140.md",
+      "title": "What countries and regions does Saily cover?",
+      "sha": "5993914d75d01153",
+      "words": 446
+    },
+    "https://support.saily.com/hc/en-us/articles/31092295169948": {
+      "file": "en-us/31092295169948.md",
+      "title": "How Saily data plans work: total vs daily data, Unlimited plans, and speed limits",
+      "sha": "615d88c45f6d129e",
+      "words": 425
+    },
+    "https://support.saily.com/hc/en-us/articles/31763970183196": {
+      "file": "en-us/31763970183196.md",
+      "title": "What is ClassPass with Saily Ultra?",
+      "sha": "e67ef14ab411b889",
+      "words": 615
+    },
+    "https://support.saily.com/hc/en-us/articles/31797245183516": {
+      "file": "en-us/31797245183516.md",
+      "title": "Why should I move my Saily eSIM?",
+      "sha": "0036117f1f821d74",
+      "words": 971
+    },
+    "https://support.saily.com/hc/zh-cn/articles/12805704050972": {
+      "file": "zh-cn/12805704050972.md",
+      "title": "如何购买 Saily eSIM？",
+      "sha": "1fe275cd4eeed43f",
+      "words": 271
+    },
+    "https://support.saily.com/hc/zh-cn/articles/12822169782812": {
+      "file": "zh-cn/12822169782812.md",
+      "title": "如何使用 Saily eSIM 设置热点",
+      "sha": "ea22e5da89a757c6",
+      "words": 512
+    },
+    "https://support.saily.com/hc/zh-cn/articles/12822203571100": {
+      "file": "zh-cn/12822203571100.md",
+      "title": "我可以重新安装 eSIM 吗？",
+      "sha": "77bad90e3d22d1d1",
+      "words": 495
+    },
+    "https://support.saily.com/hc/zh-cn/articles/12822397552028": {
+      "file": "zh-cn/12822397552028.md",
+      "title": "如果我的设备不支持 eSIM，是否可以使用 Saily？",
+      "sha": "00a0230a02fcf312",
+      "words": 118
+    },
+    "https://support.saily.com/hc/zh-cn/articles/12823108536476": {
+      "file": "zh-cn/12823108536476.md",
+      "title": "如何检查 Saily eSIM 是否已激活？",
+      "sha": "ec821e9b8f1c4396",
+      "words": 344
+    },
+    "https://support.saily.com/hc/zh-cn/articles/12823150321052": {
+      "file": "zh-cn/12823150321052.md",
+      "title": "如果我的 eSIM 流量用完了，会发生什么情况？",
+      "sha": "7757f7083675900f",
+      "words": 221
+    },
+    "https://support.saily.com/hc/zh-cn/articles/12823154589724": {
+      "file": "zh-cn/12823154589724.md",
+      "title": "如何查看我当前的 Saily 数据流量使用情况？",
+      "sha": "a9d8179f1a86f3b1",
+      "words": 358
+    },
+    "https://support.saily.com/hc/zh-cn/articles/12823160758044": {
+      "file": "zh-cn/12823160758044.md",
+      "title": "eSIM 是否需要流量套餐？",
+      "sha": "dede88f77e8504f8",
+      "words": 38
+    },
+    "https://support.saily.com/hc/zh-cn/articles/12823216658204": {
+      "file": "zh-cn/12823216658204.md",
+      "title": "我可以为 eSIM 充值吗？",
+      "sha": "923aff16d6fa5767",
+      "words": 247
+    },
+    "https://support.saily.com/hc/zh-cn/articles/12838788763164": {
+      "file": "zh-cn/12838788763164.md",
+      "title": "如何解决 Saily eSIM 问题：安装错误、无法上网以及网速慢",
+      "sha": "c951af8eba0328f7",
+      "words": 7825
+    },
+    "https://support.saily.com/hc/zh-cn/articles/13269281273372": {
+      "file": "zh-cn/13269281273372.md",
+      "title": "如何截图并发送",
+      "sha": "66c443259c7fad33",
+      "words": 766
+    },
+    "https://support.saily.com/hc/zh-cn/articles/13318373425180": {
+      "file": "zh-cn/13318373425180.md",
+      "title": "如何检查我的设备是否兼容 eSIM？",
+      "sha": "a568c6ffa22c71b7",
+      "words": 808
+    },
+    "https://support.saily.com/hc/zh-cn/articles/13338388172828": {
+      "file": "zh-cn/13338388172828.md",
+      "title": "如何解决 Android 无网络问题？",
+      "sha": "d551bd4433b59a58",
+      "words": 1530
+    },
+    "https://support.saily.com/hc/zh-cn/articles/13357933521436": {
+      "file": "zh-cn/13357933521436.md",
+      "title": "如何解决 iOS 网络连接问题？",
+      "sha": "bda31264aa755b1c",
+      "words": 754
+    },
+    "https://support.saily.com/hc/zh-cn/articles/13667167229596": {
+      "file": "zh-cn/13667167229596.md",
+      "title": "如何解决 Google Pixel 无网络问题？",
+      "sha": "caa020b90ef6c7a4",
+      "words": 1447
+    },
+    "https://support.saily.com/hc/zh-cn/articles/13718527919900": {
+      "file": "zh-cn/13718527919900.md",
+      "title": "iMessage/WhatsApp 可以使用 eSIM 吗？",
+      "sha": "d0e9812013bd7fdf",
+      "words": 513
+    },
+    "https://support.saily.com/hc/zh-cn/articles/13798863550492": {
+      "file": "zh-cn/13798863550492.md",
+      "title": "Saily 是否提供捆绑包/区域套餐？",
+      "sha": "231556a0253d27e1",
+      "words": 506
+    },
+    "https://support.saily.com/hc/zh-cn/articles/14262137198236": {
+      "file": "zh-cn/14262137198236.md",
+      "title": "Saily 有没有推荐计划？",
+      "sha": "9618c88c035b2339",
+      "words": 358
+    },
+    "https://support.saily.com/hc/zh-cn/articles/15492404637084": {
+      "file": "zh-cn/15492404637084.md",
+      "title": "如何排除 iOS 上的网速缓慢问题",
+      "sha": "f0514cbe0d6085ca",
+      "words": 434
+    },
+    "https://support.saily.com/hc/zh-cn/articles/15494022819228": {
+      "file": "zh-cn/15494022819228.md",
+      "title": "如何在 Android 上排除网速缓慢问题",
+      "sha": "4adb5ff407f6e6ed",
+      "words": 389
+    },
+    "https://support.saily.com/hc/zh-cn/articles/15511041342748": {
+      "file": "zh-cn/15511041342748.md",
+      "title": "如何将 Saily eSIM 从 iOS 设备转移到其他设备",
+      "sha": "ea923b31fc96fecf",
+      "words": 276
+    },
+    "https://support.saily.com/hc/zh-cn/articles/15530928047516": {
+      "file": "zh-cn/15530928047516.md",
+      "title": "如何将 Saily eSIM 从 Android 设备转移到其他设备",
+      "sha": "3641a6d62efedb4a",
+      "words": 311
+    },
+    "https://support.saily.com/hc/zh-cn/articles/15636670187164": {
+      "file": "zh-cn/15636670187164.md",
+      "title": "如何排除 Google Pixel 上的网速缓慢问题",
+      "sha": "2e13e676c5dcc9ef",
+      "words": 423
+    },
+    "https://support.saily.com/hc/zh-cn/articles/15697852689052": {
+      "file": "zh-cn/15697852689052.md",
+      "title": "如何使用 Saily 优惠券/礼券代码",
+      "sha": "ceece2ebacdb281e",
+      "words": 162
+    },
+    "https://support.saily.com/hc/zh-cn/articles/15698622789148": {
+      "file": "zh-cn/15698622789148.md",
+      "title": "如何创建 Saily 账户",
+      "sha": "479404398e103efa",
+      "words": 228
+    },
+    "https://support.saily.com/hc/zh-cn/articles/15750378798236": {
+      "file": "zh-cn/15750378798236.md",
+      "title": "如何启用数据漫游？",
+      "sha": "78cdcfb6fd947c05",
+      "words": 428
+    },
+    "https://support.saily.com/hc/zh-cn/articles/15751399206172": {
+      "file": "zh-cn/15751399206172.md",
+      "title": "如何在设备上安装 Saily eSIM？",
+      "sha": "1f315374c76c9f82",
+      "words": 3904
+    },
+    "https://support.saily.com/hc/zh-cn/articles/15751572038300": {
+      "file": "zh-cn/15751572038300.md",
+      "title": "如何激活 Saily eSIM？",
+      "sha": "c7e502e56a0aac6c",
+      "words": 784
+    },
+    "https://support.saily.com/hc/zh-cn/articles/16420576170652": {
+      "file": "zh-cn/16420576170652.md",
+      "title": "Saily 的退款政策是什么？",
+      "sha": "dc6f1479fc872df4",
+      "words": 256
+    },
+    "https://support.saily.com/hc/zh-cn/articles/16436358702108": {
+      "file": "zh-cn/16436358702108.md",
+      "title": "如何关闭 eSIM？",
+      "sha": "df83f68383248316",
+      "words": 274
+    },
+    "https://support.saily.com/hc/zh-cn/articles/16516513668636": {
+      "file": "zh-cn/16516513668636.md",
+      "title": "如何获取发票？",
+      "sha": "04adca1f472cb122",
+      "words": 247
+    },
+    "https://support.saily.com/hc/zh-cn/articles/16518272109212": {
+      "file": "zh-cn/16518272109212.md",
+      "title": "我可以查看我的 Saily eSIM 余额吗？",
+      "sha": "08b0f8f50f714553",
+      "words": 101
+    },
+    "https://support.saily.com/hc/zh-cn/articles/16747226859164": {
+      "file": "zh-cn/16747226859164.md",
+      "title": "在使用 Saily eSIM 期間，能否使用主號碼接聽電話？",
+      "sha": "03cd7dd918f8c2c7",
+      "words": 610
+    },
+    "https://support.saily.com/hc/zh-cn/articles/16927103076892": {
+      "file": "zh-cn/16927103076892.md",
+      "title": "如何在设备上安装 Saily 应用？",
+      "sha": "7c276fff9e76a0b5",
+      "words": 368
+    },
+    "https://support.saily.com/hc/zh-cn/articles/16927592788636": {
+      "file": "zh-cn/16927592788636.md",
+      "title": "哪些设备支持 eSIM？",
+      "sha": "7a530088c54ea98e",
+      "words": 155
+    },
+    "https://support.saily.com/hc/zh-cn/articles/16929378623004": {
+      "file": "zh-cn/16929378623004.md",
+      "title": "Saily 支持哪些语言？",
+      "sha": "eaf707684071c99c",
+      "words": 811
+    },
+    "https://support.saily.com/hc/zh-cn/articles/16931801671068": {
+      "file": "zh-cn/16931801671068.md",
+      "title": "如何在我的设备上重新安装 Saily 应用？",
+      "sha": "6af05ff79b3bdb39",
+      "words": 375
+    },
+    "https://support.saily.com/hc/zh-cn/articles/17026627259164": {
+      "file": "zh-cn/17026627259164.md",
+      "title": "购买套餐时如何更改您的税务地区",
+      "sha": "28f442d5260d885a",
+      "words": 168
+    },
+    "https://support.saily.com/hc/zh-cn/articles/17463257396508": {
+      "file": "zh-cn/17463257396508.md",
+      "title": "Saily 网络保护功能是什么？",
+      "sha": "549f7121d6af0b08",
+      "words": 229
+    },
+    "https://support.saily.com/hc/zh-cn/articles/17464251910428": {
+      "file": "zh-cn/17464251910428.md",
+      "title": "Saily 虚拟位置是什么？",
+      "sha": "fb09e97401a6a6cf",
+      "words": 292
+    },
+    "https://support.saily.com/hc/zh-cn/articles/17464798496796": {
+      "file": "zh-cn/17464798496796.md",
+      "title": "何为 Saily 广告拦截器？",
+      "sha": "2e05f1d8a3d6b868",
+      "words": 335
+    },
+    "https://support.saily.com/hc/zh-cn/articles/17770364559516": {
+      "file": "zh-cn/17770364559516.md",
+      "title": "如何联系 Saily 客户支持",
+      "sha": "2f400d2b3318ffed",
+      "words": 847
+    },
+    "https://support.saily.com/hc/zh-cn/articles/18420316369692": {
+      "file": "zh-cn/18420316369692.md",
+      "title": "商务版 Saily eSIM 如何运作？",
+      "sha": "de30b0f063d06c6e",
+      "words": 622
+    },
+    "https://support.saily.com/hc/zh-cn/articles/19043096130332": {
+      "file": "zh-cn/19043096130332.md",
+      "title": "Saily 有推广伙伴计划吗？",
+      "sha": "c75c152b9b40901d",
+      "words": 63
+    },
+    "https://support.saily.com/hc/zh-cn/articles/20105542335132": {
+      "file": "zh-cn/20105542335132.md",
+      "title": "什么是 Saily 自动充值？",
+      "sha": "bbb6b0151ac6f658",
+      "words": 557
+    },
+    "https://support.saily.com/hc/zh-cn/articles/20269649356828": {
+      "file": "zh-cn/20269649356828.md",
+      "title": "如何获取多个 Saily eSIM？",
+      "sha": "d011005999c854db",
+      "words": 298
+    },
+    "https://support.saily.com/hc/zh-cn/articles/20793044376092": {
+      "file": "zh-cn/20793044376092.md",
+      "title": "如何在使用 Saily 时避免产生漫游费？",
+      "sha": "567a2ce327df3aa7",
+      "words": 947
+    },
+    "https://support.saily.com/hc/zh-cn/articles/21484628749084": {
+      "file": "zh-cn/21484628749084.md",
+      "title": "Saily 流量套餐管理",
+      "sha": "476d5afd98c904e5",
+      "words": 227
+    },
+    "https://support.saily.com/hc/zh-cn/articles/21926290717980": {
+      "file": "zh-cn/21926290717980.md",
+      "title": "支持的贵宾室目的地",
+      "sha": "eaf018b7515ef9ee",
+      "words": 117
+    },
+    "https://support.saily.com/hc/zh-cn/articles/22255302743964": {
+      "file": "zh-cn/22255302743964.md",
+      "title": "支持的快速通道目的地",
+      "sha": "b0c4897372e0bd15",
+      "words": 142
+    },
+    "https://support.saily.com/hc/zh-cn/articles/23595125732508": {
+      "file": "zh-cn/23595125732508.md",
+      "title": "什么是 Apple'的 \"“隐藏我的邮箱”\"？在哪里可以找到您的 Saily 账号邮箱？",
+      "sha": "35161e2464cbbcc9",
+      "words": 773
+    },
+    "https://support.saily.com/hc/zh-cn/articles/24617942070556": {
+      "file": "zh-cn/24617942070556.md",
+      "title": "什么是 ICCID 号码？为什么它很重要？",
+      "sha": "b2c753782d62cb3f",
+      "words": 1216
+    },
+    "https://support.saily.com/hc/zh-cn/articles/25026748831644": {
+      "file": "zh-cn/25026748831644.md",
+      "title": "如何查看 Saily 应用的最新版本并保持更新？",
+      "sha": "2554bb5762c5dba9",
+      "words": 840
+    },
+    "https://support.saily.com/hc/zh-cn/articles/25332679316252": {
+      "file": "zh-cn/25332679316252.md",
+      "title": "如何禁用后台服务",
+      "sha": "10a65922397e7ba1",
+      "words": 583
+    },
+    "https://support.saily.com/hc/zh-cn/articles/25455420492572": {
+      "file": "zh-cn/25455420492572.md",
+      "title": "Saily 超级套餐是什么？",
+      "sha": "f20d555702a5e698",
+      "words": 1330
+    },
+    "https://support.saily.com/hc/zh-cn/articles/25700495342492": {
+      "file": "zh-cn/25700495342492.md",
+      "title": "Saily 快速通道服务是什么？",
+      "sha": "b113c35b90f1c7c8",
+      "words": 497
+    },
+    "https://support.saily.com/hc/zh-cn/articles/27276323644572": {
+      "file": "zh-cn/27276323644572.md",
+      "title": "Saily 是什么？",
+      "sha": "0987dfde4e5fd398",
+      "words": 651
+    },
+    "https://support.saily.com/hc/zh-cn/articles/27276554064924": {
+      "file": "zh-cn/27276554064924.md",
+      "title": "什么是 eSIM？",
+      "sha": "6e12f607ff1b76f8",
+      "words": 1099
+    },
+    "https://support.saily.com/hc/zh-cn/articles/27480241534620": {
+      "file": "zh-cn/27480241534620.md",
+      "title": "如何删除我的 Saily 账号？",
+      "sha": "b83a9ec9986597e6",
+      "words": 189
+    },
+    "https://support.saily.com/hc/zh-cn/articles/27480300684060": {
+      "file": "zh-cn/27480300684060.md",
+      "title": "如何重命名 Saily eSIM？",
+      "sha": "500bc8848498bab7",
+      "words": 132
+    },
+    "https://support.saily.com/hc/zh-cn/articles/27480306670876": {
+      "file": "zh-cn/27480306670876.md",
+      "title": "我无法向 Saily 付款",
+      "sha": "65254bf975b76a96",
+      "words": 310
+    },
+    "https://support.saily.com/hc/zh-cn/articles/27948598334620": {
+      "file": "zh-cn/27948598334620.md",
+      "title": "Saily 电话号码是什么？",
+      "sha": "880482b27212ae12",
+      "words": 546
+    },
+    "https://support.saily.com/hc/zh-cn/articles/27948666453404": {
+      "file": "zh-cn/27948666453404.md",
+      "title": "Saily 电话号码如何处理短信和彩信？",
+      "sha": "682700cd92f9e266",
+      "words": 438
+    },
+    "https://support.saily.com/hc/zh-cn/articles/27948683924380": {
+      "file": "zh-cn/27948683924380.md",
+      "title": "Saily 电话号码的通话时长和计费如何运作？",
+      "sha": "7f8d7b6cac5b0d23",
+      "words": 465
+    },
+    "https://support.saily.com/hc/zh-cn/articles/27948689277596": {
+      "file": "zh-cn/27948689277596.md",
+      "title": "我可以使用 Saily 电话号码进行 OTP 和 2FA 验证吗？",
+      "sha": "2680dae58f4c0476",
+      "words": 752
+    },
+    "https://support.saily.com/hc/zh-cn/articles/27948695958684": {
+      "file": "zh-cn/27948695958684.md",
+      "title": "哪些国家/地区支持使用 Saily 电话号码通话？",
+      "sha": "10b798adf173b90f",
+      "words": 857
+    },
+    "https://support.saily.com/hc/zh-cn/articles/29110860512028": {
+      "file": "zh-cn/29110860512028.md",
+      "title": "如何在土耳其使用 Saily eSIM：有哪些注意事项，以及如何做好准备？",
+      "sha": "4e62c3d85318c8b0",
+      "words": 1418
+    },
+    "https://support.saily.com/hc/zh-cn/articles/29215830812444": {
+      "file": "zh-cn/29215830812444.md",
+      "title": "Saily 邮轮 eSIM 套餐是什么？",
+      "sha": "838c0f56d7f7a5dd",
+      "words": 1277
+    },
+    "https://support.saily.com/hc/zh-cn/articles/29288111980060": {
+      "file": "zh-cn/29288111980060.md",
+      "title": "Saily 在进行电话号码 KYC 验证时接受哪些类型的证件？",
+      "sha": "a9a73bf7a6747b4a",
+      "words": 1733
+    },
+    "https://support.saily.com/hc/zh-cn/articles/29726976242332": {
+      "file": "zh-cn/29726976242332.md",
+      "title": "我收到了一条来自 Saily 的短信——这是什么？",
+      "sha": "fc72e2ab3ea2b7e7",
+      "words": 800
+    },
+    "https://support.saily.com/hc/zh-cn/articles/30330925461660": {
+      "file": "zh-cn/30330925461660.md",
+      "title": "如何查找和更新 Saily 应用版本？",
+      "sha": "0b72f608df98ba50",
+      "words": 518
+    },
+    "https://support.saily.com/hc/zh-cn/articles/31030534656924": {
+      "file": "zh-cn/31030534656924.md",
+      "title": "Saily 支持哪些付款方式？",
+      "sha": "5ef8021c2ed144f3",
+      "words": 203
+    },
+    "https://support.saily.com/hc/zh-cn/articles/31072966285724": {
+      "file": "zh-cn/31072966285724.md",
+      "title": "如何向他人赠送 Saily eSIM？",
+      "sha": "e05eb7895d33f619",
+      "words": 1024
+    },
+    "https://support.saily.com/hc/zh-cn/articles/31089593239452": {
+      "file": "zh-cn/31089593239452.md",
+      "title": "如何取消 Saily 订阅或自动续订？",
+      "sha": "d14454a04d608ef9",
+      "words": 503
+    },
+    "https://support.saily.com/hc/zh-cn/articles/31091827466140": {
+      "file": "zh-cn/31091827466140.md",
+      "title": "Saily 覆盖哪些国家和区域？",
+      "sha": "4628af982bb52d40",
+      "words": 758
+    },
+    "https://support.saily.com/hc/zh-cn/articles/31092295169948": {
+      "file": "zh-cn/31092295169948.md",
+      "title": "Saily 流量套餐的工作原理：总流量与每日流量、无限流量套餐以及网速限制",
+      "sha": "21c3c928cfd2a222",
+      "words": 756
+    }
+  }
+}

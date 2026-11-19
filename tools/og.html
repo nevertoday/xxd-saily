@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>og</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body { background: #171612; color: #f3f0ea; font-family: "PingFang SC", "Avenir Next", sans-serif; position: relative; }
+  .copy { position: absolute; left: 88px; top: 50%; transform: translateY(-54%); }
+  h1 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; white-space: nowrap; display: inline-block; }
+  h1 em { font-style: normal; color: #ff7a4d; }
+  .sub { margin-top: 30px; font-size: 38px; font-weight: 500; color: #a7a194; }
+  .bot { position: absolute; right: 96px; top: 170px; width: 300px; height: 300px; border: 14px solid #f3f0ea; }
+  .bot i { position: absolute; background: #f3f0ea; }
+  .bot .e1, .bot .e2 { width: 44px; height: 44px; top: 80px; }
+  .bot .e1 { left: 58px; } .bot .e2 { right: 58px; }
+  .bot .m { left: 58px; right: 58px; top: 178px; height: 24px; background: #ff7a4d; }
+  .brand { position: absolute; left: 88px; bottom: 56px; font-size: 26px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
+  .brand b { width: 30px; height: 30px; background: #f3f0ea; position: relative; }
+  .brand b::before, .brand b::after { content: ""; position: absolute; top: 9px; width: 5px; height: 5px; background: #171612; }
+  .brand b::before { left: 7px; } .brand b::after { right: 7px; }
+</style>
+</head>
+<body>
+<div class="copy"><h1 id="h1"></h1><p class="sub" id="sub"></p></div>
+<div class="bot"><i class="e1"></i><i class="e2"></i><i class="m"></i></div>
+<div class="brand"><b></b><span id="brand"></span></div>
+<script>
+  // TBD：文字和画面由设计那一步定（大标题、一行副标题、右边的图形）。现在是占位，右边还是从 Grok Bot 站带来的 bot 脸
+  const SUB = { zh: "TBD 副标题 · 非官方学习站", en: "TBD subtitle · an unofficial guide" };
+  const BRAND = { zh: "Saily 新手教程", en: "Saily for beginners" };
+  const COPY = {
+    zh: "TBD 大标题<br><em>Saily</em>",
+    en: "TBD headline<br><em>Saily</em>",
+  };
+  const q = new URLSearchParams(location.search);
+  const lang = q.get("lang") === "en" ? "en" : "zh";
+  const h1 = document.getElementById("h1");
+  h1.innerHTML = COPY[lang];
+  if (lang === "en") { h1.style.fontFamily = '"Avenir Next", sans-serif'; h1.style.fontWeight = "800"; }
+  document.getElementById("sub").textContent = SUB[lang];
+  document.getElementById("brand").textContent = BRAND[lang];
+  let size = 128;
+  h1.style.fontSize = size + "px";
+  while (h1.getBoundingClientRect().width > 740 && size > 60) h1.style.fontSize = (size -= 2) + "px";
+  const sub = document.getElementById("sub");
+  sub.style.whiteSpace = "nowrap"; sub.style.display = "inline-block";
+  let ss = 34; sub.style.fontSize = ss + "px";
+  while (sub.getBoundingClientRect().width > 740 && ss > 22) sub.style.fontSize = (ss -= 1) + "px";
+</script>
+</body>
+</html>
