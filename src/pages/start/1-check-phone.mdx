@@ -1,5 +1,96 @@
 ---
 layout: ../../layouts/Lesson.astro
+tldr: "eSIM 是做在手机里的一张卡，不用插。这一课只做一件事：花两分钟，在手机设置里看看你的手机能不能装它。"
 lesson: 1
 ---
-{/* 待写：正文。写法见 docs/MAINTAINING.md 的「怎么写」，资料在 docs/sources/。 */}
+import Callout from "../../components/Callout.astro";
+import Term from "../../components/Term.astro";
+import Tabs from "../../components/Tabs.astro";
+import Q from "../../components/Q.astro";
+
+以前出国，很多人是这么过来的：落地以后先在机场找卖电话卡的柜台，排队买一张当地的卡，再找根针抠出卡托，把国内那张小卡换下来揣进兜里，一路都怕把它弄丢。
+
+用 <Term k="eSIM" /> 的话，这些都不用做了。
+
+## 手机里本来就有一个看不见的卡槽
+
+你手机里插着的那张塑料卡，叫<Term k="实体 SIM 卡" />，手机靠它连上运营商的网络。eSIM 做的是同一件事，只不过它是直接做在手机里的一块芯片，不用插拔。你可以把它想成手机里本来就有的一个看不见的卡槽：在 Saily App 里买好套餐，App 连着网把一份配置下载进这个卡槽，手机就多出一条线。下载的那一下要联网，装好以后就不用了。
+
+国内那张卡还插在原来的地方。所以只要手机支持双卡，两条线可以同时开着，国内号码照样能接电话，上网走 Saily。
+
+可这一切有个前提，你的手机得能装 eSIM。所以这一课只做一件事：
+
+<mark><strong>买套餐之前，先在手机设置里确认它能装 eSIM。</strong></mark>
+
+## 为什么要先查
+
+因为不是每台手机都能装。多数新款手机支持 eSIM，可 Saily 官方特别提醒过，在中国大陆、香港、澳门、台湾和韩国，很多在当地卖的机型不支持 eSIM（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#travel)）。同一个型号在不同地方卖的版本也可能不一样，所以就算你的手机很新，只要是在这几个地方买的，也值得看一眼。
+
+还有一种情况是手机被运营商锁住了，只认那一家运营商的卡。官方说，被锁的手机就算能把 Saily 的 eSIM 装上，也连不上网（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164)）。好在下面这一步查的时候，会把这件事一起查出来。
+
+## 动手查一下
+
+<Tabs id="check" items={[["ios", "iPhone"], ["android", "安卓手机"]]}>
+<div slot="ios">
+
+1. 打开 **设置**，点 **蜂窝网络**。有的 iPhone 上这一项叫 **移动服务**。
+2. 在这一页里找 **添加 eSIM**。
+
+</div>
+<div slot="android">
+
+安卓手机各家的菜单名字不太一样，先找到 SIM 卡那一页：
+
+- 三星：**设置** → **连接** → **SIM 卡管理器**。
+- Google Pixel：**设置** → **网络和互联网** → **SIM 卡**。
+- 小米、红米和 POCO：**设置** → **SIM 卡和移动网络** → **管理 eSIM**，要先在这里把 eSIM 打开。
+- 别的牌子：一般在 **设置** 里的 **移动网络** 或 **SIM 卡** 那一页。
+
+然后在这一页里找 **添加 eSIM**。有的手机写成 **添加 SIM 卡** 或 **下载 SIM 卡**，点进去能选下载 eSIM。
+
+</div>
+</Tabs>
+
+找得到这一项，就说明两件事都没问题：手机支持 eSIM，也没被运营商锁住。这是官方给的判断办法（[如何检查设备是否兼容 eSIM](https://support.saily.com/hc/zh-cn/articles/13318373425180)）。现在先别点它，下一课由 Saily App 替你装。
+
+想再确认一遍，可以对照 Saily 官网的[支持 eSIM 的机型清单](https://saily.com/esim-supported-devices/)。新机型一直在出，这份清单也跟着变（[官方说明](https://support.saily.com/hc/zh-cn/articles/16927592788636)）。
+
+顺手再看一眼系统版本，因为下一课要装的 Saily App 要 iOS 18 或更新、Android 10 或更新（[官方说明](https://support.saily.com/hc/zh-cn/articles/15751399206172)）。iPhone 在 **设置** → **通用** → **关于本机** 里能看到。
+
+## 找不到也别急
+
+找不到「添加 eSIM」，多半说明这台手机不支持 eSIM，可 Saily 照样有办法用：官方的办法是换一张能写入 eSIM 的<Term k="实体 eSIM 卡" />，插进原来的卡槽，再把 Saily 装到它上面。完整教程的[第 6 步](/guide/6-no-esim/)专门讲这条路。
+
+<Callout type="tip" title="三课就够了">
+手机能用，后面就顺了。第 2 课趁还在家、连着 Wi-Fi，买好套餐，把 eSIM 装进手机。第 3 课落地以后拨两个开关，就能上网。学完这三课，出国上网就够用了，网站上别的内容，遇到了再查。
+</Callout>
+
+## 不对怎么办
+
+<Q q="设置里找不到「添加 eSIM」。">
+
+先想想手机是在哪儿买的。在中国大陆、香港、澳门、台湾或韩国卖的，很多机型本来就不支持 eSIM。再对照官方的[机型清单](https://saily.com/esim-supported-devices/)查一下你的型号。清单上没有，就去[第 6 步](/guide/6-no-esim/)。清单上明明有，设置里却找不到，可能是手机被运营商锁了，看下一条。
+
+</Q>
+<Q q="我不确定手机有没有被运营商锁住。">
+
+iPhone 打开 **设置** → **通用** → **关于本机**，找 **运营商锁** 这一行，写着「无 SIM 卡限制」就是没锁。安卓手机各家查法不一样，最省事的还是看上面那一项 **添加 eSIM** 在不在。
+
+真被锁了，就找你的运营商申请解锁。官方说，解了锁，Saily 的 eSIM 才能装上并连上网（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164)）。
+
+</Q>
+<Q q="手机系统比 iOS 18 或 Android 10 旧。">
+
+先把手机系统更新到最新版本，再去第 2 课。Saily App 要 iOS 18 或 Android 10 以上才能装，手机太旧、升不到这个版本的话，App 就装不上。
+
+</Q>
+<Q q="我想给平板或电脑用。">
+
+多数新款平板也支持 eSIM，查法和手机一样。电脑和路由器就难了，官方说 Saily 对笔记本电脑的支持有限，对路由器更少（[官方说明](https://support.saily.com/hc/zh-cn/articles/16927592788636)）。想让电脑上网，更省事的是用手机开<Term k="热点" />，到时候看[开热点给电脑用](/howto/hotspot/)。
+
+</Q>
+<Q q="装了 eSIM，国内的号码会不会就没了？">
+
+不会。eSIM 是多出来的一条线，国内那张卡还在原位。支持双卡的手机两条线能同时开着，国内号码照样能接电话（[官方说明](https://support.saily.com/hc/zh-cn/articles/16747226859164)），只是国内运营商可能另收漫游费，第 3 课会讲怎么避开。
+
+</Q>

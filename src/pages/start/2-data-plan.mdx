@@ -1,5 +1,117 @@
 ---
 layout: ../../layouts/Lesson.astro
+tldr: "趁还在家、连着 Wi-Fi，把套餐买好，把 eSIM 装进手机。到了那边，只剩拨两个开关。"
 lesson: 2
 ---
-{/* 待写：正文。写法见 docs/MAINTAINING.md 的「怎么写」，资料在 docs/sources/。 */}
+import Callout from "../../components/Callout.astro";
+import Term from "../../components/Term.astro";
+import Tabs from "../../components/Tabs.astro";
+import Q from "../../components/Q.astro";
+
+很多人的打算是「到了再弄」。可是想想落地那一刻：你站在到达大厅，手机没网，机场的 Wi-Fi 半天连不上，排队叫车的人一个个走了。这时候再下载 App、注册、付款、装 eSIM，每一步都在跟时间赛跑。
+
+还有一件更实在的事。Saily 官方提醒，在土耳其、阿曼、卡塔尔、沙特阿拉伯、阿联酋和中国大陆，Saily 的 App 或网站可能打不开，所以要去这些地方，出发前就得把 eSIM 装好（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#travel)）。
+
+早装也不吃亏，因为<Term k="流量套餐" />不会从你装好那天就开始算。它要等你到了它覆盖的国家、连上当地的网络，才自动生效（[官方说明](https://support.saily.com/hc/zh-cn/articles/21484628749084)）。所以这一课说到底只有一句话：
+
+<mark><strong>在家连着 Wi-Fi 就把 eSIM 装好，套餐要到了目的地才开始生效。</strong></mark>
+
+<Callout type="tip" title="App 跟着手机的语言走">
+Saily App 有简体中文界面，跟着手机的系统语言走（[官方说明](https://support.saily.com/hc/zh-cn/articles/16929378623004)）。下面按中文界面写按钮名，括号里是英文原文，你的 App 是英文的，就照括号里的找。
+</Callout>
+
+## 第一步：装 Saily App
+
+iPhone 打开 App Store，安卓手机打开 Google Play，搜 Saily，下载安装就行，也可以从官网的[下载页](https://saily.com/download-esim-app/)进去（[官方说明](https://support.saily.com/hc/zh-cn/articles/16927103076892)）。Saily App 只有 iPhone 和安卓版。
+
+## 第二步：登录
+
+打开 App，用你的 Google 账号或 Apple 账号登录。Saily 没有单独的密码，以后每次都用这同一个账号登录（[官方说明](https://support.saily.com/hc/zh-cn/articles/15698622789148)）。你买的套餐都记在这个账号上，哪天重装 App 也不会丢。
+
+## 第三步：选目的地，买一个套餐
+
+1. 点 **浏览套餐**（Explore plans）。
+2. 选你要去的国家或地区。
+3. 挑一个套餐，点 **继续**（Continue），付款。
+
+挑的时候，先看清它覆盖哪里。Saily 的套餐按国家或地区卖，一个国家的套餐到了别的国家是连不上的（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164)）。一趟去好几个国家的话，可以看看有没有把这几个国家打包在一起的区域套餐（[官方说明](https://support.saily.com/hc/zh-cn/articles/13798863550492)）。
+
+再看流量。普通套餐给你一整份流量，有效期里随时用，不是按天算的；不限流量的套餐每天有一份高速流量，用完以后当天网速降到大约 1 Mbps（[官方说明](https://support.saily.com/hc/zh-cn/articles/31092295169948)）。不管哪一种，有效期一过，没用完的流量就作废了。拿不准选哪个，[完整教程第 1 步](/guide/1-choose-plan/)讲怎么照行程挑。
+
+价格经常变，本站不写，以 App 里显示的为准。付款可以用信用卡或借记卡、PayPal、Apple Pay（只限 iPhone）或 Google Pay，你能用哪几种，结账时会列出来（[官方说明](https://support.saily.com/hc/zh-cn/articles/31030534656924)）。
+
+## 第四步：把 eSIM 装进这台手机
+
+开始之前，连上家里的 Wi-Fi，也别在打电话，因为通话的时候 eSIM 装不上（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#faq)）。
+
+1. 在 App 里点 **安装 eSIM**（Set up eSIM）。
+2. 选 **在此设备上**（On this device），点 **继续**（Continue），再点 **开始安装 eSIM**（Start eSIM install）。
+3. App 开着别关。装的过程可能要几分钟，中间手机会弹出几个系统提示，照下面的选。
+
+<Tabs id="install" items={[["ios", "iPhone"], ["android", "安卓手机"]]}>
+<div slot="ios">
+
+1. 点 **激活**（Activate），再点 **继续**。
+2. 手机问你在哪里用这个套餐，选 **国内**（Home）或 **国外**（Abroad），点 **继续**。要给这条线选标签的时候，把它改名叫 Saily，以后在设置里一眼就能找到。
+3. 要是出现 **仅数据**（Data Only）这个选项，就选它，点 **继续**。
+4. 点 **完成**（Done），回到 Saily App，跟着它的页面点下去。
+
+</div>
+<div slot="android">
+
+以三星为例，别的安卓手机问的大同小异：
+
+1. 手机问的话，点 **允许**（Allow）。
+2. 让你选打电话用哪张卡，选国内那张；让你选上网用哪张卡，选 Saily，点 **完成**。
+3. 回到 Saily App，跟着它的页面点下去。
+
+</div>
+</Tabs>
+
+<Callout type="ok">
+Saily App 告诉你 eSIM 已经装好。打开手机的 **设置** → **蜂窝网络**（安卓是 SIM 卡那一页），里面多了一条线，名字可能是 Saily、旅行，或者你刚起的名字。
+</Callout>
+
+这时候它还连不上网，这是正常的。套餐要到了目的地才生效，出发前测不出来，所以不用测，到了再说。要是装完发现在国内用不了手机流量，别慌，看页尾「不对怎么办」的第一条。
+
+装好以后就放着别动，<u>尤其别在 Saily App 里删除 eSIM</u>。官方说，那样会把这张 eSIM 连同上面的套餐，一起从你的账户里删掉（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#faq)）。
+
+到这里，套餐买好了，eSIM 也在手机里了。剩下的事都在落地以后：下一课让手机用 Saily 上网，再给它打开数据漫游。
+
+## 不对怎么办
+
+<Q q="装好以后，在国内用不了手机流量了。">
+
+这是因为装的时候，上网的那条线换成了 Saily，而 Saily 的套餐只在目的地生效。出发前还要用流量，就先把上网切回国内那张卡：iPhone 在 **设置** → **蜂窝网络** → **蜂窝数据** 里选国内那张，安卓在 SIM 卡那一页的 **移动数据** 里选。落地以后，第 3 课会把它切回 Saily。
+
+</Q>
+<Q q="App 说没装上。">
+
+先别急着重装。打开手机的 SIM 卡设置看一眼，它可能其实已经装好了，同一张 eSIM 装两遍反而会出错。设置里确实没有，就检查一下 Wi-Fi，在 App 里点重试，最多试 3 次。还是不行，可以换成扫二维码或者手动输入的装法（[官方说明](https://support.saily.com/hc/zh-cn/articles/15751399206172)），完整教程的[第 2 步](/guide/2-install/)会细讲。
+
+</Q>
+<Q q="提示「此代码已失效」，或者「已在其他设备上使用」。">
+
+eSIM 可能已经装好了。先去手机的 SIM 卡设置里找找有没有 Saily 那条线，有的话就不用再装。
+
+</Q>
+<Q q="提示手机被运营商锁定（carrier locked）。">
+
+这台手机只认你运营商的卡。找你的运营商申请解锁，解了锁再回来装。怎么查有没有锁，见[第 1 课](/start/1-check-phone/)。
+
+</Q>
+<Q q="提示 eSIM 的数量到上限了。">
+
+手机里能放的 eSIM 有数。在手机的设置里删掉一张你已经不再用的 eSIM，再回 App 装一次。
+
+</Q>
+<Q q="付款没成功。">
+
+别反复点付款，免得被重复扣款或者临时冻结一笔钱。先看看卡里的余额和卡号填得对不对。银行拒了这笔付款的话，联系银行，请他们放行 Saily 的付款（[官方说明](https://support.saily.com/hc/zh-cn/articles/27480306670876)）。
+
+</Q>
+<Q q="Saily 的 App 或官网打不开。">
+
+Saily 官方确实提醒过，在土耳其、阿曼、卡塔尔、沙特阿拉伯、阿联酋和中国大陆，Saily 的 App 或网站可能打不开（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#travel)）。本站不教怎么绕过网络限制。要去这几个地方的话，更要在出发前把这一课做完。
+
+</Q>

@@ -52,41 +52,34 @@ export default {
   home: {
     h1: "Get online abroad, sorted before you leave",
     // lead：前半句、荧光笔那一句、后半句
-    lead: ["Saily is a travel eSIM from Nord Security, the company behind NordVPN. Before your trip you buy a data plan for where you're going and install it from the app, and when you land you turn on data and you're online, with no SIM counter to find at the airport. It also sells a separate +1 US phone number for calls and texts. ", "This is an unofficial guide", ", not affiliated with Saily or Nord Security. For features and prices, the official Help Center and the app are the source of truth."],
+    lead: ["Saily is a travel eSIM from Nord Security, the company behind NordVPN. Before your trip you buy data for where you're going in the app and install it on your phone, and when you land you flip two switches and you're online, with no SIM counter to find at the airport. It also sells a separate +1 US phone number for calls and texts. ", "This is an unofficial guide", ", not affiliated with Saily or Nord Security. For features and prices, the official Help Center and the app are the source of truth."],
     cta: ["Start here if you're new", "Used it already? The full guide (English)"],
-    ctaNote: "The beginner track is three lessons: check your phone, buy and install a plan, then turn on data when you land.",
+    ctaNote: "The beginner track is three lessons: check your phone, buy and install a plan before you go, then turn on data when you land.",
     painH: "Has this happened to you?",
     PAIN: [
       "You land, your phone has no internet, and you can't call a ride or open a map, so you go looking for Wi-Fi.",
       "You travel with your home SIM on and come back to a roaming bill.",
       "You queue at the airport for a local SIM, then worry about losing your own card while you swap.",
     ],
-    diffH: "What changes with Saily",
-    diffW: "When", diffA: "Buying a local SIM on arrival", diffB: "Installing Saily before you go",
-    DIFF: [
-      ["Buying", "Find a counter at the airport and queue", "Buy it in the app before you leave"],
-      ["Setting up", "Pop out the tray and swap cards", "Install the eSIM from the app"],
-      ["Landing", "Buy the card first, then get online", "Turn on data roaming and you're online"],
-    ],
     lessonsH: "Beginners need just three lessons",
-    lessonsP: "Just read them in order. After these three you'll be online when you land, and everything else on the site is there to look up when you need it.",
+    lessonsP: "Read them in order, about 25 minutes in all. By the end you'll know whether your phone can use an eSIM, you'll have a plan bought and installed before you leave, you'll be online a few minutes after you land, and you'll know how to keep your home carrier from charging you roaming. Everything else on the site is there to look up when you need it.",
     lessonsLabel: "Beginner track: 3 lessons",
     fitH: "Is it for you?", yesH: "Yes, if", noH: "Not yet, if",
     YES: ["You're traveling abroad and want data the moment you land", "Your phone supports eSIM, or you're happy to buy a physical card that holds eSIMs", "You want a US number for calls and texts"],
-    NO: ["You're not leaving the country this time", "Saily doesn't work where you're going: check your destination on the official site first", "You need MMS or call forwarding, which the Saily phone number doesn't support"],
-    devH: "Once you're comfortable",
-    devP: "The full guide goes into each step in more detail. The whole thing is four steps, one line each:",
+    NO: ["You're not leaving the country this time", "Saily doesn't work where you're going. Its list is Belarus, Cuba, Iran, North Korea, Russia, Syria and restricted regions of Ukraine", "You need MMS or call forwarding, which the Saily phone number doesn't support"],
+    tracksH: "What this site covers",
+    tracksP: "The beginner track covers the first of these. For the other two, the full guide has a step each, for when you need them.",
     // 完整教程目前只有英文和中文
     devNote: "The full guide is in English (and Chinese) for now.",
-    // FLOW：每个是 [标题, 说明]，图标和顺序固定
-    FLOW: [
-      ["Check your phone", "See whether it supports eSIM. If it doesn't, a physical card that holds eSIMs can stand in."],
-      ["Buy a plan", "Pick the destination and the data. One country or several, pick by your trip."],
-      ["Install the eSIM", "Install it from the app on Wi-Fi before you leave."],
-      ["Land and connect", "Switch mobile data to Saily and turn on data roaming for it."],
+    // TRACKS：每个是 [标题, 说明]，图标、顺序和对应的教程步骤固定（在 views/Home.astro 的 TRACK_BASE）
+    TRACKS: [
+      ["Data abroad", "What Saily is for. You buy a data plan for your destination, install it on your phone, and it works when you land. The full guide goes step by step through picking a plan, installing the eSIM, arriving and topping up, plus the app's other features."],
+      ["A +1 US phone number", "A separate US number Saily sells, for calls and texts. You verify your identity before you get it, and some banks and payment apps treat it as an internet (VoIP) number and won't send codes to it."],
+      ["A phone without eSIM", "Saily's answer is a physical card that holds eSIMs. It goes in your SIM slot, and you install Saily onto it."],
     ],
-    CONN: ["it works", "bought", "landed"],
-    stepsLabel: "Full guide: {n} steps",
+    tracksLabel: "Matching steps in the full guide",
+    // 每件事下面链到完整教程的一步：{n} 是第几步，{title} 是那一步的标题（英文）
+    stepLink: "Step {n}: {title}",
   },
 
   // 新手入门三课在导航、首页路线图里的标题、时间、简介（顺序：1 查手机、2 买套餐装好、3 落地上网）
