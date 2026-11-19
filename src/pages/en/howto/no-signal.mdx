@@ -1,5 +1,123 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: no-signal
+step: 3
+time: 10 minutes, trying one thing at a time
+for: You've arrived and Saily has no signal, or has signal but nothing loads
+tldr: First make sure you've arrived, you have data left, and Wi-Fi is off. Signal without internet usually means the Saily line isn't selected for data, its data roaming is off, or the APN isn't wbdata.
+description: "What to check, in order, when your Saily eSIM has no signal or signal but no internet: three things that need no settings, the three settings that cause most cases, making the phone reconnect, what to look at first when it's slow, and what to send support."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Tabs from "../../../components/Tabs.astro";
+import Callout from "../../../components/Callout.astro";
+import Copy from "../../../components/Copy.astro";
+
+Your plane has just landed in Tokyo and is still taxiing. You turn off Airplane mode and signal bars appear in the corner. But the map keeps spinning, the ride-hailing app won't open, and you're standing in the airport with no idea where to start. Work down this page one item at a time and stop at whichever one gets you online. If you reach the end and it still isn't working, you'll have everything support needs ready.
+
+One line in Saily's own FAQ comes close to answering it all ([official FAQ](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE2RZHCPQB7CFC8E7VY)). <mark>Signal without internet usually means one of three things is off: the Saily line isn't selected for data, its data roaming is off, or the APN isn't wbdata.</mark> Before you touch any settings, though, spend a minute ruling out three simpler things.
+
+## Rule out three things that need no settings
+
+Saily's [troubleshooting guide](https://support.saily.com/hc/en-us/articles/12838788763164) starts with these too:
+
+1. **Have you arrived?** A plan connects only once you're in the country or region it covers, so you can't test it at home before you leave. If you bought a plan for a different country, no setting will help. Buy one for the country you're in, in the app.
+2. **Is there data left?** Open the Saily app and check your remaining data and plan status. If it's used up, top up or buy a new plan in the app.
+3. **Turn off Wi-Fi and try again.** Lots of hotel and airport Wi-Fi needs you to sign in first, and while your phone is on it, you're not testing Saily at all. Turn Wi-Fi off and open a website.
+
+## Signal but no internet? Check these three
+
+**One, the Saily line is on and selected for data.** Sometimes the <Term k="eSIM" /> finishes installing but stays switched off, especially on iOS 26 and Xiaomi phones. You don't need to reinstall it, just switch it on. Or it may be on while your phone still uses the other SIM for data. Turn off automatic switching too, or the phone falls back to your home SIM, which blocks Saily and may bring roaming charges from your home carrier.
+
+**Two, data roaming is on for the Saily line.** Saily connects through local partner networks, so this switch has to be on, and Saily says it never charges extra for roaming. Keep <Term k="漫游" text="data roaming" /> off on your home SIM, though, to avoid charges from your home carrier.
+
+**Three, the APN is wbdata.** The <Term k="APN" /> is the set of settings that tells your phone how to reach mobile data, and Saily's must be `wbdata`. On Android, only an eSIM the Saily app installed itself gets the APN and data roaming set automatically, while a QR code or manual install doesn't. Try opening the Saily app and leaving it open for up to 5 minutes, since it can finish the setup by itself.
+
+<Tabs id="ns" items={[["ios","iPhone"],["samsung","Samsung"],["pixel","Pixel"]]}>
+<div slot="ios">
+
+1. Open **Settings** > **Cellular** (called **Mobile Service** on some iPhones), tap the Saily line, and turn on **Turn On This Line**.
+2. Back in **Cellular** > **Cellular Data**, choose the Saily line, then turn off **Allow Cellular Data Switching**.
+3. Tap the Saily line again and turn on **Data Roaming**.
+4. On the same screen, tap **Cellular Data Network** and enter `wbdata` in the **APN** field under both **Cellular Data** and **LTE Setup**, leaving everything else empty. If your iPhone is on iOS 17 or older, Saily recommends updating to the latest iOS first.
+
+</div>
+<div slot="samsung">
+
+1. Open **Settings** > **Connections** > **SIM manager**, find the eSIM with Saily shown under it (it may be called eSIM 1, eSIM 2 or Saily #1), and turn it on.
+2. On the same screen, tap **Mobile data**, choose the Saily eSIM, then turn off **Data switching and backup calling**.
+3. Open **Settings** > **Connections** > **Mobile networks** and turn on **Data roaming**.
+4. In **Mobile networks** > **Access Point Names**, select the Saily tab at the top first, and check that the selected APN is `wbdata`.
+
+</div>
+<div slot="pixel">
+
+1. Open **Settings** > **Network & internet** > **SIMs**, tap the Saily eSIM (usually Saily #1 or Saily), and turn on **Use SIM**.
+2. On that screen, turn on **Mobile data**. Back in **SIMs**, make sure Saily is selected for data and turn off **Automatic data switching**.
+3. Back on the Saily eSIM screen, scroll down and turn on **Roaming**.
+4. Scroll further to **Access Point Names** and check that the selected APN is `wbdata`.
+
+</div>
+</Tabs>
+
+If the APN on Android isn't `wbdata`, edit the Saily entry so the APN field is `wbdata`. If you can't edit it, or you only see `mms.wbdata`, tap **+** or **Add**, enter `wbdata` as both the name and the APN, and `default,ia,dun` as the APN type (enter only `default` if your phone rejects `dun`). Leave the rest empty, tap **Save** in the three-dot menu, and select the new entry. <u>Don't delete or rename the entry called Saily APN V6</u>, because the Saily app creates it again. For Xiaomi, Oppo and other phones, Saily's troubleshooting guide lists where each setting is by brand.
+
+<Callout type="ok">
+With all three right, turn off Wi-Fi and open a website. If it loads, you're done.
+</Callout>
+
+## Still nothing? Make the phone reconnect
+
+Go through these in order, and after each one, turn off Wi-Fi and try a website:
+
+1. **Turn on Airplane mode for 15 seconds, then off.** Your phone makes a fresh connection to the local network. Give it up to a minute, then test.
+2. **Set network selection to automatic.** On iPhone it's under **Network Selection** for the Saily line, and on Samsung under **Mobile networks** > **Network operators**. If you're near a border and the phone has latched onto a neighboring country's network, do the opposite. Turn automatic off and pick a local network by hand.
+3. **Restart the phone.** Turn it fully off and back on, then wait a minute for the eSIM to register on the local network.
+4. **Switch from 5G to 4G.** Some local partner networks don't have 5G everywhere. On iPhone, choose **LTE** (or **4G**) under **Voice & Data** for the Saily line. On Samsung, choose **LTE/3G/2G** under **Mobile networks** > **Network mode**.
+5. **Reset network settings.** This puts Wi-Fi passwords, data roaming and the APN back to factory defaults, so afterward you'll reconnect to Wi-Fi, turn data roaming back on for Saily, select it for data and check the APN. On iPhone, go to **Settings** > **General** > **Transfer or Reset iPhone** > **Reset** > **Reset Network Settings**. On Samsung, go to **Settings** > **General management** > **Reset** > **Reset network settings**.
+
+## Reinstalling is the last resort
+
+If none of that worked, Saily's last step is to connect to stable Wi-Fi, delete the Saily eSIM in your phone's settings, restart, and install it again from the Saily app ([official article](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE29G6WP3ZTSWN35QP9)). Keep two things in mind before you do:
+
+- Don't do this while you're in Turkey, Oman, Qatar, Saudi Arabia, the UAE or mainland China. Saily warns that its app or website may not open there, so once deleted, the eSIM may not come back ([official note](https://support.saily.com/hc/en-us/articles/12838788763164#travel)).
+- Delete the one in your phone's settings. **Delete eSIM** in the Saily app permanently removes the eSIM and its plans from your account, and cancels its phone number, Ultra subscription and auto top-up.
+
+For how the different kinds of delete compare, see [Read this before you delete an eSIM](/en/howto/delete-esim/).
+
+## If it's slow, check your high-speed data first
+
+Slow isn't always about signal. Unlimited plans get 5 GB of high-speed data every 24 hours (3 GB in some destinations), then drop to up to 1 Mbps. On a regular plan, the high-speed data is simply the amount you bought ([official article](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE2BD7RP0JQEWWXNJ6Y)). Once it's used up, changing settings, restarting or contacting support can't bring it back early. You wait for the reset or buy a new plan for the same country. Go by the Saily app for what's left, and see [Make your data last](/en/howto/save-data/).
+
+If you do still have high-speed data, the tricks from the last section help here too. Toggle Airplane mode, restart, pick a network by hand, or switch to 4G. Then try somewhere else. Coverage drops indoors, underground, inside thick stone or concrete buildings and in remote areas, so step near a window or outside and test again.
+
+## When you contact support, bring this
+
+Saily support is there 24/7. There's no phone line, only live chat and email, and live chat only works in the Saily app. Open the **Help** tab and tap **Chat with us** ([contacting support](https://support.saily.com/hc/en-us/articles/17770364559516)). If your phone has no internet, connect to Wi-Fi first and then open the app.
+
+Saily asks you to tell them your phone model, which country you're in and which steps you've tried, along with a screenshot of your phone's <Term k="EID" /> (on iPhone, scroll down in **Settings** > **General** > **About**, and on Android phones it's usually under **About phone**). If it's slow, they may also ask you to run a speed test on fast.com, tap "Show more info," and send your download speed, upload speed and latency. Adjust this to your situation and something like it is all you need:
+
+<Copy id="ns-support" title="A message for support, adjusted to your situation" code="Hi, I'm in Tokyo and my phone is an iPhone 15. Saily shows the eSIM as installed and I have signal bars, but nothing loads. I've checked that the Saily line is on, it's selected for mobile data, data roaming is on, and the APN is wbdata. I've also toggled Airplane mode and restarted the phone once, with no luck. A screenshot of my EID is attached. Could you take a look?" />
+
+When there's signal but no internet, Saily says the cause is usually one of those three settings. If you still can't find it, take this information to support and tell them you've already been through Saily's steps, so they can pick up from the next one.
+
+## Stuck?
+
+<Q q="The corner says No Service and there are no bars at all.">
+Go back to the first section. Are you in the country the plan covers, and is the plan for this country? Then check the Saily line is on and network selection is automatic. If you see messages like "your phone is carrier locked," "Network Provider Lock" or "device is locked," or a padlock next to the eSIM, your home carrier has locked the phone to its own SIMs, and you need to ask them to unlock it ([official article](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE2BTHX48CETF1JZSD6)).
+</Q>
+<Q q="Near a border, my phone joined a neighboring country's network.">
+Turn off automatic network selection for the Saily line and pick a local network by hand. On iPhone it's under **Network Selection** for the Saily line, and on Samsung under **Mobile networks** > **Network operators**.
+</Q>
+<Q q="I can't find the Roaming switch on my Pixel.">
+Saily says some newer Pixels hide it. Update Android and Carrier Services in the Google Play Store, and if it's still missing, contact Saily support.
+</Q>
+<Q q="On my Pixel, the eSIM stops working a minute after a restart, and no other eSIM will install either.">
+Saily says some Pixels on Android 16 or 17 (mostly Pixel 9 Pro, 9 Pro XL, 10 Pro, 10 Pro XL and 6a) can have a failing built-in eSIM chip, which only a repair or replacement fixes ([official article](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE25PN7YTVXK5FQ2MP3)). Contact Google about the phone and Saily support about your plan.
+</Q>
+<Q q="I'm in Turkey (or mainland China) and the Saily app won't open.">
+Saily warns that its app or website may not open in Turkey, Oman, Qatar, Saudi Arabia, the UAE and mainland China, which is why it says to install before you go. Everything earlier on this page happens in your phone's settings and doesn't need the app. While you're there, don't delete and reinstall the eSIM.
+</Q>
+<Q q="Speed keeps jumping around and the connection drops.">
+Check whether you still have high-speed data. If you do, switch from 5G to 4G, toggle Airplane mode once, and try again by a window or outside.
+</Q>

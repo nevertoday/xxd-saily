@@ -1,5 +1,69 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: hotspot
+step: 4
+time: 2 minutes
+for: You need a laptop or tablet online, and only your phone has data
+tldr: Turn on your phone's hotspot and your laptop gets online through Saily. Whatever the laptop uses comes out of the same plan.
+description: "Share your Saily eSIM data with a laptop or tablet: where the hotspot switch is on iPhone and Android, how hotspot data is counted, and how it differs from sharing a plan."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Tabs from "../../../components/Tabs.astro";
+
+You're in a café in Lisbon and need to send a file from your laptop, but the café Wi-Fi just won't connect. Your phone is fine, though. It's been on Saily data all day. You don't need to hunt for another network. Turn on your phone's <Term k="热点" />, connect the laptop to it, and the file goes out over your phone's connection. When you finish this page, your laptop or tablet will be online through your phone, and you'll know whose data it's using.
+
+What a hotspot does is simple. Your phone is connected to the local network, and it passes that connection on to devices next to it. <mark>A hotspot shares your phone's connection, not your plan, so every bit of data the laptop uses counts against your Saily plan.</mark>
+
+## First, check that your phone is online
+
+A hotspot only passes along the connection your phone already has. If the phone has no internet, the laptop won't load anything either. So turn off Wi-Fi on your phone and open a website. If it loads, the Saily line is working. If it doesn't, sort the phone out first with [No signal, or signal but no internet](/en/howto/no-signal/), then come back.
+
+## Turn on the hotspot
+
+Saily's [hotspot guide](https://support.saily.com/hc/en-us/articles/12822169782812) comes down to one thing. Once your <Term k="eSIM" /> is on, find the hotspot in your phone's settings and switch it on. Where it lives depends on the phone:
+
+<Tabs id="hs" items={[["ios","iPhone"],["android","Android"]]}>
+<div slot="ios">
+
+1. Open **Settings** and go to **Cellular** (called **Mobile Service** or **Mobile Data** on some iPhones).
+2. Tap **Personal Hotspot**.
+3. Turn on the switch next to **Allow Others to Join**.
+
+</div>
+<div slot="android">
+
+These are the names on a Samsung phone. Other brands word them a little differently, and searching Settings for "hotspot" finds it too.
+
+1. Open **Settings** and go to **Connections**.
+2. Tap **Mobile Hotspot and Tethering**.
+3. Tap **Mobile Hotspot** and turn it on.
+
+</div>
+</Tabs>
+
+Then, on the laptop, open the Wi-Fi list, pick your phone's name, and type the password shown on the phone's hotspot screen. Once it's connected, open a website on the laptop. If it loads, you're done.
+
+## What the laptop uses comes out of your plan
+
+The official [hotspot limits](https://support.saily.com/hc/en-us/articles/12822169782812#h_01M4WPJ9R8KAKEPFTCYG5C3JR0) section is clear about this. Data you share through a hotspot comes out of your eSIM's data balance, just like data your phone uses itself, and Saily's fair use policy applies to hotspot use too.
+
+A laptop usually goes through data faster than a phone. The moment it's online, the system updates and cloud syncing that normally run quietly on Wi-Fi start running too. So turn the hotspot off when you're done, and open the Saily app now and then to see what's left. If you want your data to go further, see [Make your data last](/en/howto/save-data/).
+
+## A hotspot isn't sharing your plan
+
+With a hotspot, you keep it running and other people borrow it. The eSIM stays on your phone, so if you walk away or switch the hotspot off, they lose their connection. If someone you travel with wants data on their own phone, what you're after is a Saily shared plan. See [Share with your family](/en/howto/share-family/).
+
+That's really all there is to it. While the hotspot is on, data comes out of your plan. Turn it off and that stops.
+
+## Stuck?
+
+<Q q="The laptop joined the hotspot, but websites won't load.">
+Most likely the phone itself has no internet. Turn off Wi-Fi on the phone and open a website. If that doesn't work, go through [No signal, or signal but no internet](/en/howto/no-signal/). Once the phone is online, disconnect the laptop from the hotspot and join it again.
+</Q>
+<Q q="I can't find Mobile Hotspot and Tethering on my Android phone.">
+That's what Samsung calls it, and other phones use other names. Open **Settings** and search for "hotspot" in the search box at the top.
+</Q>
+<Q q="I ran the hotspot all afternoon and a big chunk of data is gone.">
+That's expected, because the laptop's data counts against your plan too. Turn the hotspot off when you're finished, and pause automatic updates and cloud syncing on the laptop for a while. For how much is left, go by what the Saily app shows.
+</Q>

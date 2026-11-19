@@ -1,5 +1,78 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: dual-sim
+step: 3
+time: 5 minutes
+for: While you're abroad, your home number still needs to take calls and texts
+tldr: Leave your home SIM on for calls and texts only. Send all data through Saily, and turn off data roaming and automatic switching for the home SIM, and the two work side by side.
+description: "Using your home number and a Saily eSIM together abroad: your phone needs to run two SIMs at once, data goes through Saily, the home SIM's data roaming and automatic switching go off, and WhatsApp and iMessage keep working."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Tabs from "../../../components/Tabs.astro";
+import Callout from "../../../components/Callout.astro";
+
+Your bank only sends codes to your home number, and that's the number your family calls when something comes up, so you don't want it going dark for a week abroad. But you've also heard about people coming home to a roaming bill. You can have it both ways. Once you've set things up with this page, your home number stays on for calls and texts, all your data goes through Saily, and the home SIM doesn't quietly use data.
+
+The whole idea fits in one line. <mark>Let your home SIM handle only calls and texts, give all the data to Saily, and turn off data roaming on the home SIM.</mark>
+
+## First, check your phone can run two SIMs at once
+
+Your home number usually lives on a <Term k="实体 SIM 卡" />, and Saily is an <Term k="eSIM" />. For both to work at the same time, your phone needs Dual SIM Dual Standby (DSDS), which means two SIMs can be on at once, each taking its own calls. Saily says your primary number should keep receiving calls as long as your phone can have a physical SIM and an eSIM active together ([official article](https://support.saily.com/hc/en-us/articles/16747226859164)). Some iPhone models and many recent Android phones can. How many eSIMs you can have active also depends on the model and its software, so check your phone's manual if you're not sure.
+
+## Give the data to Saily
+
+With both SIMs on, your phone needs to know which one to use for data. So set Saily as the data SIM and turn off automatic switching. While that switch is on, your phone may fall back to your home SIM for data, which can block the Saily connection or bring roaming charges from your home carrier ([troubleshooting guide](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE2PTHFBPJDCRTS7G4J)).
+
+The home SIM is the opposite. It needs to stay on for calls and texts, but it doesn't need data, so turn its <Term k="漫游" text="data roaming" /> off. The Saily line must have data roaming on, because it connects through local partner networks, and Saily says it never charges extra for roaming ([official article](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE2XW7V3YEG5V72RYQE)).
+
+<Tabs id="ds" items={[["ios","iPhone"],["android","Android (Samsung)"]]}>
+<div slot="ios">
+
+1. Open **Settings** > **Cellular** (called **Mobile Service** on some iPhones) > **Cellular Data**, choose the Saily line, then turn off **Allow Cellular Data Switching**.
+2. Back in **Cellular**, tap the Saily line and turn on **Data Roaming**.
+3. Now tap your home SIM. Leave **Turn On This Line** on, and if its screen has **Data Roaming**, turn that off.
+
+</div>
+<div slot="android">
+
+These are the names on a Samsung phone. Other Android phones use different ones, and Saily's [troubleshooting guide](https://support.saily.com/hc/en-us/articles/12838788763164) lists the paths by brand.
+
+1. Open **Settings** > **Connections** > **SIM manager**, and make sure both SIMs are on.
+2. On the same screen, tap **Mobile data** and choose the Saily eSIM.
+3. Turn off **Data switching and backup calling** (some US and Canadian models don't have it).
+4. Open **Settings** > **Connections** > **Mobile networks** and turn on **Data roaming**.
+
+</div>
+</Tabs>
+
+<Callout type="ok">
+The Saily line is the one used for data, with data roaming on, and your home SIM is still on and getting calls and texts. Turn off Wi-Fi and open a website. If it loads, your data is going through Saily.
+</Callout>
+
+## Do calls and texts cost anything?
+
+Saily only handles data. Calls and texts on your home number still go through your home carrier. Saily points out that when you use both SIMs, your carrier may charge extra roaming fees for calls, so ask your carrier before you leave ([official article](https://support.saily.com/hc/en-us/articles/16747226859164#h_01KQYJASJ0P06Y9CX6EXBXATEM)).
+
+If you won't need your home number at all on this trip, the simplest thing is to switch it off completely. Saily's [guide to avoiding roaming charges](https://support.saily.com/hc/en-us/articles/20793044376092) includes disabling your personal SIM (on iPhone, turn off **Turn On This Line** for it), or taking the physical SIM out before you go. One more small trick from the same guide is to turn on Airplane mode before you leave home and turn it off only when you're ready to use Saily, so your phone doesn't join any network on the way.
+
+## WhatsApp and iMessage keep working
+
+Chat apps don't depend on your SIM. Saily explains that WhatsApp only uses your number for a one-time check when you sign up, and after that it just needs an internet connection, even if you swap or remove the SIM. iMessage also runs over the internet and can use your Apple ID email ([official article](https://support.saily.com/hc/en-us/articles/13718527919900)). So over Saily data, both keep sending and receiving as usual.
+
+Every few days, check your usage in the Saily app, and when you're home, look over your carrier's bill for anything unexpected. Saily suggests both. Set this up once and your home number stays reachable, without the data roaming charges.
+
+## Stuck?
+
+<Q q="My home number isn't getting calls or texts.">
+Check that the home SIM's line is on. On iPhone that's **Turn On This Line**, and on Samsung it's in **SIM manager**. Then make sure your phone can keep two SIMs on standby at once, which your manual will say. If both check out and nothing arrives, it's a question for your home carrier.
+</Q>
+<Q q="I came home to a data roaming bill from my carrier.">
+Most likely automatic switching was on, or the home SIM's data roaming wasn't off, so the phone fell back to the home SIM for data. Next time, turn off **Allow Cellular Data Switching** (on Samsung, **Data switching and backup calling**) and the home SIM's data roaming before you leave. If you don't need the home number, just switch that SIM off.
+</Q>
+<Q q="iMessage isn't sending or receiving properly.">
+Saily's check goes like this. Open **Settings** > **Messages**, make sure **iMessage** is on, then tap **Send & Receive**. Saily recommends having your Apple ID email ticked and the phone number unticked. If that doesn't help, restart the phone.
+</Q>
+<Q q="Saily shows signal, but nothing loads.">
+Go through [No signal, or signal but no internet](/en/howto/no-signal/) one item at a time.
+</Q>

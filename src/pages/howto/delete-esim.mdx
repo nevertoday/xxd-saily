@@ -1,5 +1,78 @@
 ---
 layout: ../../layouts/HowTo.astro
 slug: delete-esim
+step: 2
+time: 读 3 分钟
+for: 想关掉、删掉 Saily eSIM，或者删掉 Saily 账号
+tldr: 暂时不用，关掉这条线就行；在手机设置里删 eSIM，套餐还留在账号里；Saily App 里的「删除 eSIM」和删除账号，删了就回不来。
+description: 删 Saily eSIM 之前先分清四件事：关掉线路、在手机设置里删 eSIM、在 Saily App 里删 eSIM、删除 Saily 账号，各自会丢掉什么，什么时候用哪一个。
 ---
-{/* 待写：正文。写法见 docs/MAINTAINING.md 的「怎么写」，资料在 docs/sources/。 */}
+import Term from "../../components/Term.astro";
+import Q from "../../components/Q.astro";
+import Tabs from "../../components/Tabs.astro";
+
+旅行回来，手机设置里多了一条用不上的 Saily 线路，你想把它清掉。可「删除」这两个字在这里有好几种意思，按错了地方，丢的可能不只是这张 <Term k="eSIM" />，还有上面的套餐、电话号码和自动充值。看完这一页，你会知道自己要的是哪一种，按下去之前心里有底。
+
+<mark>删之前先看你在哪删：在手机设置里删，只是从这部手机上拿掉；在 Saily App 里删，是从账号里永久删掉。</mark>
+
+从轻到重，一共四种。
+
+## 暂时不用：关掉这条线
+
+回家以后用不着 Saily，最轻的做法是把这条线关掉，eSIM 和套餐都还在，下次出门再打开就行（[关闭 eSIM](https://support.saily.com/hc/zh-cn/articles/16436358702108)）：
+
+<Tabs id="de" items={[["ios","iPhone"],["android","安卓（三星）"]]}>
+<div slot="ios">
+
+打开 **设置** → **蜂窝网络**（有的系统版本叫 **移动服务**），点 Saily 那条线，关掉 **启用此号码**。
+
+</div>
+<div slot="android">
+
+打开 **设置** → **连接** → **SIM 卡管理器**，选 Saily 那张 eSIM，把开关关掉。
+
+</div>
+</Tabs>
+
+只有一点要知道：关掉线路不会让套餐停下来。官方说，套餐一旦激活就没法暂停（[激活说明](https://support.saily.com/hc/zh-cn/articles/15751572038300#h_01KQYSVQNWB4DTM9CF03ZJ375C)），有效期照样在走。
+
+## 从这部手机上拿掉：在手机设置里删
+
+在手机设置里删 Saily eSIM，只是把它从这部手机上拿掉，套餐还留在你的 Saily 账号里（[常见问答](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE22FYPG3YY7FBPFVQ3)）。iPhone 在 **设置** → **蜂窝网络** 里点 Saily 那条线，再点 **删除 eSIM**；三星在 **设置** → **连接** → **SIM 卡管理器** 里选这张 eSIM，点 **删除**。以后想用，在 Saily App 的 **eSIM** 页点 **安装 eSIM**（Install eSIM）就能装回来，换了手机也一样，只要用同一个邮箱登录（[重新安装说明](https://support.saily.com/hc/zh-cn/articles/12822203571100)）。
+
+这一种用得上的时候不少：
+
+- 换手机，先从旧手机上删，见[换了手机，把 eSIM 移过去](/howto/change-phone/)。
+- 手机提示 eSIM 已经装满了，删掉一张以前旅行留下、再也不用的旧 eSIM，腾出位置（[排查指南](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE17RWJ59BPRQSN3AHG)）。
+- 排查到最后一步，官方让你删了重装。
+
+删的时候注意两点。手机要连着网再删，官方讲换手机时就是这么要求的（[常见问答](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE2Z59F1JKQWSA5SJ9X)）。人在土耳其、阿曼、卡塔尔、沙特阿拉伯、阿联酋或中国大陆时别删：官方提醒，在这些地方 Saily 的 App 或网站可能打不开，删了可能就装不回来（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#travel)）。
+
+## 从账号里永久删掉：Saily App 里的「删除 eSIM」
+
+Saily App 里也有一个 **删除 eSIM**，名字一样，后果完全不同。它会把这张 eSIM 和上面的套餐从你的 Saily 账户里永久删掉，同时取消它的电话号码、Ultra 订阅和自动充值。官方在排查指南里也特别叮嘱，重装 eSIM 时<u>别用 Saily App 里的删除 eSIM</u>（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE29G6WP3ZTSWN35QP9)）。
+
+所以，除非你确定这张 eSIM、上面的套餐和号码都不要了，否则别碰它。要是这张 eSIM 上挂着 Saily 的美国号码，删了号码也就跟着没了。只想停掉号码或 Ultra 的扣费，要做的是取消订阅，见[想退款](/howto/refund/)里的「订阅要自己停」。
+
+## 最重的一种：删除 Saily 账号
+
+删账号是永久的，你买过的所有服务都会用不了（[删除账号](https://support.saily.com/hc/zh-cn/articles/27480241534620)）。删之前先看一眼：还有没用完的套餐吗？还有在用的电话号码吗？删了，这些都回不来。
+
+真要删的话，打开 Saily App 并登录，点 **个人资料**（Profile）图标，进 **账号设置**（account settings），在 **删除账户**（delete account）下点 **删除**，再点一次 **删除** 确认。也可以在帮助中心任意一篇文章的底部点「与我们联系」或「给我们发邮件」，让客服来删，不过要先验证你是账号的主人。
+
+记住这个顺序：关线路最轻，在手机里删其次，App 里删和删账号都回不来。拿不准的时候，先关线路。
+
+## 卡住了？
+
+<Q q="我在 Saily App 里删了 eSIM，还能恢复吗？">
+官方说这是从账户里永久删除。要是你是在迁移到新 eSIM 以后误删了新的那张，官方说可以找客服帮忙（[官方英文说明](https://support.saily.com/hc/en-us/articles/31797245183516)）。别的情况也可以先问问客服：在 Saily App 的 **帮助**（Help）页点 **与我们聊天**（Chat with us）。
+</Q>
+<Q q="在手机里删了 eSIM，App 里装不回来。">
+先确认手机连着稳定的 Wi-Fi。还是装不了，官方的办法是把 Saily App 删掉、重新装一次，登录后再试。
+</Q>
+<Q q="手机提示 eSIM 装满了，装不了新的。">
+在手机设置里删掉一张以前旅行留下、再也不用的旧 eSIM，再装新的。删之前看清楚是哪一张。
+</Q>
+<Q q="关掉了线路，套餐还在算天数吗？">
+在算。官方说套餐激活以后就没法暂停，关掉线路只是这部手机暂时不用它。
+</Q>

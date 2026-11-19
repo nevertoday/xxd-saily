@@ -1,5 +1,80 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: save-data
+step: 4
+time: 5 minutes
+for: Your plan is small, or your Unlimited plan keeps slowing down
+tldr: Turn off background refresh, switch on Saily's Ad Blocker, and trust the Saily app for usage. On Unlimited plans, once the day's high-speed data is used up you drop to about 1 Mbps until the reset.
+description: "Making Saily data last longer: how your plan's data is counted, how to stop background data on iPhone and Android, where to turn on Saily's Ad Blocker, and why your phone and the app show different usage."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Tabs from "../../../components/Tabs.astro";
+
+You bought a 3 GB <Term k="流量套餐" /> for a five-day trip, and on the second morning half of it is gone. All you did was check maps and send a few photos, so where did it go? Often the answer is in the background. Your photos are backing up to the cloud, and your email and news apps are refreshing themselves, all while you're not looking at the phone. When you've set things up with this page, your phone won't spend data in the background like that anymore, and you'll know which number to trust.
+
+Saily says it too. Background services often use mobile data without you noticing ([official article](https://support.saily.com/hc/en-us/articles/25332679316252)). <mark>A lot of data goes while you're not looking at your phone, so start saving in the background.</mark>
+
+## First, know how your plan counts
+
+Before saving, it helps to know what you're saving. A regular Saily plan is one total amount. You can use it any time during its validity period, and it isn't split by day. When the validity period ends, whatever's left expires.
+
+Unlimited plans work differently. There's no cap on the total, but each day you get one high-speed allowance, and once you've used it, your speed drops to about 1 Mbps for the rest of the day ([how Saily data plans work](https://support.saily.com/hc/en-us/articles/31092295169948#h_01M522X6YNPPAP9KGFFW4ZT0N0)). The troubleshooting guide puts the allowance at 5 GB every 24 hours, or 3 GB in some destinations ([troubleshooting guide](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE2BD7RP0JQEWWXNJ6Y)). For most destinations it resets at midnight in the <Term k="eSIM" />'s local time. Destinations that span several time zones, like the US, Canada and Australia, plus regional and global plans, reset at a fixed time that may not be midnight where you are. When you reach 80% of the day's high-speed allowance, Saily sends a notification with the exact reset time in UTC. So on an Unlimited plan, saving data means making the high-speed part last until the reset.
+
+## Turn off background refresh
+
+Background refresh lets apps update content, upload photos and sync accounts while you're not using them. It's handy, and it's also the easiest way for data to slip away. Saily suggests turning it off while you're on the Saily eSIM:
+
+<Tabs id="sd" items={[["ios","iPhone"],["android","Android"]]}>
+<div slot="ios">
+
+1. Open **Settings** > **General** > **Background App Refresh**.
+2. Tap **Background App Refresh** at the top again and choose **Off**, or **Wi-Fi** so apps refresh only on Wi-Fi.
+3. Fully close the apps you're using and open them again, so the change takes effect.
+
+</div>
+<div slot="android">
+
+This is the path Saily gives, which is how Pixel-style phones lay it out. Other brands name things differently, and searching Settings for "Data Saver" finds it.
+
+1. Open **Settings** > **Network & internet** > **Data Saver**.
+2. Turn the switch on.
+3. Fully close the apps you're using and open them again, so the change takes effect.
+
+</div>
+</Tabs>
+
+Saily also reminds you to turn background data back on once you stop using the Saily eSIM and go back to your usual network, so your apps work fully again ([official article](https://support.saily.com/hc/en-us/articles/25332679316252#h_01KGRTNBDXYR2MBHVPZTAC1BDM)).
+
+## Turn on Saily's Ad Blocker
+
+Ads on web pages use data too. The Saily app has a built-in Ad Blocker that stops many ads from loading, and Saily says it helps cut data use ([Ad Blocker article](https://support.saily.com/hc/en-us/articles/17464798496796#h_01KP2VFA4N47SZ5ETW5F36FY3S)):
+
+1. Open the Saily app and go to the home screen.
+2. Scroll down to **Security** and tap **Ad Blocker**.
+3. Turn the switch on.
+
+It blocks ads by the web address they come from, so ads hosted at the same address as the site itself get through. Seeing the odd ad with it on is normal.
+
+## For usage, go by the Saily app
+
+Your phone's settings have their own data counter, and it often doesn't match the Saily app. Saily says that's normal. Your phone's counter was last reset on a different day from when your plan started, it also counts data from other SIMs or Wi-Fi, and it may miss some background traffic ([how Saily data plans work](https://support.saily.com/hc/en-us/articles/31092295169948#h_01M522X6YNFD8W1K5GSVD60RWT)). Saily counts all the data that went through its network while your plan was active, so when the numbers differ, trust the Saily app. Your remaining data is in the middle of the app's home screen, under the eSIM.
+
+Data you share through a <Term k="热点" /> comes out of the same plan. See [Share your data with a hotspot](/en/howto/hotspot/). If a regular plan really does run out, top up or buy a new plan in the app ([troubleshooting guide](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE169TRQHYS7JZ92BBP)).
+
+Rein in the background, block the ads, and glance at the app every few days. After that, you'll know where your data is going.
+
+## Stuck?
+
+<Q q="My Unlimited plan suddenly got very slow.">
+Most likely you've used the day's high-speed data and you're down to around 1 Mbps. Saily is blunt about it. Changing settings, restarting the phone or contacting support can't bring high speed back early, so you have to wait for the reset. At that speed, messaging apps, email and most websites still work. If you can't wait, buy a regular (non-unlimited) plan for the same destination in the app to get full speed again.
+</Q>
+<Q q="My phone and the Saily app show different usage.">
+That's normal, for the reasons in "For usage, go by the Saily app" above. Trust the Saily app.
+</Q>
+<Q q="With background refresh off, some apps are slow to show messages.">
+That's the trade-off. Apps only update when you open them. For the one or two you can't do without, turn background refresh back on just for them, and switch it all back on once you're on your usual network again.
+</Q>
+<Q q="The Ad Blocker is on, but I still see ads.">
+It blocks ads by the address they come from, so ads hosted with the site itself get through. Saily says the same.
+</Q>
