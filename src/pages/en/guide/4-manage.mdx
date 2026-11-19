@@ -1,5 +1,101 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 4
+need: A Saily eSIM that's already installed (step 2)
+tldr: How much is left, when it expires and how to add more all live on your eSIM's page in the Saily app. Three things charge you again later on their own (Ultra, the phone number and Auto top-up), so switch them off when you're done.
+description: See your remaining data in the Saily app and in phone settings; when a plan expires, unused data goes with it; add a plan to the same eSIM with Add data, even for your next country; how Top-up now and Auto top-up work and how to turn them off; the rules for credits and referrals; how to cancel Ultra, the phone number and Auto top-up.
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import Tabs from "../../../components/Tabs.astro";
+import Q from "../../../components/Q.astro";
+
+It's your fourth night in Kyoto. You open the map in a side street to find your way back to the hotel, and the page takes ages to load. You check the Saily app and your <Term k="eSIM" /> is down to a few dozen MB, with three days still to go.
+
+You don't need to hunt for a SIM shop, or hold out until you're back on hotel Wi-Fi. You can add more data right there in the app. Your <Term k="流量套餐" /> is really a balance that runs out and expires, and there's one place where you look after it.
+
+<mark><strong>Checking what's left and adding more both happen on your eSIM's page in the Saily app.</strong></mark>
+
+So spend a minute learning the way around before you leave, and you won't be scrambling on the road. This step covers where to look and how to add data, then credits, and last, the things that charge you again on their own.
+
+## See how much is left
+
+Open the Saily app. The number in the middle of the home screen, under your eSIM, is how much data you have left. For more detail, tap the eSIM to see the plan's remaining balance and expiry date. See the official pages on [checking your data usage](https://support.saily.com/hc/en-us/articles/12823154589724) and [checking your eSIM balance](https://support.saily.com/hc/en-us/articles/16518272109212).
+
+Your phone's settings keep a count too. But it records how much that line has used, not how much your plan has left, so for the balance, use the app.
+
+<Tabs id="usage" items={[["ios", "iPhone"], ["android", "Android"]]}>
+<div slot="ios">
+
+Open **Settings** → **Mobile Service** (on some versions it's **Cellular**) and scroll down. You'll see how much data each line has used in the current period, Saily included.
+
+</div>
+<div slot="android">
+
+On a Samsung phone, open **Settings** → **Connections** → **Data usage**. It lists what your home SIM, your Saily eSIM and Wi-Fi have each used. Other brands may name these menus differently.
+
+</div>
+</Tabs>
+
+## When it runs out, or runs out of time
+
+A data plan can end in two ways. The data runs out, which is easy, because you just add more. Or the validity period ends, and then the plan and any unused data expire together ([official page](https://support.saily.com/hc/en-us/articles/21484628749084)). So don't save data for your next trip. Once the date passes, it's gone.
+
+## Add more data
+
+In the app, tap your eSIM, choose **Add data**, pick the location and the amount of data, tap **continue**, and pay. If your account has several eSIMs, tap the top of the screen first and select the one you want. See the official page [Can I top up an eSIM?](https://support.saily.com/hc/en-us/articles/12823216658204)
+
+The location step is worth a second look, because the plan you add doesn't have to be for the same country. Say you're going on from Japan to South Korea. You can add a Korea plan to the same eSIM, and as long as the eSIM is activated, the new plan starts on its own when you arrive ([official page](https://support.saily.com/hc/en-us/articles/12823150321052)).
+
+If you want data for another device, or to keep two trips apart, you can also get a second eSIM. Tap your eSIM at the top of the app, choose **Add new eSIM**, tap **Get a new eSIM**, and pick a plan the way you did the first time ([official steps](https://support.saily.com/hc/en-us/articles/20269649356828)).
+
+## If you might forget, let Top-up handle it
+
+If you already know this trip will need more data and you'd rather not keep watching, use **Top-up**. It's on your eSIM's page, right under the current plan, between **Add data** and **Get number**. Tap it and you'll get two options. Which ones you see depends on the status of your original plan.
+
+**Top-up now** buys one more plan like your original right away, paid with the payment details from your first purchase. On the Home screen it shows combined with your original plan. Under **Profile → My Plans** it appears as a separate plan.
+
+**Auto top-up** renews your data plan automatically once you've used it up. Choose which plan it's for and whether it runs once or every time you run out, tap **Save**, then confirm with **Top-up**. Once it's on, a green dot appears on the **Top-up** button, and you get a push notification each time an auto top-up succeeds or fails. One catch is that if you paid for your first plan partly with credits or a discount code, the automatic top-up charges full price. See the official page [What is Saily Auto Top-Up?](https://support.saily.com/hc/en-us/articles/20105542335132)
+
+## Credits and referrals
+
+<Term k="抵用金" text="Credits" /> are a balance in your Saily account that you can put toward a plan. One way to get them is the referral program. Every Saily user has a referral code. Tap **Credits** at the bottom of the app to see yours, then tap **Share code** or **Copy** to send it to a friend. When a new user signs up with your code, they get a discount on their first purchase and you get Saily credit. For the amounts, go by the [official page](https://support.saily.com/hc/en-us/articles/14262137198236) and what the app shows. With Ultra, you also get some credit back on purchases ([official page](https://support.saily.com/hc/en-us/articles/25455420492572)).
+
+There aren't many rules, but each one matters. Credits are valid for one year from the day they're issued. They can't be moved to another account, so to use them for someone else, buy an eSIM with them and send that person the QR code (gifting is in [step 7](/en/guide/7-extras/)). Referral discounts are for new users and only for their first purchase, and you can't use your own code. On Android you claim your referral reward yourself, with **Claim Your Reward** in the app. All of this is on the official page about [gifting an eSIM](https://support.saily.com/hc/en-us/articles/31072966285724). This site doesn't publish any referral codes. For more, see [where credits come from and how to use them](/en/howto/credits/).
+
+## The things that charge you again
+
+You pay for a data plan once. Three things, though, charge you again on their own until you cancel them. The Ultra plan and the phone number plan charge every billing period, and Auto top-up charges when your data runs out. After you cancel, you keep the benefits until the current billing period ends ([official page](https://support.saily.com/hc/en-us/articles/31089593239452)).
+
+To stop Ultra, go to **Profile** → **Your plans**, select your Ultra plan, cancel it and confirm. Before you cancel, the app may offer a lower-tier plan. If you take it, it starts at your next billing cycle. If you still want to cancel, your plan pauses for one billing cycle and then ends for good. If you can't cancel in the app, Saily support will cancel it for you.
+
+To stop the phone number, go to **Your plans** too, select the phone number plan and cancel it. After the plan ends, your number stays reserved for 30 days. To keep it, tap **Get number** in the app within those 30 days and buy the phone number plan again on the same eSIM. After 30 days the number is released and can't be recovered. Step 5 goes into the number in more detail.
+
+To stop Auto top-up, open the **eSIMs** tab, select the eSIM, tap **Top-up**, then tap **Cancel auto top-up** and confirm. When the green dot is gone, it's off.
+
+<u>Don't use **Delete eSIM** in the Saily app to stop charges.</u> It permanently removes the eSIM and its plans from your account, and cancels its phone number, Ultra subscription and Auto top-up along with it ([official page](https://support.saily.com/hc/en-us/articles/12838788763164)). Turn off each thing on its own as above. For refunds, see [ask for a refund](/en/howto/refund/) and the official [refund policy](https://support.saily.com/hc/en-us/articles/16420576170652).
+
+You now know how much data you have, how to add more, and which things charge you on their own. Next up is the US phone number Saily sells alongside its data.
+
+## Stuck?
+
+<Q q="I added data, but I still have no internet.">
+<p>A new plan starts once you're in a place it covers, and only if the eSIM is activated and data roaming is on (<a href="https://support.saily.com/hc/en-us/articles/21484628749084">official page</a>). If you've arrived and it still doesn't work, go through <a href="/en/guide/3-abroad/">step 3</a> one item at a time.</p>
+</Q>
+<Q q="I can't find Top-up, or there's no Auto top-up option.">
+<p><strong>Top-up</strong> sits on the eSIM page, right under your current plan. Which options it shows depends on the status of your original plan, so sometimes you'll only see one of them.</p>
+</Q>
+<Q q="Auto top-up charged more than my first purchase.">
+<p>If your first plan was paid partly with credits or a discount code, the automatic top-up charges full price. That's a stated rule, not a billing mistake.</p>
+</Q>
+<Q q="I want to pay for my phone number with a different card.">
+<p>Saily's way is to cancel the phone number plan, wait for it to expire, and buy it again with the new card. To keep the same number, buy it again on the same eSIM with <strong>Get number</strong> within 30 days of the plan ending.</p>
+</Q>
+<Q q="I can't cancel Ultra in the app.">
+<p>Ask Saily support to cancel it. In the app, open the <strong>Help</strong> tab and tap <strong>Chat with us</strong>. See <a href="https://support.saily.com/hc/en-us/articles/17770364559516">how to contact support</a>.</p>
+</Q>
+<Q q="Can I move my credits to a family member?">
+<p>No, credits stay in your own account. You can buy an eSIM with them and send the QR code to the other person to install. See <a href="/en/guide/7-extras/">step 7</a>.</p>
+</Q>
+
+<Checkpoint id="s4" items={["I know where the app shows how much data is left and when it expires", "I can use <strong>Add data</strong> on this eSIM, including a plan for my next country", "I've decided whether to turn on <strong>Auto top-up</strong>, and I know the green dot means it's on", "I know Ultra, the phone number and Auto top-up charge me again on their own, and where to cancel them", "I won't use <strong>Delete eSIM</strong> in the app to stop charges"]} />

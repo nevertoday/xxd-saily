@@ -1,5 +1,66 @@
 ---
 layout: ../../layouts/Guide.astro
 step: 6
+need: 一张能装 eSIM 的实体卡；能联系上 Saily 客服
+tldr: 手机里没有 eSIM，就插一张能装 eSIM 的实体卡，把 Saily 装到这张卡上。官方的办法是 eSIM.me 的卡加客服给的二维码；BeeSIM 这类卡是网友走通的路，官方文档没提。
+description: 手机不支持 eSIM 时怎么用 Saily：官方的办法是买一张 eSIM.me 的实体卡，再找 Saily 客服要二维码；网友用 BeeSIM 这类卡通过蓝牙写入的做法，官方没写，风险自担；二维码只能装一次，别给别人。
 ---
-{/* 待写：正文。写法见 docs/MAINTAINING.md 的「怎么写」，资料在 docs/sources/。 */}
+import Checkpoint from "../../components/Checkpoint.astro";
+import Term from "../../components/Term.astro";
+import Copy from "../../components/Copy.astro";
+import Q from "../../components/Q.astro";
+
+你在 Saily 买好了套餐，照着教程去手机设置里找 **添加 eSIM**，可是翻来翻去，就是没有这一项。官方说，这一项不出现，要么是手机不支持 <Term k="eSIM" />，要么是手机被运营商锁了（[官方说明](https://support.saily.com/hc/zh-cn/articles/13318373425180)）。不支持的情况在国内很常见，Saily 官方也提醒过，在中国大陆、香港、澳门、台湾和韩国，很多当地卖的机型都不支持 eSIM（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#travel)）。
+
+先别急着退款。eSIM 说到底是一份下载进手机的配置，手机里没有装它的芯片，可以借一张实体卡来装。
+
+<mark><strong>手机里没有 eSIM，就给它插一张能装 eSIM 的实体卡，再把 Saily 装到这张卡上。</strong></mark>
+
+这种卡叫<Term k="实体 eSIM 卡" />。它和普通的<Term k="实体 SIM 卡" />一样插在卡槽里，里面却能放下 eSIM。装卡有两条路，一条是 Saily 官方写了的，一条是网友自己走通的，下面分开讲。
+
+## 先确认一下
+
+动手之前，先确认手机真的不支持。怎么查，看[新手入门第 1 课](/start/1-check-phone/)，也可以对照 Saily 官网的[支持 eSIM 的机型列表](https://saily.com/esim-supported-devices/)。官方说这份列表会随着新机型上市而变，支不支持还和手机在哪个国家卖有关。
+
+还要排除运营商锁。被运营商锁住的手机用不了 eSIM，开头那篇官方文章里写了怎么查；要是锁了，官方的建议是找你的运营商解锁（[安装 eSIM](https://support.saily.com/hc/zh-cn/articles/15751399206172)）。插一张实体卡能不能绕开这把锁，Saily 的文档没说。
+
+## 官方的办法：eSIM.me 的卡，加客服给的二维码
+
+Saily 官方的说法是，从 eSIM.me 买一张实体卡，用它替下你平时插的那张卡，这样就能把 eSIM 配置直接下载到手机上，再配上 Saily，就能用流量了（[官方说明](https://support.saily.com/hc/zh-cn/articles/12822397552028)）。因为它要占一个卡槽，只有一个卡槽的手机，就得先把国内的卡取下来。
+
+要把 Saily 装上去，还差一样东西，就是二维码。官方写明，这一步要先联系 Saily 客服，找他们要。联系的办法有两种：在 Saily App 里打开 **帮助**（Help）选项卡，点 **与我们聊天**（Chat with us）；或者在帮助中心的[提交请求](https://support.saily.com/hc/en-us/requests/new)页面发邮件（[怎么联系客服](https://support.saily.com/hc/zh-cn/articles/17770364559516)）。跟客服说清楚你的情况就行，比如：
+
+<Copy id="ask-qr" title="发给 Saily 客服，按你的情况改一改" code="你好，我的手机不支持 eSIM，所以买了一张 eSIM.me 的实体卡，已经插在手机卡槽里了。我想把账户里这张 Saily eSIM 装到这张卡上，麻烦把它的安装二维码发给我。谢谢！" />
+
+拿到二维码以后，这张卡怎么用、怎么把二维码扫进去，照 eSIM.me 自己的说明来，Saily 的文档只讲到给你二维码这一步。装好以后，到了当地，照[第 3 步](/guide/3-abroad/)让手机用 Saily 上网、打开数据漫游。
+
+<u>二维码只能装一次，别人拿到它也能装走你的 eSIM，所以别转发，也别发到群里。</u>官方在讲送人 eSIM 时也说过，二维码装过一次就不能再用了（[官方说明](https://support.saily.com/hc/zh-cn/articles/31072966285724)）。
+
+## 网友走的另一条路：BeeSIM、9eSIM 这类卡
+
+市面上还有别的能写入 eSIM 的实体卡，网友提到过 BeeSIM、9eSIM、XeSIM、ESTK 这些。<u>Saily 的帮助中心没有提到这些卡，用它们装 Saily，风险由你自己承担。</u>
+
+有网友在 X 上分享过完整的过程（[原帖一](https://x.com/AI_Jasonyu/status/2080877134319624492)、[原帖二](https://x.com/zureA255062/status/2113811704106959213)）。大致是这样：先在 Saily App 里点 **安装 eSIM**（Set up eSIM），选 **在其他人的设备上**（On someone else's device），让 App 显示出安装二维码。这个选项官方的安装教程里也有，本来是让你在另一块屏幕上显示二维码用的（[官方说明](https://support.saily.com/hc/zh-cn/articles/15751399206172)）。然后把 BeeSIM 卡插进手机卡槽（另一位网友是先装进配套的蓝牙读卡器），用它自带的小程序、网页或 App，通过蓝牙连上这张卡，扫这个二维码，把 Saily 写进卡里。
+
+有网友建议，扫码不成功就改成手动输入激活码。官方说，自动安装失败时，Saily App 里会出现 **查看说明**（View instructions），点开能看到 SM-DP+ 地址和激活码。
+
+这些卡出了问题，先找卡的厂家，因为 Saily 的文档里没有它们的说明。帖子里的购买链接和优惠码，本站不放。
+
+不管走哪条路，最后都是 Saily 的 eSIM 装在了一张实体卡上。上面两篇帖子里，网友装在卡上的正是 Saily 的美国号码，号码本身的规矩见[第 5 步](/guide/5-phone-number/)。下一步讲流量之外，Saily 还附带了哪些东西。
+
+## 卡住了？
+
+<Q q="在国内打不开 Saily App。">
+<p>Saily 官方提醒，在土耳其、阿曼、卡塔尔、沙特阿拉伯、阿联酋和中国大陆，Saily 的 App 或网站可能打不开，所以要去这些地方，出发前就把 eSIM 装好（<a href="https://support.saily.com/hc/zh-cn/articles/12838788763164#travel">官方说明</a>）。本站不讲绕过限制的办法。</p>
+</Q>
+<Q q="扫码时提示「此代码已失效」或者「已在其他设备上使用」。">
+<p>官方说，这时 eSIM 可能已经装上了。先去手机的 SIM 卡设置里看一眼，别重复装同一个 eSIM（<a href="https://support.saily.com/hc/zh-cn/articles/15751399206172">官方说明</a>）。确实没装上，就联系 Saily 客服说明情况（<a href="https://support.saily.com/hc/zh-cn/articles/17770364559516">怎么联系客服</a>）。</p>
+</Q>
+<Q q="卡插上了，在国内却没有信号。">
+<p>不一定是卡坏了。Saily 的流量套餐要等你到了它覆盖的国家或地区，打开这条线和数据漫游以后才开始用（<a href="https://support.saily.com/hc/zh-cn/articles/12838788763164">官方说明</a>）。到了当地还没有网，照<a href="/guide/3-abroad/">第 3 步</a>查。</p>
+</Q>
+<Q q="同一个 Saily eSIM，能不能同时装在两个地方？">
+<p>不能。官方说一个 Saily eSIM 同一时间只能在一部手机上用。要换地方装，先在原来那里联网删掉它，再装到新的地方。</p>
+</Q>
+
+<Checkpoint id="s6" items={["我确认过手机设置里真的没有 <strong>添加 eSIM</strong>，也不是被运营商锁了", "我知道官方的办法是 eSIM.me 的卡，二维码要找 Saily 客服要", "我知道 BeeSIM、9eSIM 这些卡官方没提，用了风险自担", "二维码我没有发给任何人"]} />

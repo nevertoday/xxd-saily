@@ -1,5 +1,122 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 5
+need: A phone that can take the Saily eSIM (if yours has no eSIM, see step 6 first); a valid original ID document, and for documents issued in China, both a passport and a national ID card
+tldr: It's a real US +1 number, but the carrier behind it runs on internet calling (VoIP), so most services text it codes and some banks and payment apps won't. You verify your identity before you get it, answering a call uses minutes, and if renewal stops, the number goes.
+description: What Saily's US +1 number is and where to buy it; which documents KYC accepts (China-issued documents need a passport and a national ID card); why the number can show up as VoIP and what to do when a code doesn't arrive; calls are billed by the minute, incoming too; send plain-text SMS only; where calls work; how to keep or change the number; what users on X report.
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+Plenty of people find Saily not for the data, but for the other thing it sells: a US +1 phone number. One Chinese-language guide on X about getting this number has more than 750,000 views ([the post](https://x.com/AI_Jasonyu/status/2080877134319624492)).
+
+Read through those posts and you'll see people arguing over one question. Is it a "real" mobile number or a "virtual" one? Saily's own help center answers it. It's a real US number assigned through the North American Numbering Plan (NANPA). It makes and receives calls and texts, and it's assigned only to you for as long as your service stays active. But the carrier that provides it uses internet-based (VoIP) network technology, so some apps and websites that check number types will label it "VoIP" rather than "mobile". Saily points out that this describes the carrier's network, not whether the number is genuine ([OTP and 2FA](https://support.saily.com/hc/en-us/articles/27948689277596)).
+
+<mark><strong>The number is real but the line behind it is VoIP, so most services text it codes and some banks, financial and payment apps won't.</strong></mark>
+
+Keep that in mind and the rest of this step makes sense. It starts with what the number is and how to get it, then covers what codes, calls and texts can and can't do, and ends with how to keep the number.
+
+## What it is and where to get it
+
+The Saily phone number is an optional add-on. It sits on your Saily eSIM and works alongside your data. Saily says it's designed for travelers and Global plan users who need to call and text ([What is a Saily phone number?](https://support.saily.com/hc/en-us/articles/27948598334620)). If you don't want a number, you can still buy data on its own.
+
+You buy a <Term k="电话号码套餐" /> on your eSIM's page in the app. It's in the row under your current plan, where the button reads **Get number** or **Add min./SMS** ([official page](https://support.saily.com/hc/en-us/articles/20105542335132)). The help center doesn't list what the number costs, so go by the price the app shows. It renews every billing period until you cancel; [step 4](/en/guide/4-manage/) shows how.
+
+## Verify your identity first
+
+Before the number is switched on, you go through <Term k="KYC 实名认证" />. It's mandatory. Until it's done and verified, Saily won't tell you which number you've been given or switch it on ([official page](https://support.saily.com/hc/en-us/articles/29288111980060)). Data-only plans don't usually need it. The app asks for your document when you set up a phone number.
+
+There are three physical documents you can use: a national ID card (both sides), a passport (photo page) or a driver's license (both sides). Each has to be a valid, government-issued original. Saily can't accept expired documents, photocopies, scans of photocopies, screenshots, or photos of a document shown on another screen. Besides the document, you may be asked for a selfie, photos or a short video, to confirm that the person holding it is you.
+
+<u>If your document was issued in China, you must provide both a passport and a national ID card. One alone won't complete verification.</u> That's in the official list of country-specific requirements, and it applies to China and Morocco. Saily also can't currently verify documents from some countries, such as Russia, Iran and North Korea. What counts is the country that issued the document, not where you are or where you bought the plan.
+
+Saily has a few tips for photographing your document. Put it on a flat, dark, plain surface, get all four corners in the frame, avoid glare from lights and sunlight, keep your fingers off it, shoot both sides if it has two, and make sure the text and photo are sharp.
+
+One more thing to know. Because Saily is legally required to collect and keep this data, some of your rights over it, such as asking for deletion, may be limited for KYC records, call records and similar data.
+
+## Codes: most arrive, some services refuse
+
+Back to that sentence at the top. Most services send verification codes to this number without trouble. But Saily also says plainly that some services don't accept VoIP numbers for verification, particularly certain banks, financial and payment apps, and platforms with strict security policies. Those services set that policy, and Saily can't change it.
+
+Saily lists a few apps commonly reported as working for one-time codes, such as Signal, Viber, WhatsApp and Airbnb, and a separate list of services commonly reported as working for two-factor authentication. Both lists say they're not exhaustive or guaranteed, and that they can change at any time ([the official lists](https://support.saily.com/hc/en-us/articles/27948689277596)).
+
+When a service won't accept the number, Saily suggests trying these in order:
+
+1. Check whether it offers another way to verify, such as an authenticator app, email or a passkey. Saily notes these are often more secure than text codes anyway.
+2. Ask that service's support team whether they can verify your account another way.
+3. Email support@saily.com and tell Saily which service it was, to help them improve compatibility.
+
+<Callout type="no" title="It's not a US identity">
+Having a US number doesn't give you a US address or US residency. Banks, brokers and payment services have their own requirements for opening an account, and this number doesn't help with those. This site doesn't cover using it to open that kind of account.
+</Callout>
+
+## Calls: answering uses minutes too
+
+Calls come in minute packages, and the catch people trip over most is that **when someone calls you and you answer, that comes out of your minutes too**. Buy 10 minutes, and those 10 minutes cover both the calls you make and the calls you take. Saily flags this as a key difference from some traditional mobile plans ([minutes and billing](https://support.saily.com/hc/en-us/articles/27948683924380)). The good news is that billing starts only once the other side answers and the call connects. If nobody picks up, no minutes are used.
+
+Then there's the person calling you. Because it's a US number, someone calling from their local carrier at home pays their carrier's international rate for calls to the United States, wherever either of you actually is. Have them check with their own carrier before they dial.
+
+Phone number plans cover local calls only and don't support international calls. If one trip takes you through several countries, a Global plan lets you call from any supported country, so you don't need a separate plan for each one ([What is a Saily phone number?](https://support.saily.com/hc/en-us/articles/27948598334620)). Three things it can't do at all: MMS, premium-rate short numbers such as 1482, and call forwarding.
+
+## Texts: plain text only
+
+Ordinary SMS works, with two things to know ([SMS and MMS](https://support.saily.com/hc/en-us/articles/27948666453404)). The first is length. With standard Latin characters, one SMS holds up to 160 characters. With other scripts, such as Chinese or Japanese, it holds up to 70, and one message may use 2 to 3 credits from your package. The second is MMS, which isn't supported.
+
+The tricky part is that your phone or carrier sometimes turns an SMS into an MMS on its own, and then the message fails. Attaching an image, video, audio or GIF, writing a very long message, texting several people at once, adding a subject line, or sending a contact card (vCard) can all do that. So Saily recommends plain-text SMS only.
+
+## Where calls work
+
+Whether you can make or take a call depends on the country you're in at the time. Saily says voice service covers more than 150 countries and territories, and the list changes ([which countries support calls](https://support.saily.com/hc/en-us/articles/27948695958684)). Calls also aren't available everywhere you can use data ([countries and regions Saily covers](https://support.saily.com/hc/en-us/articles/31091827466140)).
+
+<Callout type="warn" title="Mainland China: the two versions disagree">
+The official English list (updated 2026-11-13) includes Hong Kong, Macau and Taiwan under Asia, but not mainland China. Saily's official Chinese translation still lists "China". The English page is the original, so this site goes by it. If you need to call from mainland China, check the latest list on the <a href="https://support.saily.com/hc/en-us/articles/27948695958684">English page</a> before you buy.
+</Callout>
+
+## Keep the number
+
+The number follows your renewal, and it follows this eSIM. To keep it, remember these things.
+
+If the phone number plan is cancelled or isn't renewed, the number stays reserved for 30 days after the plan ends. Within those 30 days, tap **Get number** in the app and buy the plan again on the same eSIM to keep it. After 30 days the number is released and can't be recovered ([official page](https://support.saily.com/hc/en-us/articles/31089593239452)).
+
+Deleting this eSIM in the Saily app cancels the number with it ([official page](https://support.saily.com/hc/en-us/articles/12838788763164)). Deleting your Saily account goes further, and you lose access to everything you bought ([delete your account](https://support.saily.com/hc/en-us/articles/27480241534620)). And the number is yours alone. You can't give a phone number or phone plan to someone else ([gifting an eSIM](https://support.saily.com/hc/en-us/articles/31072966285724)).
+
+If codes aren't arriving, you're getting unwanted calls, or the number is already registered with a service by someone else, you can change it once for free in the app. On the Home screen, tap the eSIM selector at the top, where your eSIM name and number appear. In the **eSIMs** list, tap the three-dot button next to the eSIM, then under **Phone number** tap **Change number**. Pick a reason, read the warning, and tap **Change number** again. The new number can take up to 24 hours to arrive, and your current number keeps working until then. Once it's replaced, the old number can't be recovered. After the free change, the option disappears, and you can ask Saily support for one more. This part is only on the [English page](https://support.saily.com/hc/en-us/articles/27948598334620) so far; the Chinese translation doesn't have it yet.
+
+For more, see [keep or change your number](/en/howto/keep-number/), [texts and verification codes on the US number](/en/howto/us-number-sms/) and [make calls with the number](/en/howto/number-calls/).
+
+## What users on X report
+
+These are things users have shared on X, not official guidance, so use your own judgment. Prices, promo codes and proxy settings from those posts don't appear on this site.
+
+One user who only uses this line for texts, not for its data, turned off mobile data and data roaming for that line in the phone's settings, so it can't use data in the background ([the post](https://x.com/AI_Jasonyu/status/2080877134319624492)). Keep in mind that Saily says its eSIM needs data roaming on to get online abroad, so turn it back on the day you want to use this eSIM's data.
+
+The same post makes two more points. Answering an unknown call still uses minutes, so you can simply decline numbers you don't recognize, which matches Saily's billing rules. And keep the renewal going and don't lose the Saily app or your account. Saily's docs are more specific here. The number sits on this eSIM, it's only kept for 30 days once renewal stops, and deleting the eSIM or your whole account takes the number with it (see "Keep the number" above).
+
+When texts didn't arrive, another user found it was usually a dual-SIM conflict. Turning off the other SIM in the phone for a while let the texts through. They also say that when a particular platform's code doesn't come, trying a different browser can help ([the post](https://x.com/yedabinbinah/status/2114683684414685509)).
+
+That's the number covered. Next, how to use Saily if your phone doesn't support eSIM.
+
+## Stuck?
+
+<Q q="My identity verification keeps failing.">
+<p>Check the document rules first. It has to be a valid, government-issued original; screenshots, photocopies and photos of a screen aren't accepted, and a China-issued document needs a passport and a national ID card together. Then reshoot with Saily's tips: dark surface, all four corners in frame, no glare, no fingers on it. If it still fails, contact Saily support. See the <a href="https://support.saily.com/hc/en-us/articles/29288111980060">official page</a>.</p>
+</Q>
+<Q q="An app says it doesn't support this number.">
+<p>It has most likely read the number as VoIP. See whether it offers another way to verify, such as an authenticator app, email or passkey. Then ask its support whether they can verify you another way, and email support@saily.com to tell Saily which service it was.</p>
+</Q>
+<Q q="My texts won't send.">
+<p>Check whether they're being turned into MMS: an image or GIF attached, a very long message, a group text, a subject line, or a contact card. Send one plain-text message to one person.</p>
+</Q>
+<Q q="Texts aren't arriving.">
+<p>One user's tip is to turn off the other SIM in your phone for a while, to rule out a dual-SIM conflict (<a href="https://x.com/yedabinbinah/status/2114683684414685509">the post</a>). If only one service's codes don't arrive, it may not accept VoIP numbers. Follow the answer above.</p>
+</Q>
+<Q q="My family says calling me is expensive.">
+<p>It's a US number, so they pay their own carrier's international rate for calls to the US, and Saily can't change that. Have them check with their carrier before they call.</p>
+</Q>
+<Q q="I'm in mainland China and can't make calls.">
+<p>Mainland China isn't on the official English list, and what matters is where you are at the time of the call. See "Where calls work" above.</p>
+</Q>
+
+<Checkpoint id="s5" items={["I know some services see this number as VoIP, and banks and payment apps may not accept its codes", "My ID is a valid original, and for a China-issued document I have both a passport and a national ID card", "I know answering a call uses minutes, and unanswered calls don't", "I only send plain-text SMS", "I know that if renewal stops, the number is only kept for 30 days"]} />

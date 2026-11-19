@@ -1,5 +1,87 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 7
+need: A Saily account; for Ultra's perks, an Ultra subscription
+tldr: Everything beyond data is optional. Web protection, the Ad Blocker and virtual locations are switches on the home screen, shared plans and gifting let other people use data you bought, and Ultra's perks are mostly for the airport.
+description: Saily's features beyond data. Web protection blocks harmful sites, the Ad Blocker works at the DNS level, and a virtual location changes your IP address, not your GPS. A shared plan lets up to 5 people use one plan, and gifting means buying the eSIM yourself and sending the QR code. Ultra's lounge, fast-track, delay lounge pass and ClassPass perks, and one line on Saily for business.
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+When you book a hotel, you look at the bed and the location. It's only after you check in that you notice the room has a safe, and the front desk will give you a wake-up call or hold your bags. You'd sleep fine without any of that, but knowing it's there saves you asking around on the day you need it.
+
+Saily is like that. What you buy is a <Term k="流量套餐" />, and the app also has a few other things in it. Some are switches on the home screen, some let family and friends use the data you bought, and some only come with Ultra.
+
+<mark><strong>Everything beyond data is optional, so learn what each one does and switch it on when you need it.</strong></mark>
+
+## Three switches on the home screen
+
+Open the Saily app and scroll down the home screen. Under **Security** you'll find **Web protection** and the **Ad Blocker**, and **Virtual location** is just below.
+
+**Web protection** guards against online threats such as malware and phishing. Tap it and turn it on, and it turns green on the home screen ([official page](https://support.saily.com/hc/en-us/articles/17463257396508)).
+
+The **Ad Blocker** stops ads from loading, so pages open faster and use a little less data. It works at the DNS level, which means ads served from the same domain as the website can still show up ([official page](https://support.saily.com/hc/en-us/articles/17464798496796)). If you want your data to last longer, it's a good one to turn on, and see [make your data last](/en/howto/save-data/) for more.
+
+A **Virtual location** routes your traffic through a remote server first, so websites and apps see that server's IP address, as if you were connecting from its country. Tap it, pick a country, and you're connected ([official page](https://support.saily.com/hc/en-us/articles/17464251910428)). Two things about it are often misunderstood. First, it changes only your IP address, not your phone's GPS location, and sites may still work out where you are from GPS or your account settings. Second, it doesn't make you anonymous, because sites can still recognize you from things like your account.
+
+## Let other people use your data
+
+A family traveling together doesn't need a separate plan for each person. Saily has two ways to handle this. Several people can share one plan, or you can buy a whole eSIM and give it away.
+
+A **shared plan** (also called the Family Plan) is one plan you share with up to 4 more people, so 5 people in all. Tap the plan on the home screen, or select it in **My plans**, and invite someone by entering their email address. They get an email with a **Claim plan** button. After tapping it, they log in to the Saily app and confirm, so they need the Saily app installed and their own Saily account. Newly bought plans share data in 256 MB portions, which makes it feel more like a single pool of data. A shared plan stays active until the data runs out or the plan expires ([official page](https://support.saily.com/hc/en-us/articles/29753248333724)).
+
+Not every plan can be shared. Ultra plans and Unlimited data plans can't, and neither can a plan that's already been activated, meaning someone has installed it or started using it. A 1 GB plan needs Saily app version 3.63 or later to share.
+
+**Gifting** has no button of its own. You buy the eSIM yourself and send the other person the QR code ([official page](https://support.saily.com/hc/en-us/articles/31072966285724)). Choose the destination and plan in your own account and pay as usual. When the eSIM is ready, find its QR code in the app and send it as a screenshot or a message. The other person scans it on their own phone to install it.
+
+<u>Don't install it on your own phone first.</u> Each eSIM installs on one device only, and a QR code can't be reused once it's been installed, so ask the other person to install it soon after they get it. A few more rules:
+
+- Their phone must support eSIM and be carrier-unlocked. If they use the Saily app, it needs to be version 3.23 or newer. They need a stable Wi-Fi connection to install.
+- You can only gift data plans. Phone numbers and phone plans can't be passed on.
+- The plan stays linked to your account, and so does any refund. Once the eSIM is installed or activated, you may not be able to get one.
+- Gifting is for personal use. Don't buy eSIMs to resell, which breaks Saily's Terms of Service.
+- <Term k="抵用金" text="Credits" /> can't be moved to someone else. To use them for another person, buy an eSIM with them and gift that.
+
+For how a family can split things up, see [share with your family](/en/howto/share-family/).
+
+## Ultra's travel perks
+
+Ultra is Saily's top-tier subscription plan. How its data works is in [step 1](/en/guide/1-choose-plan/). Here we'll just cover the travel perks that come with it, which are mostly for the airport ([official page](https://support.saily.com/hc/en-us/articles/25455420492572)).
+
+Each month you get one airport lounge pass and one fast-track pass. Unused ones roll over and build up for up to three months. Keep Ultra for three months in a row without using them, and you'll have three lounge passes and three fast-track passes to use in the same month.
+
+If your flight is delayed two hours or more, contact Saily support with your flight details and boarding pass, and you'll get a lounge pass to use while you wait. The name on your boarding pass must match your account, and it's only at selected airports.
+
+Fast-track is a dedicated security lane at selected airports that gets you through the queue sooner ([official page](https://support.saily.com/hc/en-us/articles/25700495342492)). Saily recommends booking at least 24 hours before you get to the airport, and the name on your Saily account must match your boarding pass. In the app, you choose the airport, terminal and time slot, and the app generates a QR code you show at the lane. (Saily's Chinese translation still says to contact support for this.) To see which airports are included, check the lists of [lounge destinations](https://support.saily.com/hc/en-us/articles/21926290717980) and [fast-track destinations](https://support.saily.com/hc/en-us/articles/22255302743964).
+
+Ultra also gives you 10 ClassPass credits each month, for fitness, wellness and beauty bookings at ClassPass venues. Sign up for ClassPass with the same email you used to buy Ultra, and note that the credits expire monthly ([official page](https://support.saily.com/hc/en-us/articles/31763970183196)). On top of that, there's priority support with faster replies and a bundle of privacy and security tools included with the subscription, listed on the official page.
+
+Ultra is a subscription that keeps renewing. Go by the price the app shows, and see [step 4](/en/guide/4-manage/) for how to cancel it.
+
+If your company needs eSIMs for employees who travel, Saily also has a data-only business plan, and employees keep their usual number for calls ([Saily for business](https://support.saily.com/hc/en-us/articles/18420316369692)).
+
+That's the end of the main guide. Along the way you checked your phone, picked a plan, installed the eSIM and got online when you landed, then learned to watch your usage, get a number, work around a phone without eSIM, and find these extras. For a specific task, look in the [How-to guides](/en/howto/). To pin down a term, try the [Wiki](/en/wiki/).
+
+## Stuck?
+
+<Q q="Websites think I'm in another country.">
+<p>You probably have a <strong>Virtual location</strong> on. Open it in the app to see which country is selected, then pick another or disconnect. That's how it's meant to work, not a fault (<a href="https://support.saily.com/hc/en-us/articles/17464251910428">official page</a>).</p>
+</Q>
+<Q q="The Ad Blocker is on, but I still see ads.">
+<p>It blocks by domain, so ads served from the same domain as the website may get through.</p>
+</Q>
+<Q q="This plan can't be shared.">
+<p>Check whether it's one of these: an Ultra or Unlimited data plan, a plan someone has already installed or started using, or a 1 GB plan on an app version older than 3.63.</p>
+</Q>
+<Q q="My friend scanned the QR code, but it won't install.">
+<p>Check that their phone supports eSIM and isn't carrier-locked, that their Saily app is version 3.23 or newer, and that their Wi-Fi is stable. Then think about whether the eSIM was already installed on another phone, because a QR code can't be reused after that.</p>
+</Q>
+<Q q="I can't book fast-track, or I can't get into the lounge.">
+<p>Check that the name on your account matches your boarding pass, that you booked at least 24 hours ahead, and that the airport is on the list. If it still doesn't work, open the <strong>Help</strong> tab in the app and tap <strong>Chat with us</strong>.</p>
+</Q>
+<Q q="The ClassPass link says I'm not eligible.">
+<p>If you've just bought Ultra, your credits can take 1 to 2 business days to activate, so try again later. If you were already on Ultra, the credits arrive at the start of your next billing cycle. If it still fails after 2 business days, contact Saily support with your order ID (<a href="https://support.saily.com/hc/en-us/articles/31763970183196">official page</a>).</p>
+</Q>
+
+<Checkpoint id="s7" items={["I know where <strong>Web protection</strong>, the <strong>Ad Blocker</strong> and <strong>Virtual location</strong> are on the home screen, and what each does", "I know a virtual location changes my IP address, not my GPS location", "When I gift an eSIM, I don't install it on my own phone first", "I know Ultra, Unlimited and already activated plans can't be shared"]} />
