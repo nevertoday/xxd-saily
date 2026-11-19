@@ -74,7 +74,7 @@ export default {
     // TRACKS：每个是 [标题, 说明]，图标、顺序和对应的教程步骤固定（在 views/Home.astro 的 TRACK_BASE）
     TRACKS: [
       ["Data abroad", "What Saily is for. You buy a data plan for your destination, install it on your phone, and it works when you land. The full guide goes step by step through picking a plan, installing the eSIM, arriving and topping up, plus the app's other features."],
-      ["A +1 US phone number", "A separate US number Saily sells, for calls and texts. You verify your identity before you get it, and some banks and payment apps treat it as an internet (VoIP) number and won't send codes to it."],
+      ["A +1 US phone number", "A separate US number Saily sells, for calls and texts. You verify your identity before you get it, and some services flag it as an internet (VoIP) number, and the Help Center says certain banks and payment apps don't accept such numbers for verification. Most services send codes to it without trouble."],
       ["A phone without eSIM", "Saily's answer is a physical card that holds eSIMs. It goes in your SIM slot, and you install Saily onto it."],
     ],
     tracksLabel: "Matching steps in the full guide",

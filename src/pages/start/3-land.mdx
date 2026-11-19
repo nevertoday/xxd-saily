@@ -25,7 +25,7 @@ import Q from "../../components/Q.astro";
 
 这一步在国内就做。国内那张卡怎么处理，看你这一路还要不要用国内号码接电话、收短信。
 
-不用的话，把这张卡整个关掉最省心，官方也是这么建议的（[官方说明](https://support.saily.com/hc/zh-cn/articles/20793044376092)），只是这段时间国内号码就接不到电话和短信了。还要用的话，就让它开着，但别让它用流量。来电照样能接，不过国内运营商可能会对通话收漫游费，出发前最好问问你的运营商（[官方说明](https://support.saily.com/hc/zh-cn/articles/16747226859164)）。
+不用的话，把这张卡整个关掉最省心，这是官方列出的办法之一（[官方说明](https://support.saily.com/hc/zh-cn/articles/20793044376092)），只是这段时间国内号码就接不到电话和短信了。还要用的话，就让它开着，但别让它用流量。来电照样能接，不过国内运营商可能会对通话收漫游费，出发前最好问问你的运营商（[官方说明](https://support.saily.com/hc/zh-cn/articles/16747226859164)）。
 
 <Tabs id="home-sim" items={[["ios", "iPhone"], ["android", "安卓手机"]]}>
 <div slot="ios">
@@ -39,7 +39,7 @@ import Q from "../../components/Q.astro";
 <div slot="android">
 
 - 整张关掉：打开 SIM 卡那一页（三星是 **设置** → **连接** → **SIM 卡管理器**），把国内那张卡的开关关上，再点 **关闭**。
-- 留着接电话：让它开着就行。落地以后你会把上网切到 Saily，并关掉自动切换，国内那张卡就不会再用流量了。
+- 留着接电话：让它开着就行。落地以后你会把上网切到 Saily，关掉自动切换，再关掉国内那张卡的数据漫游（在 **设置** → **连接** → **移动网络** 里），免得国内运营商收漫游费。
 
 </div>
 </Tabs>
@@ -73,7 +73,7 @@ import Q from "../../components/Q.astro";
 屏幕顶上出现信号格，网页打得开。
 </Callout>
 
-套餐也就在这时候自动生效了，不用你去点什么「激活」（[官方说明](https://support.saily.com/hc/zh-cn/articles/12823108536476)）。这之后再连 Wi-Fi 也没关系。
+套餐也就在这时候自动生效了，不用你去点什么「激活」（[官方说明](https://support.saily.com/hc/zh-cn/articles/12823108536476)）。
 
 ## 看看还剩多少流量
 
@@ -98,7 +98,7 @@ import Q from "../../components/Q.astro";
 
 <Q q="有信号格，可网页打不开。">
 
-官方说，这种情况多半是开关没拨对：上网没选 Saily，或者 Saily 的数据漫游没开（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#faq)）。回到上面再对一遍。都对的话，打开飞行模式，等 15 秒再关掉，让手机重新连一次当地的网络，等一分钟再试。
+官方说，这种情况多半是上网没选 Saily、Saily 的数据漫游没开，或者 APN 不是 `wbdata`（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#faq)）。回到上面把两个开关再对一遍，APN 怎么查见完整教程[第 3 步](/guide/3-abroad/)。都对的话，打开飞行模式，等 15 秒再关掉，让手机重新连一次当地的网络，等一分钟再试。
 
 </Q>
 <Q q="一格信号都没有。">

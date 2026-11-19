@@ -22,7 +22,7 @@ Saily is a travel eSIM. Install it on your phone before you leave, turn on data 
 
 The plane lands and your phone still has your home SIM. Either there's no data, or roaming is on and you're nervous about the bill. So you hunt for airport Wi-Fi or queue for a local SIM, then go looking for a pin and try not to lose your own card.
 
-An eSIM puts that card inside the phone. Install Saily at home on Wi-Fi before you leave, without taking anything out: your home number still takes calls and texts, and once you land, your data goes through Saily.
+An eSIM puts that card inside the phone. Install Saily at home on Wi-Fi before you leave, without taking anything out. Your home number stays, and you should still be able to take calls on it (your carrier may charge roaming for them, so ask before you go). Once you land, your data goes through Saily.
 
 <p align="center">
   <img src="assets/en/readme/two-lines.svg" width="100%" alt="One phone, two lines, each with its own job: your main number keeps calls and texts, with its data off so it doesn't run up roaming charges; the Saily eSIM has data on and carries your internet abroad, and you check usage in the Saily app.">

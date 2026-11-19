@@ -30,7 +30,7 @@ export const WIKI_EN = {
     one: "A physical SIM is the little card in your phone's SIM slot, and it's usually where your home number lives. On a dual-SIM phone it can stay on alongside the Saily eSIM, each doing its own job.",
     like: "Picture landing in Bangkok: the courier back home can still ring you, while your taxi app and maps run on Saily data. Two SIMs share one phone. The home one takes calls and texts, the Saily one handles the internet, and you tell your phone which does what in its settings.",
     here: [
-      "Whether both can stay on depends on the phone. Saily says your home number can keep taking calls as long as your phone can run a physical SIM and an eSIM at the same time (Dual SIM Dual Standby, or DSDS). How many eSIMs can be active at once varies by model, so check your phone's manual. The details are in [Can I receive calls on my primary number?](https://support.saily.com/hc/en-us/articles/16747226859164)",
+      "Whether both can stay on depends on the phone. Saily says your home number should be able to take calls as long as your phone can run a physical SIM and an eSIM at the same time (Dual SIM Dual Standby, or DSDS). How many eSIMs can be active at once varies by model, so check your phone's manual. The details are in [Can I receive calls on my primary number?](https://support.saily.com/hc/en-us/articles/16747226859164)",
       "With both on, the thing to watch is your home carrier's bill. Saily notes that your own carrier may charge roaming for calls on your home SIM abroad, so ask them before you go. For data, turn off [data roaming](/en/wiki/roaming/) or mobile data for your home SIM, and turn off **Allow Mobile Data Switching** on iPhone (Android has a similar automatic switching option), so your phone doesn't quietly fall back to your home SIM for data. If your phone isn't dual-SIM, you'll have to switch the home SIM off entirely and keep only the Saily eSIM. See [How to avoid roaming charges](https://support.saily.com/hc/en-us/articles/20793044376092).",
     ],
     myths: [
@@ -160,7 +160,7 @@ export const WIKI_EN = {
     list: [
       ["Country plan", "Covers one destination"],
       ["Regional plan", "One plan for several countries, only those on its list, so open the list before you buy"],
-      ["Global plan (Ultra)", "Covers 121 destinations, with 30 GB of high-speed data a month and up to 1 Mbps after that"],
+      ["Global plan (Ultra)", "Covers 121 destinations; how much high-speed data you get and how slow it drops afterward is in Saily's Ultra article and the app"],
       ["Unlimited plan", "No data cap, but a daily high-speed allowance; once it's used, about 1 Mbps for the rest of the day"],
     ],
     listTitle: "Kinds of plan", listHead: ["Plan", "In plain words"],
@@ -218,7 +218,7 @@ export const WIKI_EN = {
     one: "A +1 US number added to your Saily eSIM that makes and takes calls and sends texts. It's an optional add-on, and your data works without it.",
     like: "Like renting a mailbox in the US. You can collect your mail from any country, but whoever sends you a letter pays postage to the US. The number works the same way: someone calling you from a local phone may be charged by their carrier for an international call to the US.",
     here: [
-      "Saily describes it as a real US-based wireless number that sits alongside your Saily data eSIM. Calls come in minute packages and work in more than 150 countries and territories. A Global plan lets you call from any supported country, a local plan covers one country, and phone number plans cover local calls only, not international ones. ==Answering a call uses minutes too==, counted from when the other person picks up, and an unanswered call costs nothing. Before you get the number you go through [KYC verification](/en/wiki/kyc/), and until that's done the number isn't shown to you. See [What is a Saily phone number?](https://support.saily.com/hc/en-us/articles/27948598334620) and [minutes and billing](https://support.saily.com/hc/en-us/articles/27948683924380).",
+      "Saily describes it as a real US-based wireless number that sits alongside your Saily data eSIM. Calls come in minute packages and work only in the countries and territories on Saily's list. A Global plan lets you call from any supported country, a local plan covers one country, and phone number plans cover local calls only, not international ones. ==Answering a call uses minutes too==, counted from when the other person picks up, and an unanswered call costs nothing. Before you get the number you go through [KYC verification](/en/wiki/kyc/), and until that's done the number isn't shown to you. See [What is a Saily phone number?](https://support.saily.com/hc/en-us/articles/27948598334620) and [minutes and billing](https://support.saily.com/hc/en-us/articles/27948683924380).",
       "Texts are plain text only. Non-Latin characters, such as Chinese, fit up to 70 characters per SMS and one message may use 2 to 3 credits from your package, and adding a picture, texting a group or adding a subject line makes your phone turn it into an MMS, which won't send. Letting the number go needs some care too: when the phone number plan ends, the number is held for 30 days, and buying the plan again on the same eSIM with **Get number** in that window keeps it; after 30 days it's released and can't be recovered. See [SMS and MMS](https://support.saily.com/hc/en-us/articles/27948666453404) and [How to cancel a subscription](https://support.saily.com/hc/en-us/articles/31089593239452).",
     ],
     list: [
@@ -273,7 +273,7 @@ export const WIKI_EN = {
     myths: [
       "\"Being flagged as VoIP means it's a fake number.\" It doesn't. Saily says the label describes the carrier's network technology and has nothing to do with whether the number is genuine.",
       "\"If a service is on the list, codes will definitely arrive.\" Not necessarily. The list is just common reports, Saily doesn't guarantee it, and services can change their rules at any time.",
-      "\"With a US number, I can sign up for financial accounts as a US customer.\" This site doesn't teach that. ==Getting a code isn't the same as an institution treating you as a US resident==, and Saily itself says some banks and payment apps don't accept these numbers at all. Check the service's own rules first.",
+      "\"With this number, banks and payment apps will always accept it.\" Not necessarily. ==Whether a service accepts it for codes is the service's own call==, and Saily itself says some banks and payment apps don't accept these numbers at all. Check the service's own rules first.",
     ],
   },
 
