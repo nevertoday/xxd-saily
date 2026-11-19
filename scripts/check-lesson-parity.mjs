@@ -6,7 +6,10 @@ import { join } from "node:path";
 const [repo, lang, locale] = process.argv.slice(2);
 const LESSONS = ["1-check-phone", "2-data-plan", "3-land"];
 const raw = join(repo, "docs/sources/raw/official", locale);
-const corpus = readdirSync(raw).map((f) => readFileSync(join(raw, f), "utf8")).join("\n").toLowerCase();
+const norm = (s) => s.replace(/[’‘]/g, "'").toLowerCase();
+const read = (dir) => norm(readdirSync(dir).map((f) => readFileSync(join(dir, f), "utf8")).join("\n"));
+// Korean has a Help Center but no app interface, so its app buttons stay in English (TRANSLATE.md); look those up in en-us too
+const corpus = read(raw) + (lang === "ko" ? read(join(repo, "docs/sources/raw/official/en-us")) : "");
 
 // Labels the Help Center copy keeps in English, brand/OS names and generic tokens that are not UI labels.
 const ALLOW = new Set(["mobile plan labels", "retry eSIM installation", "ok", "lte", "4g", "lte/3g/2g", "sim", "sims"].map((s) => s.toLowerCase()));
@@ -50,7 +53,8 @@ for (const f of LESSONS) {
   const nums = (s) => s.replace(/https?:\/\/\S+/g, "").replace(/\(\/[^)]*\)/g, "").match(/\d+(?:\.\d+)?/g) || [];
   const left = [...nums(tr)];
   const dropped = nums(en).filter((n) => { const i = left.indexOf(n); if (i < 0) return true; left.splice(i, 1); return false; });
-  const added = left.filter((n) => !nums(zh).includes(n));
+  // "midnight" is often written 0 時 / 0 시 in a translation
+  const added = left.filter((n) => !nums(zh).includes(n) && !(n === "0" && /midnight/i.test(en)));
   if (dropped.length) fail(`${f}: numbers in the English missing here: ${dropped.join(", ")}`);
   if (added.length) fail(`${f}: numbers in neither the English nor the Chinese: ${added.join(", ")}`);
   if (left.length > added.length) console.log(`  note ${f}: extra numbers that the Chinese original also has: ${left.filter((n) => !added.includes(n)).join(", ")}`);
@@ -59,7 +63,7 @@ for (const f of LESSONS) {
   for (const m of tr.matchAll(/\*\*([^*]+)\*\*/g)) {
     const label = m[1].trim();
     if (ALLOW.has(label.toLowerCase())) continue;
-    if (!corpus.includes(label.toLowerCase())) missing.push(label);
+    if (!corpus.includes(norm(label))) missing.push(label);
   }
   if (missing.length) fail(`${f}: bold labels not found in ${locale} Help Center copy: ${[...new Set(missing)].join(" | ")}`);
 }
