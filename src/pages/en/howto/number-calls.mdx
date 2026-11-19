@@ -1,5 +1,59 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: number-calls
+step: 5
+time: 5-minute read
+for: You want to make and take calls on the Saily US number
+tldr: Calls you make and calls you answer come out of the same minutes, counted from when the call connects. People calling you pay their carrier's rate to the US, and whether calls work depends on the country you're in at the time.
+description: "Calls on the Saily US number: how minutes are used (answering counts too), what people calling you pay, which countries support calls, which calls won't go through, and what one user does when the number is only for texts."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+Say you're in Lisbon and your phone rings with an unknown US number. You pick up without thinking and sit through three minutes of a sales pitch before you hang up. Those three minutes came out of the call minutes you bought.
+
+<mark>On this number, calls you make and calls you answer both come out of the same minutes.</mark> Keep that in mind and the rest falls into place: who will call you, which calls to answer, and what to check before you travel.
+
+## How minutes are used
+
+The Saily <Term k="电话号码套餐" /> uses minute packages for calls. If you buy a 10-minute package, the calls you make and the calls you receive share those 10 minutes. Saily points out that this differs from many traditional mobile plans, so know it before you buy ([minutes and billing](https://support.saily.com/hc/en-us/articles/27948683924380)).
+
+The good news is that billing and minutes only start once the other side answers and the voice channel opens. You aren't charged from the moment you dial, and a call nobody answers uses no minutes at all.
+
+When your minutes or texts run low, there's an **Add min./SMS** button on the eSIM screen, under your current plan ([official article](https://support.saily.com/hc/en-us/articles/20105542335132)).
+
+## What people calling you pay
+
+Because it's a US number, anyone who calls you from their local carrier pays that carrier's rate for calls to the United States, which is an international rate, wherever either of you happens to be. Say you're in Tokyo and a relative in Shanghai calls you from their Chinese phone. They pay for a call from China to the US, and your being in Japan doesn't change that. Rates vary by carrier, so Saily suggests callers check with their own provider first. Before you ask family to call you, give them a heads-up.
+
+## Where calls work
+
+Saily phone number calls are available in over 150 countries and territories. Whether you can make or take a call depends on the country you're in at that moment. If it's on the list, calls work there, and if it isn't, they don't for now. The list can also change ([countries that support calls](https://support.saily.com/hc/en-us/articles/27948695958684)). Not every place where you can use data supports calls ([coverage](https://support.saily.com/hc/en-us/articles/31091827466140)), so check the list before you go.
+
+Mainland China needs a word of its own. The English article doesn't list mainland China, but Saily's own Chinese translation of the same article lists 中国 (China). Since the two don't match, this site goes by the English original. If you'll be in mainland China and want to call with the number, ask support first.
+
+Two more rules. Saily says phone number plans cover local calls only and don't support international calls. It doesn't spell out which numbers count as local, so ask support if you're unsure. If you're visiting several countries, pair the number with a Global plan, which lets you call in any supported country you travel to without buying a plan for each destination ([What is a Saily phone number?](https://support.saily.com/hc/en-us/articles/27948598334620)). Regional data plans cover data only, with no calls or texts ([regional plans](https://support.saily.com/hc/en-us/articles/13798863550492)).
+
+## Calls that won't go through
+
+You can't set up call forwarding, either to the number or from it. You also can't call or text short numbers such as 1482 ([What is a Saily phone number?](https://support.saily.com/hc/en-us/articles/27948598334620)).
+
+## If you only use it for texts
+
+Plenty of people get this number mostly for texts. One user on X reports ([original post](https://x.com/AI_Jasonyu/status/2080877134319624492)) that his line is only for receiving texts and has no data plan on it, so he did two things. First, he turned off mobile data and data roaming for that line, so nothing could quietly use data in the background and add charges. Second, he hangs up on unknown overseas calls, since answering them uses minutes.
+
+Before you copy him, check your own setup. <u>If the same Saily eSIM also carries a data plan you're using, leave data roaming on</u>, because the Saily eSIM needs <Term k="漫游" text="data roaming" /> on to get online abroad ([official article](https://support.saily.com/hc/en-us/articles/12838788763164)). The switch is where Saily's [How to enable Data Roaming?](https://support.saily.com/hc/en-us/articles/15750378798236) shows it, except this time you turn it off. Afterwards, ask a friend to text you to make sure texts still come through.
+
+Answering uses minutes, callers pay a US rate, and the country list decides where calls work. Remember those three and you'll know what to expect from the number. For texts and verification codes, see [Texts and verification codes on the US number](/en/howto/us-number-sms/).
+
+## Stuck?
+
+<Q q="My calls won't go through.">
+First check that the country you're in is on Saily's list for calls, then check that you have minutes left. If you're dialing a number in another country, the number doesn't support international calls.
+</Q>
+<Q q="Do missed calls use minutes?">
+No. Saily says minutes only start once the call is answered and the voice channel opens, so unanswered calls use none.
+</Q>
+<Q q="My family says calling me is expensive.">
+That's how Saily says it works. Your number is a US number, so they pay their own carrier's rate for calls to the US, wherever you both are. Ask them to check the rate with their carrier before calling.
+</Q>

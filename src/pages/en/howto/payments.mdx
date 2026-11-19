@@ -1,5 +1,75 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: payments
+step: 1
+time: 5-minute read
+for: You're paying Saily, your payment was declined, or you need an invoice
+tldr: Pay by card, PayPal, Apple Pay or Google Pay. If it's declined, don't keep retrying; find out why first. You can make your own invoice from Profile in the app.
+description: "Paying Saily: which payment methods it supports, what to check when a payment is declined, the tax country and coupon field at checkout, and how to get an invoice, all from Saily's help center."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Reply from "../../../components/Reply.astro";
+
+It's the night before your flight. You're on the hotel Wi-Fi buying a plan, you tap pay, and the screen says your payment was declined. Most people's first instinct is to tap again, and then again. <mark>When a payment is declined, don't keep retrying; find out why first.</mark> Saily warns that repeated attempts can lead to multiple charges or a temporary hold on your money.
+
+This page covers what you can pay with, what to check when a payment is declined, then the tax country and coupon field at checkout, and finally how to get an invoice.
+
+## What you can pay with
+
+You can pay for a Saily plan with any of these, in the app or on the website ([payment methods](https://support.saily.com/hc/en-us/articles/31030534656924)):
+
+- Credit or debit card
+- PayPal
+- Apple Pay (iOS only)
+- Google Pay
+
+Some payment methods, such as iDEAL in the Netherlands, aren't available in every region. The checkout page shows which ones you can use. If you have <Term k="抵用金" /> in your account, you can put them toward a plan too. See [Where credits come from and how to use them](/en/howto/credits/).
+
+## When your payment is declined
+
+When it's declined, you'll see something like this:
+
+<Reply title="Illustration: the message when a payment is declined" code="Your payment was declined. Please check your card details or try another payment method." />
+
+Stop, don't keep tapping pay, and then go through Saily's checklist one item at a time ([I can't make a payment](https://support.saily.com/hc/en-us/articles/27480306670876)):
+
+- Does your account have enough money for the purchase?
+- Did you enter your card details correctly?
+- Turn off any VPN or proxy while you pay. Saily says an unusual IP address can also cause a decline, for example an IP address from a different country than the one where your card was issued.
+- If your bank declined the transaction, contact them and ask them to allow future payments to Saily.
+
+If you were charged but got nothing, contact Saily support. Open the **Help** tab in the app and tap **Chat with us** ([Contact Saily support](https://support.saily.com/hc/en-us/articles/17770364559516)).
+
+## Tax country and coupons at checkout
+
+The checkout page shows a tax country, which decides whose tax applies to your order, so the right one means the correct tax for where you are. To change it, click the **tax country**, choose your country, and click **Save**, and you can carry on with checkout ([changing your fiscal region](https://support.saily.com/hc/en-us/articles/17026627259164)).
+
+If you have a Saily coupon or voucher code, you use it at checkout too. Next to your plan details, select **Got a coupon?**, enter the code, and click **Apply**. If the code is still valid, the discount is applied ([using a coupon code](https://support.saily.com/hc/en-us/articles/15697852689052)). This site doesn't publish any coupon or referral codes. One more thing worth knowing: if you paid for part of a plan with credits or a discount code, Auto Top-Up later charges full price ([Auto Top-Up](https://support.saily.com/hc/en-us/articles/20105542335132)).
+
+## Getting an invoice
+
+You can make an invoice yourself in the app, whether you're a business (B2B) or an individual (B2C) ([How to get an invoice?](https://support.saily.com/hc/en-us/articles/16516513668636)):
+
+1. Open the Saily app and tap **Profile** on the right of the bottom navigation bar.
+2. Under **YOUR SAILY**, tap **Get invoice**.
+3. Follow the prompts to fill in your details and generate the invoice.
+
+If you can't find that option in the app, ask support for one. If you paid through PayPal or Cleverbridge, Saily says to ask them for the invoice directly.
+
+Paying comes down to three things: use a method the checkout page lists, stop and check when it's declined, and get your invoice from Profile afterwards. For where your account's credits come from and how to spend them, read [Where credits come from and how to use them](/en/howto/credits/) next.
+
+## Stuck?
+
+<Q q="My payment keeps getting declined.">
+Stop tapping pay. Check your balance and card details, and turn off any VPN or proxy. If that doesn't help, contact the bank that issued your card and ask them to allow payments to Saily. You can also try another payment method.
+</Q>
+<Q q="I was charged but didn't get my plan.">
+Contact Saily support. Open the **Help** tab in the app and tap **Chat with us**.
+</Q>
+<Q q="My coupon code didn't work.">
+Saily only says a code gives a discount while it's still valid, and lists no other conditions. If you can't tell what went wrong, ask support.
+</Q>
+<Q q="I can't find Apple Pay at checkout.">
+Apple Pay works on iOS only, and some payment methods aren't available in every region. Pick another method the checkout page lists.
+</Q>
