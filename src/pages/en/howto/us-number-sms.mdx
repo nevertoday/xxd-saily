@@ -1,5 +1,81 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: us-number-sms
+step: 5
+time: 5-minute read, then come back when a code doesn't arrive
+for: You've set up the Saily US number and want texts and verification codes on it
+tldr: When a code doesn't arrive, either the sender won't accept this kind of number or your phone didn't let the text in. Work out which side it is first.
+description: "Texts and verification codes on Saily's US +1 number: which services may refuse it, what the official docs say to do when a code doesn't arrive, a few phone-side checks other users have shared, and what to avoid when you send a text."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Copy from "../../../components/Copy.astro";
+
+Ever had this happen? You type your Saily US number into a website, tap "Send code," and watch your phone. A minute goes by, then two, and nothing arrives, so you tap it again, and again. By the end of this page you'll know which codes this number can get, where to look first when one doesn't come, and which kinds of texts won't go out when you send them.
+
+When a code doesn't arrive, the problem is on one of two sides. <mark>Either the sender won't accept this kind of number, or your phone isn't letting the text in, so work out which side it is before you do anything else.</mark>
+
+## What kind of number this is
+
+The Saily <Term k="电话号码套餐" /> gives you a real US number, assigned through the North American Numbering Plan (NANPA). It can make calls and send and receive texts, and for as long as your service stays active, it's assigned only to you. The carrier behind it, though, uses internet-based (VoIP) network technology, so some apps and websites that check number types will label it "VoIP" instead of "mobile." Saily points out that this label describes the carrier's network, not whether your number is genuine ([official article](https://support.saily.com/hc/en-us/articles/27948689277596)).
+
+Most services send verification codes to it without any trouble. The ones that don't are mainly certain banks, financial and payment apps, and platforms with strict security policies. That's their own rule, and Saily can't change it for you. The official article lists apps that users commonly report working for one-time codes, such as Signal, Viber, WhatsApp and Airbnb, plus a list of services reported to work for two-factor (2FA) codes. It also says plainly that both lists are incomplete and not guaranteed, and that any service can change its policy at any time.
+
+So don't count on it taking every code. Saily describes the number as being for travelers and Global plan users who want calls and texts on top of their data ([What is a Saily phone number?](https://support.saily.com/hc/en-us/articles/27948598334620)), and that's the only use this site covers.
+
+## When the sender won't accept it
+
+If a service tells you outright that it doesn't accept the number, or the code never comes after several tries, the official advice is to go through these in order:
+
+1. See whether the service offers another way to verify, like an authenticator app, email or a passkey. Saily adds that these are often more secure than text codes anyway.
+2. Contact the service's support team and ask whether they can verify your account another way.
+3. Email support@saily.com and tell Saily which service it was. Saily says this helps them improve compatibility.
+
+For step 3, you can send something like this. Swap Example Shop for the service you ran into:
+
+<Copy id="sms-tell-saily" title="Email to Saily" code={`Hi, my Saily US number doesn't get verification codes from Example Shop. Texts from friends come in fine, so I think this service doesn't accept the number. Could you look into it, and is there anything I can try on my side?`} />
+
+If it still won't work, there's one more option. Saily lets you change your number once for free in the app, and "not receiving verification codes" is one of the reasons it lists. Before you do, read [Keep or change your number](/en/howto/keep-number/), because once the old number is replaced, you can't get it back.
+
+## When your phone doesn't let it in
+
+The other case is that the service did send the code, but it never showed up on your phone. Saily's help center doesn't cover this side, so what follows is user experience, from a summary one user on X put together after going back and forth with Saily support ([original post](https://x.com/yedabinbinah/status/2114683684414685509)).
+
+- If there's another SIM in your phone, he found that a dual-SIM conflict was the most likely cause. Turning the other SIM off for a moment in your phone's settings sometimes lets a backlog of codes arrive all at once. For running two lines side by side, see [Keep your home number alongside Saily](/en/howto/dual-sim/).
+- A code can take a few minutes to arrive. Don't keep tapping "Resend" in the meantime. He says doing that can get you flagged by the platform for abuse, and then you have to wait a while before trying again.
+- On the same number, a code that didn't come through in one browser sometimes arrived after switching to another browser.
+- If none of that works, go straight to Saily support.
+
+To reach support, open the **Help** tab in the app and tap **Chat with us** ([Contact Saily support](https://support.saily.com/hc/en-us/articles/17770364559516)).
+
+One more case has nothing to do with texts at all. Your number isn't shown or switched on until <Term k="KYC 实名认证" /> is complete ([KYC requirements](https://support.saily.com/hc/en-us/articles/29288111980060)), so if you can't see your number at the top of the app's Home screen yet, finish verifying first.
+
+## When you send, stick to plain text
+
+Besides getting codes, you might use the number to text people. There's an easy trap here. The number supports regular SMS only, not MMS, and sometimes your phone or carrier quietly turns a text into an MMS, which then fails to send. Saily lists when that happens ([SMS and MMS](https://support.saily.com/hc/en-us/articles/27948666453404)):
+
+- you attach a photo, video, audio file, GIF or other media;
+- the message is very long;
+- you send it to several people at once;
+- you add a subject line;
+- you share a contact card (vCard).
+
+So send plain text, to one person at a time. How much fits in one text also depends on the characters you use. Standard Latin letters allow up to 160 characters per SMS. Non-Latin scripts such as Japanese or Chinese allow up to 70, and then a single text may use 2 to 3 credits from your package. Those are the SMS credits in your phone package, not the Saily <Term k="抵用金" /> in your account. Also, you can't text or call short numbers (like 1482) from this number.
+
+## How to check it works
+
+Ask a friend to text your US number, or try getting a code from one of the apps on Saily's list, like WhatsApp. One user on X reports doing exactly that, testing with an app like this first to make sure codes came through before using the number elsewhere ([original post](https://x.com/AI_Jasonyu/status/2080877134319624492)).
+
+Keep the two sides in mind. If the sender won't take the number, switch to another way of verifying or ask their support and Saily's. If your phone isn't letting it in, check for a dual-SIM conflict and stop tapping resend. For keeping the number itself, read [Keep or change your number](/en/howto/keep-number/) next.
+
+## Stuck?
+
+<Q q="I tapped Send, and the code never came.">
+Wait a few minutes and don't keep tapping resend. If there's another SIM in your phone, turn it off for a moment and check again. Still nothing? Try another browser, or follow the "When the sender won't accept it" section above and ask the service's support and Saily's.
+</Q>
+<Q q="I can't see my number in the app.">
+Your number isn't shown or switched on until KYC verification is done. Finish that first. For what documents to have ready, see [Keep or change your number](/en/howto/keep-number/).
+</Q>
+<Q q="My text failed to send.">
+Check whether it has a photo, a subject line, more than one recipient, or is very long. Any of those can make your phone turn it into an MMS, and this number can't send or receive MMS. Make it one plain text to one person and try again.
+</Q>
