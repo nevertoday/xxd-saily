@@ -4,7 +4,7 @@
 export const FAQ_EN = [
   { id: "site", title: "About this site", items: [
     ["Is this an official Saily site?", "No. It's an unofficial guide with no ties to Saily or Nord Security, so for features, prices and how things work, go by the [official Help Center](https://support.saily.com/hc/en-us) and the Saily app."],
-    ["Where does all this come from?", "The facts come from Saily's official Help Center. We've rewritten everything in our own words and link to the source where we can. Experiences people share on X are quoted only as what someone tried, with a link, and never as the source of a feature, a price or a step."],
+    ["Where does all this come from?", "The facts come from Saily's official Help Center. We've rewritten everything in our own words and link to the source where we can. Experiences people share on X are quoted only as what someone tried, with a link, and never as the source of a feature, a price or a step. Those posts often include the author's own referral codes and network setup steps, which this site doesn't use."],
     ["Can you give me a promo code, a referral code, or the cheapest price right now?", "No. Prices and promotions keep changing, so this site doesn't list prices, doesn't post promo or referral codes, and doesn't teach ways to game the pricing. Before you buy, go by what the Saily app and website show."],
     ["Will this site show me how to reach Saily where the internet is restricted?", "No, this site doesn't teach ways around network restrictions. All we pass on is Saily's own advice: in some countries its app or website may not load, so if you're going to one of them, install the eSIM before you leave. See [the question below](/en/faq/#before-4)."],
   ]},
