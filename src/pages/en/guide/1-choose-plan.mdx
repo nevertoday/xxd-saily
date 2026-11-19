@@ -1,5 +1,88 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 1
+need: "Your itinerary: which countries, and how long in each"
+tldr: "Pick by where first. A country plan covers one country, and for several, check a regional plan's country list. Then pick by how you use data. A standard plan gives one allowance for the whole trip, an Unlimited plan gives a daily high-speed allowance and drops to about 1 Mbps after. Plans start when you land, and can't be paused once active."
+description: "Pick the right plan: what country, regional and global plans cover; how a standard plan's total allowance and an Unlimited plan's daily high-speed allowance work; when a plan starts and how long you have to install it; when Ultra, the Family Plan and Cruise plans make sense; estimating data for your trip."
 ---
-{/* TBD: body. See docs/MAINTAINING.md (voice and hard rules) and docs/sources/. */}
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+Say you're spending ten days in Europe, with four in Paris, then a train to Italy, and the last few days in Spain. Open Saily and there's a lot on offer. There's a France plan, an Italy plan, a Europe regional plan, and Unlimited plans too. Which one won't waste money, and won't leave you offline halfway through?
+
+<mark><strong>Picking a plan comes down to two questions, where you're going and then how you'll use it. A standard plan gives you one allowance for the whole trip, and an Unlimited plan gives you a fresh high-speed allowance every day.</strong></mark>
+
+[Beginner lesson 2](/en/start/2-data-plan/) covers buying a plan in the app, so this step is only about choosing. Prices change all the time, so this site doesn't list them. The app shows what's current.
+
+## Where first: one country, or several
+
+Saily's plans come in three sizes of coverage. A **country plan** covers one destination. A **regional plan** bundles several countries into one plan, so one eSIM carries you across borders without a plan per country. But it only covers the countries on its own list, and not every country is in a regional bundle. A **global plan** is Ultra, which covers 121 destinations; more on that below. See [What countries and regions does Saily cover?](https://support.saily.com/hc/en-us/articles/31091827466140)
+
+For that Europe trip, you'd check whether all three countries are in the same regional plan yourself. The Help Center's way is to open the [All Destinations](https://saily.com/all-destinations/) page on Saily's website, scroll down, select **Region**, pick a region, and tap **View country list** to see what it includes ([Help Center](https://support.saily.com/hc/en-us/articles/13798863550492)). If all three are there, one regional plan does the job. If one is missing, add a country plan for it.
+
+Two things trip people up when checking. Plans are listed by country, not by city, so search for a city's country. Islands usually come under their country, with exceptions. Hawaii has its own plan, the Canary Islands come under Spain, Northern Cyprus isn't covered, and neither are the Cook Islands or the Solomon Islands. Glance at the Help Center's island table before you go.
+
+The most important rule is that <u>a plan for one country won't connect in another</u>, no matter what settings you change ([Help Center](https://support.saily.com/hc/en-us/articles/12838788763164)). So every stop on your trip needs a plan that covers it. For ways to combine plans, see the how-to [One trip, several countries](/en/howto/multi-country/).
+
+## Then how: a total allowance, or a daily one
+
+A standard plan gives you one total amount of data, which you can use any time during the plan's validity period. It isn't split by day. If you spend the first two days on hotel Wi-Fi and the next few navigating and filming, it all comes out of the same pot, and whatever's left when the plan expires is gone.
+
+An Unlimited plan counts differently. You choose how many days, and the price depends on that. Data is unlimited for those days, but each day you get a high-speed allowance, which the Help Center's troubleshooting guide puts at 5 GB every 24 hours, or 3 GB in some destinations. Once you've used it, your speed drops to about 1 Mbps for the rest of the day. The Help Center says messaging apps, email and most websites still work at that speed ([Help Center](https://support.saily.com/hc/en-us/articles/12838788763164)).
+
+When does full speed come back? For most destinations, at midnight in your eSIM's local time. Destinations that span time zones, like the US, Canada and Australia, plus regional and global plans, reset at a fixed time that may not be midnight where you are. When you reach 80% of the day's high-speed allowance, Saily sends a notification with the exact reset time in UTC. If you can't wait, buying a regular plan for the same destination gets you full speed right away. Also, Unlimited plans can't be shared with other people in the app. See [How Saily data plans work](https://support.saily.com/hc/en-us/articles/31092295169948).
+
+To choose between them, think about how much you use each day and how evenly. If you're on maps and video calls all day and dread running out, Unlimited's advantage is that going over only slows you down. If you'll spend a few days mostly on Wi-Fi, a standard plan lets that allowance carry over to busier days, so nothing goes to waste.
+
+## When a plan starts
+
+Buying a plan doesn't start it. If you install the eSIM and turn on data roaming before your trip, the plan activates by itself when you arrive and connect to a supported network, and that's when its validity period starts running ([Help Center](https://support.saily.com/hc/en-us/articles/21484628749084)). So buying days or even weeks ahead is fine. Once installed, it just waits on your phone.
+
+Don't leave it forever, though. You have 180 days from purchase to install and activate it, and if you haven't by then, the plan activates on its own ([Saily data plan management](https://support.saily.com/hc/en-us/articles/21484628749084)). And <u>once a plan is activated, it can't be paused</u> ([Help Center](https://support.saily.com/hc/en-us/articles/15751572038300)), so don't activate it at home just to try it out.
+
+Plans you add later work the same way. A plan you buy for the second country on your trip activates when you arrive there ([Help Center](https://support.saily.com/hc/en-us/articles/12823150321052)).
+
+## Three special plans
+
+For most trips, the two kinds above are all you need. These three only matter in particular situations, so it's enough to know they exist.
+
+**Ultra** is a subscription global plan covering 121 destinations. It gives you a high-speed allowance each billing cycle, which resets at 00:00 UTC at the start of the cycle, so the reset can fall on a different day from your billing date. How much you get depends on the tier. The Ultra article says 30 GB a month, then unlimited data at up to 1 Mbps; the troubleshooting guide breaks it down further, with Plus at 10 GB per cycle, Premium at 30 GB, and Standard at 10 GB with no slower data after that. Check the Ultra page on Saily's website before you subscribe. Ultra also comes with airport lounges, fast-track security, NordVPN and more, covered in [step 7](/en/guide/7-extras/). See [What is Saily Ultra?](https://support.saily.com/hc/en-us/articles/25455420492572)
+
+The **Family Plan** (also called a Shared Plan) lets up to five people use one plan. As the plan owner, you invite up to four more people by email from the app. Each of them taps **Claim plan** in the email and signs in to the Saily app on their own phone with their own Saily account. Newly bought plans are shared in 256 MB portions, which feels close to one shared pool. Every plan can be shared except Ultra and Unlimited plans, and sharing a 1 GB plan needs app version 3.63 or later. Sharing ends when the data runs out or the plan expires. See [What is the Saily Family Plan (Shared Plan)?](https://support.saily.com/hc/en-us/articles/29753248333724) and the how-to [Share with your family](/en/howto/share-family/).
+
+A **Cruise** plan is for cruises. Regular plans rely on land-based mobile networks, which are out of range once the ship is at sea, so a regular plan can't stand in for a cruise plan on board. Cruise plans connect to dedicated maritime satellite and cellular-at-sea networks, and only once the ship is more than 12 nautical miles from the coast. In port or sailing close to shore, they won't connect. They're being rolled out gradually and only work on selected cruises. In the app, tap **Add data** and look for a separate **Cruise** section; if it's there, tap **See available cruise lines** to confirm your ship before you buy. When you're connected, your phone shows the operator as 901-18, WMS or Cellular at Sea. See [What is a Saily Cruise eSIM plan?](https://support.saily.com/hc/en-us/articles/29215830812444)
+
+## Estimating data for your trip
+
+The Help Center doesn't give figures like "an hour of video uses this much," and this site won't make them up. When you estimate, think about a few things:
+
+- What you'll mostly use it for. Maps, messaging and looking things up use little; streaming video on the go and video calls use a lot.
+- Whether you'll share a <Term k="热点" /> with a laptop. A hotspot draws from the same data, counted the same as your phone's own use.
+- What your phone uses in the background. The Help Center suggests turning off background services you don't need; see [How to disable background services](https://support.saily.com/hc/en-us/articles/25332679316252).
+
+Don't go by your phone's own data counter. The Help Center says it may have been reset on a different date and may include other SIMs and Wi-Fi, so it's normal for it not to match the Saily app. Trust the Saily app.
+
+You also don't need to buy huge. When a standard plan runs low, you can add data in the app at any time or turn on Auto Top-Up; see [step 4](/en/guide/4-manage/). The exception is somewhere like Turkey, where the app may be unreachable and you might not be able to top up after you arrive. Buy enough before you go, or set up top-up first. [Step 3](/en/guide/3-abroad/) has a section on Turkey.
+
+With a plan chosen, the next step is installing it on your phone before you leave.
+
+## Stuck?
+
+<Q q="I can't find the city I'm going to.">
+<p>Plans are listed by country, not city, so search for the city's country. If you're going to an island, check the island table in the Help Center's <a href="https://support.saily.com/hc/en-us/articles/31091827466140">coverage article</a> first. Some islands need a different plan, and some aren't covered.</p>
+</Q>
+<Q q="My Unlimited plan has slowed down.">
+<p>You've most likely used today's high-speed allowance, so you're at about 1 Mbps, and changing settings or restarting won't help. Wait for the reset, or buy a regular plan for the same destination.</p>
+</Q>
+<Q q="If I buy a month ahead, will it expire before I leave?">
+<p>No. A plan activates when you land and connect to a local network, and the validity period starts then. Just install it and travel within 180 days of buying it.</p>
+</Q>
+<Q q="Can I share an Unlimited plan with my family?">
+<p>No. Unlimited plans and Ultra can't be shared. To share one plan as a family, buy a standard plan and share it with the Family Plan.</p>
+</Q>
+<Q q="Can I make calls on a regional plan?">
+<p>No, regional plans are data only. For calls and texts, the official route is to add a Saily phone number to the Global plan; see <a href="/en/guide/5-phone-number/">step 5</a>.</p>
+</Q>
+
+<Checkpoint id="s1" items={["Every country on my trip is covered by a plan, and for several countries I've checked a regional plan's list", "I know whether I'm buying a standard or an Unlimited plan, and what happens when each runs out", "I know a plan starts when I land, and can't be paused once active"]} />
