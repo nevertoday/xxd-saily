@@ -60,15 +60,6 @@
   /* 触屏：按钮都是 44px，目录栏放不下 8px 的间隔，收成 4px；GitHub 小箭头至少 24px 宽（成组的点按区） */
   @media (pointer: coarse) { .site-tools { --site-gh-more-w: 24px; gap: var(--space-1); } }
 
-  /* 外观按钮：图标跟着当前是亮还是暗；选了主题色，右下角多一个那个颜色的小圆点 */
-  .site-look { position: relative; }
-  .site-look__dot { position: absolute; inset-inline-end: 4px; bottom: 4px; width: 8px; height: 8px; border: 1.5px solid var(--bg); border-radius: var(--r-circle); }
-  .site-look__dot[hidden] { display: none; }
-  /* 外观设置组放进浮层：浮层本身就是框，组的框去掉（一个框只有一个框），行的左右留白也交给浮层 */
-  .site-look-pop { width: 320px; padding: var(--space-3) var(--space-4) var(--space-2); }
-  .site-look-pop .xxd-group__body { border: 0; border-radius: 0; background: none; }
-  .site-look-pop .xxd-row { --row-pad-x: 0; }
-
   /* ---------- 三栏 ---------- */
   /* 阅读页：正文栏限宽，目录紧跟在正文后面，不贴到屏幕最右边 */
   .site-body { --read-width: var(--site-read); display: grid; grid-template-columns: var(--site-cols); justify-content: center; align-items: start; max-width: var(--site-max); margin-inline: auto; }

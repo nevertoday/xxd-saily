@@ -112,12 +112,12 @@ const GITHUB_MARK = '<svg width="16" height="16" viewBox="0 0 16 16" fill="curre
       <div class="site-top__end">
       <button class="site-search" id="site-search" type="button" aria-label={L.search}><i data-xxd-icon="Search" data-size="16"></i><span>{L.search}</span><kbd class="xxd-kbd">⌘K</kbd></button>
       <div class="site-tools">
-        <!-- 外观：用 UI Kit 的外观设置组（主题 · 圆角 · 主色），和小小东其他产品同一套、同一份存储；boot.js 在首帧前应用 -->
-        <button class="xxd-btn site-look" data-size="sm" data-variant="ghost" data-icon-only type="button" data-xxd-popover="site-look-pop" aria-label={L.look} data-tooltip={L.look} data-tooltip-placement="bottom">
-          <i data-xxd-icon="Palette" data-size="16"></i>
-          <span class="site-look__dot" id="site-look-dot" hidden></span>
+        <!-- 外观：UI Kit 的外观按钮，图标是现在的主题（亮是太阳、暗是月亮）；点开挂 UI Kit 的外观设置组（主题 · 圆角 · 主色），和小小东其他产品同一套、同一份存储；boot.js 在首帧前应用 -->
+        <button class="xxd-btn xxd-appearance-btn" data-size="sm" data-variant="ghost" data-icon-only type="button" data-xxd-popover="site-look-pop" aria-label={L.look} data-tooltip={L.look} data-tooltip-placement="bottom">
+          <i class="xxd-appearance-btn__sun" data-xxd-icon="Sun" data-size="16"></i>
+          <i class="xxd-appearance-btn__moon" data-xxd-icon="Moon" data-size="16"></i>
         </button>
-        <div class="xxd-popover site-look-pop" id="site-look-pop" popover data-placement={menuAt} data-opts={lookOpts}></div>
+        <div class="xxd-popover xxd-appearance-pop" id="site-look-pop" popover data-placement={menuAt} data-opts={lookOpts}></div>
         <!-- 语言：菜单里列出全部语言，当前的那个打勾；中文、英文是全站，其他语言有首页和新手入门 -->
         <button class="xxd-btn site-lang" data-size="sm" data-variant="ghost" type="button" data-xxd-menu="site-lang-menu" aria-label={L.lang ?? (lang === "zh" ? "语言" : "Language")} data-tooltip={L.lang ?? (lang === "zh" ? "语言" : "Language")} data-tooltip-placement="bottom"><i data-xxd-icon="Languages" data-size="16"></i><span class="site-lang__name">{info.name}</span></button>
         <div class="xxd-menu site-lang-menu" id="site-lang-menu" role="menu" popover data-placement={menuAt}>
@@ -215,21 +215,11 @@ const GITHUB_MARK = '<svg width="16" height="16" viewBox="0 0 16 16" fill="curre
     <script type="application/json" id="site-search-index" data-opts={JSON.stringify({ placeholder: L.searchPh, empty: L.searchEmpty })} data-base={import.meta.env.BASE_URL} data-sections={`${import.meta.env.BASE_URL}${lang === "zh" ? "" : lang + "/"}search-sections.json`} set:html={searchIndex} />
     <script is:inline>
       (() => {
-        const T = window.XxdTheme, X = window.Xxd;
-        if (!T || !X) return;
+        const X = window.Xxd;
+        if (!X) return;
         // 外观面板：直接挂 UI Kit 的外观设置组。改了就写进同一份设置，下次打开首帧就是这个样子
         const pop = document.getElementById("site-look-pop");
         X.mountAppearance(pop, JSON.parse(pop.dataset.opts || "{}"));
-        // 外观按钮右下角的小圆点：选了主色才出现，就是那个颜色
-        const dot = document.getElementById("site-look-dot");
-        const syncDot = () => {
-          const a = ({ ...T.DEFAULT_SETTINGS, ...T.read() }).accent || "";
-          dot.hidden = !a;
-          if (a) dot.style.background = a;
-        };
-        pop.addEventListener("xxd:appearance", syncDot);
-        window.addEventListener("xxd:settings", syncDot);
-        syncDot();
         X.init(document);
 
         // 搜索：⌘K / 点按钮，用 xxd 的命令面板
