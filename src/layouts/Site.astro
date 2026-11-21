@@ -8,6 +8,8 @@ import { WIKI } from "../data/wiki.js";
 import { WIKI_EN } from "../data/wiki.en.js";
 import { FAQ } from "../data/faq.js";
 import { FAQ_EN } from "../data/faq.en.js";
+import { OG_SIZE, SITE_OG } from "../data/og.js";
+import { plain } from "../lib/md.js";
 import { existsSync, readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
@@ -16,6 +18,8 @@ interface Props {
   title: string;
   description?: string;
   headings?: { slug: string; text: string; depth: number }[];
+  /** 这一页自己的分享大图（public/ 下的路径，如 /og/wiki/esim.png）；不传就用全站那张 */
+  og?: string;
 }
 const UI = {
   zh: { html: "zh-CN", brand: "Saily 新手教程", desc: "Saily 的非官方学习站：出国用 eSIM 上网、用美国号码打电话，从查手机到落地上网，说人话。", skip: "跳到正文", menu: "打开目录", search: "搜索教程",
@@ -52,11 +56,9 @@ const menuAt = info.dir === "rtl" ? "bottom-start" : "bottom-end";
 const lookOpts = JSON.stringify(x ? { locale: "en", labels: x.ui.appearance } : { locale: lang === "zh" ? "zh-CN" : "en", labels: { cornersDesc: lang === "zh" ? "关掉就是直角" : "Off keeps every corner square" } });
 const wikiItems = WIKI.map((w) => (en ? { ...w, ...WIKI_EN[w.slug] } : w));
 const faqGroups = en ? FAQ_EN : FAQ;
-const { title, description = L.desc, headings = [] } = Astro.props;
+const { title, description = L.desc, headings = [], og: ogPath } = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const cur = (href) => (href.replace(/\/$/, "") || "/") === path;
-// 搜索关键词去掉行内标记（**粗体**、==荧光笔==、++粗墨线++）
-const plain = (x) => x.replace(/\*\*|==|\+\+/g, "");
 const toc = headings.filter((h) => h.depth === 2); // 只列二级标题：标签页里的小标题不进目录
 // 搜索：新手入门每一课、主线每一步、每篇 How-to、每个 Wiki 条目、每条常见问题（xxd 的命令面板，⌘K 打开）
 const searchIndex = JSON.stringify([
@@ -69,9 +71,9 @@ const searchIndex = JSON.stringify([
 // 静态文件带内容指纹（?v=），改了就换地址：/xxd/* 缓存一天、site.css 一小时，不会出现新页面配旧样式
 const ver = (f) => { try { return createHash("sha256").update(readFileSync(join(process.cwd(), "public", f))).digest("hex").slice(0, 10); } catch { return "0"; } };
 const asset = (f) => `${link("/" + f)}?v=${ver(f)}`;
-// 分享大图：public/og.png（中文页）、public/og-en.png（其他语言）放进去了才输出 og:image
-const ogFile = lang === "zh" ? "og.png" : "og-en.png";
-const og = existsSync(join(process.cwd(), "public", ogFile)) ? new URL(link("/" + ogFile), Astro.site) : null;
+// 分享大图：页面传了 og 就用它（Wiki 条目），否则中文页用 og.png、其他语言用 og-en.png；图在 public/ 里才输出 og:image。图由 npm run og 生成（src/data/og.js）
+const ogFile = ogPath ?? (lang === "zh" ? SITE_OG.zh : SITE_OG.en);
+const og = existsSync(join(process.cwd(), "public", ogFile)) ? new URL(link(ogFile), Astro.site) : null;
 const GITHUB_MARK = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>';
 ---
 
@@ -89,8 +91,8 @@ const GITHUB_MARK = '<svg width="16" height="16" viewBox="0 0 16 16" fill="curre
     <meta property="og:description" content={description} />
     <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
     {og && <meta property="og:image" content={og} />}
-    {og && <meta property="og:image:width" content="2560" />}
-    {og && <meta property="og:image:height" content="1280" />}
+    {og && <meta property="og:image:width" content={String(OG_SIZE.width * OG_SIZE.scale)} />}
+    {og && <meta property="og:image:height" content={String(OG_SIZE.height * OG_SIZE.scale)} />}
     {alternates.map((l) => <link rel="alternate" hreflang={l.html} href={new URL(l.href, Astro.site)} />)}
     <meta name="twitter:card" content={og ? "summary_large_image" : "summary"} />
     {og && <meta name="twitter:image" content={og} />}

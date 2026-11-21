@@ -4,7 +4,8 @@ import Site from "../layouts/Site.astro";
 import { WIKI } from "../data/wiki.js";
 import { WIKI_EN, WIKI_GROUPS_EN } from "../data/wiki.en.js";
 import { wikiHref, howtoHref, stepHref, HOWTO_FLAT, STEPS, link, langOf, t } from "../data/nav.js";
-import { inline } from "../lib/md.js";
+import { inline, plain } from "../lib/md.js";
+import { wikiOg } from "../data/og.js";
 interface Props { slug: string }
 const lang = langOf(Astro.url.pathname);
 const en = lang === "en";
@@ -24,7 +25,7 @@ const headings = [
   { slug: "myths", text: T.myths, depth: 2 },
 ];
 ---
-<Site title={`${w.title} · Wiki`} description={w.one.replace(/\*\*|==|\+\+/g, "")} headings={headings}>
+<Site title={`${w.title} · Wiki`} description={plain(w.one)} headings={headings} og={wikiOg(w.slug, lang)}>
   <article class="xxd-prose wiki">
     <ol class="xxd-breadcrumbs" data-size="sm"><li><a href={link("/wiki/", lang)}>Wiki</a></li><li>{w.group}</li><li aria-current="page">{w.title}</li></ol>
     <h1>{w.title}</h1>
