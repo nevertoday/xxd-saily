@@ -9,3 +9,5 @@ export const inline = (s) =>
     .replace(/`([^`]+)`/g, '<code class="xxd-code-inline">$1</code>')
     .replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g, '<a class="xxd-link" href="$2" target="_blank" rel="noopener">$1</a>')
     .replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, '<a class="xxd-link" href="$2">$1</a>');
+// 同样的文字去掉标记，只留字（meta 描述、分享大图）
+export const plain = (s) => s.replace(/\[([^\]]+)\]\([^)\s]+\)/g, "$1").replace(/\*\*|==|\+\+|`/g, "");

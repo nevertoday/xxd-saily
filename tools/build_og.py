@@ -1,38 +1,73 @@
 #!/usr/bin/env python3
-"""分享大图和 README 头图：用 Chrome 给 tools/og.html 截图（中文 ?lang=zh，英文 ?lang=en），1280×640，2 倍清晰度。
+"""分享大图：用 Chrome 给 tools/og.html 截图，1280×640，2 倍清晰度（2560×1280）。
 
-    python3 tools/build_og.py
+    npm run og        （就是 python3 tools/build_og.py）
 
-输出：public/og.png、public/og-en.png（网页分享用），assets/social.png、assets/en/social.png（README 头图）。
-改文字、改样子都在 tools/og.html 里改（现在是 TBD 占位，等设计定稿），改完重跑一次，两张图都看一眼有没有字压住字、顶到边。
+截哪些卡、填什么字都在 src/data/og.js：全站两张（public/og.png 中文页、public/og-en.png 其他语言，
+顺带复制成 README 头图 assets/social.png、assets/en/social.png），加上每个 Wiki 条目中英文各一张
+（public/og/wiki/<slug>.png、public/og/en/wiki/<slug>.png，条目名和一句话从 wiki.js、wiki.en.js 读）。
+每张卡截完把指纹记进 tools/og-manifest.json，指纹没变的卡不重截；public/og/ 下不在表里的图会删掉。
+改了 tools/og.html，所有卡都会重截，挑几张看一眼：字有没有互相压住、顶到边。
 """
+import json
 import os
 import shutil
 import subprocess
 import tempfile
+from pathlib import Path
+from urllib.parse import quote, urlencode
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = Path(__file__).resolve().parent.parent
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-W, H, SCALE = 1280, 640, 2
-OUT = {"zh": ["public/og.png", "assets/social.png"], "en": ["public/og-en.png", "assets/en/social.png"]}
+TEMPLATE = (ROOT / "tools" / "og.html").as_uri()
+OG_DIR = ROOT / "public" / "og"
 
 
-def shot(lang, path, profile):
-    url = f"file://{os.path.join(ROOT, 'tools', 'og.html')}?lang={lang}"
-    subprocess.run([CHROME, "--headless=new", "--hide-scrollbars", f"--force-device-scale-factor={SCALE}",
-                    f"--window-size={W},{H}", f"--user-data-dir={profile}", f"--screenshot={path}", url],
-                   check=True, capture_output=True)
+def shot(card, size, path, profile):
+    url = f"{TEMPLATE}?{urlencode(card['query'], quote_via=quote)}"
+    subprocess.run([CHROME, "--headless=new", "--hide-scrollbars", f"--force-device-scale-factor={size['scale']}",
+                    f"--window-size={size['width']},{size['height']}", f"--user-data-dir={profile}",
+                    f"--screenshot={path}", url], check=True, capture_output=True)
+
+
+def write_json(path, data):
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
+    tmp.replace(path)
+
+
+def main():
+    if not os.path.exists(CHROME):
+        raise SystemExit("需要 Google Chrome 来截图")
+    plan = json.loads(subprocess.run(["node", "scripts/og-cards.mjs"], cwd=ROOT, check=True,
+                                     capture_output=True, text=True).stdout)
+    manifest_path = ROOT / plan["manifest"]
+    cards = {c["path"]: c for c in plan["cards"]}
+    old = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+    manifest = {p: h for p, h in old.items() if p in cards}
+
+    def outputs(card):
+        return [ROOT / "public" / card["path"].lstrip("/"), *(ROOT / c for c in card["copies"])]
+
+    todo = [c for c in cards.values() if manifest.get(c["path"]) != c["hash"] or not all(p.exists() for p in outputs(c))]
+    with tempfile.TemporaryDirectory() as tmp:
+        for i, card in enumerate(todo, 1):
+            png = Path(tmp) / "card.png"
+            shot(card, plan["size"], png, Path(tmp) / "chrome")
+            for out in outputs(card):
+                out.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(png, out)
+            manifest[card["path"]] = card["hash"]
+            write_json(manifest_path, manifest)
+            print(f"[{i}/{len(todo)}] public{card['path']}")
+    gone = [p for p in OG_DIR.rglob("*") if p.is_file() and "/" + p.relative_to(ROOT / "public").as_posix() not in cards]
+    for p in gone:
+        p.unlink()
+        print("removed", p.relative_to(ROOT))
+    if manifest != old:
+        write_json(manifest_path, manifest)
+    print(f"{len(cards)} 张卡：重截 {len(todo)} 张，{len(cards) - len(todo)} 张没变" + (f"，删掉 {len(gone)} 张" if gone else ""))
 
 
 if __name__ == "__main__":
-    if not os.path.exists(CHROME):
-        raise SystemExit("需要 Google Chrome 来截图")
-    with tempfile.TemporaryDirectory() as tmp:
-        for lang, outs in OUT.items():
-            first = os.path.join(ROOT, outs[0])
-            os.makedirs(os.path.dirname(first), exist_ok=True)
-            shot(lang, first, os.path.join(tmp, "chrome"))
-            for other in outs[1:]:
-                os.makedirs(os.path.dirname(os.path.join(ROOT, other)), exist_ok=True)
-                shutil.copyfile(first, os.path.join(ROOT, other))
-            print("wrote", ", ".join(outs))
+    main()
