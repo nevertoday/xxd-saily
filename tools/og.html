@@ -17,10 +17,18 @@
   .brand { position: absolute; left: 88px; bottom: 56px; font-size: 26px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
   .brand b { width: 26px; height: 32px; background: #f3f0ea; clip-path: polygon(0 0, 70% 0, 100% 22%, 100% 100%, 0 100%); position: relative; }
   .brand b::after { content: ""; position: absolute; left: 6px; top: 13px; width: 14px; height: 11px; background: #ff7a4d; }
+  /* Wiki 条目的卡（?kind=wiki）：分组、条目名、一句话，在品牌行上方的区域里竖着居中；SIM 卡缩小，给文字让出宽度 */
+  .group { display: none; }
+  .wiki .copy { top: 72px; bottom: 128px; width: 800px; transform: none; display: flex; flex-direction: column; justify-content: center; }
+  .wiki .group { display: block; margin-bottom: 26px; font-size: 30px; font-weight: 600; color: #ff7a4d; }
+  .wiki h1 { display: block; white-space: normal; word-break: keep-all; overflow-wrap: anywhere; text-wrap: balance; }
+  .wiki .sub { margin-top: 30px; font-size: 36px; line-height: 1.45; text-wrap: pretty; }
+  .wiki .sub.clamp { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+  .wiki .sim { right: 96px; top: 162px; width: 200px; height: 262px; }
 </style>
 </head>
 <body>
-<div class="copy"><h1 id="h1"></h1><p class="sub" id="sub"></p></div>
+<div class="copy"><p class="group" id="group"></p><h1 id="h1"></h1><p class="sub" id="sub"></p></div>
 <div class="sim"><svg viewBox="0 0 260 340" aria-hidden="true">
   <path d="M14 14 H186 L246 74 V326 H14 Z" fill="none" stroke="#f3f0ea" stroke-width="14" stroke-linejoin="miter"/>
   <rect x="62" y="150" width="136" height="104" fill="#ff7a4d"/>
@@ -30,27 +38,66 @@
 </svg></div>
 <div class="brand"><b></b><span id="brand"></span></div>
 <script>
-  // 定稿（2026-11-19）：利益点 + 三条线（流量、美国号码、没有 eSIM 的手机）。覆盖范围照官方：200 多个国家和地区
-  const SUB = { zh: "流量套餐 · 美国号码 · 手机不支持 eSIM 也有办法", en: "Online when you land · a US number · even without eSIM" };
-  const BRAND = { zh: "Saily 新手教程 · 非官方", en: "Saily for beginners · unofficial" };
-  const COPY = {
-    zh: "如何爽用 Saily<br><em>出国落地就有网</em>",
-    en: "Get the most<br>out of <em>Saily</em>",
-  };
+  // 两种卡：全站的卡（?lang=zh|en）；Wiki 条目的卡（?kind=wiki&lang=…&title=…&one=…&group=…，文字由 src/data/og.js 传进来，已去掉行内标记）
   const q = new URLSearchParams(location.search);
   const lang = q.get("lang") === "en" ? "en" : "zh";
   const h1 = document.getElementById("h1");
-  h1.innerHTML = COPY[lang];
-  if (lang === "en") { h1.style.fontFamily = '"Avenir Next", sans-serif'; h1.style.fontWeight = "800"; }
-  document.getElementById("sub").textContent = SUB[lang];
-  document.getElementById("brand").textContent = BRAND[lang];
-  let size = 128;
-  h1.style.fontSize = size + "px";
-  while (h1.getBoundingClientRect().width > 740 && size > 60) h1.style.fontSize = (size -= 2) + "px";
   const sub = document.getElementById("sub");
-  sub.style.whiteSpace = "nowrap"; sub.style.display = "inline-block";
-  let ss = 34; sub.style.fontSize = ss + "px";
-  while (sub.getBoundingClientRect().width > 740 && ss > 22) sub.style.fontSize = (ss -= 1) + "px";
+  const EN_FONT = '"Avenir Next", sans-serif';
+  if (q.get("kind") === "wiki") wikiCard(); else siteCard();
+
+  function siteCard() {
+    // 定稿（2026-11-19）：利益点 + 三条线（流量、美国号码、没有 eSIM 的手机）。覆盖范围照官方：200 多个国家和地区
+    const SUB = { zh: "流量套餐 · 美国号码 · 手机不支持 eSIM 也有办法", en: "Online when you land · a US number · even without eSIM" };
+    const BRAND = { zh: "Saily 新手教程 · 非官方", en: "Saily for beginners · unofficial" };
+    const COPY = {
+      zh: "如何爽用 Saily<br><em>出国落地就有网</em>",
+      en: "Get the most<br>out of <em>Saily</em>",
+    };
+    h1.innerHTML = COPY[lang];
+    if (lang === "en") { h1.style.fontFamily = EN_FONT; h1.style.fontWeight = "800"; }
+    sub.textContent = SUB[lang];
+    document.getElementById("brand").textContent = BRAND[lang];
+    let size = 128;
+    h1.style.fontSize = size + "px";
+    while (h1.getBoundingClientRect().width > 740 && size > 60) h1.style.fontSize = (size -= 2) + "px";
+    sub.style.whiteSpace = "nowrap"; sub.style.display = "inline-block";
+    let ss = 34; sub.style.fontSize = ss + "px";
+    while (sub.getBoundingClientRect().width > 740 && ss > 22) sub.style.fontSize = (ss -= 1) + "px";
+  }
+
+  function wikiCard() {
+    const BRAND = { zh: "Saily 新手教程 · Wiki · 非官方", en: "Saily for beginners · Wiki · unofficial" };
+    document.body.classList.add("wiki");
+    document.getElementById("group").textContent = q.get("group") ?? "";
+    document.getElementById("brand").textContent = BRAND[lang];
+    if (lang === "en") { h1.style.fontFamily = sub.style.fontFamily = EN_FONT; h1.style.fontWeight = "800"; }
+    const box = document.querySelector(".copy");
+    const group = document.getElementById("group");
+    const subLine = 36 * 1.45;
+    const lines = (el, lineHeight) => Math.round(el.offsetHeight / lineHeight);
+    // 条目名只在词和词之间换行：中文按词切开（「拦截器」不会被拆成两行），只在两个词紧挨着的地方加换行点，标点和括号不会落单
+    let prev = null;
+    for (const s of new Intl.Segmenter(lang, { granularity: "word" }).segment(q.get("title") ?? "")) {
+      if (prev?.isWordLike && s.isWordLike) h1.append(document.createElement("wbr"));
+      h1.append(s.segment);
+      prev = s;
+    }
+    // 字号从 112px 往下试：72px 以内能排成一行就排一行；排不下就换行，缩到条目名下面还放得下 3 行一句话为止，最小 64px，手机上也看得清
+    const titleRoom = box.clientHeight - (sub.offsetTop - group.offsetTop - h1.offsetHeight) - 3 * subLine;
+    let size;
+    const setSize = (s) => { size = s; h1.style.fontSize = s + "px"; };
+    setSize(112);
+    while (lines(h1, size * 1.12) > 1 && size > 72) setSize(size - 2);
+    if (lines(h1, size * 1.12) > 1) for (setSize(112); h1.offsetHeight > titleRoom && size > 64;) setSize(size - 2);
+    // 一句话：放得下的整句都放，最多 3 行（条目名到了 64px 还占三行，就只剩 2 行）；第一句就放不下才截断加省略号
+    const maxLines = Math.min(3, Math.floor((box.clientHeight - (sub.offsetTop - group.offsetTop)) / subLine));
+    const sentences = (q.get("one") ?? "").split(/(?<=[。！？])|(?<=[.!?])\s+/);
+    let n = sentences.length;
+    const show = () => { sub.textContent = sentences.slice(0, n).join(lang === "en" ? " " : ""); return lines(sub, subLine) <= maxLines; };
+    while (!show() && n > 1) n--;
+    if (lines(sub, subLine) > maxLines) { sub.classList.add("clamp"); sub.style.webkitLineClamp = String(maxLines); }
+  }
 </script>
 </body>
 </html>
