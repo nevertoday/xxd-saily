@@ -72,6 +72,10 @@ export const STEPS = [
 export const stepHref = (s, lang = "zh") => link(`/guide/${s.slug}/`, lang);
 
 export const HOWTO = [
+  { group: "装 eSIM", en: { group: "Installing" }, items: [
+    { slug: "no-esim-options", title: "没有合适的手机，Saily 怎么装", en: { title: "No suitable phone? How to set up Saily" } },
+    { slug: "scan-qr", title: "扫二维码装 eSIM，一步一步", en: { title: "Install the eSIM with a QR code, step by step" } },
+  ]},
   { group: "旅行", en: { group: "Travel" }, items: [
     { slug: "multi-country", title: "一趟去好几个国家", en: { title: "One trip, several countries" } },
     { slug: "hotspot", title: "开热点给电脑用", en: { title: "Share your data with a hotspot" } },

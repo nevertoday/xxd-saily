@@ -1,0 +1,110 @@
+---
+layout: ../../../layouts/HowTo.astro
+slug: scan-qr
+step: 2
+time: 6-minute read, 5 minutes to do, on Wi-Fi
+for: You need to install the Saily eSIM with a QR code, because the app can't install it, it's going on another device or a removable eSIM card, or support sent you a code
+tldr: The QR code comes from another device logged in to the same account, from View instructions in the app, or from Saily support. Scan it from Add eSIM in your phone's settings, not with a chat app or the camera. With one phone, pick a saved screenshot from Photos or type the details in. A code installs once, so don't share it.
+description: "Installing the Saily eSIM with a QR code from start to finish: when you actually need one, where the code comes from, what to have ready, where to scan on iPhone, Samsung, Pixel and other Android phones, how to do it with only one phone, which switches to turn on afterwards, how to tell it worked, and what to do about scan errors."
+---
+import Tabs from "../../../components/Tabs.astro";
+import Q from "../../../components/Q.astro";
+import Callout from "../../../components/Callout.astro";
+import Term from "../../../components/Term.astro";
+
+Lots of people hear "scan the QR code" and point a chat app's scanner or the camera at it. Up comes a string of letters, and nothing gets installed. Others have only one phone, the code is on that same screen, and there's nothing to scan it with. This page walks through the whole thing: where the code comes from, what to scan it with, and what to do once it's scanned.
+
+Remember one line. <mark>Scan an eSIM QR code from Add eSIM in your phone's settings, not with a chat app or the camera. It installs only once, so don't send it to anyone.</mark>
+
+## First, check whether you need a QR code at all
+
+If your phone supports eSIM, the easiest way is to tap **Set up eSIM** in the Saily app and choose **On this device**. The app installs it for you, no QR code needed, and it sets up things like data roaming along the way ([install guide](https://support.saily.com/hc/en-us/articles/15751399206172)).
+
+You only need a QR code when:
+
+- the app's automatic install fails after a few tries;
+- you're installing the eSIM on another phone or tablet, say for family;
+- your phone doesn't support eSIM and you're putting Saily on a <Term k="实体 eSIM 卡" /> (see [Step 6](/en/guide/6-no-esim/));
+- Saily support sent you a QR code.
+
+## Have these ready before you scan
+
+- **Steady Wi-Fi.** After the scan, the phone downloads the eSIM, so do this at home before you leave. If a VPN is on, turn it off first. Saily says a VPN can block the install ([troubleshooting](https://support.saily.com/hc/en-us/articles/12838788763164)).
+- **Add eSIM in your phone's settings.** If it isn't there, this phone can't take an eSIM and scanning won't help. Read [No suitable phone? How to set up Saily](/en/howto/no-esim-options/).
+- **A code only you can see.** <u>A QR code works for one install. If someone else scans it first, you won't be able to install it.</u> Don't post the screenshot in a group chat or send it to whoever's helping you ([official article](https://support.saily.com/hc/en-us/articles/31072966285724)).
+
+## Step 1: Get the QR code
+
+The code comes from one of three places:
+
+1. **The Saily app on another device.** On another phone or tablet, install the Saily app, log in to the **same** account, tap **Set up eSIM**, choose **On someone else's device**, and tap **Continue**. The QR code appears, and once your phone has it installed, the app there tells you ([official article](https://support.saily.com/hc/en-us/articles/15751399206172#h_01M6RBWJ4RSSJHKXWZYZEC3545)).
+2. **View instructions in the app.** When the automatic install fails, a **View instructions** button appears. It shows the QR code plus the SM-DP+ address and <Term k="激活码" /> for typing it in by hand ([official article](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE1X1VQ1NEG2A4V9VEY)).
+3. **Saily support.** If you're using an eSIM.me card, you get the code from support. Saily suggests opening a code from support on another screen or printing it.
+
+## Step 2: Scan it from your phone's settings
+
+Scan from the system settings, because that's the only place that can actually install an eSIM. Where to go depends on your phone:
+
+<Tabs id="scan" items={[["ios", "iPhone"], ["samsung", "Samsung"], ["pixel", "Pixel"], ["android", "Other Android"]]}>
+<div slot="ios">
+
+Go to **Settings → Mobile Service** (**Cellular** on some models), tap **Add eSIM**, then **Use QR Code**, and scan. Then follow the screens: keep your home SIM as the default line and pick Saily for mobile data.
+
+</div>
+<div slot="samsung">
+
+Go to **Settings → Connections → SIM manager**, tap **Add eSIM**, then **Scan QR code from service provider**. Scan, tap **Add**, and wait for the download to finish.
+
+</div>
+<div slot="pixel">
+
+Go to **Settings → Network & internet → SIMs**, tap **Add SIM** (or **+**), then **Download a new eSIM**. Scan the code and tap **Download**.
+
+</div>
+<div slot="android">
+
+On OnePlus, Motorola, Nothing and similar phones, SIM settings are usually under **Settings → Network & internet → SIMs** or **Settings → Connections → SIM manager**. Look for a button like **Add eSIM**, **Add SIM** or **Download SIM** and scan from there.
+
+</div>
+</Tabs>
+
+After the scan, the phone takes a moment to download the eSIM. Don't leave the screen or turn off Wi-Fi while it does.
+
+## Only have one phone?
+
+A phone can't scan its own screen, so when the code is on that same phone, do it another way ([official article](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE1X1VQ1NEG2A4V9VEY)):
+
+- **iPhone: save it and pick it from Photos.** Take a screenshot of the code, follow the iPhone steps above, and on the scan screen tap **Open Photos** and choose the screenshot.
+- **Android: type it in.** On the scan screen, look for "Enter activation code" or "Need help?" and type the activation code from **View instructions** exactly as shown. On Android it usually starts with `LPA:1$`. iPhone can do this too: under **Use QR Code**, tap **Enter Details Manually** and fill in the SM-DP+ address and activation code.
+- **Use another screen.** The "second screen" doesn't have to be a friend's phone. Your own computer or tablet works. Send the screenshot to your own computer, open it, and scan it with your phone. Saily also says you can print a code from support. Delete the image afterwards.
+
+## Step 3: Turn on the right switches
+
+On iPhone, following the screens to the end mostly sets things up. Android needs two more things. <u>After a QR code or manual install, turn on data roaming for the Saily line yourself and check that the APN is `wbdata`.</u> Saily says the app only sets these when it does the install itself ([official article](https://support.saily.com/hc/en-us/articles/12838788763164#h_01M7MKZKE1X1VQ1NEG2A4V9VEY)).
+
+Once it's in, give the line a name you'll recognise in your phone's settings, like "Saily," so you don't mix lines up later. If you're still at home, there's no need to test data yet. The plan starts when you reach a country it covers. [Step 3](/en/guide/3-abroad/) covers the switches for that.
+
+## How to tell it worked
+
+Go back to your phone's SIM settings. A new Saily line there means it's installed. If you scanned a code shown on another device, the Saily app on that device tells you too.
+
+Once it's installed, don't scan again. Installing the same eSIM twice causes errors.
+
+<Callout type="tip">
+An eSIM installed by QR code is the same eSIM the app would have installed, with the same plans and number on it. If you ever remove it to reinstall, delete it only in your phone's settings, never with the delete option in the app. Deleting the eSIM in the app cancels your number too. See [Read this before you delete an eSIM](/en/howto/delete-esim/).
+</Callout>
+
+## Stuck?
+
+<Q q="I scanned it with a chat app and got a string of letters. Nothing installed.">
+An eSIM code has to be scanned from Add eSIM in your phone's settings, as in Step 2 above. That string of letters is the activation code itself, so don't screenshot it and send it to anyone.
+</Q>
+<Q q="The scan says “This code is no longer valid” or “already being used on another device.”">
+Saily says the eSIM may already be installed. Check your SIM settings before trying again (<a href="https://support.saily.com/hc/en-us/articles/15751399206172">official article</a>). If it really isn't there, contact Saily support and explain (<a href="https://support.saily.com/hc/en-us/articles/17770364559516">how to contact support</a>).
+</Q>
+<Q q="There's no Add eSIM in my settings.">
+The phone may not support eSIM, or it may be locked to a carrier. Start with <a href="/en/howto/no-esim-options/">No suitable phone? How to set up Saily</a>.
+</Q>
+<Q q="It keeps spinning after the scan and won't install.">
+Check that your Wi-Fi is steady and your VPN is off. Saily also suggests switching off your physical SIM and other eSIM lines in settings while you install, then turning them back on afterwards (<a href="https://support.saily.com/hc/en-us/articles/12838788763164">troubleshooting</a>).
+</Q>

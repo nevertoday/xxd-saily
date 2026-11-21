@@ -1,0 +1,98 @@
+---
+layout: ../../layouts/HowTo.astro
+slug: no-esim-options
+step: 6
+time: 读 6 分钟，先找到你是哪种情况
+for: 买了（或者想买）Saily，可手机不支持 eSIM、身边只有这一部手机、或者还没买能装 eSIM 的设备
+tldr: Saily 的流量和号码都挂在一张 eSIM 上，这张 eSIM 装进哪台设备，网和短信就进哪台。手机支持 eSIM 就让 App 直接装；只有一部手机又装不上，就存图选照片或手动输入；手机不支持就配一张实体 eSIM 卡；还没设备，就先别急着买号码。
+description: 没有合适的手机时 Saily 怎么用，按四种情况给办法：手机支持 eSIM（只有一部也行）、支持但 App 装不上又没有第二台设备、手机不支持 eSIM（比如很多国行手机）、还没有能装 eSIM 的设备。每种情况先做什么，买设备前要看哪三样，以后换设备要注意什么。
+---
+import Q from "../../components/Q.astro";
+import Callout from "../../components/Callout.astro";
+import Term from "../../components/Term.astro";
+
+你在网上看到 Saily 能拿一个美国号码，兴冲冲买了，打开 App 才发现下一步是「安装 eSIM」。可你的手机设置里根本找不到「添加 eSIM」；网上的教程说要「用另一部手机扫码」，身边又没有用海外手机的朋友；还有人干脆还没买新手机，想先把号码占上。这时候最常见的念头是：「我是不是买错了？」
+
+多半没有买错，只是要先想清楚一件事。<mark>Saily 的流量和号码都挂在同一张 eSIM 上，这张 eSIM 装进哪台设备，网和短信就进哪台。所以先想清楚：你打算把它装进哪台设备？</mark>
+
+号码是挂在 eSIM 上的附加服务（[Saily 电话号码是什么](https://support.saily.com/hc/zh-cn/articles/27948598334620)），在 App 里删掉这张 eSIM，号码也会跟着取消（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164)）。好在 Saily App 本身不挑手机，不支持 eSIM 的手机照样能装 App、买东西、做实名认证，卡住的只有「装 eSIM」这一步。下面这张表，先找到你是哪一种。
+
+<div class="xxd-table-wrap lookup lookup--route">
+<table class="xxd-table">
+<thead><tr><th>你的情况</th><th>最省事的办法</th><th>往下看</th></tr></thead>
+<tbody>
+<tr><th scope="row">手机支持 eSIM（只有这一部也没关系）</th><td>在 App 里选「在此设备上」，让 App 直接装，用不着二维码</td><td><a class="xxd-link" href="#情况一手机支持-esim只有这一部也行">情况一</a></td></tr>
+<tr><th scope="row">手机支持 eSIM，可 App 装不上，身边也没有第二台设备</th><td>iPhone 存二维码截图、从照片里选；安卓手动输入激活码；或者把码放到自己电脑上扫</td><td><a class="xxd-link" href="#情况二app-装不上身边又没有第二台设备">情况二</a></td></tr>
+<tr><th scope="row">手机不支持 eSIM（很多国行手机就是）</th><td>插一张实体 eSIM 卡，把 Saily 写进卡里</td><td><a class="xxd-link" href="#情况三手机不支持-esim">情况三</a></td></tr>
+<tr><th scope="row">还没有能装 eSIM 的设备，打算买</th><td>设备到手前先别买号码；挑设备时看三样</td><td><a class="xxd-link" href="#情况四还没有能装-esim-的设备">情况四</a></td></tr>
+</tbody>
+</table>
+</div>
+
+拿不准手机支不支持？去手机设置里找 **添加 eSIM**，找得到就是支持，而且没被运营商锁；也可以对照 Saily 官网的[支持 eSIM 的机型列表](https://saily.com/esim-supported-devices/)。怎么查，[新手入门第 1 课](/start/1-check-phone/)讲得更细。
+
+## 情况一：手机支持 eSIM，只有这一部也行
+
+很多人以为装 eSIM 一定要「另一部手机扫码」，其实手机支持 eSIM 的话，根本用不着二维码。在 Saily App 里点 **安装 eSIM**（Set up eSIM），选 **在此设备上**，点 **继续**，再点 **开始安装 eSIM**，App 会替你装好，还顺手把数据漫游这些设置好（[安装 eSIM](https://support.saily.com/hc/zh-cn/articles/15751399206172)）。
+
+装的时候连着稳定的 Wi-Fi，开着 VPN 的话先断开。完整的步骤见[第 2 步：装好 eSIM](/guide/2-install/)。
+
+## 情况二：App 装不上，身边又没有第二台设备
+
+App 自动安装失败时，会出现 **查看说明**（View instructions），点开能看到二维码、SM-DP+ 地址和<Term k="激活码" />。二维码就显示在你这部手机上，可手机扫不了自己的屏幕，这时官方给了两个办法，都不用找人帮忙（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE1X1VQ1NEG2A4V9VEY)）：
+
+- **iPhone：存图再选照片。** 把二维码截图存进相册，去 **设置 → 蜂窝网络 → 添加 eSIM → 使用二维码**，点 **打开照片**，选这张截图。
+- **手动输入。** 在扫码界面选手动输入，把 SM-DP+ 地址和激活码一字不差地填进去。安卓上的激活码一般以 `LPA:1$` 开头。
+
+还有一个办法：「另一块屏幕」不一定是朋友的手机，你自己的电脑或平板也行。把截图传到自己的电脑上打开，用手机扫就好，扫完把图删掉。<u>别把二维码发给帮忙的人或者发到群里，二维码装过一次就不能再用，别人先扫了，你就装不上了。</u>
+
+每种手机从哪里扫、扫完开哪几个开关，见[扫二维码装 eSIM，一步一步](/howto/scan-qr/)。
+
+## 情况三：手机不支持 eSIM
+
+国内买的手机很多不支持 eSIM，官方也提醒过，在中国大陆、香港、澳门、台湾和韩国，很多当地卖的机型都没有 eSIM（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#travel)）。手机里没有装 eSIM 的芯片，就借一张实体卡来装：这种卡叫<Term k="实体 eSIM 卡" />，长得和普通 SIM 卡一样，插在卡槽里，里面却能放下 eSIM。
+
+装卡有两条路：
+
+- **官方的办法：** 从 eSIM.me 买一张卡，替下你平时插的卡，再找 Saily 客服要二维码，照 eSIM.me 的说明写进去（[官方说明](https://support.saily.com/hc/zh-cn/articles/12822397552028)）。
+- **网友走通的路：** BeeSIM、9eSIM 这类卡，在 Saily App 里选 **在其他人的设备上** 让它显示二维码，截图存好，再用卡自带的小程序或 App 通过蓝牙扫码写进卡里。<u>Saily 的帮助中心没有提到这些卡，用它们风险自担，出了问题先找卡的厂家。</u>
+
+这两条路都不需要第二部能装 eSIM 的手机。要注意的是，这张卡占一个卡槽，只有一个卡槽的手机，就得先把国内的卡取下来。每一步的细节，见[第 6 步：手机不支持 eSIM 怎么办](/guide/6-no-esim/)。
+
+## 情况四：还没有能装 eSIM 的设备
+
+想先买着、等新手机到了再装？先看你买的是什么。
+
+**只想要号码的，设备到手前先别买。** 号码套餐按周期一直续费，直到你取消（[取消订阅](https://support.saily.com/hc/zh-cn/articles/31089593239452)），可号码挂在 eSIM 上，eSIM 没装进设备，你就收不到短信，等于白白续着费。等手机或实体 eSIM 卡到手，再去买号码、做实名。
+
+**买流量套餐的，也别买得太早。** 官方英文版说，流量套餐要在购买后 180 天内装好激活，过了会自动激活；中文版还写的是 30 天（[官方说明](https://support.saily.com/hc/en-us/articles/21484628749084)）。临近出发再买最稳妥。
+
+挑设备的时候，看这三样：
+
+1. **在 Saily 的支持机型列表里。** 列表会随新机型变，支不支持还和手机在哪里卖有关，同一个型号，国行版和海外版可能不一样（[机型列表](https://saily.com/esim-supported-devices/)）。
+2. **设置里有「添加 eSIM」。** 在店里或者拿到手就先看一眼。
+3. **没有被运营商锁。** 被锁的手机能装上 eSIM，却连不上网。iPhone 去 **设置 → 通用 → 关于本机 → 运营商锁**，显示「无 SIM 卡限制」就是没锁（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164)）。
+
+不想为它换手机，也可以走情况三，给现在的手机配一张实体 eSIM 卡。手边有一部闲置的、支持 eSIM 的旧手机，也能专门拿来装 Saily，装法和情况一一样。
+
+<Callout type="tip">
+以后换了新手机，Saily 可以跟着搬过去，见[换了手机，把 eSIM 移过去](/howto/change-phone/)。搬之前记住：只在旧手机的设置里删，别点 App 里的删除 eSIM，那样号码也会跟着取消。
+</Callout>
+
+## 做完怎么确认
+
+装好以后，去手机的 SIM 卡设置里看，有一条新的 Saily 线就对了；用实体 eSIM 卡的，插好卡以后在同一个地方看。有号码的，App 主页顶部会显示你的号码（要等实名认证通过）。请朋友给这个号码发条短信，收到了，就说明号码和设备这头都通了。
+
+记住开头那一句：先想清楚装进哪台设备，剩下的就是照着对应的情况走。装法里最绕的扫码那一步，接着看[扫二维码装 eSIM，一步一步](/howto/scan-qr/)。
+
+## 卡住了？
+
+<Q q="App 里选了「在此设备上」，可手机不支持 eSIM，现在找不到二维码了。">
+回到 App 里这张 eSIM，点 <strong>安装 eSIM</strong>，这次选 <strong>在其他人的设备上</strong>，二维码就会出来。还是找不到，就联系 Saily 客服，说明你要把 eSIM 装到一张实体卡上（<a href="https://support.saily.com/hc/zh-cn/articles/17770364559516">怎么联系客服</a>）。
+</Q>
+<Q q="我买了号码，可还没有设备，能先收短信吗？">
+不能。号码挂在 eSIM 上，eSIM 要先装进一台设备，短信才有地方收。设备一时到不了的话，想想要不要先取消续费；取消以后号码还会留 30 天，见<a href="/howto/keep-number/">号码怎么留住、怎么换</a>。
+</Q>
+<Q q="能不能把 eSIM 装在朋友的手机上，让他帮我收码？">
+一张 Saily eSIM 同一时间只能在一部手机上用（<a href="https://support.saily.com/hc/zh-cn/articles/12838788763164">官方说明</a>），装在朋友手机上，码就只进他的手机，而且号码也不能转送给别人（<a href="https://support.saily.com/hc/zh-cn/articles/31072966285724">官方说明</a>）。还是装在你自己的设备或者实体卡上更稳妥。
+</Q>

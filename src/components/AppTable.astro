@@ -1,0 +1,35 @@
+---
+// 应用收码情况表：<AppTable rows={[["WhatsApp", "聊天", "official", "一次性验证码"], …]} />
+// 每行：应用名、做什么的、状态、备注（可选，支持 [文字](链接)）。状态只有这几种，标签文字和颜色在这里定，页面上的说明要和这里一致：
+//   official 官方名单（Saily 帮助中心列的据反馈通常能用）  users 网友收到过  mixed 结果不一  call 只能电话验证  redirect 转到别处验证  unsure 不保证  no 常收不到
+import { langOf } from "../data/nav.js";
+import { inline } from "../lib/md.js";
+interface Props { rows: [string, string, Status, string?][] }
+type Status = "official" | "users" | "mixed" | "call" | "redirect" | "unsure" | "no";
+const { rows } = Astro.props;
+const en = langOf(Astro.url.pathname) === "en";
+const STATUS: Record<Status, { tone?: string; zh: string; en: string }> = {
+  official: { tone: "success", zh: "官方名单", en: "Official list" },
+  users: { tone: "action", zh: "网友收到过", en: "Users got codes" },
+  mixed: { tone: "warning", zh: "结果不一", en: "Mixed results" },
+  call: { tone: "warning", zh: "只能电话验证", en: "Voice call only" },
+  redirect: { zh: "转到别处验证", en: "Verifies elsewhere" },
+  unsure: { tone: "warning", zh: "不保证", en: "Not guaranteed" },
+  no: { tone: "danger", zh: "常收不到", en: "Often fails" },
+};
+const head = en ? ["App", "What it's for", "Codes on the number"] : ["应用", "做什么的", "能不能收码"];
+---
+<div class="xxd-table-wrap lookup">
+  <table class="xxd-table">
+    <thead><tr>{head.map((h) => <th>{h}</th>)}</tr></thead>
+    <tbody>
+      {rows.map(([name, what, s, note]) => (
+        <tr>
+          <th scope="row">{name}</th>
+          <td>{what}</td>
+          <td><span class="xxd-badge" data-tone={STATUS[s].tone}>{en ? STATUS[s].en : STATUS[s].zh}</span>{note && <span class="lookup__note" set:html={inline(note)} />}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,110 @@
+---
+layout: ../../layouts/HowTo.astro
+slug: scan-qr
+step: 2
+time: 读 6 分钟，动手 5 分钟，要连着 Wi-Fi
+for: 要用二维码装 Saily eSIM：App 装不上、要装到别的设备上、用实体 eSIM 卡，或者客服发了二维码给你
+tldr: 二维码从另一台登录同一账户的设备上来，或者从 App 的「查看说明」、客服那里来；要从手机设置里的「添加 eSIM」进去扫，别用微信扫一扫。只有一部手机就存图选照片，或者手动输入。二维码只能装一次，别给别人。
+description: 扫二维码装 Saily eSIM 的完整流程：什么时候才需要二维码，二维码从哪来，扫之前要准备什么，iPhone、三星、Pixel、其他安卓各从哪里扫，只有一部手机怎么扫，扫完要开哪几个开关，怎么确认装好了，扫码报错怎么办。
+---
+import Tabs from "../../components/Tabs.astro";
+import Q from "../../components/Q.astro";
+import Callout from "../../components/Callout.astro";
+import Term from "../../components/Term.astro";
+
+很多人一听「扫码装 eSIM」，就打开微信「扫一扫」对着二维码扫，结果屏幕上跳出一串看不懂的字母，什么也没装上。也有人只有一部手机，二维码就显示在这部手机上，不知道该拿什么去扫。这一页把扫码从头到尾讲一遍：码从哪来，用什么扫，扫完要做什么。
+
+先记住一句。<mark>eSIM 的二维码，要从手机设置里的「添加 eSIM」进去扫，不是用微信或相机扫；它只能装一次，所以别转发给别人。</mark>
+
+## 先看看你需不需要二维码
+
+手机本身支持 eSIM 的话，最省事的是在 Saily App 里点 **安装 eSIM**（Set up eSIM），选 **在此设备上**，让 App 替你装，全程用不着二维码，App 还会顺手把数据漫游这些设置好（[安装 eSIM](https://support.saily.com/hc/zh-cn/articles/15751399206172)）。
+
+下面这几种情况，才需要二维码：
+
+- App 自动安装试了几次都失败；
+- 要把 eSIM 装到另一部手机或平板上，比如给家人装；
+- 手机不支持 eSIM，要把 Saily 写进一张<Term k="实体 eSIM 卡" />（见[第 6 步](/guide/6-no-esim/)）；
+- Saily 客服直接发了一张二维码给你。
+
+## 扫之前，准备好这几样
+
+- **稳定的 Wi-Fi。** 扫码以后，手机要联网下载 eSIM，这一步出发前在家里做就好。开着 VPN 的话先断开，官方说 VPN 会挡住安装（[排查安装问题](https://support.saily.com/hc/zh-cn/articles/12838788763164)）。
+- **手机设置里看得到「添加 eSIM」。** 看不到，说明这部手机装不了，扫也没用，去看[没有合适的手机，Saily 怎么装](/howto/no-esim-options/)。
+- **一个只给自己看的二维码。** <u>二维码装过一次就不能再用，别人先扫了，你就装不上了。</u>截图别发到群里，也别发给帮你的人（[官方说明](https://support.saily.com/hc/zh-cn/articles/31072966285724)）。
+
+## 第一步：把二维码拿出来
+
+二维码有三个来处，看你是哪一种：
+
+1. **另一台设备上的 Saily App。** 在另一部手机或平板上装好 Saily App，登录**同一个**账户，点 **安装 eSIM**，选 **在其他人的设备上**（On someone else's device），点 **继续**，屏幕上就会出现二维码。等你这边装好了，那台设备上的 App 还会告诉你（[官方说明](https://support.saily.com/hc/zh-cn/articles/15751399206172#h_01M6RBWJ4RSSJHKXWZYZEC3545)）。
+2. **App 里的「查看说明」。** App 自动安装失败时，会出现 **查看说明**（View instructions），点开能看到二维码，还有手动输入要用的 SM-DP+ 地址和<Term k="激活码" />（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE1X1VQ1NEG2A4V9VEY)）。
+3. **Saily 客服发给你的。** 用 eSIM.me 这种实体卡的，二维码要找客服要。客服发来的二维码，官方建议在另一块屏幕上打开，或者打印出来扫。
+
+## 第二步：从手机设置里扫
+
+手机扫的时候，要从系统设置里进去，因为只有那里才能把 eSIM 装进手机。每种手机的入口不一样：
+
+<Tabs id="scan" items={[["ios", "iPhone"], ["samsung", "三星"], ["pixel", "Pixel"], ["android", "其他安卓"]]}>
+<div slot="ios">
+
+去 **设置 → 蜂窝网络**（Settings → Mobile Service，有的机型叫 Cellular），点 **添加 eSIM**（Add eSIM），再点 **使用二维码**（Use QR Code），对准二维码扫。然后照着屏幕往下走：默认号码选国内的卡，蜂窝数据选 Saily。
+
+</div>
+<div slot="samsung">
+
+去 **设置 → 连接 → SIM 卡管理器**（Settings → Connections → SIM manager），点 **添加 eSIM**（Add eSIM），再点 **扫描服务提供商的二维码**（Scan QR code from service provider），扫完点 **添加**，等它下载完。
+
+</div>
+<div slot="pixel">
+
+去 **设置 → 网络和互联网 → SIM 卡**（Settings → Network & internet → SIMs），点 **添加 SIM 卡**（Add SIM，或者 **+**），再点 **下载新的 eSIM**（Download a new eSIM），扫码，点 **下载**。
+
+</div>
+<div slot="android">
+
+一加、摩托罗拉、Nothing 这些手机，SIM 卡设置多半在 **设置 → 网络和互联网 → SIM 卡**，或者 **设置 → 连接 → SIM 卡管理器**。找 **添加 eSIM**、**添加 SIM 卡** 或 **下载 SIM 卡** 这样的按钮，点进去扫码。
+
+</div>
+</Tabs>
+
+扫完以后，手机会花一点时间下载，别中途退出，也别关 Wi-Fi。
+
+## 只有一部手机，怎么扫
+
+手机扫不了自己屏幕上的码，所以二维码显示在同一部手机上时，换个办法（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE1X1VQ1NEG2A4V9VEY)）：
+
+- **iPhone：存图再选照片。** 先把二维码截图存到相册，再走上面 iPhone 的步骤，到扫码界面时点 **打开照片**（Open Photos），选这张截图。
+- **安卓：手动输入。** 在扫码界面找「输入激活码」或者「需要帮助？」，把 App 里 **查看说明** 显示的激活码一字不差地输进去。安卓上的激活码一般以 `LPA:1$` 开头。iPhone 也能手动输入，在 **使用二维码** 里点 **手动输入详细信息**（Enter Details Manually），填 SM-DP+ 地址和激活码。
+- **换一块屏幕。** 「另一块屏幕」不一定是别人的手机。你自己的电脑、平板都行，把截图传到自己的电脑上打开就能扫；客服发来的二维码，官方还说可以打印出来。传完记得把这张图删掉。
+
+## 第三步：扫完，打开该开的开关
+
+iPhone 照屏幕走完，基本就设好了。安卓要多做两件事：<u>用二维码或手动输入装好以后，要自己打开 Saily 这条线的数据漫游，并确认 APN 是 `wbdata`。</u>官方说，App 只在它亲手装的时候才替你设这两样（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#h_01M7MKZKE1X1VQ1NEG2A4V9VEY)）。
+
+装好以后，在手机设置里给这条线起个好认的名字，比如「Saily」，以后切换不会认错。还在国内就不用急着测网，流量套餐要到了覆盖的国家才开始用，开关怎么设见[第 3 步](/guide/3-abroad/)。
+
+## 怎么确认装好了
+
+回到手机的 SIM 卡设置，看得到一条新的 Saily 线，就是装好了。要是用另一台设备显示的二维码，那台设备上的 Saily App 也会告诉你已经装好。
+
+装好了就别再扫一遍。同一张 eSIM 装两次反而会报错。
+
+<Callout type="tip">
+用二维码装的 eSIM，和 App 直接装的是同一张，套餐、号码都在它上面。以后要删掉重装，只在手机设置里删，别点 App 里的删除，App 里删掉 eSIM，号码也会跟着取消，见[删掉 eSIM 之前先看这个](/howto/delete-esim/)。
+</Callout>
+
+## 卡住了？
+
+<Q q="用微信扫了一下，出来一串字母，什么都没装上。">
+eSIM 的二维码要从手机设置里的「添加 eSIM」进去扫，照上面「第二步」走。微信扫出来的那串字，其实就是激活码，别把它截图转给别人。
+</Q>
+<Q q="扫码时提示「此代码已失效」或者「已在其他设备上使用」。">
+官方说，这时 eSIM 可能已经装上了，先去 SIM 卡设置里看一眼，别重复装（<a href="https://support.saily.com/hc/zh-cn/articles/15751399206172">官方说明</a>）。确实没装上，就联系 Saily 客服说明情况（<a href="https://support.saily.com/hc/zh-cn/articles/17770364559516">怎么联系客服</a>）。
+</Q>
+<Q q="设置里找不到「添加 eSIM」。">
+可能是手机不支持 eSIM，也可能是被运营商锁了。先看<a href="/howto/no-esim-options/">没有合适的手机，Saily 怎么装</a>。
+</Q>
+<Q q="扫完一直在转圈，装不上。">
+确认 Wi-Fi 稳定，断开 VPN。官方还建议安装时先在设置里关掉实体卡和别的 eSIM 线路再试，装好以后再打开（<a href="https://support.saily.com/hc/zh-cn/articles/12838788763164">排查安装问题</a>）。
+</Q>

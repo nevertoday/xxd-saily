@@ -2,69 +2,90 @@
 layout: ../../../layouts/HowTo.astro
 slug: number-apps
 step: 5
-time: 6-minute read, then come back before you link a new service
+time: 5-minute read, then come back before you link a new service
 for: You have the Saily US number and want to know which apps will send codes to it, and what each of those apps is for
-tldr: Apps on Saily's own list are the safest bet, and other users have had codes from most chat, social and account sign-ups. Banks and payment apps are the pickiest, and AI services like ChatGPT and Claude are the least predictable. Test it once before you link an account that matters.
-description: "Which apps send verification codes to Saily's US +1 number: the official list (WhatsApp, Signal, Viber, Airbnb, plus 2FA on PayPal, Wise, Venmo and others), what users on X found when they tested Telegram, X, Google, Apple ID and more (results vary), why ChatGPT and Claude are hit and miss, what each app is for, and what to keep in mind once a number is linked."
+tldr: Apps on Saily's own list are the safest bet, and other users have had codes from most chat, social and account sign-ups. Banks and payment apps are the pickiest, and AI services like ChatGPT are the least predictable. Test it once before you link an account that matters.
+description: "Which apps send verification codes to Saily's US +1 number, in four tables by use: chat and social (WhatsApp, Signal, Telegram, X and more), accounts, shopping and travel (Apple ID, Google, Airbnb and more), money (PayPal, Wise, Venmo, Revolut and more) and AI (ChatGPT, Claude). What each app is for, whether it's on the official list or only in users' tests, where results disagree, and what to keep in mind once a number is linked."
 ---
 import Q from "../../../components/Q.astro";
 import Callout from "../../../components/Callout.astro";
+import AppTable from "../../../components/AppTable.astro";
 
-A lot of people buy the Saily US number for one reason: when an app outside their country asks for a phone number, they finally have one that can get the code. Then the moment comes to type it in, and the doubts start. Will WhatsApp take it? Will PayPal? Will ChatGPT just refuse? By the end of this page you'll know which apps have Saily's own list behind them, which ones other users have only reported working, and which ones you shouldn't count on. You'll also know what each app on the list is actually for.
+A lot of people buy the Saily US number for one reason: when an app outside their country asks for a phone number, they finally have one that can get the code. Then the moment comes to type it in, and the doubts start. Will WhatsApp take it? Will PayPal? Will ChatGPT just refuse? This page sorts the apps into four tables by what they're for. Find the app you need and you'll see what it does and whether it sends codes to the number.
 
 Here's the short version. <mark>Apps on the official list are the safest bet. Most chat, social and account sign-ups have worked for other users too. Banks and payment apps are the pickiest, and AI services are the least predictable. Whatever the app, test the number once before you link an account that matters.</mark>
+
+## What the labels mean
+
+- **Official list**: apps Saily's help center lists as "commonly reported as working" ([the lists](https://support.saily.com/hc/en-us/articles/27948689277596#h_01KTBC4HD8WJVE4A7NA0M88M8P)). Saily says the lists aren't complete or guaranteed and can change, but this is the most reliable tier.
+- **Users got codes**: not on Saily's list, but users on X have tested it and got a code. Mostly from two posts: an October 2026 roundup of a test on October 15 ([the post](https://x.com/yedabinbinah/status/2114683684414685509)), and a September 2026 test ([the post](https://x.com/guyun_ai/status/2100200291539059164)). These are their own experiences, not Saily's word.
+- **Mixed results**: the two tests disagree, or it only works on some numbers.
+- **Not guaranteed** and **Often fails**: not on the official list, and users either can't say it works or mostly didn't get a code.
+
+In the notes, a "one-time code" is the code you get once when you sign up or log in. "2FA" (two-factor authentication) means you link the number to your account, and from then on every login asks for your password plus a code sent to the number. Saily's two lists are split along those lines.
+
+## Chat and social
+
+<AppTable rows={[
+  ["WhatsApp", "The world's most used chat app; you need a phone number to sign up", "official", "One-time codes. The September test failed twice"],
+  ["Signal", "A chat app built around encryption", "official", "One-time codes"],
+  ["Viber", "Chat and internet calls, popular in Eastern Europe and the Middle East", "official", "One-time codes"],
+  ["Telegram", "A chat app with lots of channels and groups", "mixed", "Arrived right away in the October test, failed twice in September"],
+  ["X", "What used to be Twitter", "users", "Both tests got codes"],
+  ["Discord", "Chat rooms, popular with gaming and hobby communities", "users", ""],
+  ["TikTok", "Short videos", "users", ""],
+  ["Snapchat", "Disappearing messages and photos", "users", ""],
+  ["Tinder", "Dating", "users", ""],
+  ["Facebook, Instagram", "Social network and photo sharing", "redirect", "The October roundup says they move the check over to WhatsApp"],
+]} />
+
+WhatsApp only checks the number once, at sign-up. After that it runs on any internet connection, whether or not that number is in your phone ([official article](https://support.saily.com/hc/en-us/articles/13718527919900)).
+
+## Accounts, shopping and travel
+
+<AppTable rows={[
+  ["Apple ID", "Apple's account", "users", "Both tests got codes"],
+  ["Google", "Google's account", "users", "Doesn't ask for a number at sign-up; a code arrived when the number was added later"],
+  ["Microsoft", "Microsoft's account", "users", ""],
+  ["Amazon", "Online shopping", "users", ""],
+  ["Airbnb", "Booking homes and short-term rentals", "official", "One-time codes"],
+]} />
+
+With these accounts, you'd usually add a number for password recovery and an extra check at login.
+
+## Money
+
+<AppTable rows={[
+  ["PayPal", "An online wallet for paying and getting paid", "official", "2FA. Both users' tests got codes too"],
+  ["Wise", "International transfers and a multi-currency account", "official", "2FA"],
+  ["Venmo", "How people in the US send each other money and split bills", "official", "2FA"],
+  ["Cash App", "A US money-transfer app that can also buy stocks", "official", "2FA"],
+  ["Chime", "A US online bank with no branches", "official", "2FA"],
+  ["Bunq", "A Dutch online bank", "official", "2FA"],
+  ["Klarna", "Buy now, pay later", "official", "2FA"],
+  ["Robinhood, Webull, eToro", "Platforms for buying and selling stocks and other investments", "official", "2FA"],
+  ["Gemini", "An exchange for buying and selling crypto", "official", "2FA"],
+  ["Revolut", "A multi-currency account and card, handy for spending and exchanging money abroad", "call", "Saily hasn't confirmed its SMS 2FA works"],
+]} />
+
+Money apps make up most of the official list, yet the same article says banks, financial and payment apps are the likeliest to refuse the number. Both are true. <u>The ones in this table have been reported working. Don't assume a bank or payment app that isn't here will work too; try it yourself.</u>
+
+One more thing about PayPal: it plays a second role with Saily. When you buy the number or a data plan, you can pick PayPal at checkout ([payment methods](https://support.saily.com/hc/en-us/articles/31030534656924)). Paying Saily with PayPal and getting PayPal's codes on the number are two separate things.
+
+## AI services
+
+<AppTable rows={[
+  ["ChatGPT", "OpenAI's AI chat assistant", "no", "The September test says OpenAI refused to send a code; the October roundup says some numbers get one, after about 5 minutes"],
+  ["Claude", "Anthropic's AI chat assistant", "unsure", "The October roundup says it isn't guaranteed either"],
+]} />
+
+Plenty of people want this number for AI services, and these are the least predictable. Neither is on the official list. The October roundup also warns not to tap "resend" while you wait for a ChatGPT code, or it may be flagged as abuse and you'll wait about a day to try again. If AI services are the main reason you want the number, go in knowing it might work and might not, and that today's result can change tomorrow.
 
 ## Why not every app takes it
 
 It's a real US number, assigned through the North American Numbering Plan, and it's yours alone. But the carrier behind it runs on internet-based (VoIP) technology, so apps that check number types will label it "VoIP" rather than "mobile." Most services don't care and send the code anyway. The ones that do care are mostly certain banks, financial and payment apps, and platforms with strict security rules. That's their policy, and Saily can't change it ([official article](https://support.saily.com/hc/en-us/articles/27948689277596)).
 
-So whether it works is never really up to Saily. It's up to the app you're signing up for, and apps change their rules whenever they like. That's why every list below is a guide, not a promise.
-
-## The official list: commonly reported as working
-
-Saily's help center keeps two lists, and says plainly that neither is complete or guaranteed and both can change ([the lists](https://support.saily.com/hc/en-us/articles/27948689277596#h_01KTBC4HD8WJVE4A7NA0M88M8P)). The difference is when the code gets sent. A one-time password (OTP) is the code you get once when you sign up or log in. Two-factor authentication (2FA) means you link the number to your account, and from then on every login asks for your password plus a code sent to the number.
-
-**Commonly reported as working for one-time codes:**
-
-- **WhatsApp**: the world's most used chat app, and you need a phone number to sign up. It only checks the number once, at sign-up. After that it runs on any internet connection, whether or not that number is in your phone ([official article](https://support.saily.com/hc/en-us/articles/13718527919900)).
-- **Signal**: a chat app built around encryption, also tied to a phone number.
-- **Viber**: chat and internet calls, popular in Eastern Europe and the Middle East, and it signs you up with a phone number too.
-- **Airbnb**: for booking homes and short-term rentals around the world. It asks you to verify a phone number when you sign up and book.
-
-**Commonly reported as working for 2FA:**
-
-- **PayPal**: an online wallet for paying and getting paid, common for shopping abroad and for being paid by people in other countries.
-- **Wise**: international transfers and a multi-currency account, for exchanging money and sending it abroad.
-- **Venmo**: how people in the US send each other money and split bills.
-- **Cash App**: another US money-transfer app, which can also buy stocks.
-- **Chime**: a US online bank with no branches.
-- **Bunq**: a Dutch online bank, for opening an account in Europe.
-- **Revolut**: a multi-currency account and card, handy for spending and exchanging money while traveling. <u>It only verifies by voice call. Saily hasn't confirmed that Revolut's SMS 2FA works with the number.</u>
-- **Klarna**: buy now, pay later, for splitting online purchases into installments.
-- **Robinhood**, **Webull** and **eToro**: platforms for buying and selling stocks and other investments.
-- **Gemini**: an exchange for buying and selling crypto.
-
-Money apps make up most of that list, yet the same article says banks and payment apps are the likeliest to refuse the number. Both are true. The ones on the list have been reported working. For any bank or payment app that isn't on it, you'll have to try it yourself.
-
-One more thing about PayPal: it plays a second role with Saily. When you buy the number or a data plan, you can pick PayPal at checkout ([payment methods](https://support.saily.com/hc/en-us/articles/31030534656924)). Paying Saily with PayPal and getting PayPal's codes on the number are two separate things.
-
-## What users on X found: apps off the list
-
-The official list is short, and a lot of what people care about, like Telegram, X and Google, isn't on it. Below are tests two users shared on X. They're those users' own experiences, not Saily's word, and the two didn't get the same results.
-
-One user's roundup from October 2026 says that in a test on October 15, codes from Telegram, WhatsApp, X, TikTok, Discord, PayPal, Apple ID, Microsoft, Snapchat, Tinder and Amazon came through almost instantly. Facebook and Instagram moved the check over to WhatsApp. Google didn't ask for a phone number at sign-up, and a code arrived right away when the number was added later ([the post](https://x.com/yedabinbinah/status/2114683684414685509)).
-
-Another user tested in September 2026. Codes from PayPal, X, Google and Apple arrived, but Telegram and WhatsApp each failed twice. They said they'd test again later ([the post](https://x.com/guyun_ai/status/2100200291539059164)).
-
-Same app, one person gets the code instantly and another gets nothing. The number, the timing, or whether the phone let the text in can all make the difference. So a user's list tells you someone has made it work. It can't tell you it'll work for you.
-
-In case some of these are new to you: **Telegram** is a chat app with lots of channels and groups. **X** is what used to be Twitter. **Discord** is chat rooms, popular with gaming and hobby communities. **TikTok** is short videos, **Snapchat** is disappearing messages and photos, and **Tinder** is dating. **Apple ID**, **Microsoft** and **Google** are those companies' accounts, and you'd usually add a number for password recovery and login checks. **Amazon** is online shopping.
-
-## ChatGPT and Claude: the least predictable
-
-Plenty of people want this number for AI services, and these are the least predictable. Neither is on the official list. The user who tested in September says OpenAI flatly refused to send a code to the Saily number, but sent one fine to a number from another carrier ([the post](https://x.com/guyun_ai/status/2100200291539059164)). The October roundup says support confirmed ChatGPT isn't guaranteed. After October 15 some numbers did get ChatGPT codes, but they took about 5 minutes. Don't tap "resend" while you wait, or it may be flagged as abuse and you'll wait about a day to try again. Claude isn't guaranteed either ([the post](https://x.com/yedabinbinah/status/2114683684414685509)).
-
-If AI services are the main reason you want the number, go in knowing it might work and might not, and that today's result can change tomorrow.
+So whether it works is never really up to Saily. It's up to the app you're signing up for. Same app, one person gets the code instantly and another gets nothing, and the number, the timing, or whether the phone let the text in can all make the difference. The tables tell you someone has made it work. They can't tell you it'll work for you.
 
 ## Once it's linked
 
@@ -82,7 +103,7 @@ Saily says that if a service won't accept the number, you can email support@sail
 
 Start with an app where nothing much is at stake, like WhatsApp or Signal from the official list. If the code arrives, the number and your phone are both fine. Then link the services you actually need, one at a time. After each one, log out and log back in on the spot to make sure the code really comes through.
 
-Keep that one line in mind: the lists are only a guide, and the only way to know whether your app takes the number is to try it. To keep the number yours for good, read [Keep or change your number](/en/howto/keep-number/) next.
+Keep that one line in mind: the tables are only a guide, and the only way to know whether your app takes the number is to try it. To keep the number yours for good, read [Keep or change your number](/en/howto/keep-number/) next.
 
 ## Stuck?
 
@@ -92,6 +113,6 @@ That app doesn't accept VoIP numbers, and trying again won't change it. See if i
 <Q q="The app says it sent the code, but nothing shows up.">
 Wait a few minutes and don't keep tapping resend. If there's another SIM in the phone, turn it off for now. More fixes are in [Texts and verification codes on the US number](/en/howto/us-number-sms/).
 </Q>
-<Q q="The app I want isn't on any list.">
+<Q q="The app I want isn't in any of the tables.">
 Then the only way to know is to try. Test it with an account that doesn't matter first. If the code never comes, Saily lets you change the number once for free in the app, and not getting verification codes is one of the listed reasons. But once the old number is gone, it's gone, so read [Keep or change your number](/en/howto/keep-number/) before you change it.
 </Q>

@@ -249,6 +249,22 @@
   .shot figcaption { margin-top: 6px; color: var(--muted); font-size: var(--text-xs); line-height: 20px; }
   .shot__stamp { color: var(--muted); }
 
+  /* 查表用的表格（AppTable.astro 和正文里直接写的 <table>）：三列都能换行，手机上不横着滚；状态标签和备注叠成一行一行 */
+  .lookup { margin-block: var(--space-4); }
+  .lookup .xxd-table :is(th, td) { white-space: normal; vertical-align: top; padding-block: var(--space-2); height: auto; }
+  .lookup tbody th { color: var(--ink); font: var(--weight-medium) var(--text-sm) / var(--leading-sm) var(--font-body); text-align: start; }
+  /* 四张表列宽一样，上下对得齐 */
+  .lookup .xxd-table { display: table; table-layout: fixed; } /* 正文里的 table 默认是 block（窄屏能横滚），这里要铺满 */
+  .lookup :is(th, td):nth-child(1) { width: 26%; }
+  .lookup :is(th, td):nth-child(2) { width: 37%; }
+  .lookup tbody tr + tr > * { border-top: 1px solid var(--line); }
+  /* 按处境选办法的表：第三列只放「情况一」这样的短链接，让给第二列 */
+  .lookup--route :is(th, td):nth-child(1) { width: 34%; }
+  .lookup--route :is(th, td):nth-child(2) { width: 50%; }
+  @media (max-width: 560px) { .lookup--route :is(th, td):nth-child(1) { width: 32%; } .lookup--route :is(th, td):nth-child(2) { width: 44%; } }
+  .lookup tbody th { white-space: normal; border-bottom: 0; } /* 套件给表头 th 加了下边线，行首的 th 不要 */
+  .lookup__note { display: block; margin-top: var(--space-1); color: var(--muted); font-size: var(--text-xs); line-height: var(--leading-xs); }
+
   /* 带箭头标注的截图（Annot.astro）：SVG 盖在图上，坐标就是图片像素。截图永远是亮色的，标注用固定的红色加白边 */
   .annot__frame { position: relative; max-width: 100%; width: fit-content; }
   .annot__frame img { width: 100%; }
