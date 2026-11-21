@@ -77,7 +77,8 @@
 | --- | --- | --- |
 | https://x.com/AI_Jasonyu/status/2080877134319624492 （2026-07，75 万次阅读） | 鱼总聊AI | 国行 iPhone 用实体 eSIM 卡（BeeSIM，蓝牙写卡）装 Saily 号码的完整流程；装好后关掉这条线的蜂窝数据和数据漫游；接听来电也扣分钟；号码绑在 Saily 账号上，别删账号、别断续费。 |
 | https://x.com/zureA255062/status/2113811704106959213 （2026-10） | 蔚蓝WEILANX | 同一路线的另一份实操。 |
-| https://x.com/yedabinbinah/status/2114683684414685509 （2026-10） | DaBin.Binah | 收不到短信多半是双卡冲突，先临时关掉另一张卡；用户反映价格涨了、出现了包年选项（以 App 为准）；有的平台收不到验证码时，换个浏览器或联系客服。 |
+| https://x.com/yedabinbinah/status/2114683684414685509 （2026-10） | DaBin.Binah | 收不到短信多半是双卡冲突，先临时关掉另一张卡；用户反映价格涨了、出现了包年选项（以 App 为准）；有的平台收不到验证码时，换个浏览器或联系客服。10-15 实测接码名单（Telegram、X、Apple ID 等），ChatGPT/Claude 不保证，用在 howto/number-apps。 |
+| https://x.com/guyun_ai/status/2100200291539059164 （2026-09-16） | guyun | 接码实测：PayPal、X、Google、Apple 收到；Telegram、WhatsApp 各两次没收到；OpenAI 拒绝发码。用在 howto/number-apps。帖子里的价格和推荐码不搬。 |
 
 帖子之间、帖子和官方之间互相矛盾的地方（写的时候以官方为准，不要照搬帖子）：
 

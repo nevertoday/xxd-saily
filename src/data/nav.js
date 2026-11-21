@@ -82,6 +82,7 @@ export const HOWTO = [
   ]},
   { group: "电话号码", en: { group: "Phone number" }, items: [
     { slug: "us-number-sms", title: "用美国号码收短信和验证码", en: { title: "Texts and verification codes on the US number" } },
+    { slug: "number-apps", title: "美国号码能用在哪些应用", en: { title: "Which apps take the US number" } },
     { slug: "keep-number", title: "号码怎么留住、怎么换", en: { title: "Keep or change your number" } },
     { slug: "number-calls", title: "用这个号码打电话", en: { title: "Make calls with the number" } },
   ]},
