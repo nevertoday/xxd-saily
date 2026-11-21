@@ -1,10 +1,12 @@
 // 构建以后查整站：每页最多一处 <mark>；站内链接和锚点都在；示意的回复都标了「示意 / Illustration」；没留下占位字；没有漏渲染的 **。
+// 还查分享大图：src/data/og.js 里的每张卡（每个 Wiki 条目中英文各一张）都在 public/ 里，而且是照现在的文字和 tools/og.html 截的（指纹对得上 tools/og-manifest.json）。
 //
 //   npm run build && node scripts/check-site.mjs
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { EXTRA } from "../src/i18n/index.js";
+import { ROOT, MANIFEST, ogCards } from "./og-cards.mjs";
 
 const DIST = join(dirname(fileURLToPath(import.meta.url)), "../dist");
 if (!existsSync(DIST)) {
@@ -48,6 +50,12 @@ for (const file of pages) {
   if (visible.includes("**")) fail(file, "有没渲染出来的 **（加粗的结尾紧挨着中文标点或文字时会这样，在 ** 后加空格或改用 <strong>）");
 }
 
+const manifest = existsSync(join(ROOT, MANIFEST)) ? JSON.parse(readFileSync(join(ROOT, MANIFEST), "utf8")) : {};
+for (const c of ogCards()) {
+  if (!existsSync(join(ROOT, "public", c.path))) problems.push(`分享大图缺了：public${c.path}，跑 npm run og`);
+  else if (manifest[c.path] !== c.hash) problems.push(`分享大图过期了（文字或 tools/og.html 改过）：public${c.path}，跑 npm run og`);
+}
+
 const uniq = [...new Set(problems)];
-console.log(uniq.length ? `✗ ${uniq.length} 个问题\n  ${uniq.join("\n  ")}` : `✓ ${pages.length} 页：<mark>、站内链接和锚点、示意标题、占位字都没问题`);
+console.log(uniq.length ? `✗ ${uniq.length} 个问题\n  ${uniq.join("\n  ")}` : `✓ ${pages.length} 页：<mark>、站内链接和锚点、示意标题、占位字都没问题；分享大图都是最新的`);
 process.exitCode = uniq.length ? 1 : 0;

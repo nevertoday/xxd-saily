@@ -42,6 +42,7 @@ node scripts/check-i18n.mjs
 - **主线教程**每一步是 `src/pages/guide/<n>-<slug>.mdx`，开头写 `layout: ../../layouts/Guide.astro` 和 `step: n`。
 - **How-to** 是 `src/pages/howto/<slug>.mdx`（`layout: ../../layouts/HowTo.astro`，`slug` 要和 `HOWTO` 里一致，`step` 是相关的主线步骤）。
 - **Wiki** 和 **常见问题** 只改数据：`src/data/wiki.js`、`src/data/faq.js`。Wiki 条目可以带一张 `list` 表。`GLOSSARY` 的每个术语用 `wiki:` 指向一条 Wiki 条目；加了新条目，记得把对应术语指过去。
+- 每个 Wiki 条目在 X 上分享时用自己的大图（条目名 + 一句话），是生成的：加了条目，或者改了条目名、一句话、分组，跑 `npm run og`，把 `public/og/` 和 `tools/og-manifest.json` 一起提交。忘了跑，`npm run check` 会报出是哪几张。
 - **教程组件**（在 MDX 里 import）：`Callout`（`ok` / `warn` / `no` / `tip`）、`Term`（术语，`k` 对应 `GLOSSARY`）、`Checkpoint`（可打勾的检查点）、`Q`（「卡住了？」里的一条）、`Tabs`（按 iPhone / 安卓或路线切换）、`Copy`（带复制按钮的一段话）、`Cmd`（正文里一点就复制的命令）、`Reply`（示意 App 里的提示或收到的短信）、`Shot`（配图）、`Annot`（带红色箭头和编号的截图，坐标就是图片像素，见组件开头的注释）、`Fig`（图示）。
 - **极速拿号**（`src/pages/quick-number.mdx` 和 `/en/` 那份，版式 `layouts/Quick.astro`）：不在 How-to 目录里，首页和第 5 步有入口。截图在 `public/img/quick-number/`，是 saily.com 网页上的流程（号码页 → 只获取号码 → 结账填推荐码）；网页改版了就重截，裁掉账号邮箱、抵用金余额这类个人信息。
 - **搜索**（⌘K）自动收录新手入门每一课、主线每一步、每篇 How-to、每个 Wiki 条目和每条常见问题，正文按小节做全文搜索。
@@ -68,7 +69,7 @@ node scripts/check-i18n.mjs
 
 ```bash
 node scripts/sync-docs.mjs          # 重新抓官方帮助中心（en-us、zh-cn），列出新增、删除、改动的文章，更新 docs/sources/official.json
-npm run check                       # 构建以后：多语言检查 + 整站检查（<mark>、站内链接和锚点、示意标题、占位字）
+npm run check                       # 构建以后：多语言检查 + 整站检查（<mark>、站内链接和锚点、示意标题、占位字、分享大图是不是最新）
 node scripts/check-doc-links.mjs    # 联网查帮助中心链接打得开、#锚点在线上页面里真的有（锚点别从本地副本的标题猜）
 ```
 
@@ -132,11 +133,11 @@ Cloudflare Workers 静态资源，配置在 `wrangler.jsonc`。更新：`npm run
 
 ## README 插画和分享大图
 
-生成器都在 `tools/`，文字现在是 TBD 占位，画面等设计那一步定，定之前别跑：
+生成器都在 `tools/`：
 
 - README 头图：`python3 tools/build_hero.py` 写出 `assets/hero.svg` 和 `assets/en/hero.svg`（一段循环的 SVG 动画）。看效果：把 SVG 内嵌进一个 HTML，用 `document.getAnimations()` 暂停在某一秒再截图（放在 `<img>` 里的动画，无头 Chrome 不会往前走）。
 - README 配图：`python3 tools/build_readme_svgs.py` 写出 `assets/readme/*.svg` 和 `assets/en/readme/*.svg`。
-- 分享大图：样子和文字都在 `tools/og.html`（一张 HTML 海报，`?lang=zh` / `?lang=en`）。`python3 tools/build_og.py` 用 Chrome 截图，2 倍清晰度（2560×1280），写出 `public/og.png`（中文页分享用）、`public/og-en.png`（英文页分享用）。`Site.astro` 只在这两张存在时才输出 `og:image`。改完两张都看一眼：字有没有互相压住、顶到边。GitHub 仓库的 Social preview 用英文那张，要在仓库 Settings → General 手动上传。
+- 分享大图：样子都在 `tools/og.html`（一张 HTML 海报：`?lang=zh` / `?lang=en` 是全站那张，`?kind=wiki&title=…&one=…&group=…` 是 Wiki 条目那张）。截哪些卡、填什么字在 `src/data/og.js`：全站两张 `public/og.png`（中文页）、`public/og-en.png`（其他语言），每个 Wiki 条目中英文各一张 `public/og/wiki/<slug>.png`、`public/og/en/wiki/<slug>.png`。`npm run og` 用 Chrome 截图，2 倍清晰度（2560×1280），每张的指纹（模板 + 文字）记在 `tools/og-manifest.json`，没变的不重截；`npm run check` 照指纹查缺图和过期。页面用哪张：`Site.astro` 的 `og` 属性（Wiki 条目页传自己的），不传就是全站那张。改了模板，挑最长的条目名和一句话中英文各看一眼：字有没有互相压住、顶到边。GitHub 仓库的 Social preview 用英文全站那张，要在仓库 Settings → General 手动上传。
 
 本站标志（`Site.astro` 里的 `site-mark` 和 `public/favicon.svg`）是一张极简的 SIM 卡：切掉一角的方块，中间一块芯片，墨色，和小小东其他站同一套笔法。故意不像 Saily 官方的图标，本站是非官方的。
 
