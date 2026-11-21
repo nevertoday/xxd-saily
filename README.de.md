@@ -68,7 +68,7 @@ Diese Seiten sind auf Englisch.
 
 Jede Funktion, jeder Preis und jeder Schritt ist mit dem [offiziellen Hilfe-Center von Saily](https://support.saily.com/hc/de) abgeglichen und auf der Seite verlinkt; wo sich das chinesische und das englische Hilfe-Center widersprechen, gilt das englische, und die Seite sagt das dazu. Erfahrungen von X werden nur als das zitiert, was jemand ausprobiert hat, mit Link.
 
-Diese Anleitung enthält keine Rabatt- oder Empfehlungscodes, bringt keine Preistricks und keine Wege um Netzsperren herum bei und stellt die US-Nummer nicht als Mittel dar, sich als Einwohner der USA auszugeben.
+Diese Anleitung enthält keine Rabattcodes und keine Empfehlungscodes anderer Leute; die einzige Ausnahme ist die Seite [Quick number](https://saily.xiaoxiaodong.ai/en/quick-number/) (auf Englisch) mit dem Empfehlungscode des Autors und dem Hinweis, dass der Autor dafür Guthaben bekommt. Sie bringt keine Preistricks und keine Wege um Netzsperren herum bei und stellt die US-Nummer nicht als Mittel dar, sich als Einwohner der USA auszugeben.
 
 Das ist eine inoffizielle Anleitung ohne Verbindung zu Saily oder Nord Security, und sie spricht nicht für sie. Saily ist eine Marke ihres Inhabers. Funktionen und Preise ändern sich, deshalb sind das offizielle Hilfe-Center und die App maßgeblich.
 

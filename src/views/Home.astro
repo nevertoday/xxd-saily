@@ -3,7 +3,7 @@
 // 事实都出自官方帮助中心（来源见 docs/sources/README.md 的「和本站的对应」）。
 import Site from "../layouts/Site.astro";
 import Contact from "../components/Contact.astro";
-import { LESSONS, lessonHref, STEPS, stepHref, langOf, fullLang, t } from "../data/nav.js";
+import { LESSONS, lessonHref, STEPS, stepHref, langOf, fullLang, t, link } from "../data/nav.js";
 import { X as dict, fmt } from "../i18n/index.js";
 
 const lang = langOf(Astro.url.pathname);
@@ -15,6 +15,7 @@ const ZH = {
   lead: ["Saily 是 Nord Security（做 NordVPN 的那家公司）出的旅行 eSIM。出发前在 App 里买好目的地的流量，装进手机，落地拨两个开关就能上网，不用再到机场找柜台买卡。它还另外卖一个美国 +1 电话号码，能打电话、收发短信。", "这是一个非官方的学习站", "，和 Saily、Nord Security 都没有关系；功能和价格以官方帮助中心和 App 为准。"],
   cta: ["新手从这里开始", "用过了，看完整教程"],
   ctaNote: "新手入门一共三课：先看手机能不能用，再在出发前买好套餐装上，最后落地打开数据。",
+  quick: ["只想先拿一个美国号码？", "极速拿号：在网页上 3 分钟买好"],
   painH: "你是不是也遇到过这些",
   PAIN: [
     "落地以后手机没网，叫不了车、看不了地图，只好到处找 Wi-Fi。",
@@ -43,6 +44,7 @@ const EN = {
   lead: ["Saily is a travel eSIM from Nord Security, the company behind NordVPN. Before your trip you buy data for where you're going in the app and install it on your phone, and when you land you flip two switches and you're online, with no SIM counter to find at the airport. It also sells a separate +1 US phone number for calls and texts. ", "This is an unofficial guide", ", not affiliated with Saily or Nord Security. For features and prices, the official Help Center and the app are the source of truth."],
   cta: ["Start here if you're new", "Used it already? The full guide"],
   ctaNote: "The beginner track is three lessons: check your phone, buy and install a plan before you go, then turn on data when you land.",
+  quick: ["Just want a US number for now?", "Quick number: buy one on the website in 3 minutes"],
   painH: "Has this happened to you?",
   PAIN: [
     "You land, your phone has no internet, and you can't call a ride or open a map, so you go looking for Wi-Fi.",
@@ -83,6 +85,7 @@ const headings = [["h-pain", C.painH], ["h-lessons", C.lessonsH], ["h-fit", C.fi
       <a class="xxd-btn" data-variant="ghost" href={stepHref(STEPS[0], fl)} hreflang={fl === lang ? undefined : fl}>{C.cta[1]}</a>
     </div>
     <p class="home__note">{C.ctaNote}</p>
+    {(lang === "zh" || lang === "en") && <p class="home__quick"><i data-xxd-icon="PhoneCall" data-size="16"></i>{C.quick[0]} <a class="xxd-link" href={link("/quick-number/", lang)}>{C.quick[1]}</a></p>}
 
     <section aria-labelledby="h-pain">
       <h2 id="h-pain">{C.painH}</h2>

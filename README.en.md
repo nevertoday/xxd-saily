@@ -54,6 +54,8 @@ Details in [step 6 of the guide](https://saily.xiaoxiaodong.ai/en/guide/6-no-esi
 
 Saily also sells a US +1 number that can make calls and receive texts and verification codes. You verify your identity first; documents issued in China need both a passport and a national ID card. Saily is upfront that the number runs on a VoIP carrier network: most services send codes to it fine, but some banks, financial and payment apps don't accept it.
 
+Just want a number for now, without a data plan? [Quick number](https://saily.xiaoxiaodong.ai/en/quick-number/) walks you through buying one on the Saily website, with annotated screenshots.
+
 How to get it, keep it, and what to do when a code doesn't arrive: [step 5 of the guide](https://saily.xiaoxiaodong.ai/en/guide/5-phone-number/) and the [phone number how-tos](https://saily.xiaoxiaodong.ai/en/howto/).
 
 ## Already using it?
@@ -66,7 +68,7 @@ How to get it, keep it, and what to do when a code doesn't arrive: [step 5 of th
 
 Every feature, price and step is checked against [Saily's official help center](https://support.saily.com/hc/en-us), linked on the page; where the Chinese and English help centers disagree, the English one wins and the page says so. Experiences shared on X are quoted only as what someone tried, with a link.
 
-This guide doesn't carry promo or referral codes, doesn't teach pricing tricks or ways around network restrictions, and doesn't present the US number as a way to pass as a US resident.
+This guide doesn't carry promo codes or other people's referral codes; the one exception is the [Quick number](https://saily.xiaoxiaodong.ai/en/quick-number/) page, which shows the author's own referral code and says the author gets credit for it. It doesn't teach pricing tricks or ways around network restrictions, and doesn't present the US number as a way to pass as a US resident.
 
 This is an unofficial guide with no connection to Saily or Nord Security, and it doesn't speak for them. Saily is a trademark of its owner. Features and prices change, so the official help center and the app are the reference.
 

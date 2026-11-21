@@ -42,7 +42,8 @@ node scripts/check-i18n.mjs
 - **主线教程**每一步是 `src/pages/guide/<n>-<slug>.mdx`，开头写 `layout: ../../layouts/Guide.astro` 和 `step: n`。
 - **How-to** 是 `src/pages/howto/<slug>.mdx`（`layout: ../../layouts/HowTo.astro`，`slug` 要和 `HOWTO` 里一致，`step` 是相关的主线步骤）。
 - **Wiki** 和 **常见问题** 只改数据：`src/data/wiki.js`、`src/data/faq.js`。Wiki 条目可以带一张 `list` 表。`GLOSSARY` 的每个术语用 `wiki:` 指向一条 Wiki 条目；加了新条目，记得把对应术语指过去。
-- **教程组件**（在 MDX 里 import）：`Callout`（`ok` / `warn` / `no` / `tip`）、`Term`（术语，`k` 对应 `GLOSSARY`）、`Checkpoint`（可打勾的检查点）、`Q`（「卡住了？」里的一条）、`Tabs`（按 iPhone / 安卓或路线切换）、`Copy`（带复制按钮的一段话）、`Cmd`（正文里一点就复制的命令）、`Reply`（示意 App 里的提示或收到的短信）、`Shot`（配图）、`Fig`（图示）。
+- **教程组件**（在 MDX 里 import）：`Callout`（`ok` / `warn` / `no` / `tip`）、`Term`（术语，`k` 对应 `GLOSSARY`）、`Checkpoint`（可打勾的检查点）、`Q`（「卡住了？」里的一条）、`Tabs`（按 iPhone / 安卓或路线切换）、`Copy`（带复制按钮的一段话）、`Cmd`（正文里一点就复制的命令）、`Reply`（示意 App 里的提示或收到的短信）、`Shot`（配图）、`Annot`（带红色箭头和编号的截图，坐标就是图片像素，见组件开头的注释）、`Fig`（图示）。
+- **极速拿号**（`src/pages/quick-number.mdx` 和 `/en/` 那份，版式 `layouts/Quick.astro`）：不在 How-to 目录里，首页和第 5 步有入口。截图在 `public/img/quick-number/`，是 saily.com 网页上的流程（号码页 → 只获取号码 → 结账填推荐码）；网页改版了就重截，裁掉账号邮箱、抵用金余额这类个人信息。
 - **搜索**（⌘K）自动收录新手入门每一课、主线每一步、每篇 How-to、每个 Wiki 条目和每条常见问题，正文按小节做全文搜索。
 - **UI Kit 升级**：在 xxd-ui-kit 里 `pnpm xxd sync <本目录>`，不要手改 `public/xxd/`。改完界面跑 `pnpm xxd doctor <本目录>`。
 
@@ -58,7 +59,7 @@ node scripts/check-i18n.mjs
 - 写进网站的内容一律用自己的话讲，引用原话一次不超过一句，并附官方那一篇（或原帖）的链接。
 - 资料里没写的行为、按钮名、数字，不写。拿不准就不写，或者写「以官方帮助中心为准」并给链接。
 - 会变的东西（套餐、覆盖的国家、支持的机型、按钮位置）以官方为准，变了就改 `data/` 或页面里对应的那一处。
-- **价格和优惠一直在变。** 本站不写具体价格，不写正在进行的促销，不放任何优惠码或推荐码（作者自己的也不放），也不教怎么钻价格的漏洞（标错的价格、重复领优惠之类）。要讲钱，只讲规则，比如抵用金一年内有效、不能转给别的账户，并链到官方那一篇。
+- **价格和优惠一直在变。** 本站不写具体价格，不写正在进行的促销，不放优惠码，也不放别人的推荐码。唯一的例外是[极速拿号](/quick-number/)（中英两页）放了作者自己的推荐码，页面上写明这是作者的码、作者会因此拿到抵用金、不用也照样能买；别的页面不放。也不教怎么钻价格的漏洞（标错的价格、重复领优惠之类）。要讲钱，只讲规则，比如抵用金一年内有效、不能转给别的账户，并链到官方那一篇。
 - **不教绕过网络限制。** 不教怎么用代理、VPN 或别的办法，在限制网络的地方打开 Saily 的 App 或网站；网友帖子里的这类步骤一律不搬进来。要提到这件事，就引 Saily 官方自己的提醒：在土耳其、阿曼、卡塔尔、沙特阿拉伯、阿联酋和中国大陆，Saily 的 App 或网站可能打不开，所以要去这些地方，出发前就把 eSIM 装好（[官方说明](https://support.saily.com/hc/zh-cn/articles/12838788763164#travel)）。
 
 ## 同步

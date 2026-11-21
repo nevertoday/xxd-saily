@@ -6,7 +6,7 @@ v1 of this site is Chinese (root) and English (`/en/`). This brief is for the ne
 The unofficial Saily beginners site gets more languages. Each language has the home page, the three beginner lessons and its own README; deeper pages (guide, how-to, wiki, FAQ) link to the English version. The site reads like a friend explaining (Kevin Kelly style: one core idea, a picture first, connected sentences). The translations must read that way in each language, not like a word-for-word translation.
 
 ## Read first
-- `docs/MAINTAINING.md`: 「资料来源」, 「写作规矩（硬规矩）」 and 「怎么写」 (the voice and the hard rules apply to every language: no prices or promo codes, nothing on getting around network restrictions).
+- `docs/MAINTAINING.md`: 「资料来源」, 「写作规矩（硬规矩）」 and 「怎么写」 (the voice and the hard rules apply to every language: no prices or promo codes (the author's referral code lives only on the zh/en Quick number page), nothing on getting around network restrictions).
 - The English and Chinese originals: `src/pages/en/start/{1-check-phone,2-data-plan,3-land}.mdx`, `src/pages/start/…` (zh), `src/i18n/base.js` (English UI strings and home page), `src/views/Home.astro`, the English README.
 - How the Grok Bot site did the same languages, for tone and layout only (its content is about a different product): `../xxd-grokbot/src/i18n/<lang>.js`, `../xxd-grokbot/src/pages/<lang>/start/`.
 

@@ -311,7 +311,7 @@ export const WIKI = [
     one: "抵用金是存在 Saily 账户里、买套餐时能抵钱的余额。从发放那天起一年内有效，不能转给别的账户。",
     like: "像商场发的购物券：只能在这家店用，写着你的名字，过了日期就作废。",
     here: [
-      "在 App 底部点 **抵用金**（Credits）就能看到。官方帮助中心提到的来源有两个：好友用你的推荐码加入 Saily，你会拿到一笔抵用金（安卓上要点 **领取您的奖励**（Claim Your Reward）手动领）；超级套餐的会员买东西，会按比例返一部分抵用金。本站不放推荐码，具体数额以 App 为准。见官方的[推荐计划](https://support.saily.com/hc/zh-cn/articles/14262137198236)和[超级套餐](https://support.saily.com/hc/zh-cn/articles/25455420492572)。",
+      "在 App 底部点 **抵用金**（Credits）就能看到。官方帮助中心提到的来源有两个：好友用你的推荐码加入 Saily，你会拿到一笔抵用金（安卓上要点 **领取您的奖励**（Claim Your Reward）手动领）；超级套餐的会员买东西，会按比例返一部分抵用金。本站只在[极速拿号](/quick-number/)放了作者自己的推荐码，具体数额以 App 为准。见官方的[推荐计划](https://support.saily.com/hc/zh-cn/articles/14262137198236)和[超级套餐](https://support.saily.com/hc/zh-cn/articles/25455420492572)。",
       "用的时候，抵用金能抵套餐的钱，可不能转到别的账户。想拿它给家人朋友买，官方的办法是用抵用金买一张 eSIM，再把二维码发给对方去装。还有一点：套餐要是有一部分是用抵用金付的，之后的自动充值按原价收费。见官方的[付款方式](https://support.saily.com/hc/zh-cn/articles/31030534656924)和[送人说明](https://support.saily.com/hc/zh-cn/articles/31072966285724)。",
     ],
     myths: [

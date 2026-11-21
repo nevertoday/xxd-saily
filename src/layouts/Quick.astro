@@ -1,0 +1,25 @@
+---
+// 单独的一页速成教程（比如 /quick-number/）：样子和 How-to 一样，但不在 How-to 目录里，也不排进完整教程的顺序。
+// frontmatter：title、description、tldr、time、for、step（相关的完整教程步骤）。
+import Site from "./Site.astro";
+import Feedback from "../components/Feedback.astro";
+import { STEPS, stepHref, link, langOf, t } from "../data/nav.js";
+const { frontmatter, headings = [] } = Astro.props;
+const lang = langOf(Astro.url.pathname);
+const en = lang === "en";
+const step = frontmatter.step !== undefined ? STEPS.find((s) => s.n === frontmatter.step) : null;
+---
+<Site title={frontmatter.title} description={frontmatter.description} headings={headings}>
+  <header class="step-head">
+    <ol class="xxd-breadcrumbs" data-size="sm"><li><a href={link("/", lang)}>{en ? "Home" : "首页"}</a></li><li aria-current="page">{frontmatter.crumb ?? frontmatter.title}</li></ol>
+    <h1>{frontmatter.title}</h1>
+    {frontmatter.tldr && <p class="page-tldr"><span class="page-tldr__label">{en ? "In one line" : "一句话"}</span>{frontmatter.tldr}</p>}
+    <div class="step-head__meta">
+      {frontmatter.time && <span class="xxd-badge">{frontmatter.time}</span>}
+      {frontmatter.for && <span class="xxd-badge">{en ? "For: " : "适用："}{frontmatter.for}</span>}
+      {step && <a class="xxd-badge" href={stepHref(step, lang)}>{en ? `Full guide step ${step.n}: ` : `完整教程第 ${step.n} 步：`}{t(step, "title", lang)}</a>}
+    </div>
+  </header>
+  <article class="xxd-prose"><slot /></article>
+  <Feedback page={frontmatter.title} />
+</Site>

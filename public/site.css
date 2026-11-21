@@ -100,6 +100,8 @@
   .home h2 { margin: 0 0 var(--space-3); font: var(--weight-strong) var(--text-lg) / 1.4 var(--font-title); }
   .home h2 + p { margin: -6px 0 var(--space-4); color: var(--muted); font-size: var(--text-sm); line-height: 20px; }
   .home__note { margin: var(--space-2) 0 0; color: var(--muted); font-size: var(--text-xs); }
+  .home__quick { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: var(--space-4) 0 0; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); background: var(--wash); font-size: var(--text-sm); }
+  .home__quick > i { color: var(--muted); }
   /* 「你是不是遇到过」：三句话，左边一条细线把它们收成一组 */
   .home .pain { margin: 0; padding: 0; padding-inline-start: calc(var(--space-5) - 2px); border-inline-start: 2px solid var(--line); list-style: none; }
   .home .pain li { margin: 0 0 var(--space-2); line-height: 26px; }
@@ -246,6 +248,26 @@
   .shot img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); background: #fff; } /* xxd-ignore：截图是亮色的，暗色下也垫白底 */
   .shot figcaption { margin-top: 6px; color: var(--muted); font-size: var(--text-xs); line-height: 20px; }
   .shot__stamp { color: var(--muted); }
+
+  /* 带箭头标注的截图（Annot.astro）：SVG 盖在图上，坐标就是图片像素。截图永远是亮色的，标注用固定的红色加白边 */
+  .annot__frame { position: relative; max-width: 100%; width: fit-content; }
+  .annot__frame img { width: 100%; }
+  .annot__svg { position: absolute; inset: 1px; width: calc(100% - 2px); height: calc(100% - 2px); overflow: visible; pointer-events: none; }
+  .annot { --annot: #E5341D; } /* xxd-ignore：画在亮色截图上，不跟主题走 */
+  .annot__line, .annot__halo { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .annot__line { stroke: var(--annot); stroke-width: calc(3.5px * var(--k, 1)); }
+  .annot__halo { stroke: #fff; stroke-width: calc(8px * var(--k, 1)); opacity: .9; } /* xxd-ignore */
+  .annot__head { fill: var(--annot); stroke: #fff; stroke-width: 1.5; stroke-linejoin: round; } /* xxd-ignore */
+  .annot__tag circle { fill: var(--annot); stroke: #fff; stroke-width: 2.5; } /* xxd-ignore */
+  .annot__no { fill: #fff; font: 700 calc(15px * var(--k, 1))/1 var(--font-sans, system-ui), sans-serif; } /* xxd-ignore */
+  .annot__label { fill: var(--annot); font: 700 calc(17px * var(--k, 1))/1 var(--font-sans, system-ui), sans-serif; paint-order: stroke; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; } /* xxd-ignore */
+  /* 动画：线按顺序画出来，箭头和编号随后淡入 */
+  .annot.is-anim .annot__line, .annot.is-anim .annot__halo { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .annot.is-anim .annot__head, .annot.is-anim .annot__tag { opacity: 0; }
+  .annot.is-in .annot__line, .annot.is-in .annot__halo { animation: annot-draw .55s ease-out forwards; animation-delay: calc(var(--i) * .7s + .15s); }
+  .annot.is-in .annot__head, .annot.is-in .annot__tag { animation: annot-fade .25s ease-out forwards; animation-delay: calc(var(--i) * .7s + .6s); }
+  @keyframes annot-draw { to { stroke-dashoffset: 0; } }
+  @keyframes annot-fade { to { opacity: 1; } }
 
   .feedback {
     display: flex; align-items: flex-start; gap: 8px; max-width: var(--read-width, 680px);

@@ -68,7 +68,7 @@ Estas páginas estão em inglês:
 
 Cada recurso, preço e passo é conferido na [Central de Ajuda oficial da Saily](https://support.saily.com/hc/pt-br), com o link na própria página; quando a Central de Ajuda em chinês e a em inglês não batem, vale a em inglês, e a página avisa. Experiências compartilhadas no X só aparecem como algo que alguém testou, com o link.
 
-Este guia não traz códigos promocionais nem de indicação, não ensina truques com preços nem formas de contornar restrições de rede, e não apresenta o número dos EUA como um jeito de se passar por morador dos EUA.
+Este guia não traz códigos promocionais nem códigos de indicação de outras pessoas; a única exceção é a página [Quick number](https://saily.xiaoxiaodong.ai/en/quick-number/) (em inglês), com o código de indicação do autor e o aviso de que o autor recebe crédito por ele. Também não ensina truques com preços nem formas de contornar restrições de rede, e não apresenta o número dos EUA como um jeito de se passar por morador dos EUA.
 
 Este é um guia não oficial, sem nenhuma relação com a Saily ou com a Nord Security, e não fala em nome delas. Saily é uma marca do seu proprietário. Recursos e preços mudam, então a referência são a Central de Ajuda oficial e o app.
 

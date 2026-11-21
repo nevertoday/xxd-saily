@@ -11,7 +11,7 @@ An independent, open-source, unofficial learning site at saily.xiaoxiaodong.ai a
 
 ## Facts and sources
 - Every factual statement about Saily (features, prices, steps, limits, what support does) comes from the official help center. Write it in your own words; don't copy paragraphs; link the article (`https://support.saily.com/hc/en-us/articles/<id>` on en pages, `https://support.saily.com/hc/zh-cn/articles/<id>` on zh pages when the zh article exists).
-- Prices change. When you mention one, say it's what the official article states and that the app shows the current price. Never write promo codes, referral codes, or pricing tricks.
+- Prices change. When you mention one, say it's what the official article states and that the app shows the current price. Never write promo codes, other people's referral codes, or pricing tricks. The one exception is the author's own referral code on the Quick number page (`src/pages/quick-number.mdx` and its /en/ twin), disclosed there; don't add it anywhere else.
 - Community posts from X: only as clearly labelled user experience (「有用户在 X 上分享……」/ "One user on X reports …") with a link to the post, never as the source of a feature, price or step. Where they disagree with the official docs, the official docs win.
 - Never teach getting around network restrictions. Where it matters, quote Saily's own advice that the app may be unreachable in some countries, so install before you go.
 - Never present the US number as a way to pass as a US resident for financial accounts. State what the official OTP/2FA article says about which services may refuse it.
