@@ -252,6 +252,10 @@
   /* 带箭头标注的截图（Annot.astro）：SVG 盖在图上，坐标就是图片像素。截图永远是亮色的，标注用固定的红色加白边 */
   .annot__frame { position: relative; max-width: 100%; width: fit-content; }
   .annot__frame img { width: 100%; }
+  .annot__frame > a { display: block; cursor: zoom-in; }
+  /* 电脑版和手机版截图：按屏幕宽度只显示一张 */
+  .annot__frame--m { display: none; }
+  @media (max-width: 560px) { .annot__frame--d { display: none; } .annot__frame--m { display: block; } }
   .annot__svg { position: absolute; inset: 1px; width: calc(100% - 2px); height: calc(100% - 2px); overflow: visible; pointer-events: none; }
   .annot { --annot: #E5341D; } /* xxd-ignore：画在亮色截图上，不跟主题走 */
   .annot__line, .annot__halo { fill: none; stroke-linecap: round; stroke-linejoin: round; }

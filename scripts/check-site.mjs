@@ -36,7 +36,12 @@ for (const file of pages) {
   }
   for (const m of html.matchAll(/href="(\/[^"#?]*)(?:\?[^"#]*)?(#[^"]*)?"/g)) {
     const path = decodeURI(m[1]);
-    if (/\.(css|js|svg|png|ico|xml|txt|json|webmanifest)$/.test(path) || path.startsWith("/xxd/")) continue;
+    if (path.startsWith("/xxd/")) continue;
+    // 指向文件（截图、图标等）：文件在就行
+    if (/\.[a-z0-9]+$/i.test(path)) {
+      if (!existsSync(join(DIST, path))) fail(file, `文件不存在：${path}`);
+      continue;
+    }
     const target = join(DIST, path, path.endsWith("/") ? "" : "/", "index.html");
     if (!existsSync(target)) {
       fail(file, `链接不存在：${path}`);
