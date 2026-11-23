@@ -69,6 +69,8 @@ export const ROUTE = [
   { n: 5, href: "/howto/number-apps/", title: "拿去注册，收验证码", sum: "先看哪些应用收得到、哪些不保证；收不到时先分清是哪一头的问题", en: { title: "Sign up and get your codes", sum: "See which apps send codes and which don't promise to, and what to check when one doesn't arrive" } },
   { n: 6, href: "/howto/keep-number/", title: "保号：别让它丢了", sum: "续费别断，别在 App 里删 eSIM；号码丢了，绑过的账号就收不到码", en: { title: "Keep the number", sum: "Don't let the renewal lapse or delete the eSIM in the app. Lose the number and your accounts lose their codes" } },
 ];
+// 以后加的语言：六步的标题、简介在 src/i18n/<语言>.js 的 route 里，按顺序叠到这里
+for (const [code, d] of Object.entries(EXTRA)) (d.route || []).forEach((r, i) => { if (ROUTE[i]) ROUTE[i][code] = r; });
 export const routeHref = (r, lang = "zh") => link(lang === "zh" ? r.href : (r.enHref ?? r.href), lang);
 
 export const STEPS = [

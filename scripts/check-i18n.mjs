@@ -2,7 +2,7 @@
 //   node scripts/check-i18n.mjs ja        只查日语
 //   node scripts/check-i18n.mjs           全部查
 // 先查：nav.js 的 LANGS 里每种非全站语言在 src/i18n/index.js 的 EXTRA 里都有，EXTRA 里的每种也都在 LANGS 里。
-// 查的是：src/i18n/<语言>.js 的键和 base.js 一样多、{占位} 没丢、数组长度一样；
+// 查的是：src/i18n/<语言>.js 的键和 base.js 一样多、{占位} 和 [字](键) 链接没丢、数组长度一样；
 // src/pages/<语言>/ 下的首页和三课都在、MDX 能编译、复制块的 id 和英文版一样、每页最多一处 <mark>、
 // 站内链接指向存在的页面（新手入门指向本语言，其他页面指向 /en/）；
 // 新手三课的图示（figs）和 src/data/figs.js 的英文结构一样，三课里用到的 <Fig> 和英文版一样。
@@ -29,9 +29,10 @@ const walk = (base, tr, path, code) => {
   } else if (base && typeof base === "object") {
     if (!tr || typeof tr !== "object") return fail(code, `缺 ${path}`);
     for (const k of Object.keys(base)) walk(base[k], tr[k], path ? `${path}.${k}` : k, code);
-  } else if (typeof base === "string") {
+  } else if (typeof base === "string" && base) {
     if (typeof tr !== "string" || !tr.trim()) return fail(code, `缺 ${path}`);
     for (const ph of base.match(/\{\w+\}/g) || []) if (!tr.includes(ph)) fail(code, `${path} 丢了占位 ${ph}`);
+    for (const ln of base.match(/\]\(\w+\)/g) || []) if (!tr.includes(ln)) fail(code, `${path} 丢了链接 [字]${ln.slice(1)}`);
   }
 };
 

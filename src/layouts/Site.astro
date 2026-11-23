@@ -150,16 +150,14 @@ const GITHUB_MARK = '<svg width="16" height="16" viewBox="0 0 16 16" fill="curre
             <h2 class="xxd-sidebar__label">{L.start}</h2>
             <a class="xxd-sidebar__item" href={link("/", lang)} aria-current={cur(link("/", lang)) ? "page" : undefined}><span>{L.home}</span></a>
           </section>
-          {!x && (
-            <section class="xxd-sidebar__group">
-              <h2 class="xxd-sidebar__label">{L.route}</h2>
-              {ROUTE.map((r) => (
-                <a class="xxd-sidebar__item" href={routeHref(r, lang)} aria-current={cur(routeHref(r, lang)) ? "page" : undefined}>
-                  <span class="site-nav__num">{r.n}</span><span>{t(r, "title", lang)}</span>
-                </a>
-              ))}
-            </section>
-          )}
+          <section class="xxd-sidebar__group">
+            <h2 class="xxd-sidebar__label">{L.route}</h2>
+            {ROUTE.map((r) => (
+              <a class="xxd-sidebar__item" href={routeHref(r, fl)} hreflang={x ? fl : undefined} aria-current={cur(routeHref(r, fl)) ? "page" : undefined}>
+                <span class="site-nav__num">{r.n}</span><span>{t(r, "title", lang)}</span>
+              </a>
+            ))}
+          </section>
           <section class="xxd-sidebar__group">
             <h2 class="xxd-sidebar__label">{L.lessons}</h2>
             {LESSONS.map((s) => (

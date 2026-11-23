@@ -2,20 +2,24 @@
 // 中文、英文首页。大多数读者来这里，不是为了出国，是要一个美国 +1 号码去注册海外应用、收验证码，所以首页围着这件事讲：
 // 卡在哪（痛点）→ 和接码平台差在哪 → 从买号到收码的六步（ROUTE）→ 能收哪些码、哪些别指望 → 适不适合 → 网站还讲什么（流量放最后）。
 // Saily 的事实出自官方帮助中心；网友的经验写明是网友，附原帖（来源见 docs/sources/README.md）。
-// 以后加的语言（日韩西葡法德俄阿）还是原来那张以出国上网为主的首页：views/HomeIntl.astro。
+// 中文、英文的文字在下面的 ZH、EN；其他语言（日韩西葡法德俄阿）的在 src/i18n/<语言>.js 的 home，
+// 链接写成 [字](键)，键见 URL。这些语言只有首页和新手三课，六步和完整教程都链到英文页。
 import Site from "../layouts/Site.astro";
 import Contact from "../components/Contact.astro";
-import { ROUTE, routeHref, LESSONS, lessonHref, STEPS, stepHref, langOf, t, link } from "../data/nav.js";
+import { ROUTE, routeHref, LESSONS, lessonHref, STEPS, stepHref, langOf, fullLang, t, link } from "../data/nav.js";
+import { X as dict, fmt } from "../i18n/index.js";
 
-const lang = langOf(Astro.url.pathname) === "en" ? "en" : "zh";
-// 官方文章写全地址（check-doc-links 只认完整的链接）：[中文版, 英文版]
+const lang = langOf(Astro.url.pathname);
+const fl = fullLang(lang);
+const hl = fl === lang ? undefined : fl;
+// 官方文章写全地址（check-doc-links 只认完整的链接）。帮助中心没有俄文、阿拉伯文，用英文版
 const DOC = {
-  otp: ["https://support.saily.com/hc/zh-cn/articles/27948689277596", "https://support.saily.com/hc/en-us/articles/27948689277596"],
-  keep: ["https://support.saily.com/hc/zh-cn/articles/31089593239452", "https://support.saily.com/hc/en-us/articles/31089593239452"],
+  otp: { zh: "https://support.saily.com/hc/zh-cn/articles/27948689277596", en: "https://support.saily.com/hc/en-us/articles/27948689277596", ja: "https://support.saily.com/hc/ja/articles/27948689277596", ko: "https://support.saily.com/hc/ko/articles/27948689277596", es: "https://support.saily.com/hc/es/articles/27948689277596", pt: "https://support.saily.com/hc/pt-br/articles/27948689277596", fr: "https://support.saily.com/hc/fr/articles/27948689277596", de: "https://support.saily.com/hc/de/articles/27948689277596" },
+  keep: { zh: "https://support.saily.com/hc/zh-cn/articles/31089593239452", en: "https://support.saily.com/hc/en-us/articles/31089593239452", ja: "https://support.saily.com/hc/ja/articles/31089593239452", ko: "https://support.saily.com/hc/ko/articles/31089593239452", es: "https://support.saily.com/hc/es/articles/31089593239452", pt: "https://support.saily.com/hc/pt-br/articles/31089593239452", fr: "https://support.saily.com/hc/fr/articles/31089593239452", de: "https://support.saily.com/hc/de/articles/31089593239452" },
 };
-const doc = (k: keyof typeof DOC) => DOC[k][lang === "en" ? 1 : 0];
-const a = (href: string, text: string) => `<a class="xxd-link" href="${href}">${text}</a>`;
-const L = (p: string) => link(p, lang);
+const doc = (k: keyof typeof DOC) => DOC[k][lang as "zh"] ?? DOC[k].en;
+const a = (href: string, text: string) => `<a class="xxd-link" href="${href}"${href.startsWith("/") && hl ? ` hreflang="${hl}"` : ""}>${text}</a>`;
+const L = (p: string) => link(p, fl);
 const POST_TAKEOVER = "https://www.80aj.com/2026/08/26/whatsapp-account-loss-risk/";
 const POST_JASON = "https://x.com/AI_Jasonyu/status/2080877134319624492";
 
@@ -115,7 +119,19 @@ const EN: typeof ZH = {
   stepLink: (n, title) => `Step ${n}: ${title}`,
 };
 
-const C = lang === "en" ? EN : ZH;
+// 其他语言：src/i18n/<语言>.js 的 home（缺的键是 base.js 的英文），[字](键) 换成链接
+const URL_OF: Record<string, string> = { otp: doc("otp"), keep: doc("keep"), takeover: POST_TAKEOVER, jason: POST_JASON, apps: L("/howto/number-apps/") };
+const md = (s: string) => s.replace(/\[([^\]]+)\]\((\w+)\)/g, (m, text, k) => (URL_OF[k] ? a(URL_OF[k], text) : m));
+const TRACK_BASE = ZH.TRACKS.map(([icon, , , steps]) => [icon, steps]);
+const x = dict(lang);
+const C: typeof ZH = x
+  ? { ...x.home, brand: x.ui.brand,
+      PAIN: x.home.PAIN.map(md),
+      VS: x.home.VS.map(([h, them, us]: string[]) => [h, them, md(us)]),
+      CODES: x.home.CODES.map(([h, d]: string[]) => [h, md(d)]),
+      TRACKS: x.home.TRACKS.map(([h, p]: string[], i: number) => [TRACK_BASE[i][0], h, p, TRACK_BASE[i][1]]),
+      stepLink: (n: number, title: string) => fmt(x.home.stepLink, { n, title }) }
+  : lang === "en" ? EN : ZH;
 const headings = [["h-pain", C.painH], ["h-vs", C.vsH], ["h-route", C.routeH], ["h-codes", C.codesH], ["h-fit", C.fitH], ["h-tracks", C.tracksH]].map(([slug, text]) => ({ slug, text, depth: 2 }));
 ---
 <Site title={C.brand} headings={headings}>
@@ -123,8 +139,8 @@ const headings = [["h-pain", C.painH], ["h-vs", C.vsH], ["h-route", C.routeH], [
     <h1>{C.h1}</h1>
     <p class="home__lead">{C.lead[0]}<mark>{C.lead[1]}</mark>{C.lead[2]}</p>
     <div class="home__cta">
-      <a class="xxd-btn" data-variant="primary" href={L("/quick-number/")}>{C.cta[0]}<i data-xxd-icon="ArrowRight" data-size="16"></i></a>
-      <a class="xxd-btn" data-variant="ghost" href={stepHref(STEPS[5], lang)}>{C.cta[1]}</a>
+      <a class="xxd-btn" data-variant="primary" href={L("/quick-number/")} hreflang={hl}>{C.cta[0]}<i data-xxd-icon="ArrowRight" data-size="16"></i></a>
+      <a class="xxd-btn" data-variant="ghost" href={stepHref(STEPS[5], fl)} hreflang={hl}>{C.cta[1]}</a>
     </div>
     <p class="home__note">{C.ctaNote}</p>
 
@@ -152,7 +168,7 @@ const headings = [["h-pain", C.painH], ["h-vs", C.vsH], ["h-route", C.routeH], [
           <li class="xxd-steps__item">
             <span class="xxd-steps__mark" aria-hidden="true">{r.n}</span>
             <span class="xxd-steps__text">
-              <a class="xxd-steps__title xxd-steps__link" href={routeHref(r, lang)}>{t(r, "title", lang)}</a>
+              <a class="xxd-steps__title xxd-steps__link" href={routeHref(r, fl)} hreflang={hl}>{t(r, "title", lang)}</a>
               <span class="xxd-steps__desc">{t(r, "sum", lang)}</span>
             </span>
           </li>
@@ -181,6 +197,7 @@ const headings = [["h-pain", C.painH], ["h-vs", C.vsH], ["h-route", C.routeH], [
     <section aria-labelledby="h-tracks">
       <h2 id="h-tracks">{C.tracksH}</h2>
       <p>{C.tracksP}</p>
+      {x && <p class="home__note">{x.home.devNote}</p>}
       <div class="flow">
         {C.TRACKS.map(([icon, h, p, steps], i) => (
           <div class="flow__box" data-mine={i === 0 ? "" : undefined}>
@@ -189,7 +206,7 @@ const headings = [["h-pain", C.painH], ["h-vs", C.vsH], ["h-route", C.routeH], [
             <p class="flow__desc">{p}</p>
             <ul class="flow__how" aria-label={C.tracksLabel}>
               {icon === "Globe" && <li><a href={lessonHref(LESSONS[0], lang)}>{C.lessonsLink}</a></li>}
-              {(steps as number[]).map((n) => STEPS.find((s) => s.n === n)!).map((s) => <li><a href={stepHref(s, lang)}>{C.stepLink(s.n, t(s, "title", lang))}</a></li>)}
+              {(steps as number[]).map((n) => STEPS.find((s) => s.n === n)!).map((s) => <li><a href={stepHref(s, fl)} hreflang={hl}>{C.stepLink(s.n, t(s, "title", fl))}</a></li>)}
             </ul>
           </div>
         ))}

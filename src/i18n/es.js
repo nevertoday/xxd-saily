@@ -4,7 +4,7 @@
 export default {
   ui: {
     brand: "Saily para principiantes",
-    desc: "Una guía no oficial de Saily, la eSIM de datos para viajar que también ofrece un número de teléfono de EE. UU. Desde comprobar tu teléfono hasta tener internet al aterrizar, con palabras sencillas.",
+    desc: "Una guía no oficial de Saily: consigue un número de EE. UU. (+1) propio para registrarte en apps y recibir códigos de verificación, instálalo incluso sin eSIM, soluciona códigos que no llegan y conserva el número, con palabras sencillas. También datos para viajar al extranjero.",
     skip: "Ir al contenido",
     menu: "Abrir menú",
     search: "Buscar en la guía",
@@ -23,7 +23,9 @@ export default {
     navLabel: "Navegación del sitio",
     start: "Empezar",
     home: "Inicio",
-    lessons: "Para principiantes: empieza aquí",
+    // 导航：拿美国号码的六步（英文页）、出国上网的新手三课（本语言）
+    route: "Número de EE. UU.: de la compra a los códigos (en inglés)",
+    lessons: "Datos en el extranjero: tres lecciones",
     more: "Más (en inglés)",
     main: "Guía completa: 8 pasos",
     howto: "How-to: cómo hacerlo",
@@ -49,37 +51,71 @@ export default {
   },
 
   home: {
-    h1: "Internet en el extranjero, resuelto antes de salir",
+    h1: "Un número de EE. UU. (+1) propio para registrarte y recibir códigos de verificación",
     // lead：前半句、荧光笔那一句、后半句
-    lead: ["Saily es una eSIM para viajar de Nord Security, la empresa de NordVPN. Antes del viaje compras en la app datos para tu destino y los instalas en el teléfono, y al aterrizar activas dos interruptores y ya tienes internet, sin buscar en el aeropuerto dónde venden tarjetas SIM. También vende aparte un número de teléfono de EE. UU. (+1) para llamadas y SMS. ", "Esta es una guía no oficial", ", sin relación con Saily ni con Nord Security. Para funciones y precios, la referencia son el Centro de ayuda oficial y la app."],
-    cta: ["Empieza aquí si es tu primera vez", "¿Ya lo usas? La guía completa (en inglés)"],
-    ctaNote: "Para principiantes hay tres lecciones: comprobar tu teléfono, comprar e instalar un plan antes de salir y activar los datos al aterrizar.",
-    painH: "¿Te ha pasado algo así?",
+    lead: ["Muchas apps piden verificar un número de teléfono al registrarte o iniciar sesión, y a muchos números fuera de EE. UU. nunca les llega el código. Saily, una eSIM de Nord Security (la empresa de NordVPN), también vende un número de EE. UU. (+1). Se asigna bajo el Plan de Numeración de América del Norte y, mientras mantengas el servicio activo, es solo tuyo para códigos de verificación, SMS y llamadas. No necesitas un plan de datos antes y puedes comprarlo en la web. ", "Esta es una guía no oficial", ", sin relación con Saily ni con Nord Security. Para funciones y precios, la referencia son el Centro de ayuda oficial y la app."],
+    // 两个按钮：极速拿号（英文页）、完整教程第 5 步（英文页）
+    cta: ["Número rápido: cómpralo en la web en 3 minutos (en inglés)", "Entiende primero cómo funciona el número (en inglés)"],
+    ctaNote: "Después de pagar, verificas tu identidad en la app de Saily antes de que te asignen el número. El número va en una eSIM, y hay una solución incluso si tu teléfono no tiene eSIM.",
+    // [链接上的字](键) 会换成链接，键原样保留：otp、keep 是官方帮助中心，takeover、jason 是网友的中文帖子，apps 是本站英文页
+    painH: "¿Te pasa alguna de estas cosas?",
     PAIN: [
-      "Aterrizas, el teléfono no tiene internet y no puedes pedir un taxi ni abrir un mapa, así que te pones a buscar Wi-Fi.",
-      "Viajas con tu SIM de siempre encendida y, al volver, te llega una factura de roaming.",
-      "Haces fila en el aeropuerto para comprar una SIM local y, al cambiarla, te preocupa perder la tuya.",
+      "Te registras en una app como Telegram o WhatsApp, pones tu número de siempre y el código nunca llega, o la app te dice que no acepta ese número.",
+      "Pagaste un poco en una web de recepción de códigos, pero el número nunca fue tuyo. Después pasó a otra persona, que se registró de nuevo con ese mismo número y se quedó con tu cuenta ([un caso real, en chino](takeover)).",
+      "El número vinculado a tu cuenta se canceló o venció, así que al iniciar sesión en un teléfono nuevo el código no llega a ningún lado y pierdes la cuenta.",
+      "Miraste cómo conseguir una SIM de otro país, pero la cuota mensual no es barata y el registro es cada vez más difícil. Un usuario que intentó sacar una SIM de EE. UU. se quedó atascado en el registro ([publicación, en chino](jason)).",
+      "Por fin tienes un número de EE. UU., lo vinculas y aun así algunas apps no te mandan el código, sin saber si el problema es el número o tu teléfono.",
     ],
-    lessonsH: "Para empezar bastan tres lecciones",
-    lessonsP: "Léelas en orden; en total son unos 25 minutos. Al terminar sabrás si tu teléfono puede usar una eSIM, tendrás un plan comprado e instalado antes de salir, tendrás internet a los pocos minutos de aterrizar y sabrás cómo evitar que tu operador te cobre roaming. Todo lo demás del sitio está para consultarlo cuando lo necesites.",
-    lessonsLabel: "Para principiantes: 3 lecciones",
+    vsH: "En qué se diferencia de una web de recepción de códigos",
+    vsP: "Una web de recepción de códigos solo te presta un número. Un número de Saily es tuyo. Eso es lo que importa para cualquier cuenta que vayas a seguir usando y puedas necesitar recuperar después.",
+    // 表头：第一格空着
+    vsHead: ["", "Web de recepción de códigos", "Número de EE. UU. de Saily"],
+    // VS：每行 [这一行比什么, 接码平台, Saily]
+    VS: [
+      ["De quién es el número", "De la web. Al poco tiempo, el mismo número recibe códigos para otra persona", "Mientras tu servicio siga activo, está asignado solo a ti ([Centro de ayuda](otp))"],
+      ["¿Seguirás recibiendo códigos dentro de seis meses?", "Normalmente no. Hace tiempo que el número pasó a otra persona", "Sí, mientras siga renovándose. Si vence, se guarda durante 30 días para que puedas recuperarlo ([Centro de ayuda](keep))"],
+      ["Qué necesitas", "Sin documento de identidad; pagas por código", "Verificación de identidad, una suscripción con renovación y un dispositivo compatible con eSIM"],
+    ],
+    routeH: "De comprar el número a recibir códigos, en seis pasos",
+    routeP: "Sigue el orden. Cada paso enlaza a la página que lo explica en detalle (en inglés). Todo se hace en la web y en la app de Saily, sin necesidad de viajar.",
+    routeLabel: "Conseguir un número de EE. UU.: 6 pasos",
+    codesH: "Hablemos claro: qué códigos llegan",
+    codesP: "Es un número real de EE. UU., pero el operador que hay detrás funciona sobre red de internet (VoIP), así que algunos servicios que comprueban el tipo de número lo detectan como VoIP y no envían códigos. La propia Saily lo advierte. De mayor a menor seguridad:",
+    // CODES：每行 [把握多大, 说明]
+    CODES: [
+      ["Lista de Saily: suele funcionar", "Códigos de un solo uso (OTP): WhatsApp, Signal, Viber, Airbnb. Verificación en dos pasos (2FA): PayPal, Wise, Venmo y otros. La lista no es exhaustiva ni está garantizada ([Lista de Saily](otp))"],
+      ["Pruebas de usuarios: depende", "Telegram, X, Google, Apple ID, ChatGPT y otros. A algunas personas les funciona la misma app y a otras no. Consulta [Qué apps aceptan el número de EE. UU. (en inglés)](apps)"],
+      ["En China continental", "Un usuario recibió códigos allí a través de una red local en roaming ([publicación, en chino](jason)), pero China continental no aparece en la lista en inglés de Saily de lugares donde funcionan las llamadas, así que es posible que las llamadas no funcionen"],
+      ["No cuentes con ello", "Bancos, brókeres y otros servicios financieros similares: Saily indica que algunos no aceptan este tipo de números. Además, el número no te da identidad estadounidense y este sitio no trata sobre abrir cuentas con él"],
+    ],
     fitH: "¿Es para ti?", yesH: "Sí, si", noH: "Todavía no, si",
-    YES: ["Viajas al extranjero y quieres datos nada más aterrizar", "Tu teléfono es compatible con eSIM, o no te importa comprar una tarjeta física que admite eSIM", "Quieres un número de EE. UU. para llamadas y SMS"],
-    NO: ["Esta vez no sales del país", "Saily no funciona en tu destino. Su lista es Bielorrusia, Cuba, Irán, Corea del Norte, Rusia, Siria y las regiones restringidas de Ucrania", "Necesitas MMS o desvío de llamadas, que el número de teléfono de Saily no admite"],
-    tracksH: "Qué cubre este sitio",
-    tracksP: "Las lecciones para principiantes cubren lo primero. Para las otras dos cosas, la guía completa tiene un paso para cada una, para cuando las necesites.",
+    YES: ["Necesitas un número que reciba códigos por SMS para registrarte o iniciar sesión en apps", "Son cuentas que vas a usar a largo plazo y quieres un número que sea solo tuyo y se siga renovando", "Puedes verificar tu identidad con un documento válido. Para documentos emitidos en China hacen falta pasaporte y documento nacional de identidad", "Tu teléfono es compatible con eSIM, o no te importa añadir una tarjeta física que admite eSIM"],
+    NO: ["Lo quieres para verificar cuentas bancarias, de inversión o de pagos de EE. UU.", "Necesitas MMS o desvío de llamadas, que el número no admite", "Tu documento de identidad es de un país que Saily todavía no puede verificar, como Rusia, Irán o Corea del Norte", "No quieres una suscripción con renovación. El número solo sigue siendo tuyo mientras se renueva"],
+    tracksH: "Qué más cubre este sitio",
+    tracksP: "Además del número, el servicio principal de Saily son los datos para viajar al extranjero. La guía completa lo explica para cuando lo necesites.",
     // 完整教程目前只有英文和中文
-    devNote: "Por ahora, la guía completa está en inglés (y en chino).",
-    // TRACKS：每个是 [标题, 说明]，图标、顺序和对应的教程步骤固定（在 views/Home.astro 的 TRACK_BASE）
+    devNote: "Por ahora, la guía completa está en inglés (y en chino). Las tres lecciones para principiantes están en tu idioma.",
+    // TRACKS：每个是 [标题, 说明]，图标、顺序和对应的教程步骤固定（在 views/Home.astro 的 TRACK_BASE：号码、没有 eSIM 的手机、出国流量）
     TRACKS: [
-      ["Datos en el extranjero", "Para esto sirve Saily. Compras un plan de datos para tu destino, lo instalas en el teléfono y funciona al llegar. La guía completa explica paso a paso cómo elegir un plan, instalar la eSIM, llegar y recargar datos, además de las otras funciones de la app."],
-      ["Un número de teléfono de EE. UU. (+1)", "Un número de EE. UU. que Saily vende aparte, para llamadas y SMS. Antes de recibirlo verificas tu identidad. Algunos servicios lo marcan como número de internet (VoIP), y el Centro de ayuda dice que ciertos bancos y apps de pago no aceptan esos números para verificar. La mayoría de los servicios le envían códigos sin problema."],
-      ["Un teléfono sin eSIM", "La solución de Saily es una tarjeta física que admite eSIM. Va en la ranura de la SIM, y en ella instalas Saily."],
+      ["El número de EE. UU. (+1)", "Qué documento pide la verificación, qué hacer si no llegan los códigos, por qué contestar llamadas consume minutos, por qué los SMS deben ser de texto simple y cómo conservar o cambiar el número."],
+      ["Un teléfono sin eSIM", "Muchos teléfonos vendidos en China continental no tienen eSIM. La solución de Saily es una tarjeta física que admite eSIM: va en la ranura de la SIM y en ella instalas Saily."],
+      ["Datos en el extranjero", "Compras un plan de datos para tu destino, lo instalas y funciona al aterrizar. Si es tu primera vez, las tres lecciones para principiantes te llevan paso a paso."],
     ],
-    tracksLabel: "Pasos de la guía completa sobre esto",
+    lessonsLink: "Datos en el extranjero: tres lecciones para principiantes",
+    tracksLabel: "Pasos correspondientes de la guía completa",
     // 每件事下面链到完整教程的一步：{n} 是第几步，{title} 是那一步的标题（英文）
     stepLink: "Paso {n}: {title}",
   },
+
+  // 拿美国号码的六步在导航、首页里的标题和简介（顺序固定，链接都去英文页；见 nav.js 的 ROUTE）
+  route: [
+    { title: "Comprueba si tu teléfono admite eSIM", sum: "El número va en una eSIM. Si tu teléfono no tiene eSIM, sirve una tarjeta eSIM extraíble" },
+    { title: "Compra el número en la web", sum: "No hace falta plan de datos. En la página del número, elige «Get Number Only», selecciona el periodo de renovación y paga" },
+    { title: "Verifica tu identidad para recibir el número", sum: "Sube tu documento de identidad en la app. Con documentos chinos necesitas pasaporte y documento nacional de identidad. Al aprobarse, aparece tu número" },
+    { title: "Instala la eSIM y recibe tu primer SMS", sum: "Deja que la app la instale o escanea el código QR, y luego pide a un amigo que te envíe un SMS" },
+    { title: "Regístrate y recibe tus códigos", sum: "Mira qué apps envían códigos, cuáles no lo garantizan y qué revisar si alguno no llega" },
+    { title: "Conserva el número", sum: "No dejes vencer la renovación ni elimines la eSIM en la app. Si pierdes el número, tus cuentas pierden sus códigos" },
+  ],
 
   // 新手入门三课在导航、首页路线图里的标题、时间、简介（顺序：1 查手机、2 买套餐装好、3 落地上网）
   lessons: [
