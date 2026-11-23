@@ -47,12 +47,12 @@
   if (q.get("kind") === "wiki") wikiCard(); else siteCard();
 
   function siteCard() {
-    // 定稿（2026-11-19）：利益点 + 三条线（流量、美国号码、没有 eSIM 的手机）。覆盖范围照官方：200 多个国家和地区
-    const SUB = { zh: "流量套餐 · 美国号码 · 手机不支持 eSIM 也有办法", en: "Online when you land · a US number · even without eSIM" };
+    // 2026-11-22 改：读者来这里多半是为了美国号码收验证码，卡片先讲号码；流量放在副标题最后
+    const SUB = { zh: "注册海外应用 · 收验证码 · 国行手机也能装", en: "App sign-ups · verification codes · even without eSIM" };
     const BRAND = { zh: "Saily 新手教程 · 非官方", en: "Saily for beginners · unofficial" };
     const COPY = {
-      zh: "如何爽用 Saily<br><em>出国落地就有网</em>",
-      en: "Get the most<br>out of <em>Saily</em>",
+      zh: "一个只归你的<br><em>美国 +1 号码</em>",
+      en: "A US number<br>that's <em>yours</em>",
     };
     h1.innerHTML = COPY[lang];
     if (lang === "en") { h1.style.fontFamily = EN_FONT; h1.style.fontWeight = "800"; }

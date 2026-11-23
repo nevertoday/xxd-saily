@@ -264,6 +264,14 @@
   @media (max-width: 560px) { .lookup--route :is(th, td):nth-child(1) { width: 32%; } .lookup--route :is(th, td):nth-child(2) { width: 44%; } }
   .lookup tbody th { white-space: normal; border-bottom: 0; } /* 套件给表头 th 加了下边线，行首的 th 不要 */
   .lookup__note { display: block; margin-top: var(--space-1); color: var(--muted); font-size: var(--text-xs); line-height: var(--leading-xs); }
+  /* 首页两张表：和接码平台对比（三列，接码那列淡一档，眼睛先落在右边），哪些码收得到（两列，没有表头） */
+  .lookup--vs :is(th, td):nth-child(1) { width: 22%; }
+  .lookup--vs :is(th, td):nth-child(2) { width: 36%; }
+  .lookup--vs .vs__them { color: var(--muted); }
+  .lookup--two :is(th, td):nth-child(1) { width: 26%; }
+  .lookup--two :is(th, td):nth-child(2) { width: auto; }
+  .lookup--two tbody tr:first-child > * { border-top: 0; }
+  @media (max-width: 560px) { .lookup--vs :is(th, td):nth-child(1) { width: 26%; } .lookup--vs :is(th, td):nth-child(2) { width: 32%; } .lookup--two :is(th, td):nth-child(1) { width: 32%; } }
 
   /* 带箭头标注的截图（Annot.astro）：SVG 盖在图上，坐标就是图片像素。截图永远是亮色的，标注用固定的红色加白边 */
   .annot__frame { position: relative; max-width: 100%; width: fit-content; }

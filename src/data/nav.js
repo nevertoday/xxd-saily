@@ -59,45 +59,57 @@ export const LESSONS = [
 for (const [code, d] of Object.entries(EXTRA)) (d.lessons || []).forEach((l, i) => { if (LESSONS[i]) LESSONS[i][code] = l; });
 export const lessonHref = (s, lang = "zh") => link(`/start/${s.slug}/`, lang);
 
+// 拿美国号码的路线：首页「从买号到收码」和左侧导航最上面一组都从这里读。大多数读者来这个站，就是为了这一条：
+// 一个只归自己的美国 +1 号码，拿去注册海外应用、收验证码。href 不带语言前缀；英文锚点不同时写 enHref。
+export const ROUTE = [
+  { n: 1, href: "/howto/no-esim-options/", title: "先看手机能不能装 eSIM", sum: "号码装在 eSIM 上。国行手机多半不支持，配一张实体 eSIM 卡也能用", en: { title: "Check your phone can take an eSIM", sum: "The number lives on an eSIM. If your phone has no eSIM, a removable eSIM card works" } },
+  { n: 2, href: "/quick-number/", title: "在网页上买号码", sum: "不用买流量。在官网号码页点「只获取号码」，选好续费周期付款", en: { title: "Buy the number on the website", sum: "No data plan needed. On the number page, choose Get Number Only, pick a renewal period and pay" } },
+  { n: 3, href: "/guide/5-phone-number/#先实名才拿得到号码", enHref: "/guide/5-phone-number/#verify-your-identity-first", title: "实名，拿到号码", sum: "在 App 里交证件，中国证件要护照和身份证两样；通过以后才显示号码", en: { title: "Verify your identity to get the number", sum: "Upload your ID in the app. Chinese IDs need both a passport and an ID card. The number appears once you pass" } },
+  { n: 4, href: "/howto/scan-qr/", title: "装好 eSIM，收第一条短信", sum: "让 App 直接装，或者扫二维码；装好请朋友发条短信试试", en: { title: "Install the eSIM and get your first text", sum: "Let the app install it, or scan the QR code, then have a friend text you" } },
+  { n: 5, href: "/howto/number-apps/", title: "拿去注册，收验证码", sum: "先看哪些应用收得到、哪些不保证；收不到时先分清是哪一头的问题", en: { title: "Sign up and get your codes", sum: "See which apps send codes and which don't promise to, and what to check when one doesn't arrive" } },
+  { n: 6, href: "/howto/keep-number/", title: "保号：别让它丢了", sum: "续费别断，别在 App 里删 eSIM；号码丢了，绑过的账号就收不到码", en: { title: "Keep the number", sum: "Don't let the renewal lapse or delete the eSIM in the app. Lose the number and your accounts lose their codes" } },
+];
+export const routeHref = (r, lang = "zh") => link(lang === "zh" ? r.href : (r.enHref ?? r.href), lang);
+
 export const STEPS = [
-  { n: 0, slug: "0-what", title: "Saily 是什么", minutes: "读 5 分钟", ready: true, sum: "Nord Security 做的旅行 eSIM：它替你省掉什么，管不了什么，和开漫游、买当地卡比起来怎样", en: { title: "What Saily is", minutes: "5-minute read", sum: "A travel eSIM from Nord Security: what it saves you, what it can't do, and how it stacks up against roaming or a local SIM" } },
+  { n: 0, slug: "0-what", title: "Saily 是什么", minutes: "读 5 分钟", ready: true, sum: "Nord Security 做的 eSIM，卖两样东西：一个可以单独买的美国 +1 号码，和出国用的流量", en: { title: "What Saily is", minutes: "5-minute read", sum: "An eSIM from Nord Security that sells two things: a +1 US number you can buy on its own, and data for trips abroad" } },
   { n: 1, slug: "1-choose-plan", title: "选对套餐", minutes: "10 分钟", ready: true, sum: "去一个国家还是好几个，要一份总流量还是每天不限量，让你的行程来定", en: { title: "Pick the right plan", minutes: "10 minutes", sum: "One country or several, one data total or unlimited by the day: let your trip decide" } },
   { n: 2, slug: "2-install", title: "装好 eSIM", minutes: "10 分钟", ready: true, sum: "让 App 替你装；装不上，再扫二维码或者手动输入激活码", en: { title: "Install the eSIM", minutes: "10 minutes", sum: "Let the app install it, and fall back on a QR code or the activation code if it can't" } },
   { n: 3, slug: "3-abroad", title: "到了当地", minutes: "5 分钟", ready: true, sum: "让手机走 Saily 上网、打开数据漫游；没网的时候，先查这几样", en: { title: "Once you land", minutes: "5 minutes", sum: "Switch mobile data to Saily and turn on data roaming, and what to check first when there's no internet" } },
   { n: 4, slug: "4-manage", title: "用量、加流量和抵用金", minutes: "10 分钟", ready: true, sum: "看还剩多少流量，不够了怎么加，自动充值和抵用金怎么用", en: { title: "Usage, top-ups and credits", minutes: "10 minutes", sum: "See how much data is left, add more when you run low, and how Auto Top-Up and credits work" } },
-  { n: 5, slug: "5-phone-number", title: "美国电话号码", minutes: "15 分钟", ready: true, sum: "Saily 的 +1 美国号码能打电话、收发短信；开通之前，先要做实名认证", en: { title: "The US phone number", minutes: "15 minutes", sum: "Saily's +1 US number makes calls and sends texts, once you've passed the identity check" } },
+  { n: 5, slug: "5-phone-number", title: "美国电话号码", minutes: "15 分钟", ready: true, sum: "一个只归你的美国 +1 号码：收验证码、打电话、发短信；先实名才给号，续费不断才留得住", en: { title: "The US phone number", minutes: "15 minutes", sum: "A +1 US number that's yours alone, for codes, calls and texts. You verify your identity to get it and keep it by renewing" } },
   { n: 6, slug: "6-no-esim", title: "手机不支持 eSIM 怎么办", minutes: "10 分钟", ready: true, sum: "换一张能装 eSIM 的实体卡插进卡槽，官方说的是 eSIM.me，再找客服要二维码把 Saily 装上去", en: { title: "When your phone has no eSIM", minutes: "10 minutes", sum: "Put a card that holds eSIMs in the SIM slot (Saily names eSIM.me), then get a QR code from support to install Saily on it" } },
   { n: 7, slug: "7-extras", title: "其他功能", minutes: "读 5 分钟", ready: true, sum: "网页防护、广告拦截器、虚拟位置，还有超级套餐附带的权益，各是做什么的", en: { title: "Other features", minutes: "5-minute read", sum: "What Web protection, Ad Blocker and virtual locations do, and what the Ultra plan adds" } },
 ];
 export const stepHref = (s, lang = "zh") => link(`/guide/${s.slug}/`, lang);
 
 export const HOWTO = [
-  { group: "装 eSIM", en: { group: "Installing" }, items: [
-    { slug: "no-esim-options", title: "没有合适的手机，Saily 怎么装", en: { title: "No suitable phone? How to set up Saily" } },
-    { slug: "scan-qr", title: "扫二维码装 eSIM，一步一步", en: { title: "Install the eSIM with a QR code, step by step" } },
-  ]},
-  { group: "旅行", en: { group: "Travel" }, items: [
-    { slug: "multi-country", title: "一趟去好几个国家", en: { title: "One trip, several countries" } },
-    { slug: "hotspot", title: "开热点给电脑用", en: { title: "Share your data with a hotspot" } },
-    { slug: "dual-sim", title: "国内的号码和 Saily 一起用", en: { title: "Keep your home number alongside Saily" } },
-    { slug: "save-data", title: "让流量用得久一点", en: { title: "Make your data last" } },
-    { slug: "change-phone", title: "换了手机，把 eSIM 移过去", en: { title: "Move the eSIM to a new phone" } },
-    { slug: "share-family", title: "和家人一起用", en: { title: "Share with your family" } },
-  ]},
-  { group: "电话号码", en: { group: "Phone number" }, items: [
-    { slug: "us-number-sms", title: "用美国号码收短信和验证码", en: { title: "Texts and verification codes on the US number" } },
+  { group: "号码和验证码", en: { group: "Number and codes" }, items: [
     { slug: "number-apps", title: "美国号码能用在哪些应用", en: { title: "Which apps take the US number" } },
+    { slug: "us-number-sms", title: "用美国号码收短信和验证码", en: { title: "Texts and verification codes on the US number" } },
     { slug: "keep-number", title: "号码怎么留住、怎么换", en: { title: "Keep or change your number" } },
     { slug: "number-calls", title: "用这个号码打电话", en: { title: "Make calls with the number" } },
   ]},
+  { group: "装 eSIM", en: { group: "Installing" }, items: [
+    { slug: "no-esim-options", title: "没有合适的手机，Saily 怎么装", en: { title: "No suitable phone? How to set up Saily" } },
+    { slug: "scan-qr", title: "扫二维码装 eSIM，一步一步", en: { title: "Install the eSIM with a QR code, step by step" } },
+    { slug: "change-phone", title: "换了手机，把 eSIM 移过去", en: { title: "Move the eSIM to a new phone" } },
+  ]},
   { group: "出问题了", en: { group: "When something's wrong" }, items: [
-    { slug: "no-signal", title: "没信号，或者有信号没网", en: { title: "No signal, or signal but no internet" } },
-    { slug: "refund", title: "退款和取消订阅", en: { title: "Refunds and cancelling subscriptions" } },
     { slug: "delete-esim", title: "删掉 eSIM 之前先看这个", en: { title: "Read this before you delete an eSIM" } },
+    { slug: "refund", title: "退款和取消订阅", en: { title: "Refunds and cancelling subscriptions" } },
+    { slug: "no-signal", title: "没信号，或者有信号没网", en: { title: "No signal, or signal but no internet" } },
   ]},
   { group: "钱和账户", en: { group: "Money and account" }, items: [
     { slug: "payments", title: "付款方式和发票", en: { title: "Payment methods and invoices" } },
     { slug: "credits", title: "抵用金从哪来、怎么用", en: { title: "Where credits come from and how to use them" } },
+  ]},
+  { group: "出国上网", en: { group: "Data abroad" }, items: [
+    { slug: "multi-country", title: "一趟去好几个国家", en: { title: "One trip, several countries" } },
+    { slug: "hotspot", title: "开热点给电脑用", en: { title: "Share your data with a hotspot" } },
+    { slug: "dual-sim", title: "国内的号码和 Saily 一起用", en: { title: "Keep your home number alongside Saily" } },
+    { slug: "save-data", title: "让流量用得久一点", en: { title: "Make your data last" } },
+    { slug: "share-family", title: "和家人一起用", en: { title: "Share with your family" } },
   ]},
 ];
 export const howtoHref = (slug, lang = "zh") => link(`/howto/${slug}/`, lang);

@@ -2,7 +2,7 @@
 // 外壳：顶栏（搜索、主题、语言、GitHub）、左侧导航（主线 8 步 + 栏目）、正文、右侧目录。界面全部用 xxd-ui-kit：
 // 顶栏 xxd-topbar、标志 xxd-logo、左侧 xxd-sidebar（How-to 分组是子菜单）、目录 xxd-toc（跟着滚动高亮）。
 // 中文在根路径，英文在 /en/ 下；语言看路径（langOf），界面文字在下面的 UI 里。
-import { LESSONS, lessonHref, STEPS, stepHref, HOWTO, HOWTO_FLAT, howtoHref, wikiHref, link, REPO, DOCS, DOCS_ZH, DOCS_BY_LANG, LANGS, langInfo, langOf, fullLang, isFull, langHref, t } from "../data/nav.js";
+import { ROUTE, routeHref, LESSONS, lessonHref, STEPS, stepHref, HOWTO, HOWTO_FLAT, howtoHref, wikiHref, link, REPO, DOCS, DOCS_ZH, DOCS_BY_LANG, LANGS, langInfo, langOf, fullLang, isFull, langHref, t } from "../data/nav.js";
 import { X as dict, fmt } from "../i18n/index.js";
 import { WIKI } from "../data/wiki.js";
 import { WIKI_EN } from "../data/wiki.en.js";
@@ -22,16 +22,16 @@ interface Props {
   og?: string;
 }
 const UI = {
-  zh: { html: "zh-CN", brand: "Saily 新手教程", desc: "Saily 的非官方学习站：出国用 eSIM 上网、用美国号码打电话，从查手机到落地上网，说人话。", skip: "跳到正文", menu: "打开目录", search: "搜索教程",
+  zh: { html: "zh-CN", brand: "Saily 新手教程", desc: "Saily 的非官方学习站：拿一个只归你的美国 +1 号码，注册海外应用、收验证码；国行手机怎么装、收不到码怎么办、号码怎么留住，说人话。也讲出国上网的流量。", skip: "跳到正文", menu: "打开目录", search: "搜索教程",
   searchPh: "搜课程、步骤、How-to、名词、问题……", searchEmpty: "没找到，换个词试试", look: "外观", repo: "本教程的 GitHub 仓库", repoMore: "更多：Saily 官方帮助中心", repoDefault: "默认",
   repos: [[REPO, "本教程", "nevertoday/xxd-saily", "教程的源码，有问题在这里提"], [DOCS_ZH, "Saily 官方帮助中心", "support.saily.com", "功能、价格和用法以这里为准"]],
-  navLabel: "网站目录", start: "开始", home: "首页", lessons: "新手入门：先看这三课", main: "完整教程：想用得更深的人看", pending: "编写中", ref: "查资料", howto: "How-to：具体怎么做",
+  navLabel: "网站目录", start: "开始", home: "首页", route: "拿美国号码：从买号到收码", lessons: "出国上网：新手三课", main: "完整教程：想用得更深的人看", pending: "编写中", ref: "查资料", howto: "How-to：具体怎么做",
   wiki: "Wiki：这是什么", faq: "常见问题", toc: "本页", tocLabel: "本页目录", hintMain: "完整教程", hintLesson: "新手入门", hintFaq: "常见问题", switchTo: "English", switchLabel: "Switch to English",
   foot: `本站是 Saily 的非官方学习站，和 Saily、Nord Security 都没有关系。功能、价格以 <a href="${DOCS_ZH}">官方帮助中心</a> 和 Saily App 为准。教程源码和问题反馈在 <a href="${REPO}">GitHub</a>。` },
-  en: { html: "en", brand: "Saily for beginners", desc: "An unofficial guide to Saily: travel eSIM data and a US phone number, from checking your phone to getting online when you land, in plain words.", skip: "Skip to content", menu: "Open menu", search: "Search the guide",
+  en: { html: "en", brand: "Saily for beginners", desc: "An unofficial guide to Saily: get a +1 US number of your own for app sign-ups and verification codes, install it even without eSIM, fix codes that don't arrive and keep the number, in plain words. Data for trips abroad too.", skip: "Skip to content", menu: "Open menu", search: "Search the guide",
     searchPh: "Search lessons, steps, how-tos, terms, questions…", searchEmpty: "Nothing found. Try another word", look: "Appearance", repo: "This guide on GitHub", repoMore: "More: the Saily Help Center", repoDefault: "Default",
     repos: [[REPO, "This guide", "nevertoday/xxd-saily", "Source for this guide; file issues here"], [DOCS, "Saily Help Center", "support.saily.com", "The source of truth for features and prices"]],
-    navLabel: "Site navigation", start: "Start", home: "Home", lessons: "Beginner track: start here", main: "Full guide: to go further", pending: "In progress", ref: "Reference", howto: "How-to: how exactly",
+    navLabel: "Site navigation", start: "Start", home: "Home", route: "Get a US number: buy to codes", lessons: "Data abroad: three lessons", main: "Full guide: to go further", pending: "In progress", ref: "Reference", howto: "How-to: how exactly",
     wiki: "Wiki: what is it", faq: "FAQ", toc: "On this page", tocLabel: "On this page", hintMain: "Full guide", hintLesson: "Beginner track", hintFaq: "FAQ", switchTo: "中文", switchLabel: "切换到中文",
     foot: `An unofficial guide to Saily, not affiliated with Saily or Nord Security. For features and prices, the <a href="${DOCS}">official Help Center</a> and the Saily app are the source of truth. Source and feedback for this guide are on <a href="${REPO}">GitHub</a>.` },
 };
@@ -150,6 +150,16 @@ const GITHUB_MARK = '<svg width="16" height="16" viewBox="0 0 16 16" fill="curre
             <h2 class="xxd-sidebar__label">{L.start}</h2>
             <a class="xxd-sidebar__item" href={link("/", lang)} aria-current={cur(link("/", lang)) ? "page" : undefined}><span>{L.home}</span></a>
           </section>
+          {!x && (
+            <section class="xxd-sidebar__group">
+              <h2 class="xxd-sidebar__label">{L.route}</h2>
+              {ROUTE.map((r) => (
+                <a class="xxd-sidebar__item" href={routeHref(r, lang)} aria-current={cur(routeHref(r, lang)) ? "page" : undefined}>
+                  <span class="site-nav__num">{r.n}</span><span>{t(r, "title", lang)}</span>
+                </a>
+              ))}
+            </section>
+          )}
           <section class="xxd-sidebar__group">
             <h2 class="xxd-sidebar__label">{L.lessons}</h2>
             {LESSONS.map((s) => (

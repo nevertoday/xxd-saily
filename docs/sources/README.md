@@ -79,6 +79,7 @@
 | https://x.com/zureA255062/status/2113811704106959213 （2026-10） | 蔚蓝WEILANX | 同一路线的另一份实操。 |
 | https://x.com/yedabinbinah/status/2114683684414685509 （2026-10） | DaBin.Binah | 收不到短信多半是双卡冲突，先临时关掉另一张卡；用户反映价格涨了、出现了包年选项（以 App 为准）；有的平台收不到验证码时，换个浏览器或联系客服。10-15 实测接码名单（Telegram、X、Apple ID 等），ChatGPT/Claude 不保证，用在 howto/number-apps。 |
 | https://x.com/guyun_ai/status/2100200291539059164 （2026-09-16） | guyun | 接码实测：PayPal、X、Google、Apple 收到；Telegram、WhatsApp 各两次没收到；OpenAI 拒绝发码。用在 howto/number-apps。帖子里的价格和推荐码不搬。 |
+| https://www.80aj.com/2026/08/26/whatsapp-account-loss-risk/ （2026-08-26，转述 linux.do 的帖子） | Toy | 用接码平台的号码注册的 WhatsApp，开了 PIN、邮箱和安全密钥，号码被平台回收后，仍被别人用同一个号码重新注册夺走。首页「你是不是也卡在这些地方」和「它和接码平台差在哪」用它当例子。 |
 
 帖子之间、帖子和官方之间互相矛盾的地方（写的时候以官方为准，不要照搬帖子）：
 
